@@ -1,0 +1,8 @@
+node_modules
+.next
+out
+**/*.test.*
+**/*.story.*
+yarn.lock
+.storybook
+storybook-static
