@@ -1,8 +1,8 @@
 import * as nextImage from 'next/image';
 
 export const parameters = {
-  actions: { argTypesRegex: "^on[A-Z].*" },
-}
+  actions: { argTypesRegex: '^on[A-Z].*' },
+};
 
 // Stub out nextjs `Image` component
 // https://stackoverflow.com/a/64765638

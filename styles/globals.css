@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    font-feature-settings: "kern";
+    font-feature-settings: 'kern';
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
   }
