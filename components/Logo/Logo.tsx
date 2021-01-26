@@ -12,7 +12,7 @@ export interface LogoProps {
  * Reusable logo component that takes a size prop
  */
 const Logo = ({ size = 32, ...rest }: LogoProps) => (
-  <Image
+  <img
     src="/images/logo.png"
     alt="NFTX"
     height={size}
