@@ -2,6 +2,13 @@
   "name": "nftx-gallery",
   "version": "0.1.0",
   "private": true,
+  "author": "NTFX Gallery Squad <>",
+  "homepage": "https://github.com/NFTX-project/sp-nftx-gallery",
+  "contributors": [
+    "Tobias <4254570+quagliero@users.noreply.github.com>",
+    "Jacob <jcbssmall@gmail.com>",
+    "Justin <justincavery@gmail.com>"
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -10,7 +17,7 @@
     "build-storybook": "build-storybook",
     "lint": "eslint ./",
     "tsc": "tsc --noEmit",
-    "prettier": "prettier --write ./"
+    "prettier": "prettier --write --ignore-unknown ./"
   },
   "husky": {
     "hooks": {
@@ -18,7 +25,11 @@
     }
   },
   "lint-staged": {
-    "**/*": "prettier --write --ignore-unknown && eslint ./"
+    "**/*": [
+      "yarn eslint",
+      "yarn prettier",
+      "git add"
+    ]
   },
   "dependencies": {
     "autoprefixer": "^10.2.3",
