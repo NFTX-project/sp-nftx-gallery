@@ -2723,6 +2723,21 @@ autoprefixer@^9.7.2:
     postcss "^7.0.32"
     postcss-value-parser "^4.1.0"
 
+axios-hooks@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/axios-hooks/-/axios-hooks-2.3.0.tgz#2e728e5c75fd59c5300168dd94017bb6d1ffc517"
+  integrity sha512-YAmsXIC6E/Uevz8pdaHDfCPLl/o83TCFiueZMdKgVSDcpuy7mMz1cm85JuANibYMgl0Fqx8SENLfjtG22QX30Q==
+  dependencies:
+    "@babel/runtime" "7.12.5"
+    lru-cache "6.0.0"
+
+axios@^0.21.1:
+  version "0.21.1"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.21.1.tgz#22563481962f4d6bde9a76d516ef0e5d3c09b2b8"
+  integrity sha512-dKQiRHxGD9PPRIUNIWvZhPTPpl1rf/OxTYKsqKUDjBwYylTvV7SjSHJb9ratfyzM6wCdLCOYLzs73qpg5c4iGA==
+  dependencies:
+    follow-redirects "^1.10.0"
+
 babel-code-frame@^6.22.0:
   version "6.26.0"
   resolved "https://registry.yarnpkg.com/babel-code-frame/-/babel-code-frame-6.26.0.tgz#63fd43f7dc1e3bb7ce35947db8fe369a3f58c74b"
@@ -5146,6 +5161,11 @@ flush-write-stream@^1.0.0:
   dependencies:
     inherits "^2.0.3"
     readable-stream "^2.3.6"
+
+follow-redirects@^1.10.0:
+  version "1.13.2"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.13.2.tgz#dd73c8effc12728ba5cf4259d760ea5fb83e3147"
+  integrity sha512-6mPTgLxYm3r6Bkkg0vNM0HTjfGrOEtsfbhagQvbxDEsEkpNhw582upBaoRZylzen6krEmxXJgt9Ju6HiI4O7BA==
 
 for-in@^1.0.2:
   version "1.0.2"
@@ -8395,6 +8415,11 @@ react-fast-compare@^3.0.1, react-fast-compare@^3.2.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/react-fast-compare/-/react-fast-compare-3.2.0.tgz#641a9da81b6a6320f270e89724fb45a0b39e43bb"
   integrity sha512-rtGImPZ0YyLrscKI9xTpV8psd6I8VAtjKCzQDlzyDvqJA8XOW78TXYQwNRNd8g8JZnDu8q9Fu/1v4HPAVwVdHA==
+
+react-filter-search@^1.0.11:
+  version "1.0.11"
+  resolved "https://registry.yarnpkg.com/react-filter-search/-/react-filter-search-1.0.11.tgz#8f38d968c56ca55431bd1353f02a137276181ec1"
+  integrity sha512-iHTUToEyUYbXqb/hNn8KM4zo0NtbGamEKuBJc0kvnXyJZBCUbkD9TQW+DaeA3wwV0sRZ0r64MXIEHJWHPw+Omw==
 
 react-helmet-async@^1.0.2:
   version "1.0.7"
