@@ -40,7 +40,7 @@ const Home = () => (
     <section>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4">
         {vaults.map((vault, i) => (
-          <Link key={vault.address} href={`/${i + 1}`}>
+          <Link key={vault.address} href={`/${i}`}>
             <a
               className={`flex p-6 font-mono break-all bg-${
                 colorMap[vault.name]
