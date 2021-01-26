@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/router';
-import vaultsJson from '../constants/vaults.json';
+import vaultsJson from '../../constants/vaults.json';
 import useAxios from 'axios-hooks';
 import FilterResults from 'react-filter-search';
-import Search from '../components/Search';
+import Search from '../../components/Search';
 
 type Asset = {
   name: string;
@@ -32,18 +32,27 @@ function VaultItem({ asset }: VaultItemProps) {
 }
 
 function VaultCollection({ vault }: VaultsProps) {
+  const activeVault = useMemo(() => {
+    return (
+      vaultsJson.find((v) => {
+        if (vault === v.name.toLocaleLowerCase()) {
+          return v;
+        }
+      }) || vaultsJson[0]
+    );
+  }, [vault]);
+
   const [limit, setLimit] = useState(50);
   const [offset, setOffset] = useState(0);
   const [collection, setCollection] = useState([]);
-  const [url, setUrl] = useState(
-    `https://api.opensea.io/api/v1/assets?asset_contract_address=${
-      vaultsJson[vault].address
-    }&token_ids=${vaultsJson[vault].ids
-      .slice(offset, limit)
-      .join('&token_ids=')}&offset=${offset}&limit=${limit}`
-  );
-  const [{ data, loading, error }, refetch] = useAxios(url);
   const [value, setValue] = useState('');
+  const url = useMemo(() => {
+    const tokenIds = activeVault.ids.slice(offset, limit).join('&token_ids=');
+
+    return `https://api.opensea.io/api/v1/assets?asset_contract_address=${activeVault.address}&token_ids=${tokenIds}&offset=${offset}&limit=${limit}`;
+  }, [activeVault, offset, limit]);
+
+  const [{ data, loading, error }, refetch] = useAxios(url);
 
   useEffect(() => {
     if (offset === 0) return;
@@ -58,7 +67,7 @@ function VaultCollection({ vault }: VaultsProps) {
   }, [data]);
 
   useEffect(() => {
-    console.log(collection);
+    console.log({ collection });
   }, [collection]);
 
   function handleChange(event: { target: HTMLInputElement }) {
@@ -90,9 +99,7 @@ function VaultCollection({ vault }: VaultsProps) {
   return (
     <div className="container mx-auto text-center px-4">
       <header className="flex flex-col sm:flex-row justify-between items-center my-8">
-        <h1 className="text-3xl font-bold mb-6 sm:mb-0">
-          {vaultsJson[vault].name}
-        </h1>
+        <h1 className="text-3xl font-bold mb-6 sm:mb-0">{activeVault.name}</h1>
         <Search value={value} handleChange={handleChange} />
       </header>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4">
@@ -111,7 +118,7 @@ function VaultCollection({ vault }: VaultsProps) {
         }
       </div>
       {/* see more button */}
-      {vaultsJson[vault].ids < collection.length && (
+      {activeVault.ids.length < collection.length && (
         <button onClick={seeMore}>more</button>
       )}
     </div>
@@ -128,7 +135,7 @@ export default function Vault() {
     setVault(router.query.vault.toString());
   }, [router]);
 
-  if (!vault) return <p>NO VAULT WITH THAT NUMBER</p>;
+  if (!vault) return <p>NO VAULT WITH THAT NAME</p>;
 
   return (
     <>

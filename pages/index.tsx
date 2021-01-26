@@ -5,22 +5,22 @@ import Logo from '../components/Logo';
 import vaults from '../constants/vaults.json';
 
 const colorMap = {
-  'PUNK-BASIC': 'green-50',
-  'PUNK-FEMALE': 'green-100',
-  'PUNK-ATTR-4': 'green-200',
-  'PUNK-ATTR-5': 'green-300',
-  'PUNK-ZOMBIE': 'green-400',
-  'AXIE-ORIGIN': 'blue-50',
-  'AXIE-MYSTIC-1': 'blue-100',
-  'AXIE-MYSTIC-2': 'blue-200',
-  'KITTY-GEN-0': 'red-50',
-  'KITTY-GEN-0-F': 'red-100',
-  'KITTY-FOUNDER': 'red-200',
-  'AVASTR-BASIC': 'yellow-50',
-  'AVASTR-RANK-30': 'yellow-100',
-  'AVASTR-RANK-60': 'yellow-200',
-  GLYPH: 'pink-50',
-  JOY: 'indigo-50',
+  'PUNK-BASIC': 'bg-green-50',
+  'PUNK-FEMALE': 'bg-green-100',
+  'PUNK-ATTR-4': 'bg-green-200',
+  'PUNK-ATTR-5': 'bg-green-300',
+  'PUNK-ZOMBIE': 'bg-green-400',
+  'AXIE-ORIGIN': 'bg-blue-50',
+  'AXIE-MYSTIC-1': 'bg-blue-100',
+  'AXIE-MYSTIC-2': 'bg-blue-200',
+  'KITTY-GEN-0': 'bg-red-50',
+  'KITTY-GEN-0-F': 'bg-red-100',
+  'KITTY-FOUNDER': 'bg-red-200',
+  'AVASTR-BASIC': 'bg-yellow-50',
+  'AVASTR-RANK-30': 'bg-yellow-100',
+  'AVASTR-RANK-60': 'bg-yellow-200',
+  GLYPH: 'bg-pink-50',
+  JOY: 'bg-indigo-50',
 };
 
 const Home = () => (
@@ -39,12 +39,13 @@ const Home = () => (
 
     <section>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4">
-        {vaults.map((vault, i) => (
-          <Link key={vault.address} href={`/${i}`}>
+        {vaults.map((vault) => (
+          <Link
+            key={vault.name}
+            href={`/vault/${vault.name.toLocaleLowerCase()}/`}
+          >
             <a
-              className={`flex p-6 font-mono break-all bg-${
-                colorMap[vault.name]
-              }`}
+              className={`flex p-6 font-mono break-all ${colorMap[vault.name]}`}
             >
               <div className="flex-none h-20 w-20 sm:w-28 sm:h-28 relative">
                 <img
