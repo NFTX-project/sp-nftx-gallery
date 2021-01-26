@@ -20,7 +20,7 @@ interface VaultsProps {
 
 function VaultItem({ asset }: VaultItemProps) {
   return (
-    <div className="each mb-10 m-2 shadow-lg border-gray-800 bg-gray-100 relative">
+    <div className="each mb-10 shadow-lg border-gray-800 bg-gray-100 relative">
       <img className="w-full" src={asset.image_url} alt="" />
       <div className="desc p-4 text-gray-800">
         <span className="description text-sm block py-2 border-gray-400 mb-2">
@@ -71,13 +71,22 @@ function VaultCollection({ vault }: VaultsProps) {
     setLimit((limit) => limit + 50);
   }
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error!{error}</p>;
+  if (loading) return (
+    <p>Loading...</p>
+  );
+  if (error) return (
+    <p className="text-red-400">Error!{error}</p>
+  );
 
   return (
-    <>
-      <Search value={value} handleChange={handleChange} />
-      <div className="grid grid-cols-3 gap-4">
+    <div className="container mx-auto text-center px-4">
+      <header className="flex flex-col sm:flex-row justify-between items-center my-8">
+        <h1 className="text-3xl font-bold mb-6 sm:mb-0">
+          {vaultsJson[vault].name}
+        </h1>
+        <Search value={value} handleChange={handleChange} />
+      </header>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4">
         {
           <FilterResults
             value={value}
@@ -96,7 +105,7 @@ function VaultCollection({ vault }: VaultsProps) {
       {vaultsJson[vault].ids < collection.length && (
         <button onClick={seeMore}>more</button>
       )}
-    </>
+    </div>
   );
 }
 
