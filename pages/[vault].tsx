@@ -71,12 +71,21 @@ function VaultCollection({ vault }: VaultsProps) {
     setLimit((limit) => limit + 50);
   }
 
-  if (loading) return (
-    <p>Loading...</p>
-  );
-  if (error) return (
-    <p className="text-red-400">Error!{error}</p>
-  );
+  if (loading) {
+    return (
+      <div className="container mx-auto px-4 py-20">
+        <p>Loading...</p>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="container mx-auto px-4 py-20">
+        <p className="text-red-400">Error!{error}</p>
+      </div>
+    );
+  }
 
   return (
     <div className="container mx-auto text-center px-4">
