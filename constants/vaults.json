@@ -130,7 +130,11 @@
       9913
     ],
     "address": "0xb7F7F6C52F2e2fdb1963Eab30438024864c313F6",
-    "name": "PUNK-BASIC"
+    "name": "PUNK-BASIC",
+    "meta": {
+      "prettyName": "Cryptopunks (Basic)",
+      "slug": "punks"
+    }
   },
   {
     "ids": [

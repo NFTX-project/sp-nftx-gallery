@@ -4,31 +4,10 @@ import vaultsJson from '../../constants/vaults.json';
 import useAxios from 'axios-hooks';
 import FilterResults from 'react-filter-search';
 import Search from '../../components/Search';
-
-type Asset = {
-  name: string;
-  image_url: string;
-};
-
-interface VaultItemProps {
-  asset: Asset;
-}
+import VaultCard from '../../components/VaultCard';
 
 interface VaultsProps {
   vault: string;
-}
-
-function VaultItem({ asset }: VaultItemProps) {
-  return (
-    <div className="each mb-10 shadow-lg border-gray-800 bg-gray-100 relative">
-      <img className="w-full" src={asset.image_url} alt="" />
-      <div className="desc p-4 text-gray-800">
-        <span className="description text-sm block py-2 border-gray-400 mb-2">
-          {asset.name}
-        </span>
-      </div>
-    </div>
-  );
 }
 
 function VaultCollection({ vault }: VaultsProps) {
@@ -82,7 +61,7 @@ function VaultCollection({ vault }: VaultsProps) {
 
   if (loading) {
     return (
-      <div className="container mx-auto px-4 py-20">
+      <div className="container mx-auto px-4 py-20 text-gray-100">
         <p>Loading...</p>
       </div>
     );
@@ -90,19 +69,19 @@ function VaultCollection({ vault }: VaultsProps) {
 
   if (error) {
     return (
-      <div className="container mx-auto px-4 py-20">
-        <p className="text-red-400">Error!{error}</p>
+      <div className="container mx-auto px-4 py-20 text-gray-100">
+        <p>Error!{error}</p>
       </div>
     );
   }
 
   return (
-    <div className="container mx-auto text-center px-4">
-      <header className="flex flex-col sm:flex-row justify-between items-center my-8">
+    <div className="container mx-auto text-center px-4 text-gray-50">
+      <header className="flex flex-col sm:flex-row justify-between items-center mt-8 mb-16">
         <h1 className="text-3xl font-bold mb-6 sm:mb-0">{activeVault.name}</h1>
         <Search value={value} handleChange={handleChange} />
       </header>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 mb-12">
         {
           <FilterResults
             value={value}
@@ -111,7 +90,18 @@ function VaultCollection({ vault }: VaultsProps) {
               results.length === 0
                 ? 'None found!'
                 : results.map((asset, idx) => (
-                    <VaultItem asset={asset} key={idx} />
+                    <VaultCard
+                      key={idx}
+                      eyebrow={asset.asset_contract.name}
+                      image={asset.image_url}
+                      title={asset.name}
+                      background={
+                        asset.background_color
+                          ? `#${asset.background_color}`
+                          : null
+                      } // seems to come through as hex without the hex
+                      text={`Number of sales: ${asset.num_sales}`}
+                    />
                   ))
             }
           />
@@ -135,7 +125,7 @@ export default function Vault() {
     setVault(router.query.vault.toString());
   }, [router]);
 
-  if (!vault) return <p>NO VAULT WITH THAT NAME</p>;
+  if (!vault) return <p className="text-gray-100">NO VAULT WITH THAT NAME</p>;
 
   return (
     <>

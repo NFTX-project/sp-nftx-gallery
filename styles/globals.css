@@ -7,5 +7,6 @@
     font-feature-settings: 'kern';
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
+    background-color: #0c0c0c;
   }
 }

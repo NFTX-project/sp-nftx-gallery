@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 py-12 text-white">
+    <footer className="bg-gray-200 py-12 text-gray-600">
       <div className="container mx-auto px-4">
         <div className="py-1">
           <Link href="https://nftx.org">
