@@ -72,7 +72,9 @@ function VaultCollection({ vault }: VaultsProps) {
   return (
     <div className="container mx-auto text-center px-4 text-off-white">
       <header className="flex flex-col sm:flex-row justify-between items-center mt-8 mb-16">
-        <h1 className="text-3xl font-bold mb-6 sm:mb-0">{activeVault.name}</h1>
+        <h1 className="flex-1 text-left text-3xl font-bold mb-6 sm:mb-0">
+          {activeVault.name}
+        </h1>
         <Search value={value} handleChange={handleChange} />
       </header>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 mb-12">

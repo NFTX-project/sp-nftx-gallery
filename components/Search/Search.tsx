@@ -11,12 +11,12 @@ const Search = ({
   handleChange,
   placeholder = 'Search...',
 }: SearchProps) => (
-  <div className="relative">
+  <div className="w-full sm:w-auto">
     <input
       type="text"
       value={value}
       onChange={handleChange}
-      className="h-14 w-96 pr-8 pl-5 border border-gray-100 rounded z-0 focus:shadow focus:outline-none bg-dark-gray"
+      className="h-14 w-full md:w-80 lg:w-96 pr-8 pl-5 border border-gray-100 rounded z-0 focus:shadow focus:outline-none bg-dark-gray"
       placeholder={placeholder}
     />
   </div>
