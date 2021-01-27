@@ -48,7 +48,7 @@ const VaultCard = ({
           <h4 className="uppercase text-sm mb-1 text-off-white">{eyebrow}</h4>
         )}
         <h3 className="font-bold text-xl text-off-white">{title}</h3>
-        {/* <p className="uppercase text-xs text-gray-400 mt-2 text-off-white">{text}</p> */}
+        <p className="uppercase text-xs text-gray-400 mt-2">{text}</p>
       </div>
     </article>
   );

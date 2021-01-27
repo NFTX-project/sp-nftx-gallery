@@ -96,7 +96,7 @@ function VaultCollection({ vault }: VaultsProps) {
                           ? `#${asset.background_color}`
                           : null
                       } // seems to come through as hex without the hex
-                      text={`Number of sales: ${asset.num_sales}`}
+                      text={`Number of sales: ${asset.num_sales || 0}`}
                     />
                   ))
             }
