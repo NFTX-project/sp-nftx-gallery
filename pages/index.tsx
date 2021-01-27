@@ -5,6 +5,8 @@ import Logo from '../components/Logo';
 import vaults from '../constants/vaults.json';
 import VaultCard from '../components/VaultCard';
 
+// TODO - live data
+
 const Home = () => (
   <div className="container mx-auto py-24 px-4">
     <Head>
