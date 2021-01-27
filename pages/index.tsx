@@ -84,11 +84,7 @@ const Home = () => {
                   >
                     <a>
                       <VaultCard
-                        image={`https://via.placeholder.com/160x160.png?text=${
-                          collection[
-                            collection.findIndex((i) => i.token_id === v)
-                          ].image_url
-                        }`}
+                        image={`https://via.placeholder.com/160x160.png?text=${v}`}
                         eyebrow={vault.name}
                         title={v}
                       />
