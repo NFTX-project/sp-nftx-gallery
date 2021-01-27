@@ -9,7 +9,7 @@ export interface LogoProps {
 }
 
 /**
- * Reusable logo component that takes a size prop
+ * Reusable logo component that takes a size
  */
 const Logo = ({ size = 32, className, ...rest }: LogoProps) => (
   <img
