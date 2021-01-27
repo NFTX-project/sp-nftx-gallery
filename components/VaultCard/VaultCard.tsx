@@ -31,9 +31,9 @@ const VaultCard = ({
   background,
 }: VaultCardProps) => {
   return (
-    <article className="bg-gray-900 text-gray-50 border-2 border-gray-700 text-left break-words">
+    <article className="bg-gray text-gray-50 border-2 border-lightest-gray text-left break-words">
       <div
-        className="p-12 flex justify-center items-center bg-gray-800"
+        className="p-12 flex justify-center items-center bg-light-gray"
         style={{ backgroundColor: background }}
       >
         <img
@@ -42,10 +42,12 @@ const VaultCard = ({
           className="w-full object-contain h-36"
         />
       </div>
-      <div className="p-6 border-t-2 border-gray-700">
-        {eyebrow && <h4 className="uppercase text-sm mb-1">{eyebrow}</h4>}
-        <h3 className="font-bold text-xl">{title}</h3>
-        <p className="uppercase text-xs text-gray-400 mt-2">{text}</p>
+      <div className="p-6 border-t-2 border-lightest-gray">
+        {eyebrow && (
+          <h4 className="uppercase text-sm mb-1 text-off-white">{eyebrow}</h4>
+        )}
+        <h3 className="font-bold text-xl text-off-white">{title}</h3>
+        {/* <p className="uppercase text-xs text-gray-400 mt-2 text-off-white">{text}</p> */}
       </div>
     </article>
   );

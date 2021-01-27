@@ -35,19 +35,13 @@ function VaultCollection({ vault }: VaultsProps) {
 
   useEffect(() => {
     if (offset === 0) return;
-    console.log('LIMIT', limit, 'OFFSET', offset);
     refetch();
   }, [limit]);
 
   useEffect(() => {
     if (!data?.assets) return;
-    console.log(data.assets);
     setCollection([...collection, ...data.assets]);
   }, [data]);
-
-  useEffect(() => {
-    console.log({ collection });
-  }, [collection]);
 
   function handleChange(event: { target: HTMLInputElement }) {
     const { value } = event.target;
@@ -61,7 +55,7 @@ function VaultCollection({ vault }: VaultsProps) {
 
   if (loading) {
     return (
-      <div className="container mx-auto px-4 py-20 text-gray-100">
+      <div className="container mx-auto px-4 py-20 text-off-white">
         <p>Loading...</p>
       </div>
     );
@@ -69,14 +63,14 @@ function VaultCollection({ vault }: VaultsProps) {
 
   if (error) {
     return (
-      <div className="container mx-auto px-4 py-20 text-gray-100">
+      <div className="container mx-auto px-4 py-20 text-off-white">
         <p>Error!{error}</p>
       </div>
     );
   }
 
   return (
-    <div className="container mx-auto text-center px-4 text-gray-50">
+    <div className="container mx-auto text-center px-4 text-off-white">
       <header className="flex flex-col sm:flex-row justify-between items-center mt-8 mb-16">
         <h1 className="text-3xl font-bold mb-6 sm:mb-0">{activeVault.name}</h1>
         <Search value={value} handleChange={handleChange} />
