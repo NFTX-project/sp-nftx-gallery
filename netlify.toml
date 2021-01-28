@@ -1,5 +1,6 @@
 
+
 [[redirects]]
   from = "/vault/:vault"
-  to = "/vault/[vault].html
+  to = "/vault.html/[vault].html
   status = 200
