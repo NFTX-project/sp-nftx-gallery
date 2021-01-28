@@ -2,7 +2,6 @@ import React from 'react';
 
 export interface SkeletonCardProps {
   /**
-   * * trial
    * Background color in hex format
    */
   background?: string;
