@@ -17,17 +17,13 @@ const Home = () => {
 
   return (
     <div className="container mx-auto py-24 px-4">
-      <Head>
-        <title>NFTX Gallery</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
       <h1 className="text-4xl font-bold text-center text-off-white">
-        Welcome to the <a href="https://nftx.org">NFTX</a> Vault.
+        <a href="https://nftx.org">NFTX</a> Vaults
       </h1>
       <div className="my-16 text-center text-off-white">
         <Logo size={100} />
       </div>
+
       <Search value={value} handleChange={handleChange} />
 
       <FilterResults
@@ -37,13 +33,13 @@ const Home = () => {
           results.length === 0
             ? 'None found!'
             : results.map((vault) => (
-                <section className="mb-24" key={vault.name}>
+                <section className="mb-24 font-sans font-bold" key={vault.name}>
                   <header className="flex items-center justify-between mb-6">
-                    <h3 className="text-off-white font-bold text-2xl">
+                    <h3 className="text-off-white font-sans text-2xl">
                       {vault.name}
                     </h3>
                     <Link href={`/vault/${vault.name.toLocaleLowerCase()}/`}>
-                      <a className="text-off-white text-lg">
+                      <a className="text-off-white text-lg font-sans">
                         {'See details '}
                         <span className="text-2xl">&rsaquo;</span>
                       </a>

@@ -2,11 +2,11 @@ module.exports = {
   purge: ['./pages/**/*.tsx', './components/**/*.tsx'],
   theme: {
     fontFamily: {
-      // Add here once branding done
-      // sans: '',
-      // serif: '',
-      // body: '',
-      // display: '',
+      sans: ['"DM Sans"', 'system-ui'],
+      //  'serif': ['ui-serif', 'Georgia'],
+      mono: ['"IBM Plex Mono"', 'Menlo', 'ui-monospace', 'SFMono-Regular'],
+      //  'display': ['Oswald'],
+      //  'body': ['Open Sans'],
     },
     extend: {
       colors: {
