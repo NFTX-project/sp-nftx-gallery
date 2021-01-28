@@ -18,7 +18,6 @@ export interface VaultCardProps {
    */
   text?: ReactNode;
   /**
-   * * trial
    * Background color in hex format
    */
   background?: string;
