@@ -9,14 +9,14 @@ export interface SearchProps {
 const Search = ({
   value,
   handleChange,
-  placeholder = 'Search...',
+  placeholder = 'Search',
 }: SearchProps) => (
-  <div className="w-full sm:w-auto">
+  <div className="w-full sm:w-auto lg:w-96">
     <input
       type="text"
       value={value}
       onChange={handleChange}
-      className="font-mono h-14 w-full md:w-80 text-off-white font-bold lg:w-96 pr-8 pl-5 border border-gray-100 rounded z-0 focus:shadow focus:outline-none bg-dark-gray"
+      className="font-mono h-14 w-full md:w-80 text-off-white font-bold lg:w-96 pr-8 pl-5 border border-1 border-lightest-gray rounded z-0 focus:shadow focus:outline-none bg-dark-gray"
       placeholder={placeholder}
     />
   </div>
