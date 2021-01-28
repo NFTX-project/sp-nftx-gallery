@@ -1,0 +1,5 @@
+
+[[redirects]]
+  from = "/:vault"
+  to = "/[vault].html?vault=:vault"
+  status = 200
