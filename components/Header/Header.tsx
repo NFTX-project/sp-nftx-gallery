@@ -10,7 +10,9 @@ const Header = () => {
           <Link href="/">
             <a className="flex items-center">
               <Logo />
-              <span className="pl-4 text-off-white">{'Gallery'}</span>
+              <span className="pl-4 text-off-white font-bold text-lg">
+                {'NFTX GALLERY'}
+              </span>
             </a>
           </Link>
         </div>

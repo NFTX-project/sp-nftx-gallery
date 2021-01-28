@@ -5,6 +5,7 @@ import useAxios from 'axios-hooks';
 import FilterResults from 'react-filter-search';
 import Search from '../../components/Search';
 import VaultCard from '../../components/VaultCard';
+import SkeletonCard from '../../components/Skeleton';
 
 interface VaultsProps {
   vault: string;
@@ -53,13 +54,11 @@ function VaultCollection({ vault }: VaultsProps) {
     setLimit((limit) => limit + 50);
   }
 
-  if (loading) {
-    return (
-      <div className="container mx-auto px-4 py-20 text-off-white">
-        <p>Loading...</p>
-      </div>
-    );
-  }
+  // if (true) {
+  //   return (
+  //     <SkeletonCard/>
+  //   );
+  // }
 
   if (error) {
     return (
@@ -78,30 +77,41 @@ function VaultCollection({ vault }: VaultsProps) {
         <Search value={value} handleChange={handleChange} />
       </header>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 mb-12">
-        {
+        {loading ? (
+          [...Array(4)].map((i, idx) => (
+            <SkeletonCard
+              width={300}
+              height={400}
+              opacity={1 / (idx + 0.1)}
+              key={idx}
+            />
+          ))
+        ) : (
           <FilterResults
             value={value}
             data={collection}
-            renderResults={(results) =>
-              results.length === 0
-                ? 'None found!'
-                : results.map((asset, idx) => (
-                    <VaultCard
-                      key={idx}
-                      eyebrow={asset.asset_contract.name}
-                      image={asset.image_url}
-                      title={asset.name}
-                      background={
-                        asset.background_color
-                          ? `#${asset.background_color}`
-                          : null
-                      } // seems to come through as hex without the hex
-                      text={`Number of sales: ${asset.num_sales || 0}`}
-                    />
-                  ))
-            }
+            renderResults={(results) => {
+              let toMap = results;
+
+              if (results.length === 0) {
+                toMap = collection;
+              }
+
+              return toMap.map((asset, idx) => (
+                <VaultCard
+                  key={idx}
+                  eyebrow={asset.asset_contract.name}
+                  image={asset.image_url}
+                  title={asset.name}
+                  background={
+                    asset.background_color ? `#${asset.background_color}` : null
+                  } // seems to come through as hex without the hex
+                  text={`Number of sales: ${asset.num_sales || 0}`}
+                />
+              ));
+            }}
           />
-        }
+        )}
       </div>
       {/* see more button */}
       {activeVault.ids.length < collection.length && (
@@ -117,7 +127,6 @@ export default function Vault() {
 
   useEffect(() => {
     if (!router.query.vault) return;
-    console.log('VAULT', router.query.vault);
     setVault(router.query.vault.toString());
   }, [router]);
 
