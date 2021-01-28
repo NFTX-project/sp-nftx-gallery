@@ -8,18 +8,11 @@ import FilterResults from 'react-filter-search';
 import Search from '../components/Search';
 
 const Home = () => {
-  const [limit, setLimit] = useState(50);
-  const [offset, setOffset] = useState(0);
   const [value, setValue] = useState('');
 
   function handleChange(event: { target: HTMLInputElement }) {
     const { value } = event.target;
     setValue(value);
-  }
-
-  function seeMore() {
-    setOffset(limit);
-    setLimit((limit) => limit + 50);
   }
 
   return (
