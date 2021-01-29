@@ -6,6 +6,8 @@ import vaults from '../constants/vaults.json';
 import VaultCard from '../components/VaultCard';
 import FilterResults from 'react-filter-search';
 import Search from '../components/Search';
+import Button from '../components/Button';
+import { Kind } from '../components/Button/constants';
 
 const Home = () => {
   const [value, setValue] = useState('');
@@ -16,9 +18,43 @@ const Home = () => {
   }
 
   return (
-    <div className="container mx-auto py-24 px-4 ">
-      <h1 className="text-4xl font-bold text-center text-off-white leading-normal mb-0.5">
-        <a href="https://nftx.org">NFTX</a> Vault
+    <div className="container mx-auto pt-12 pb-24 px-4">
+      <Head>
+        <title>NFTX Gallery</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <nav className="mb-16 flex justify-center md:justify-end flex-wrap">
+        <Link href="https://nftx.org/" passHref={true}>
+          <Button className="mb-2" kind={Kind.ICON}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              className="h-6 w-6"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
+              />
+            </svg>
+          </Button>
+        </Link>
+        <Link href="https://nftx.org/" passHref={true}>
+          <Button className="mb-2 ml-3" kind={Kind.PRIMARY}>
+            {'Create Fund'}
+          </Button>
+        </Link>
+        <Link href="https://nftx.org/#/" passHref={true}>
+          <Button className="mb-2 ml-3" kind={Kind.SECONDARY}>
+            {'Manage Fund'}
+          </Button>
+        </Link>
+      </nav>
+      <h1 className="text-4xl font-bold text-center text-off-white">
+        <a href="https://nftx.org">NFTX</a> Vaults
       </h1>
       <h2 className="text-sm font-bold text-center text-off-white leading-loose mb-3">
         [#] funds created in the last [#] days · [#] redeemed in last 24h
