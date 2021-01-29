@@ -23,7 +23,7 @@ const Home = () => {
         <title>NFTX Gallery</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <nav className="mb-16 flex justify-center md:justify-end flex-wrap">
+      <nav className="mb-16 mt-12 flex justify-center md:justify-end flex-wrap">
         <Link href="https://nftx.org/" passHref={true}>
           <Button className="mb-2" kind={Kind.ICON}>
             <svg
@@ -53,7 +53,7 @@ const Home = () => {
           </Button>
         </Link>
       </nav>
-      <h1 className="text-4xl font-bold text-center text-off-white">
+      <h1 className="text-4xl mb-2 font-bold text-center text-off-white">
         <a href="https://nftx.org">NFTX</a> Vaults
       </h1>
       <h2 className="text-sm font-bold text-center text-off-white leading-loose mb-3">

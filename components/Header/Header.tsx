@@ -11,7 +11,7 @@ const Header = () => {
             <a className="flex items-center">
               <Logo />
               <span className="pl-4 text-off-white font-bold text-lg">
-                {'NFTX GALLERY'}
+                {'NFTX'}
               </span>
             </a>
           </Link>
