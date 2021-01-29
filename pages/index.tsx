@@ -16,15 +16,21 @@ const Home = () => {
   }
 
   return (
-    <div className="container mx-auto py-24 px-4">
-      <h1 className="text-4xl font-bold text-center text-off-white">
-        <a href="https://nftx.org">NFTX</a> Vaults
+    <div className="container mx-auto py-24 px-4 ">
+      <h1 className="text-4xl font-bold text-center text-off-white leading-normal mb-0.5">
+        <a href="https://nftx.org">NFTX</a> Vault
       </h1>
-      <div className="my-16 text-center text-off-white">
-        <Logo size={100} />
-      </div>
+      <h2 className="text-sm font-bold text-center text-off-white leading-loose mb-3">
+        [#] funds created in the last [#] days · [#] redeemed in last 24h
+      </h2>
+      <p className="text-md object-center text-center text-light-text-gray leading-relaxed max-w-xl mx-auto">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.
+      </p>
 
-      <Search value={value} handleChange={handleChange} />
+      <div className="flex items-end justify-end max-w-full my-20">
+        <Search value={value} handleChange={handleChange} />
+      </div>
 
       <FilterResults
         value={value}
