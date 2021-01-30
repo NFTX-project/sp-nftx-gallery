@@ -62,14 +62,14 @@ function VaultCollection({ vault }: VaultsProps) {
 
   if (error) {
     return (
-      <div className="container mx-auto px-4 py-20 text-off-white">
+      <div className="container mx-auto px-4 py-20 text-gray-50">
         <p>Error!{error}</p>
       </div>
     );
   }
 
   return (
-    <div className="container mx-auto text-center px-4 text-off-white">
+    <div className="container mx-auto text-center px-4 text-gray-50">
       <header className="flex flex-col sm:flex-row justify-between items-center mt-8 mb-16">
         <h1 className="flex-1 text-left text-3xl font-bold mb-6 sm:mb-0">
           {activeVault.name}

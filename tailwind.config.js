@@ -10,11 +10,11 @@ module.exports = {
     },
     extend: {
       colors: {
-        'light-gray': '#242526',
-        'dark-gray': '#0C0C0C',
-        'lightest-gray': 'rgba(152, 150, 163, 0.35)',
-        'off-white': '#FAFAFA',
-        'light-text-gray': 'rgba(255, 255, 255, 0.5)',
+        'gray-900': '#0c0c0c',
+        'gray-800': '#191A1B',
+        'gray-700': '#242526',
+        'gray-500': '#9a96a3',
+        'gray-50': '#FAFAFA',
       },
     },
   },

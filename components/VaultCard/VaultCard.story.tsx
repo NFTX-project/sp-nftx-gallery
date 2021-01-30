@@ -3,16 +3,11 @@ import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 
 import VaultCard, { VaultCardProps } from './VaultCard';
+import FundStatus from '../FundStatus/FundStatus';
 
 export default {
   title: 'Components/VaultCard',
   component: VaultCard,
-  argTypes: {
-    image: { control: 'text' },
-    eyebrow: { control: 'text' },
-    title: { control: 'text' },
-    text: { control: 'text' },
-  },
   parameters: {
     backgrounds: {
       default: 'dark',
@@ -21,15 +16,31 @@ export default {
   },
 } as Meta;
 
-export const Base: Story<VaultCardProps> = (args) => (
-  <div className="bg-gray-900">
-    <VaultCard {...args} />
-  </div>
+const Template: Story<VaultCardProps> = (args) => (
+  <VaultCard {...args} />
 );
-Base.args = {
+
+export const NFT = Template.bind({});
+NFT.args = {
   image:
     'https://lh3.googleusercontent.com/Xxa2jwdrc68IADg17DXm5TdwtJ4TPtba3vt-s6gxATQkjcPDHpmV7FvGn7dE9y7DjwS1EzGnYfhUAf08garZoMTpOePxoVx2tiARseM',
   eyebrow: 'Cryptopunks',
   title: 'W#8196',
   text: 'Original price: 0.35 ETH',
+};
+
+export const Fund = Template.bind({});
+Fund.args = {
+  image:
+    'https://lh3.googleusercontent.com/Xxa2jwdrc68IADg17DXm5TdwtJ4TPtba3vt-s6gxATQkjcPDHpmV7FvGn7dE9y7DjwS1EzGnYfhUAf08garZoMTpOePxoVx2tiARseM',
+  eyebrow: '121 Wrapped Cryptopunks',
+  title: 'PUNK-BASIC',
+  text: (
+    <FundStatus
+      amm={true}
+      fin={true}
+      ver={true}
+    />
+  ),
+  stack: true,
 };

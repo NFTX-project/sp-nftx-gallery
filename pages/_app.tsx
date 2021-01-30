@@ -13,7 +13,7 @@ const App = ({
     [key: string]: any;
   };
 }) => (
-  <div className="min-h-screen flex flex-col">
+  <div className="bg-gray-900 min-h-screen flex flex-col">
     <Header />
     <Head>
       <title>NFTX Gallery</title>

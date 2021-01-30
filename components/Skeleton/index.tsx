@@ -22,7 +22,7 @@ const SkeletonCard = ({
   return (
     <div className="animate-pulse  flex space-x-4">
       <div
-        className=" bg-lightest-gray shadow rounded-md p-4 max-w-sm w-full mx-auto"
+        className=" bg-gray-500 border-opacity-30 shadow rounded-md p-4 max-w-sm w-full mx-auto"
         style={{
           background: background,
           width: width,

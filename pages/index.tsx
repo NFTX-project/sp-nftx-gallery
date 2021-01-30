@@ -53,13 +53,13 @@ const Home = () => {
           </Button>
         </Link>
       </nav>
-      <h1 className="text-4xl mb-2 font-bold text-center text-off-white">
+      <h1 className="text-4xl mb-2 font-bold text-center text-gray-50">
         <a href="https://nftx.org">NFTX</a> Vaults
       </h1>
-      <h2 className="text-sm font-bold text-center text-off-white leading-loose mb-3">
+      <h2 className="text-sm font-bold text-center text-gray-50 leading-loose mb-3">
         [#] funds created in the last [#] days · [#] redeemed in last 24h
       </h2>
-      <p className="text-md object-center text-center text-light-text-gray leading-relaxed max-w-xl mx-auto">
+      <p className="text-md object-center text-center text-white text-opacity-50 leading-relaxed max-w-xl mx-auto">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua.
       </p>
@@ -77,11 +77,11 @@ const Home = () => {
             : results.map((vault) => (
                 <section className="mb-24 font-sans font-bold" key={vault.name}>
                   <header className="flex items-center justify-between mb-6">
-                    <h3 className="text-off-white font-sans text-2xl">
+                    <h3 className="text-gray-50 font-sans text-2xl">
                       {vault.name}
                     </h3>
                     <Link href={`/vault/${vault.name.toLocaleLowerCase()}/`}>
-                      <a className="text-off-white text-lg font-sans">
+                      <a className="text-gray-50 text-lg font-sans">
                         {'See details '}
                         <span className="text-2xl">&rsaquo;</span>
                       </a>
