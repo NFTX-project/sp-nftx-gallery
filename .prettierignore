@@ -32,3 +32,6 @@ coverage
 
 # Next.js build output
 .next
+
+# storybook
+storybook-static

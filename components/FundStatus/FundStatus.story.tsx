@@ -6,8 +6,7 @@ import FundStatus, { FundStatusProps } from './FundStatus';
 export default {
   title: 'Components/FundStatus',
   component: FundStatus,
-  argTypes: {
-  },
+  argTypes: {},
 } as Meta;
 
 const Template: Story<FundStatusProps> = (args) => <FundStatus {...args} />;

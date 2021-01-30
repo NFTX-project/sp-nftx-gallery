@@ -9,12 +9,12 @@ export interface IconProps {
    * The name of the icon to render
    * Must exist in `Icons` constant
    */
-  name: Icons,
+  name: Icons;
   /**
    * Any additional styling classes
    * If passed in they *must* set a height/width
    */
-  className?: string,
+  className?: string;
 }
 
 const iconMap = {
@@ -22,10 +22,7 @@ const iconMap = {
   [Icons.xCircle]: XCircle,
 };
 
-const Icon = ({
-  className,
-  name,
-}: IconProps) => {
+const Icon = ({ className, name }: IconProps) => {
   const IconComponent = iconMap[name] || 'span';
 
   const styles = `${className ?? ' h-6 w-6'}`;
@@ -35,5 +32,5 @@ const Icon = ({
       {React.createElement(IconComponent, { className: styles })}
     </Suspense>
   );
-}
+};
 export default Icon;

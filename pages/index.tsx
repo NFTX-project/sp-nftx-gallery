@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import Logo from '../components/Logo';
 import vaults from '../constants/vaults.json';
 import VaultCard from '../components/VaultCard';
 import FilterResults from 'react-filter-search';

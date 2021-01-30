@@ -16,9 +16,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<VaultCardProps> = (args) => (
-  <VaultCard {...args} />
-);
+const Template: Story<VaultCardProps> = (args) => <VaultCard {...args} />;
 
 export const NFT = Template.bind({});
 NFT.args = {
@@ -35,12 +33,6 @@ Fund.args = {
     'https://lh3.googleusercontent.com/Xxa2jwdrc68IADg17DXm5TdwtJ4TPtba3vt-s6gxATQkjcPDHpmV7FvGn7dE9y7DjwS1EzGnYfhUAf08garZoMTpOePxoVx2tiARseM',
   eyebrow: '121 Wrapped Cryptopunks',
   title: 'PUNK-BASIC',
-  text: (
-    <FundStatus
-      amm={true}
-      fin={true}
-      ver={true}
-    />
-  ),
+  text: <FundStatus amm={true} fin={true} ver={true} />,
   stack: true,
 };

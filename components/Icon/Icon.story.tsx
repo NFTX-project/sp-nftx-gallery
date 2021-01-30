@@ -20,7 +20,11 @@ export default {
   },
 } as Meta;
 
-const Template: Story<IconProps> = ({ color, ...args }) => <div style={{ color }}><Icon {...args} /></div>;
+const Template: Story<IconProps> = ({ color, ...args }) => (
+  <div style={{ color }}>
+    <Icon {...args} />
+  </div>
+);
 
 export const Checked = Template.bind({});
 Checked.args = {

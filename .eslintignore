@@ -5,3 +5,4 @@ out
 **/*.story.*
 yarn.lock
 .storybook
+storybook-static

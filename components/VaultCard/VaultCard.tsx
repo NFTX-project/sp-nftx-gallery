@@ -24,7 +24,7 @@ export interface VaultCardProps {
   /**
    * Should it appear as a stack?
    */
-  stack?: boolean,
+  stack?: boolean;
 }
 
 const VaultCard = ({
@@ -58,8 +58,8 @@ const VaultCard = ({
       </article>
       {stack && (
         <>
-          <div className="bg-gray-800 h-1 mx-1 border-l border-b border-r border-gray-500 border-opacity-30"/>
-          <div className="bg-gray-800 h-1 mx-2 border-l border-b border-r border-gray-500 border-opacity-30"/>
+          <div className="bg-gray-800 h-1 mx-1 border-l border-b border-r border-gray-500 border-opacity-30" />
+          <div className="bg-gray-800 h-1 mx-2 border-l border-b border-r border-gray-500 border-opacity-30" />
         </>
       )}
     </div>
