@@ -10,12 +10,14 @@ export interface ButtonProps
   ref: string;
 }
 
-const baseStyles = `inline-flex outline-none font-medium rounded-md`;
+const baseStyles = `inline-flex outline-none font-medium rounded-md hover:outline focus:outline-none focus:ring-2 focus:ring-opacity-75`;
 const kindStyles = {
-  [Kind.PRIMARY]: 'bg-gradient-to-b from-purple-500 to-purple-600 text-white',
-  [Kind.SECONDARY]: 'bg-white text-gray-900',
+  [Kind.PRIMARY]:
+    'bg-gradient-to-b from-purple-500 to-purple-600 text-white hover:from-purple-700 hover:to-purple-700 focus:ring-purple-600',
+  [Kind.SECONDARY]:
+    'bg-white text-gray-900 hover:bg-gray-50 focus:ring-gray-300',
   [Kind.ICON]:
-    'bg-gradient-to-b from-purple-400 via-purple-500 to-purple-400 text-white',
+    'bg-gradient-to-b from-purple-400 via-purple-500 to-purple-400 text-white hover:from-purple-500 hover:to-purple-500 focus:ring-purple-600',
 };
 const sizeStyles = {
   [Size.MEDIUM]: `py-3 px-4 min-h-100 h-12`,
