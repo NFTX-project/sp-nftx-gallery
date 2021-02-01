@@ -6,6 +6,7 @@ import FilterResults from 'react-filter-search';
 import Search from '../../components/Search';
 import VaultCard from '../../components/VaultCard';
 import SkeletonCard from '../../components/Skeleton';
+import { VaultCardStatus } from '../../components/VaultCard/constants';
 
 interface VaultsProps {
   vault: string;
@@ -78,13 +79,8 @@ function VaultCollection({ vault }: VaultsProps) {
       </header>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 mb-12">
         {loading ? (
-          [...Array(4)].map((i, idx) => (
-            <SkeletonCard
-              width={300}
-              height={400}
-              opacity={1 / (idx + 0.1)}
-              key={idx}
-            />
+          [...Array(4)].map((el, i) => (
+            <VaultCard key={i} status={VaultCardStatus.PENDING} />
           ))
         ) : (
           <FilterResults
