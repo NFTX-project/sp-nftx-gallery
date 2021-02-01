@@ -2,9 +2,10 @@ module.exports = {
   purge: ['./pages/**/*.tsx', './components/**/*.tsx'],
   theme: {
     fontFamily: {
-      sans: ['"DM Sans"', 'system-ui'],
+      sans:
+        '"DM Sans", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
       //  'serif': ['ui-serif', 'Georgia'],
-      mono: ['"IBM Plex Mono"', 'Menlo', 'ui-monospace', 'SFMono-Regular'],
+      mono: '"IBM Plex Mono", Menlo, ui-monospace, SFMono-Regular',
       //  'display': ['Oswald'],
       //  'body': ['Open Sans'],
     },
