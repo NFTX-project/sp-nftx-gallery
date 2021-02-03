@@ -21,7 +21,7 @@ export interface VaultCardProps {
   /**
    * The title of the card
    */
-  title: ReactNode;
+  title?: ReactNode;
   /**
    * The text that appears beneath the title
    */
