@@ -3,6 +3,7 @@ import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import Button, { ButtonProps } from './Button';
 import { Kind, Size } from './constants';
+import { Icons } from '../Icon';
 
 export default {
   title: 'Components/Button',
@@ -18,6 +19,12 @@ export default {
       control: {
         type: 'select',
         options: Object.values(Kind),
+      },
+    },
+    icon: {
+      control: {
+        type: 'select',
+        options: Object.values(Icons),
       },
     },
   },

@@ -7,6 +7,8 @@ import FilterResults from 'react-filter-search';
 import Search from '../components/Search';
 import Button from '../components/Button';
 import { Kind } from '../components/Button/constants';
+import { Icons } from '../components/Icon';
+import FundStatus from '../components/FundStatus';
 
 const Home = () => {
   const [value, setValue] = useState('');
@@ -42,13 +44,13 @@ const Home = () => {
           </Button>
         </Link>
         <Link href="https://nftx.org/" passHref={true}>
-          <Button className="mb-2 ml-3" kind={Kind.PRIMARY}>
-            {'Create Fund'}
-          </Button>
-        </Link>
-        <Link href="https://nftx.org/#/" passHref={true}>
-          <Button className="mb-2 ml-3" kind={Kind.SECONDARY}>
-            {'Manage Fund'}
+          <Button
+            className="mb-2 ml-3"
+            kind={Kind.PRIMARY}
+            icon={Icons.EXTERNAL_LINK}
+            target="_blank"
+          >
+            {'Go to app'}
           </Button>
         </Link>
       </nav>
@@ -67,49 +69,46 @@ const Home = () => {
         <Search value={value} handleChange={handleChange} />
       </div>
 
-      <FilterResults
-        value={value}
-        data={vaults}
-        renderResults={(results) =>
-          results.length === 0
-            ? 'None found!'
-            : results.map((vault) => (
-                <section className="mb-24 font-sans font-bold" key={vault.name}>
-                  <header className="flex items-center justify-between mb-6">
-                    <h3 className="text-gray-50 font-sans text-2xl">
-                      {vault.name}
-                    </h3>
-                    <Link href={`/vault/${vault.name.toLocaleLowerCase()}/`}>
-                      <a className="text-gray-50 text-lg font-sans">
-                        {'See details '}
-                        <span className="text-2xl">&rsaquo;</span>
+      <section className="mb-24 font-sans font-bold">
+        <header className="flex items-center justify-between mb-6">
+          <h3 className="text-gray-50 font-sans text-2xl">
+            {'Explore all funds'}
+          </h3>
+          {/* <Link href={`/vault/${vault.name.toLocaleLowerCase()}/`}>
+            <a className="text-gray-50 text-lg font-sans flex items-center">
+              {'See details '}
+              <Icon name={Icons.CHEVRON_RIGHT}/>
+            </a>
+          </Link> */}
+        </header>
+        <div className="bg-gradient-to-r from-yellow-500 via-green-500 to-purple-500 h-0.5 mb-8" />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-5 gap-4">
+          <FilterResults
+            value={value}
+            data={vaults}
+            renderResults={(results) =>
+              results.length === 0
+                ? 'None found!'
+                : results.map((vault) => (
+                    <Link
+                      key={vault.name}
+                      href={`/vault/${vault.name.toLocaleLowerCase()}/`}
+                    >
+                      <a>
+                        <VaultCard
+                          image={`https://via.placeholder.com/160x160.png?text=${vault.name}`}
+                          eyebrow={`${vault.ids.length} ${vault.fund}`}
+                          title={vault.name}
+                          stack={true}
+                          text={<FundStatus amm={true} fin={true} ver={true} />}
+                        />
                       </a>
                     </Link>
-                  </header>
-                  <div className="bg-gradient-to-r from-yellow-500 via-green-500 to-purple-500 h-0.5 mb-8" />
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-5 gap-4">
-                    {vault.ids.map(
-                      (v, i) =>
-                        i < 5 && (
-                          <Link
-                            key={i}
-                            href={`/vault/${vault.name.toLocaleLowerCase()}/`}
-                          >
-                            <a>
-                              <VaultCard
-                                image={`https://via.placeholder.com/160x160.png?text=${v}`}
-                                eyebrow={vault.name}
-                                title={v}
-                              />
-                            </a>
-                          </Link>
-                        )
-                    )}
-                  </div>
-                </section>
-              ))
-        }
-      />
+                  ))
+            }
+          />
+        </div>
+      </section>
     </div>
   );
 };

@@ -1,2 +1,2 @@
 export { default } from './Icon';
-export { Icons } from './constants';
+export { Icons, Size } from './constants';

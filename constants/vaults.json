@@ -131,10 +131,7 @@
     ],
     "address": "0xb7F7F6C52F2e2fdb1963Eab30438024864c313F6",
     "name": "PUNK-BASIC",
-    "meta": {
-      "prettyName": "Cryptopunks (Basic)",
-      "slug": "punks"
-    }
+    "fund": "punks"
   },
   {
     "ids": [
@@ -176,7 +173,8 @@
       9924
     ],
     "address": "0xb7F7F6C52F2e2fdb1963Eab30438024864c313F6",
-    "name": "PUNK-FEMALE"
+    "name": "PUNK-FEMALE",
+    "fund": "punks"
   },
   {
     "ids": [
@@ -213,32 +211,38 @@
       9887
     ],
     "address": "0xb7F7F6C52F2e2fdb1963Eab30438024864c313F6",
-    "name": "PUNK-ATTR-4"
+    "name": "PUNK-ATTR-4",
+    "fund": "punks"
   },
   {
     "ids": [1605, 2209, 3361, 3438, 4669, 4716, 5647, 6295, 7015],
     "address": "0xb7F7F6C52F2e2fdb1963Eab30438024864c313F6",
-    "name": "PUNK-ATTR-5"
+    "name": "PUNK-ATTR-5",
+    "fund": "punks"
   },
   {
     "ids": [2424, 3609, 5066, 6649],
     "address": "0xb7F7F6C52F2e2fdb1963Eab30438024864c313F6",
-    "name": "PUNK-ZOMBIE"
+    "name": "PUNK-ZOMBIE",
+    "fund": "punks"
   },
   {
     "ids": [68085, 93587, 102859, 127395, 177364],
     "address": "0xF5b0A3eFB8e8E4c201e2A935F110eAaF3FFEcb8d",
-    "name": "AXIE-ORIGIN"
+    "name": "AXIE-ORIGIN",
+    "fund": "axies"
   },
   {
     "ids": [1261, 1541, 1752, 2185, 2587, 3280, 3417, 5516],
     "address": "0xF5b0A3eFB8e8E4c201e2A935F110eAaF3FFEcb8d",
-    "name": "AXIE-MYSTIC-1"
+    "name": "AXIE-MYSTIC-1",
+    "fund": "axies"
   },
   {
     "ids": [453, 5576],
     "address": "0xF5b0A3eFB8e8E4c201e2A935F110eAaF3FFEcb8d",
-    "name": "AXIE-MYSTIC-2"
+    "name": "AXIE-MYSTIC-2",
+    "fund": "axies"
   },
   {
     "ids": [
@@ -758,7 +762,8 @@
       1233583
     ],
     "address": "0x06012c8cf97BEaD5deAe237070F9587f8E7A266d",
-    "name": "KITTY-GEN-0"
+    "name": "KITTY-GEN-0",
+    "fund": "kitties"
   },
   {
     "ids": [
@@ -1267,12 +1272,14 @@
       1233583
     ],
     "address": "0x06012c8cf97BEaD5deAe237070F9587f8E7A266d",
-    "name": "KITTY-GEN-0-F"
+    "name": "KITTY-GEN-0-F",
+    "fund": "kitties"
   },
   {
     "ids": [92],
     "address": "0x06012c8cf97BEaD5deAe237070F9587f8E7A266d",
-    "name": "KITTY-FOUNDER"
+    "name": "KITTY-FOUNDER",
+    "fund": "kitties"
   },
   {
     "ids": [
@@ -1687,7 +1694,8 @@
       11436
     ],
     "address": "0xF3E778F839934fC819cFA1040AabaCeCBA01e049",
-    "name": "AVASTR-BASIC"
+    "name": "AVASTR-BASIC",
+    "fund": "avastars"
   },
   {
     "ids": [
@@ -1996,7 +2004,8 @@
       11421
     ],
     "address": "0xF3E778F839934fC819cFA1040AabaCeCBA01e049",
-    "name": "AVASTR-RANK-30"
+    "name": "AVASTR-RANK-30",
+    "fund": "avastars"
   },
   {
     "ids": [
@@ -2044,7 +2053,8 @@
       11611
     ],
     "address": "0xF3E778F839934fC819cFA1040AabaCeCBA01e049",
-    "name": "AVASTR-RANK-60"
+    "name": "AVASTR-RANK-60",
+    "fund": "avastars"
   },
   {
     "ids": [
@@ -2080,11 +2090,13 @@
       487
     ],
     "address": "0xd4e4078ca3495DE5B1d4dB434BEbc5a986197782",
-    "name": "GLYPH"
+    "name": "GLYPH",
+    "fund": "glyph"
   },
   {
     "ids": [22, 27, 32, 42, 50, 57, 61, 90, 104, 112, 122, 123, 124, 125],
     "address": "0x6c7B6cc55d4098400aC787C8793205D3E86C37C9",
-    "name": "JOY"
+    "name": "JOY",
+    "fund": "joy"
   }
 ]

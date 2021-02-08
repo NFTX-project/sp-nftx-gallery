@@ -1,5 +1,6 @@
 import React from 'react';
 import Icon, { Icons } from '../Icon';
+import { Size } from '../Icon/constants';
 
 export interface FundStatusProps {
   /**
@@ -17,36 +18,42 @@ export interface FundStatusProps {
 }
 
 const FundStatus = ({ fin, ver, amm }: FundStatusProps) => {
+  const status = [
+    {
+      key: 'fin',
+      enabled: fin,
+      abbr: 'FIN',
+      text: 'Finalised',
+    },
+    {
+      key: 'ver',
+      enabled: ver,
+      abbr: 'VER',
+      text: 'Verified',
+    },
+    {
+      key: 'amm',
+      enabled: amm,
+      abbr: 'AMM',
+      text: 'Swappable via an AMM',
+    },
+  ];
+
   return (
     <aside>
       <dl className="flex font-semibold text-xs">
-        <div className="flex items-center mr-1">
-          <dd>
-            <Icon
-              className="h-4 w-4"
-              name={fin ? Icons.checkCircle : Icons.xCircle}
-            />
-          </dd>
-          <dt title="Finalised">{'FIN'}</dt>
-        </div>
-        <div className="flex items-center mr-1">
-          <dd>
-            <Icon
-              className="h-4 w-4"
-              name={ver ? Icons.checkCircle : Icons.xCircle}
-            />
-          </dd>
-          <dt title="Verified">{'VER'}</dt>
-        </div>
-        <div className="flex items-center mr-1">
-          <dd>
-            <Icon
-              className="h-4 w-4"
-              name={amm ? Icons.checkCircle : Icons.xCircle}
-            />
-          </dd>
-          <dt title="Swappable via an AMM">{'AMM'}</dt>
-        </div>
+        {status.map((s) => (
+          <div key={s.key} className="flex items-center mr-1">
+            <dd>
+              <Icon
+                size={Size.SMALL}
+                className={`${s.enabled ? 'text-green-400' : ''}`}
+                name={s.enabled ? Icons.CHECK_CIRCLE : Icons.X_CIRCLE}
+              />
+            </dd>
+            <dt title={s.text}>{s.abbr}</dt>
+          </div>
+        ))}
       </dl>
     </aside>
   );

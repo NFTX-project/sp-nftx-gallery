@@ -5,8 +5,8 @@ import useAxios from 'axios-hooks';
 import FilterResults from 'react-filter-search';
 import Search from '../../components/Search';
 import VaultCard from '../../components/VaultCard';
-import SkeletonCard from '../../components/Skeleton';
 import { VaultCardStatus } from '../../components/VaultCard/constants';
+import Button, { Kind } from '../../components/Button';
 
 interface VaultsProps {
   vault: string;
@@ -54,12 +54,6 @@ function VaultCollection({ vault }: VaultsProps) {
     setOffset(limit);
     setLimit((limit) => limit + 50);
   }
-
-  // if (true) {
-  //   return (
-  //     <SkeletonCard/>
-  //   );
-  // }
 
   if (error) {
     return (
@@ -111,7 +105,9 @@ function VaultCollection({ vault }: VaultsProps) {
       </div>
       {/* see more button */}
       {activeVault.ids.length < collection.length && (
-        <button onClick={seeMore}>more</button>
+        <Button kind={Kind.SECONDARY} onClick={seeMore}>
+          {'More'}
+        </Button>
       )}
     </div>
   );
@@ -126,11 +122,8 @@ export default function Vault() {
     setVault(router.query.vault.toString());
   }, [router]);
 
-  if (!vault) return <p className="text-gray-100">NO VAULT WITH THAT NAME</p>;
+  if (!vault)
+    return <p className="text-gray-100">{'NO VAULT WITH THAT NAME'}</p>;
 
-  return (
-    <>
-      <VaultCollection vault={vault} />
-    </>
-  );
+  return <VaultCollection vault={vault} />;
 }

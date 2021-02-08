@@ -28,10 +28,10 @@ const Template: Story<IconProps> = ({ color, ...args }) => (
 
 export const Checked = Template.bind({});
 Checked.args = {
-  name: Icons.checkCircle,
+  name: Icons.CHECK_CIRCLE,
 };
 
 export const Cross = Template.bind({});
 Cross.args = {
-  name: Icons.xCircle,
+  name: Icons.X_CIRCLE,
 };
