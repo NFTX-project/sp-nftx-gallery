@@ -1,4 +1,4 @@
 [[redirects]]
-  from = "/vault/:vault"
-  to = "/vault/[vault].html?vault=:vault"
+  from = "/funds/:fund"
+  to = "/funds/[fund].html?fund=:fund"
   status = 200

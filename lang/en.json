@@ -1,0 +1,9 @@
+{
+  "home.meta.title": "NFTX Gallery",
+  "home.cta.app": "Go to app",
+  "home.title": "NFTX Vaults",
+  "home.subtitle": "{funds} funds created in the last {days} days · {redeemed} redeemed in last 24h",
+  "home.text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmo tempor incididunt ut labore et dolore magna aliqua.",
+  "home.funds.title": "Explore all funds",
+  "home.funds.categories.link": "View categories"
+}

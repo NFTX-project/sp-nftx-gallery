@@ -1,5 +1,4 @@
 import React from 'react';
-import { VaultCardStatus } from '../constants';
 import VaultCard from './DefaultVaultCard';
 
 const PendingVaultCard = () => (

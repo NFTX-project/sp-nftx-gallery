@@ -35,3 +35,6 @@ coverage
 
 # storybook
 storybook-static
+
+# data files
+*.json

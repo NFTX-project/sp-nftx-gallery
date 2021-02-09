@@ -22,6 +22,7 @@ const DefaultVaultCard = ({
             {placeholder}
             {image && (
               <img
+                loading="lazy"
                 src={image}
                 alt={`${eyebrow} ${title}`}
                 className="w-full object-contain h-36"
@@ -34,7 +35,7 @@ const DefaultVaultCard = ({
             <h4 className="uppercase text-sm mb-1 text-gray-50">{eyebrow}</h4>
           )}
           <h3 className="font-bold text-xl text-gray-50">{title}</h3>
-          <p className="uppercase text-xs text-gray-400 mt-2">{text}</p>
+          <div className="uppercase text-xs text-gray-400 mt-2">{text}</div>
         </div>
       </article>
       {stack && (

@@ -51,7 +51,9 @@ const FundStatus = ({ fin, ver, amm }: FundStatusProps) => {
                 name={s.enabled ? Icons.CHECK_CIRCLE : Icons.X_CIRCLE}
               />
             </dd>
-            <dt title={s.text}>{s.abbr}</dt>
+            <dt className="ml-0.5" title={s.text}>
+              {s.abbr}
+            </dt>
           </div>
         ))}
       </dl>

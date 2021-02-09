@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/router';
-import vaultsJson from '../../constants/vaults.json';
+import funds from '../../constants/funds.json';
 import useAxios from 'axios-hooks';
 import FilterResults from 'react-filter-search';
 import Search from '../../components/Search';
@@ -8,30 +8,32 @@ import VaultCard from '../../components/VaultCard';
 import { VaultCardStatus } from '../../components/VaultCard/constants';
 import Button, { Kind } from '../../components/Button';
 
-interface VaultsProps {
-  vault: string;
+interface FundProps {
+  fund: string;
 }
 
-function VaultCollection({ vault }: VaultsProps) {
-  const activeVault = useMemo(() => {
+function FundCollection({ fund }: FundProps) {
+  const activeFund = useMemo(() => {
     return (
-      vaultsJson.find((v) => {
-        if (vault === v.name.toLocaleLowerCase()) {
+      funds.find((v) => {
+        if (fund === v.fundToken.name.toLocaleLowerCase()) {
           return v;
         }
-      }) || vaultsJson[0]
+      }) || funds[0]
     );
-  }, [vault]);
+  }, [fund]);
 
   const [limit, setLimit] = useState(50);
   const [offset, setOffset] = useState(0);
   const [collection, setCollection] = useState([]);
   const [value, setValue] = useState('');
   const url = useMemo(() => {
-    const tokenIds = activeVault.ids.slice(offset, limit).join('&token_ids=');
+    const tokenIds = activeFund.holdings
+      .slice(offset, limit)
+      .join('&token_ids=');
 
-    return `https://api.opensea.io/api/v1/assets?asset_contract_address=${activeVault.address}&token_ids=${tokenIds}&offset=${offset}&limit=${limit}`;
-  }, [activeVault, offset, limit]);
+    return `https://api.opensea.io/api/v1/assets?asset_contract_address=${activeFund.asset.address}&token_ids=${tokenIds}&offset=${offset}&limit=${limit}`;
+  }, [activeFund, offset, limit]);
 
   const [{ data, loading, error }, refetch] = useAxios(url);
 
@@ -67,7 +69,7 @@ function VaultCollection({ vault }: VaultsProps) {
     <div className="container mx-auto text-center px-4 text-gray-50">
       <header className="flex flex-col sm:flex-row justify-between items-center mt-8 mb-16">
         <h1 className="flex-1 text-left text-3xl font-bold mb-6 sm:mb-0">
-          {activeVault.name}
+          {activeFund.fundToken.name}
         </h1>
         <Search value={value} handleChange={handleChange} />
       </header>
@@ -104,7 +106,7 @@ function VaultCollection({ vault }: VaultsProps) {
         )}
       </div>
       {/* see more button */}
-      {activeVault.ids.length < collection.length && (
+      {activeFund.holdings.length < collection.length && (
         <Button kind={Kind.SECONDARY} onClick={seeMore}>
           {'More'}
         </Button>
@@ -115,15 +117,15 @@ function VaultCollection({ vault }: VaultsProps) {
 
 export default function Vault() {
   const router = useRouter();
-  const [vault, setVault] = useState<string>(undefined);
+  const [fund, setFund] = useState<string>(undefined);
 
   useEffect(() => {
-    if (!router.query.vault) return;
-    setVault(router.query.vault.toString());
+    if (!router.query.fund) return;
+    setFund(router.query.fund.toString());
   }, [router]);
 
-  if (!vault)
+  if (!fund)
     return <p className="text-gray-100">{'NO VAULT WITH THAT NAME'}</p>;
 
-  return <VaultCollection vault={vault} />;
+  return <FundCollection fund={fund} />;
 }
