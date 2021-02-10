@@ -2,22 +2,24 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import { IntlProvider } from 'react-intl';
 import Head from 'next/head';
+import { FundsProvider } from '../contexts/funds';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import * as locales from '../lang';
 import '../styles/globals.css';
 
-const App = ({
-  Component,
-  pageProps,
-}: {
+interface AppProps {
   Component: React.ComponentType;
   pageProps: {
     [key: string]: any;
   };
-}) => {
+}
+
+const App = ({ Component, pageProps }: AppProps) => {
   const router = useRouter();
   const { locale = 'en', defaultLocale = 'en' } = router;
+
+  const { ...props } = pageProps;
 
   return (
     <IntlProvider
@@ -29,6 +31,7 @@ const App = ({
         <Header />
         <Head>
           <link rel="icon" href="/favicon.ico" />
+          <link rel="preconnect" href="//nftx.xyz" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link
             href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100;300&display=swap"
@@ -41,7 +44,9 @@ const App = ({
         </Head>
 
         <main className="flex-1">
-          <Component {...pageProps} />
+          <FundsProvider>
+            <Component {...props} />
+          </FundsProvider>
         </main>
         <Footer />
       </div>

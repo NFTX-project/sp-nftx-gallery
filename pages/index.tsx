@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
-import funds from '../constants/funds.json';
-import VaultCard from '../components/VaultCard';
 import FilterResults from 'react-filter-search';
 import Search from '../components/Search';
 import Button from '../components/Button';
 import { Kind } from '../components/Button/constants';
-import Icon, { Icons } from '../components/Icon';
-import FundStatus from '../components/FundStatus';
+import { Icons } from '../components/Icon';
 import Head from 'next/head';
 import useMessage from '../hooks/message';
+import { useFundsContext } from '../contexts/funds';
+import FundGroup from '../components/FundGroup';
 
 const Home = () => {
   const [value, setValue] = useState('');
@@ -18,6 +17,8 @@ const Home = () => {
     const { value } = event.target;
     setValue(value);
   }
+
+  const funds = useFundsContext();
 
   return (
     <>
@@ -60,7 +61,7 @@ const Home = () => {
         </h1>
         <h2 className="text-sm font-bold text-center text-gray-50 leading-loose mb-3">
           {useMessage('home.subtitle', {
-            funds: 21,
+            funds: funds.length,
             days: 31,
             redeemed: 5,
           })}
@@ -74,48 +75,13 @@ const Home = () => {
         </div>
 
         <section className="mb-24 font-sans font-bold">
-          <header className="flex items-center justify-between mb-6">
-            <h3 className="text-gray-50 font-sans text-2xl">
-              {useMessage('home.funds.title')}
-            </h3>
-            <Link href={`/funds/`}>
-              <a className="text-gray-50 text-lg font-sans flex items-center">
-                {useMessage('home.funds.categories.link')}
-                <Icon name={Icons.CHEVRON_RIGHT} />
-              </a>
-            </Link>
-          </header>
-          <div className="bg-gradient-to-r from-yellow-500 via-green-500 to-purple-500 h-0.5 mb-8" />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4">
-            <FilterResults
-              value={value}
-              data={funds}
-              renderResults={(results) =>
-                results.length === 0
-                  ? 'None found!'
-                  : results.map((fund) => (
-                      <Link
-                        key={fund.asset.name}
-                        href={`/funds/${fund.fundToken.name.toLocaleLowerCase()}/`}
-                      >
-                        <a>
-                          <VaultCard
-                            image={`https://via.placeholder.com/160x160.png?text=${fund.fundToken.name}`}
-                            eyebrow={`${fund?.holdings?.length || ''} ${
-                              fund.asset.name
-                            }`}
-                            title={fund.fundToken.name}
-                            stack={true}
-                            text={
-                              <FundStatus amm={true} fin={true} ver={true} />
-                            }
-                          />
-                        </a>
-                      </Link>
-                    ))
-              }
-            />
-          </div>
+          <FilterResults
+            value={value}
+            data={funds || []}
+            renderResults={(results) => (
+              <FundGroup namespace="all" slug="" funds={results} />
+            )}
+          />
         </section>
       </div>
     </>

@@ -25,4 +25,4 @@ const PendingVaultCard = () => (
   />
 );
 
-export default PendingVaultCard;
+export default React.memo(PendingVaultCard);

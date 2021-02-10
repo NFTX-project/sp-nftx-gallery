@@ -48,4 +48,4 @@ const DefaultVaultCard = ({
   );
 };
 
-export default DefaultVaultCard;
+export default React.memo(DefaultVaultCard);
