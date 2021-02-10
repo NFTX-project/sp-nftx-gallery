@@ -26,21 +26,22 @@ const FundCollection = ({
   isFinalized,
 }: FundProps) => {
   const { asPath } = useRouter();
-  const [limit, setLimit] = useState(50);
+  const [limit, setLimit] = useState(25);
   const [offset, setOffset] = useState(0);
   const [collection, setCollection] = useState([]);
   const [value, setValue] = useState('');
   const url = useMemo(() => {
     const tokenIds = holdings.slice(offset, limit).join('&token_ids=');
 
-    return `https://api.opensea.io/api/v1/assets?asset_contract_address=${asset.address}&token_ids=${tokenIds}&offset=${offset}&limit=${limit}`;
+    return `https://api.opensea.io/api/v1/assets?asset_contract_address=${asset.address}&token_ids=${tokenIds}&limit=25`;
   }, [asset.address, offset, limit]);
 
   const [{ data, loading, error }, refetch] = useAxios(url);
 
   useEffect(() => {
     if (offset === 0) return;
-    refetch();
+
+    refetch({ url });
   }, [limit]);
 
   useEffect(() => {
@@ -55,12 +56,12 @@ const FundCollection = ({
 
   function seeMore() {
     setOffset(limit);
-    setLimit((limit) => limit + 50);
+    setLimit((limit) => limit + 25);
   }
 
   if (error) {
     return (
-      <div className="container mx-auto px-4 py-20 text-gray-50">
+      <div className="container mx-auto px-4 py-20 text-gray-25">
         <p>Error! {error}</p>
       </div>
     );
@@ -83,7 +84,7 @@ const FundCollection = ({
       <div className="bg-gradient-to-r from-yellow-500 via-green-500 to-purple-500 h-0.5 mb-8" />
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 mb-12">
         {loading ? (
-          [...Array(holdings.length)].map((el, i) => (
+          [...Array(collection.length)].map((el, i) => (
             <VaultCard key={i} status={VaultCardStatus.PENDING} />
           ))
         ) : (
@@ -122,10 +123,12 @@ const FundCollection = ({
         )}
       </div>
       {/* see more button */}
-      {holdings.length < collection.length && (
-        <Button kind={Kind.SECONDARY} onClick={seeMore}>
-          {'More'}
-        </Button>
+      {holdings.length >= collection.length && (
+        <div className="my-8">
+          <Button kind={Kind.SECONDARY} onClick={seeMore}>
+            {'See More'}
+          </Button>
+        </div>
       )}
     </div>
   );

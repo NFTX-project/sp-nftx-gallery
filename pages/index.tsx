@@ -79,7 +79,7 @@ const Home = () => {
             value={value}
             data={funds || []}
             renderResults={(results) => (
-              <FundGroup namespace="all" slug="" funds={results} />
+              <FundGroup namespace="all" slug="" funds={results} xxlCols={3} />
             )}
           />
         </section>
