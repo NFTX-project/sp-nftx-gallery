@@ -9,6 +9,7 @@ import Head from 'next/head';
 import useMessage from '../hooks/message';
 import { useFundsContext } from '../contexts/funds';
 import FundGroup from '../components/FundGroup';
+import { Columns } from '../components/FundGroup/constants';
 
 const Home = () => {
   const [value, setValue] = useState('');
@@ -74,15 +75,20 @@ const Home = () => {
           <Search value={value} handleChange={handleChange} />
         </div>
 
-        <section className="mb-24 font-sans font-bold">
+        <div className="mb-24">
           <FilterResults
             value={value}
             data={funds || []}
             renderResults={(results) => (
-              <FundGroup namespace="all" slug="" funds={results} xxlCols={3} />
+              <FundGroup
+                namespace="all"
+                slug=""
+                funds={results}
+                columns={Columns.FOCUS}
+              />
             )}
           />
-        </section>
+        </div>
       </div>
     </>
   );

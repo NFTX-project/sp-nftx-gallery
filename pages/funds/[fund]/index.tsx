@@ -2,14 +2,14 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/router';
 import useAxios from 'axios-hooks';
 import FilterResults from 'react-filter-search';
-import Search from '../../components/Search';
-import VaultCard from '../../components/VaultCard';
-import { VaultCardStatus } from '../../components/VaultCard/constants';
-import Button, { Kind } from '../../components/Button';
-import FundStatus from '../../components/FundStatus';
-import { useFundsContext } from '../../contexts/funds';
-import useMessage from '../../hooks/message';
-import Breadcrumbs from '../../components/Breadcrumbs';
+import Search from '../../../components/Search';
+import VaultCard from '../../../components/VaultCard';
+import { VaultCardStatus } from '../../../components/VaultCard/constants';
+import Button, { Kind } from '../../../components/Button';
+import FundStatus from '../../../components/FundStatus';
+import { useFundsContext } from '../../../contexts/funds';
+import useMessage from '../../../hooks/message';
+import Breadcrumbs from '../../../components/Breadcrumbs';
 import Link from 'next/link';
 
 interface FundProps {
@@ -32,8 +32,9 @@ const FundCollection = ({
   const [value, setValue] = useState('');
   const url = useMemo(() => {
     const tokenIds = holdings.slice(offset, limit).join('&token_ids=');
-
-    return `https://api.opensea.io/api/v1/assets?asset_contract_address=${asset.address}&token_ids=${tokenIds}&limit=25`;
+    if (tokenIds) {
+      return `https://api.opensea.io/api/v1/assets?asset_contract_address=${asset.address}&token_ids=${tokenIds}&limit=25`;
+    }
   }, [asset.address, offset, limit]);
 
   const [{ data, loading, error }, refetch] = useAxios(url);
@@ -61,26 +62,41 @@ const FundCollection = ({
 
   if (error) {
     return (
-      <div className="container mx-auto px-4 py-20 text-gray-25">
+      <div className="container mx-auto px-4 py-20 text-gray-50">
         <p>Error! {error}</p>
       </div>
     );
   }
-
+  console.log(asset, fundToken, holdings.length);
   return (
     <div className="container mx-auto text-center px-4 text-gray-50">
-      <div className="mt-16 mb-4">
-        <Breadcrumbs />
+      <div className="flex mb-8">
+        <header className="flex-1">
+          <div className="mt-16 mb-4">
+            <Breadcrumbs />
+          </div>
+          <div className="flex-1 flex items-baseline mb-6">
+            <h1 className="text-left text-3xl font-bold mb-6 sm:mb-0 mr-4">
+              {fundToken.name}
+            </h1>
+            <FundStatus amm={true} ver={true} fin={isFinalized} />
+          </div>
+          <dl className="flex">
+            <div className="flex flex-col text-left">
+              <dt>{useMessage('fund.detail.supply')}</dt>
+              <dd className="font-medium text-xl">{holdings.length}</dd>
+            </div>
+          </dl>
+        </header>
+        <aside className="text-right flex flex-col justify-end">
+          <div className="mb-4">
+            <Button href="https://ntfx.org/">
+              {useMessage('fund.cta.invest')}
+            </Button>
+          </div>
+          <Search value={value} handleChange={handleChange} />
+        </aside>
       </div>
-      <header className="flex flex-col sm:flex-row justify-between items-center mb-8">
-        <div className="flex-1 flex items-baseline">
-          <h1 className="text-left text-3xl font-bold mb-6 sm:mb-0 mr-4">
-            {fundToken.name}
-          </h1>
-          <FundStatus amm={true} ver={true} fin={isFinalized} />
-        </div>
-        <Search value={value} handleChange={handleChange} />
-      </header>
       <div className="bg-gradient-to-r from-yellow-500 via-green-500 to-purple-500 h-0.5 mb-8" />
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 mb-12">
         {loading ? (
@@ -100,7 +116,7 @@ const FundCollection = ({
 
               return toMap.map((asset) => (
                 <Link
-                  key={asset.name}
+                  key={asset.token_id}
                   href={`${asPath}${encodeURI(asset.token_id)}`}
                 >
                   <a>
@@ -123,7 +139,7 @@ const FundCollection = ({
         )}
       </div>
       {/* see more button */}
-      {holdings.length >= collection.length && (
+      {holdings.length > collection.length && (
         <div className="my-8">
           <Button kind={Kind.SECONDARY} onClick={seeMore}>
             {'See More'}
@@ -143,9 +159,10 @@ const FundPage = () => {
   useEffect(() => {
     if (funds.length) {
       const fundName = router.query.fund;
-      const match = funds.find(
-        (v) => fundName === v.fundToken.name.toLocaleLowerCase()
-      );
+      const match = funds.find((v) => {
+        console.log(fundName, v.fundToken.name.toLocaleLowerCase());
+        return fundName === v.fundToken.name.toLocaleLowerCase();
+      });
 
       setFund(match);
       setLoading(false);
