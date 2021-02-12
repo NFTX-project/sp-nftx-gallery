@@ -90,7 +90,7 @@ const FundCollection = ({
         </header>
         <aside className="text-right flex flex-col justify-end">
           <div className="mb-4">
-            <Button href="https://ntfx.org/">
+            <Button href="https://nftx.org/">
               {useMessage('fund.cta.invest')}
             </Button>
           </div>
