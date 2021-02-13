@@ -57,8 +57,13 @@ const Home = () => {
             </Button>
           </Link>
         </nav>
-        <h1 className="text-4xl mb-2 font-bold text-center text-gray-50">
-          {useMessage('home.title')}
+        <h1 className="text-4xl mb-4 font-bold text-center text-gray-50">
+          <img
+            src="/images/nftx_on_black.svg"
+            className="mx-auto max-w-xs md:max-w-sm lg:max-w-md xl:max-w-lg 2xl:max-w-xl"
+            alt="NFTX logo"
+          />
+          <div className="invisible h-0">{useMessage('home.title')}</div>
         </h1>
         <h2 className="text-sm font-bold text-center text-gray-50 leading-loose mb-3">
           {useMessage('home.subtitle', {
