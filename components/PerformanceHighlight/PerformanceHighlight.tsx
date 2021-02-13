@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ButtonHTMLAttributes } from 'react';
 
 export interface PricePerformanceProps
   extends Partial<ButtonHTMLAttributes<any>>,

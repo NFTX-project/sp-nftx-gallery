@@ -9,7 +9,7 @@ import { Kind } from '../components/Button/constants';
 import { Icons } from '../components/Icon';
 import FundGroup, { Columns } from '../components/FundGroup';
 import Poster from '../components/Poster';
-import { getFundKey } from '../utils/getFundKey';
+import { getCategoryKey } from '../utils/getCategoryKey';
 import { Colorway } from '../components/Poster/constants';
 
 const Home = () => {
@@ -112,7 +112,7 @@ const Home = () => {
           </h3>
           <section className="flex flex-wrap -m-2">
             {categories.map((cat) => {
-              const fund = funds.find((f) => getFundKey(f) === cat.key);
+              const fund = funds.find((f) => getCategoryKey(f) === cat.key);
               const matchingAssets = funds.filter(
                 (f) => f.asset.address === fund.asset.address
               );

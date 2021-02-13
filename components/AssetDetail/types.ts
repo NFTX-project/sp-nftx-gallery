@@ -38,4 +38,6 @@ export interface AssetDetailProps {
    * Any root level class names to be applied
    */
   className?: string;
+  name?: string;
+  description?: string;
 }

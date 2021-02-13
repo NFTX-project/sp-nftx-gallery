@@ -11,6 +11,7 @@ import { useFundsContext } from '../../../contexts/funds';
 import useMessage from '../../../hooks/message';
 import Breadcrumbs from '../../../components/Breadcrumbs';
 import Link from 'next/link';
+import { Icons } from '../../../components/Icon';
 
 interface FundProps {
   holdings?: string[];
@@ -71,7 +72,7 @@ const FundCollection = ({
       </div>
     );
   }
-  console.log(asset, fundToken, holdings.length);
+
   return (
     <div className="container mx-auto text-center px-4 text-gray-50">
       <div className="flex flex-col sm:flex-row mb-8">
@@ -94,27 +95,19 @@ const FundCollection = ({
         </header>
         <aside className="text-right flex flex-col justify-end">
           <div className="mb-4">
-            <Button href="https://nftx.org/">
-              {useMessage('fund.cta.invest')}
+            <Button
+              href="https://app.sushiswap.fi/"
+              icon={Icons.EXTERNAL_LINK}
+              target="_blank"
+            >
+              {useMessage('fund.cta.invest', {
+                token: fundToken.symbol,
+              })}
             </Button>
           </div>
           <Search value={value} handleChange={handleChange} />
         </aside>
       </div>
-      <header className="flex flex-col sm:flex-row justify-between items-center mb-8">
-        <div className="flex-1 flex flex-col items-baseline">
-          <div className="flex-1 flex items-baseline">
-            <h1 className="text-left text-3xl font-bold mb-6 sm:mb-0 mr-4">
-              {fundToken.name}
-            </h1>
-            <FundStatus amm={true} ver={true} fin={isFinalized} />
-          </div>
-          <p className="text-md pt-4 pr-4 text-left text-white text-opacity-50 leading-relaxed">
-            {description}
-          </p>
-        </div>
-        <Search value={value} handleChange={handleChange} />
-      </header>
       <div className="bg-gradient-to-r from-yellow-500 via-green-500 to-purple-500 h-0.5 mb-8" />
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 mb-12">
         {loading ? (
