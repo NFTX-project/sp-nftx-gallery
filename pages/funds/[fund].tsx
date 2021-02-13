@@ -38,6 +38,10 @@ const FundCollection = ({
 
   const [{ data, loading, error }, refetch] = useAxios(url);
 
+  const firstItem = collection[0];
+  const description =
+    firstItem && firstItem.collection ? firstItem.collection.description : '';
+
   useEffect(() => {
     if (offset === 0) return;
 
@@ -73,11 +77,16 @@ const FundCollection = ({
         <Breadcrumbs />
       </div>
       <header className="flex flex-col sm:flex-row justify-between items-center mb-8">
-        <div className="flex-1 flex items-baseline">
-          <h1 className="text-left text-3xl font-bold mb-6 sm:mb-0 mr-4">
-            {fundToken.name}
-          </h1>
-          <FundStatus amm={true} ver={true} fin={isFinalized} />
+        <div className="flex-1 flex flex-col items-baseline">
+          <div className="flex-1 flex items-baseline">
+            <h1 className="text-left text-3xl font-bold mb-6 sm:mb-0 mr-4">
+              {fundToken.name}
+            </h1>
+            <FundStatus amm={true} ver={true} fin={isFinalized} />
+          </div>
+          <p className="text-md pt-4 pr-4 text-left text-white text-opacity-50 leading-relaxed">
+            {description}
+          </p>
         </div>
         <Search value={value} handleChange={handleChange} />
       </header>
