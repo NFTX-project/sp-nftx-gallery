@@ -43,7 +43,7 @@ const FundGroup = ({
         </a>
       </Link>
     </header>
-    <div className="bg-gradient-to-r from-yellow-500 via-green-500 to-purple-500 h-0.5 mb-8" />
+    <div className="bg-gradient-to-r from-red-500 via-red-800 to-pink-500 h-0.5 mb-8" />
     <div className={`grid ${gridCols[columns]} gap-4`}>
       {funds.map((item) => (
         <Link
