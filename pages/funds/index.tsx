@@ -3,9 +3,11 @@ import FilterResults from 'react-filter-search';
 import FundGroups from '../../components/FundGroups';
 import Search from '../../components/Search';
 import { useFundsContext } from '../../contexts/funds';
+import { useVaultsContext } from '../../contexts/vaults';
 
 const FundsPage = () => {
   const funds = useFundsContext();
+  const vaults = useVaultsContext();
   const [value, setValue] = useState('');
 
   function handleChange(event: { target: HTMLInputElement }) {
@@ -21,7 +23,9 @@ const FundsPage = () => {
       <FilterResults
         value={value}
         data={funds}
-        renderResults={(results) => <FundGroups funds={results} />}
+        renderResults={(results) => (
+          <FundGroups funds={results} vaults={vaults} />
+        )}
       />
     </div>
   );

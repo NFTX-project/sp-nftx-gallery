@@ -32,7 +32,7 @@ const FundGroup = ({
   columns = Columns.LIST,
 }: FundGroupProps) => (
   <section className="font-sans font-bold">
-    <header className="flex flex-col md:flex-row items-center justify-between mb-6">
+    <header className="flex flex-col md:flex-row items-center justify-between mb-5">
       <h3 className="text-gray-50 font-sans text-2xl">
         {useMessage(`funds.${namespace}.title`)}
       </h3>

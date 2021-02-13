@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import { IntlProvider } from 'react-intl';
 import Head from 'next/head';
 import { FundsProvider } from '../contexts/funds';
+import { VaultsProvider } from '../contexts/vaults';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import * as locales from '../lang';
@@ -65,7 +66,9 @@ const App = ({ Component, pageProps }: AppProps) => {
 
         <main className="flex-1">
           <FundsProvider>
-            <Component {...props} />
+            <VaultsProvider>
+              <Component {...props} />
+            </VaultsProvider>
           </FundsProvider>
         </main>
         <Footer />

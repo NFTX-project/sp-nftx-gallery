@@ -2,7 +2,7 @@ import React /* useEffect, useState */ from 'react';
 import { createContext, ReactChild, useContext } from 'react';
 import fundsData from '../data/funds.json';
 
-const FundsContext = createContext([]);
+const FundsContext = createContext(fundsData);
 
 // const getFunds = async function () {
 //   try {

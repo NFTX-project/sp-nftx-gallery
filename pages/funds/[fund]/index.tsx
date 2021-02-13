@@ -70,7 +70,7 @@ const FundCollection = ({
   console.log(asset, fundToken, holdings.length);
   return (
     <div className="container mx-auto text-center px-4 text-gray-50">
-      <div className="flex mb-8">
+      <div className="flex flex-col sm:flex-row mb-8">
         <header className="flex-1">
           <div className="mt-16 mb-4">
             <Breadcrumbs />
