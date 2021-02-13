@@ -70,9 +70,9 @@ const Button = forwardRef(
 
     return (
       <Element ref={ref} href={href} className={styles} {...rest}>
-        {children}
+        <span className="w-full">{children}</span>
         {icon && (
-          <span className="ml-2">
+          <span className="ml-2 text-center">
             <Icon name={icon} size={iconSizeMap[size]} />
           </span>
         )}
