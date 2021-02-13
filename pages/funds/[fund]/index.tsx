@@ -13,7 +13,7 @@ import Breadcrumbs from '../../../components/Breadcrumbs';
 import Link from 'next/link';
 
 interface FundProps {
-  holdings: number[];
+  holdings?: string[];
   asset: any;
   fundToken: any;
   isFinalized: boolean;
@@ -160,7 +160,6 @@ const FundPage = () => {
     if (funds.length) {
       const fundName = router.query.fund;
       const match = funds.find((v) => {
-        console.log(fundName, v.fundToken.name.toLocaleLowerCase());
         return fundName === v.fundToken.name.toLocaleLowerCase();
       });
 
