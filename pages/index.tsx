@@ -9,6 +9,7 @@ import Head from 'next/head';
 import useMessage from '../hooks/message';
 import { useFundsContext } from '../contexts/funds';
 import FundGroup from '../components/FundGroup';
+import { Columns } from '../components/FundGroup/constants';
 
 const Home = () => {
   const [value, setValue] = useState('');
@@ -56,8 +57,13 @@ const Home = () => {
             </Button>
           </Link>
         </nav>
-        <h1 className="text-4xl mb-2 font-bold text-center text-gray-50">
-          {useMessage('home.title')}
+        <h1 className="text-4xl mb-4 font-bold text-center text-gray-50">
+          <img
+            src="/images/nftx_on_black.svg"
+            className="mx-auto max-w-xs md:max-w-sm lg:max-w-md xl:max-w-lg 2xl:max-w-xl"
+            alt="NFTX logo"
+          />
+          <div className="invisible h-0">{useMessage('home.title')}</div>
         </h1>
         <h2 className="text-sm font-bold text-center text-gray-50 leading-loose mb-3">
           {useMessage('home.subtitle', {
@@ -74,15 +80,20 @@ const Home = () => {
           <Search value={value} handleChange={handleChange} />
         </div>
 
-        <section className="mb-24 font-sans font-bold">
+        <div className="mb-24">
           <FilterResults
             value={value}
             data={funds || []}
             renderResults={(results) => (
-              <FundGroup namespace="all" slug="" funds={results} xxlCols={3} />
+              <FundGroup
+                namespace="all"
+                slug=""
+                funds={results}
+                columns={Columns.FOCUS}
+              />
             )}
           />
-        </section>
+        </div>
       </div>
     </>
   );

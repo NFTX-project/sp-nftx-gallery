@@ -11,7 +11,7 @@ const Breadcrumbs = () => {
   }, [asPath]);
 
   return (
-    <nav className="flex items-center uppercase text-sm">
+    <nav className="flex flex-wrap items-center uppercase text-sm">
       {path.map((p, i) => {
         // join the URL together based on where you are
         const href = path.slice(0, i + 1).join('/');
