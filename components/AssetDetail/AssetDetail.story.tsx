@@ -2,14 +2,14 @@ import React from 'react';
 // also exported from '@storybook/react' if you can deal with breaking changes in 6.1
 import { Story, Meta } from '@storybook/react/types-6-0';
 
-import AssetCard from './AssetCard';
+import AssetDetail from './AssetDetail';
 import FundStatus from '../FundStatus/FundStatus';
-import { AssetCardStatus } from './constants';
-import { AssetCardProps } from './types';
+import { AssetDetailStatus } from './constants';
+import { AssetDetailProps } from './types';
 
 export default {
-  title: 'Components/AssetCard',
-  component: AssetCard,
+  title: 'Components/AssetDetail',
+  component: AssetDetail,
   parameters: {
     backgrounds: {
       default: 'dark',
@@ -18,12 +18,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<AssetCardProps> = (args) => <AssetCard {...args} />;
-
-export const Pending = Template.bind({});
-Pending.args = {
-  status: AssetCardStatus.PENDING,
-};
+const Template: Story<AssetDetailProps> = (args) => <AssetDetail {...args} />;
 
 export const NFT = Template.bind({});
 NFT.args = {

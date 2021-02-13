@@ -1,11 +1,11 @@
 import { ReactNode } from 'react';
-import { AssetCardStatus } from './constants';
+import { AssetDetailStatus } from './constants';
 
-export interface AssetCardProps {
+export interface AssetDetailProps {
   /**
    * The status of the card
    */
-  status?: AssetCardStatus;
+  status?: AssetDetailStatus;
   /**
    * The image src to be rendered
    */

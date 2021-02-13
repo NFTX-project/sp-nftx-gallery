@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
 
 export interface PricePerformanceProps
   extends Partial<ButtonHTMLAttributes<any>>,
@@ -22,7 +21,6 @@ const PerformanceHighlight = ({
   amountSubtitle,
   amount,
   performance,
-  ...rest
 }: PricePerformanceProps) => {
   return (
     <div className="flex-auto">

@@ -1,5 +1,5 @@
 import React from 'react';
-import type { AssetCardProps } from '../types';
+import type { AssetDetailProps } from '../types';
 import FundStatus from '../../FundStatus';
 import Button from '../../Button';
 import PerformanceHighlight from '../../PerformanceHighlight';
@@ -15,7 +15,7 @@ const DefaultVaultCard = ({
   stack,
   className,
   placeholder,
-}: AssetCardProps) => {
+}: AssetDetailProps) => {
   return (
     <div className={className}>
       <article className="text-gray-50 border-2 border-gray-500 border-opacity-30 text-left break-words">
