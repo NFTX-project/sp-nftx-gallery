@@ -13,7 +13,7 @@ interface FundGroupProps {
     asset: any;
     fundToken: any;
     isD2Vault: boolean;
-    holdings?: number[];
+    holdings?: string[];
   }[];
   columns?: Columns;
 }

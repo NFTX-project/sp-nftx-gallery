@@ -1,25 +1,42 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
-import FilterResults from 'react-filter-search';
-import Search from '../components/Search';
+import Head from 'next/head';
+import { FormattedNumber } from 'react-intl';
+import { useFundsContext } from '../contexts/funds';
+import useMessage from '../hooks/message';
 import Button from '../components/Button';
 import { Kind } from '../components/Button/constants';
 import { Icons } from '../components/Icon';
-import Head from 'next/head';
-import useMessage from '../hooks/message';
-import { useFundsContext } from '../contexts/funds';
-import FundGroup from '../components/FundGroup';
-import { Columns } from '../components/FundGroup/constants';
+import FundGroup, { Columns } from '../components/FundGroup';
+import Poster from '../components/Poster';
+import { getFundKey } from '../utils/getFundKey';
+import { Colorway } from '../components/Poster/constants';
 
 const Home = () => {
-  const [value, setValue] = useState('');
-
-  function handleChange(event: { target: HTMLInputElement }) {
-    const { value } = event.target;
-    setValue(value);
-  }
-
   const funds = useFundsContext();
+
+  const categories = [
+    {
+      key: 'hashmasks',
+      image: 'hashmasks.jpg',
+      colorway: Colorway.LIGHT,
+    },
+    {
+      key: 'wrapped-cryptopunks',
+      image: 'wrapped-cryptopunks.png',
+      colorway: Colorway.LIGHT,
+    },
+    {
+      key: 'axie',
+      image: 'axie.png',
+      colorway: Colorway.LIGHT,
+    },
+    {
+      key: 'cryptokitties',
+      image: 'cryptokitties.png',
+      colorway: Colorway.DARK,
+    },
+  ];
 
   return (
     <>
@@ -67,31 +84,77 @@ const Home = () => {
         </h1>
         <h2 className="text-sm font-bold text-center text-gray-50 leading-loose mb-3">
           {useMessage('home.subtitle', {
-            funds: funds.length,
-            days: 31,
-            redeemed: 5,
+            tvl: (
+              <FormattedNumber
+                value={10000000}
+                style="currency"
+                currency="USD"
+                maximumFractionDigits={0}
+              />
+            ),
+            volume: (
+              <FormattedNumber
+                value={50000}
+                style="currency"
+                currency="USD"
+                maximumFractionDigits={0}
+              />
+            ),
           })}
         </h2>
         <p className="text-md object-center text-center text-white text-opacity-50 leading-relaxed max-w-xl mx-auto">
           {useMessage('home.text')}
         </p>
 
-        <div className="flex items-end justify-end max-w-full my-20">
-          <Search value={value} handleChange={handleChange} />
+        <div className="mt-20 mb-16">
+          <h3 className="text-gray-50 font-sans font-bold text-2xl mb-8">
+            {useMessage(`home.categories.title`)}
+          </h3>
+          <section className="flex flex-wrap -m-2">
+            {categories.map((cat) => {
+              const fund = funds.find((f) => getFundKey(f) === cat.key);
+              const matchingAssets = funds.filter(
+                (f) => f.asset.address === fund.asset.address
+              );
+
+              if (fund) {
+                return (
+                  <Link href={`/funds/${cat.key}`}>
+                    <a className="w-1/2 md:flex-1 md:p-2 transition-transform duration-300 transform hover:scale-105">
+                      <div className="p-2 md:p-0">
+                        <Poster
+                          key={cat.key}
+                          title={useMessage(`funds.${cat.key}.title`)}
+                          text={useMessage('home.categories.poster.text', {
+                            count: matchingAssets.length,
+                          })}
+                          image={`/images/posters/${cat.image}`}
+                          colorway={cat.colorway}
+                        />
+                      </div>
+                    </a>
+                  </Link>
+                );
+              }
+
+              return null;
+            })}
+            <Link href="/funds/">
+              <a className="hidden lg:block lg:flex-1 p-2">
+                <div className="flex h-full items-center justify-center rounded-md bg-gradient-to-t from-gray-800 to-gray-700 text-white">
+                  {useMessage('home.categores.poster.all')}
+                </div>
+              </a>
+            </Link>
+          </section>
         </div>
 
         <div className="mb-24">
-          <FilterResults
-            value={value}
-            data={funds || []}
-            renderResults={(results) => (
-              <FundGroup
-                namespace="all"
-                slug=""
-                funds={results}
-                columns={Columns.FOCUS}
-              />
-            )}
+          <FundGroup
+            namespace="all"
+            slug=""
+            funds={funds}
+            columns={Columns.FOCUS}
           />
         </div>
       </div>
