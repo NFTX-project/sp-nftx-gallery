@@ -5,9 +5,10 @@ import Icon, { Icons, Size } from '../Icon';
 import useMessage from '../../hooks/message';
 
 const Breadcrumbs = () => {
-  const { asPath } = useRouter();
+  const { asPath, pathname } = useRouter();
+  const routerPath = pathname.split('/').filter(Boolean);
   const path = useMemo(() => {
-    return asPath.split('/').filter((p) => p !== '');
+    return asPath.split('/').filter(Boolean);
   }, [asPath]);
 
   return (
@@ -15,6 +16,20 @@ const Breadcrumbs = () => {
       {path.map((p, i) => {
         // join the URL together based on where you are
         const href = path.slice(0, i + 1).join('/');
+
+        let message = useMessage(`breadcrumb.${p}`);
+
+        if (routerPath[i] === '[fund]') {
+          message = useMessage('breadcrumb.fund', {
+            fund: p,
+          });
+        }
+
+        if (routerPath[i] === '[asset]') {
+          message = useMessage('breadcrumb.asset', {
+            asset: p,
+          });
+        }
 
         return (
           <div key={`${i}_${p}`} className="mr-1 flex items-center">
@@ -29,7 +44,7 @@ const Breadcrumbs = () => {
                   i + 1 === path.length ? 'text-gray-50' : 'text-gray-300'
                 }
               >
-                {useMessage(`breadcrumb.${p}`)}
+                {message}
               </a>
             </Link>
           </div>

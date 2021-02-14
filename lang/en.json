@@ -1,6 +1,8 @@
 {
   "breadcrumb.funds": "All Funds",
   "breadcrumb.mask": "Hashmasks",
+  "breadcrumb.fund": "{fund}",
+  "breadcrumb.asset": "{asset}",
   "home.meta.title": "NFTX Gallery",
   "home.cta.app": "Go to app",
   "home.title": "NFTX Vaults",

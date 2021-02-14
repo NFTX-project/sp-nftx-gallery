@@ -41,7 +41,7 @@ const FundStatus = ({ fin, ver, amm }: FundStatusProps) => {
 
   return (
     <aside>
-      <dl className="flex font-semibold text-xs">
+      <dl className="flex flex-wrap font-semibold text-xs">
         {status.map((s) => (
           <div key={s.key} className="flex items-center mr-1">
             <dd>

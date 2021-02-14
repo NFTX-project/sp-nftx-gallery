@@ -44,9 +44,9 @@ const DefaultAssetDetail = ({
             {eyebrow && (
               <h4 className="uppercase text-md mb-1 text-gray-50">{eyebrow}</h4>
             )}
-            <div className="flex items-baseline">
-              <h3 className="font-bold text-3xl text-gray-50">{title}</h3>
-              <div className="uppercase text-sm text-gray-300 mt-2 ml-2">
+            <div className="flex flex-wrap items-baseline">
+              <h3 className="font-bold text-3xl text-gray-50 mr-2">{title}</h3>
+              <div className="uppercase text-sm text-gray-300 mt-2">
                 {assetType}
               </div>
             </div>
