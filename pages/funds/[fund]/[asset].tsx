@@ -53,12 +53,12 @@ const OtherAssets = React.memo(
 
     return (
       <section className="font-sans font-bold">
-        <header className="flex flex-col md:flex-row assets-center justify-between mb-5">
+        <header className="flex flex-col md:flex-row items-baseline justify-between mb-5">
           <h3 className="text-gray-50 font-sans text-2xl">
             {useMessage(`asset.otherHoldings.title`)}
           </h3>
           <Link href={`/funds/${fundKey}`}>
-            <a className="text-gray-50 text-lg font-sans flex assets-center">
+            <a className="text-gray-50 text-lg font-sans flex items-center">
               {useMessage(`asset.otherHoldings.link`)}
               <Icon name={Icons.CHEVRON_RIGHT} />
             </a>

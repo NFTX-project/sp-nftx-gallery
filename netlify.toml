@@ -2,3 +2,8 @@
   from = "/funds/:fund"
   to = "/funds/[fund].html?fund=:fund"
   status = 200
+
+[[redirects]]
+  from = "/funds/:fund/:asset"
+  to = "/funds/[fund]/[asset].html?fund=:fund&asset=:asset"
+  status = 200
