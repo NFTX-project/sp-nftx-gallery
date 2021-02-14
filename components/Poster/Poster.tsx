@@ -25,7 +25,7 @@ const Poster = ({ background, image, title, text, colorway }: PosterProps) => {
       }}
     >
       <div className="top-4 left-4 right-4 bottom-4 absolute overflow-hidden overflow-ellipsis">
-        {title && <h3 className="font-bold text-xl leading-8 mb-2">{title}</h3>}
+        {title && <h3 className="font-bold text-xl leading-8 mb-1">{title}</h3>}
         {text && <h4 className="uppercase text-xs text-opacity-80">{text}</h4>}
       </div>
     </div>
