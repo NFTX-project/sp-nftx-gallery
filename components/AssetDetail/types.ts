@@ -7,6 +7,18 @@ export interface AssetDetailProps {
    */
   status?: AssetDetailStatus;
   /**
+   * The name of the asset type
+   */
+  assetType: string;
+  /**
+   * The name of the holding fund
+   */
+  fundName: string;
+  /**
+   * The id of the vault currently viewed on
+   */
+  vaultId: number;
+  /**
    * The image src to be rendered
    */
   image?: string;
@@ -38,6 +50,12 @@ export interface AssetDetailProps {
    * Any root level class names to be applied
    */
   className?: string;
-  name?: string;
-  description?: string;
+  /**
+   * The price, in gwei, of last sale
+   */
+  lastSalePrice: number;
+  /**
+   * The percentage performance of the asset
+   */
+  performance: number;
 }

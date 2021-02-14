@@ -1,27 +1,31 @@
 import React from 'react';
 import type { AssetDetailProps } from '../types';
-import FundStatus from '../../FundStatus';
 import Button from '../../Button';
 import PerformanceHighlight from '../../PerformanceHighlight';
 import { Size, Kind } from '../../Button/constants';
+import useMessage from '../../../hooks/message';
+import { Icons } from '../../Icon';
 
-const DefaultVaultCard = ({
+const DefaultAssetDetail = ({
   image,
   eyebrow,
   title,
-  name,
-  description,
+  text,
   background,
-  stack,
   className,
   placeholder,
+  lastSalePrice,
+  performance,
+  fundName,
+  assetType,
+  vaultId,
 }: AssetDetailProps) => {
   return (
     <div className={className}>
       <article className="text-gray-50 border-2 border-gray-500 border-opacity-30 text-left break-words">
-        <div className="flex flex-row w-full">
+        <div className="flex flex-col md:flex-row w-full">
           <div
-            className="px-12 py-24 flex justify-center items-center bg-gray-700 w-1/2"
+            className="md:w-1/2 p-6 md:p-9 lg:p-12 xl:p-24 flex justify-center items-center bg-gray-700"
             style={{ backgroundColor: background }}
           >
             <div className="relative h-full">
@@ -36,51 +40,44 @@ const DefaultVaultCard = ({
               )}
             </div>
           </div>
-          <div className="w-1/2 px-6 py-24 bg-gray-800 border-l-2 border-gray-500 border-opacity-30">
+          <div className="md:w-1/2 p-8 flex flex-col bg-gray-800 md:border-l-2 border-gray-500 border-opacity-30">
             {eyebrow && (
-              <h4 className="uppercase text-sm mb-1 text-gray-50">{eyebrow}</h4>
+              <h4 className="uppercase text-md mb-1 text-gray-50">{eyebrow}</h4>
             )}
-            <div className="flex">
-              <h3 className="font-bold text-xl text-gray-50">{title}</h3>
-              <div className="uppercase text-xs text-gray-400 mt-2 ml-2">
-                {name}
+            <div className="flex items-baseline">
+              <h3 className="font-bold text-3xl text-gray-50">{title}</h3>
+              <div className="uppercase text-sm text-gray-300 mt-2 ml-2">
+                {assetType}
               </div>
             </div>
-            <div className="flex">
-              <p className="text-sm pt-3 text-left text-white text-opacity-50 leading-relaxed">
-                {description}
-              </p>
-            </div>
-            <div className="flex pt-4">
-              <FundStatus amm={true} ver={true} fin={true} />
-            </div>
-            <div className="flex pt-4">
+            <p className="text-md pt-3 text-left text-white text-opacity-75 leading-relaxed">
+              {text}
+            </p>
+            <div className="py-8">
               <PerformanceHighlight
-                amountSubtitle="LAST SALE PRICE"
-                amount="6.2"
-                performance="+100%"
+                amount={lastSalePrice}
+                performance={performance}
               />
             </div>
-            <div className="flex pt-6">
+            <div className="mt-auto">
               <Button
                 className="w-full text-center"
                 size={Size.LARGE}
                 kind={Kind.PRIMARY}
+                href={`https://nftx.org/#/fund/${vaultId}`}
+                target="_blank"
+                icon={Icons.EXTERNAL_LINK}
               >
-                Invest in {title}
+                {useMessage('asset.detail.invest', {
+                  fund: fundName,
+                })}
               </Button>
             </div>
           </div>
         </div>
       </article>
-      {stack && (
-        <>
-          <div className="bg-gray-800 h-1 mx-1 border-l border-b border-r border-gray-500 border-opacity-30" />
-          <div className="bg-gray-800 h-1 mx-2 border-l border-b border-r border-gray-500 border-opacity-30" />
-        </>
-      )}
     </div>
   );
 };
 
-export default React.memo(DefaultVaultCard);
+export default React.memo(DefaultAssetDetail);

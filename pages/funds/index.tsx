@@ -1,9 +1,11 @@
+import Head from 'next/head';
 import React, { useState } from 'react';
 import FilterResults from 'react-filter-search';
 import FundGroups from '../../components/FundGroups';
 import Search from '../../components/Search';
 import { useFundsContext } from '../../contexts/funds';
 import { useVaultsContext } from '../../contexts/vaults';
+import useMessage from '../../hooks/message';
 
 const FundsPage = () => {
   const funds = useFundsContext();
@@ -16,18 +18,23 @@ const FundsPage = () => {
   }
 
   return (
-    <div className="container mx-auto pt-16 pb-24 px-4">
-      <div className="flex items-end justify-end max-w-full my-10">
-        <Search value={value} handleChange={handleChange} />
+    <>
+      <Head>
+        <title>{useMessage('funds.meta.title')}</title>
+      </Head>
+      <div className="container mx-auto pt-16 pb-24 px-4">
+        <div className="flex items-end justify-end max-w-full my-10">
+          <Search value={value} handleChange={handleChange} />
+        </div>
+        <FilterResults
+          value={value}
+          data={funds}
+          renderResults={(results) => (
+            <FundGroups funds={results} vaults={vaults} />
+          )}
+        />
       </div>
-      <FilterResults
-        value={value}
-        data={funds}
-        renderResults={(results) => (
-          <FundGroups funds={results} vaults={vaults} />
-        )}
-      />
-    </div>
+    </>
   );
 };
 

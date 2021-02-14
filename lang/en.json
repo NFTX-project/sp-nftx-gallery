@@ -35,6 +35,14 @@
   "funds.hashmasks.link": "See all",
   "funds.cryptocubes.title": "Cryptocubes",
   "funds.cryptocubes.link": "See all",
+  "fund.loading": "Loading fund data...",
+  "fund.error": "Failed to load fund data :(",
   "fund.detail.supply": "Supply",
-  "fund.cta.invest": "Go to ${token} fund"
+  "fund.cta.invest": "Go to ${token} fund",
+  "asset.meta.title": "{asset} - {fund} - NFTX",
+  "asset.detail.invest": "Buy ${fund}",
+  "asset.otherHoldings.title": "Other holdings in this fund",
+  "asset.otherHoldings.link": "See all",
+  "widgets.price.lastSalePrice": "Last Sale Price",
+  "widgets.price.performance": "Performance"
 }

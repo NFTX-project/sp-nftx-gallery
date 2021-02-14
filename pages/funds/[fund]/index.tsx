@@ -7,15 +7,16 @@ import VaultCard from '../../../components/VaultCard';
 import { VaultCardStatus } from '../../../components/VaultCard/constants';
 import Button, { Kind } from '../../../components/Button';
 import FundStatus from '../../../components/FundStatus';
-import { useFundsContext } from '../../../contexts/funds';
 import useMessage from '../../../hooks/message';
 import Breadcrumbs from '../../../components/Breadcrumbs';
 import Link from 'next/link';
 import { Icons } from '../../../components/Icon';
-import { getFundKey } from '../../../utils/getFundKey';
 import Divider from '../../../components/Divider';
+import Head from 'next/head';
+import useFund from '../../../hooks/fund';
 
 interface FundProps {
+  fundKey: string;
   holdings?: string[];
   asset: any;
   fundToken: any;
@@ -24,6 +25,7 @@ interface FundProps {
 }
 
 const FundCollection = ({
+  fundKey,
   holdings,
   asset,
   fundToken,
@@ -74,107 +76,98 @@ const FundCollection = ({
   }
 
   return (
-    <div className="container mx-auto text-center px-4 text-gray-50">
-      <div className="flex flex-col sm:flex-row mb-8">
-        <header className="flex-1">
-          <div className="mt-16 mb-4">
-            <Breadcrumbs />
-          </div>
-          <div className="flex-1 flex items-baseline mb-6">
-            <h1 className="text-left text-3xl font-bold mb-6 sm:mb-0 mr-4">
-              {fundToken.name}
-            </h1>
-            <FundStatus amm={true} ver={true} fin={isFinalized} />
-          </div>
-          <dl className="flex">
-            <div className="flex flex-col text-left">
-              <dt>{useMessage('fund.detail.supply')}</dt>
-              <dd className="font-medium text-xl">{holdings.length}</dd>
+    <>
+      <Head>
+        <title>{useMessage(`fund.${fundKey}.meta.title`)}</title>
+      </Head>
+      <div className="container mx-auto text-center px-4 text-gray-50">
+        <div className="flex flex-col md:flex-row mb-8">
+          <header className="flex-1">
+            <div className="mt-16 mb-4">
+              <Breadcrumbs />
             </div>
-          </dl>
-        </header>
-        <aside className="text-right flex flex-col justify-end">
-          <div className="mb-4">
-            <Button
-              href={`https://nftx.org/#/fund/${vaultId}`}
-              icon={Icons.EXTERNAL_LINK}
-              target="_blank"
-            >
-              {useMessage('fund.cta.invest', {
-                token: fundToken.symbol,
-              })}
+            <div className="flex-1 flex flex-col lg:flex-row items-baseline mb-6">
+              <h1 className="text-left text-3xl font-bold mb-6 lg:mb-0 mr-4">
+                {fundToken.name}
+              </h1>
+              <FundStatus amm={true} ver={true} fin={isFinalized} />
+            </div>
+            <dl className="flex">
+              <div className="flex flex-col text-left">
+                <dt>{useMessage('fund.detail.supply')}</dt>
+                <dd className="font-medium text-xl">{holdings.length}</dd>
+              </div>
+            </dl>
+          </header>
+          <aside className="text-right flex flex-col justify-end">
+            <div className="mb-4">
+              <Button
+                href={`https://nftx.org/#/fund/${vaultId}`}
+                icon={Icons.EXTERNAL_LINK}
+                target="_blank"
+              >
+                {useMessage('fund.cta.invest', {
+                  token: fundToken.symbol,
+                })}
+              </Button>
+            </div>
+            <Search value={value} handleChange={handleChange} />
+          </aside>
+        </div>
+        <Divider />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 mb-12">
+          {loading ? (
+            [...Array(collection.length || holdings.length)].map((el, i) => (
+              <VaultCard key={i} status={VaultCardStatus.PENDING} />
+            ))
+          ) : (
+            <FilterResults
+              value={value}
+              data={collection}
+              renderResults={(results) =>
+                results.map((asset) => (
+                  <Link
+                    key={asset.token_id}
+                    href={`${asPath}${encodeURI(asset.token_id)}`}
+                  >
+                    <a className="flex flex-col">
+                      <VaultCard
+                        className="flex-1 flex flex-col"
+                        eyebrow={asset.asset_contract.name}
+                        image={asset.image_url}
+                        title={asset.name}
+                        background={
+                          asset.background_color
+                            ? `#${asset.background_color}`
+                            : null
+                        } // seems to come through as hex without the hex
+                        text={`Number of sales: ${asset.num_sales || 0}`}
+                      />
+                    </a>
+                  </Link>
+                ))
+              }
+            />
+          )}
+        </div>
+        {/* see more button */}
+        {holdings.length > collection.length && (
+          <div className="my-8">
+            <Button kind={Kind.SECONDARY} onClick={seeMore}>
+              {'See More'}
             </Button>
           </div>
-          <Search value={value} handleChange={handleChange} />
-        </aside>
-      </div>
-      <Divider />
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 mb-12">
-        {loading ? (
-          [...Array(collection.length || holdings.length)].map((el, i) => (
-            <VaultCard key={i} status={VaultCardStatus.PENDING} />
-          ))
-        ) : (
-          <FilterResults
-            value={value}
-            data={collection}
-            renderResults={(results) =>
-              results.map((asset) => (
-                <Link
-                  key={asset.token_id}
-                  href={`${asPath}${encodeURI(asset.token_id)}`}
-                >
-                  <a className="flex flex-col">
-                    <VaultCard
-                      className="flex-1 flex flex-col"
-                      eyebrow={asset.asset_contract.name}
-                      image={asset.image_url}
-                      title={asset.name}
-                      background={
-                        asset.background_color
-                          ? `#${asset.background_color}`
-                          : null
-                      } // seems to come through as hex without the hex
-                      text={`Number of sales: ${asset.num_sales || 0}`}
-                    />
-                  </a>
-                </Link>
-              ))
-            }
-          />
         )}
       </div>
-      {/* see more button */}
-      {holdings.length > collection.length && (
-        <div className="my-8">
-          <Button kind={Kind.SECONDARY} onClick={seeMore}>
-            {'See More'}
-          </Button>
-        </div>
-      )}
-    </div>
+    </>
   );
 };
 
 const FundPage = () => {
-  const funds = useFundsContext();
   const router = useRouter();
-  const [fund, setFund] = useState<FundProps>(undefined);
-  const [loading, setLoading] = useState(true);
+  const fund = useFund(router.query.fund as string);
 
-  useEffect(() => {
-    if (funds.length) {
-      const fundName = router.query.fund;
-      const match = funds.find((v) => {
-        return fundName === getFundKey(v);
-      });
-
-      setFund(match);
-      setLoading(false);
-    }
-  }, [funds, router.query.fund]);
-
-  if (!fund && !loading) {
+  if (fund === false) {
     return (
       <div className="container text-center mx-auto px-4 py-20 text-gray-50">
         <p>{useMessage('fund.notfound')}</p>
@@ -182,7 +175,7 @@ const FundPage = () => {
     );
   }
 
-  if (loading) {
+  if (fund == null) {
     return (
       <div className="container text-center mx-auto px-4 py-20 text-gray-50">
         <p>{useMessage('fund.loading')}</p>
@@ -190,7 +183,7 @@ const FundPage = () => {
     );
   }
 
-  return <FundCollection {...fund} />;
+  return <FundCollection fundKey={router.query.fund} {...fund} />;
 };
 
 export default FundPage;

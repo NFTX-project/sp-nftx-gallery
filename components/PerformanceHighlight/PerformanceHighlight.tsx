@@ -1,37 +1,42 @@
 import React, { ButtonHTMLAttributes } from 'react';
+import useMessage from '../../hooks/message';
+import Big from 'big.js';
 
 export interface PricePerformanceProps
   extends Partial<ButtonHTMLAttributes<any>>,
     Record<string, any> {
   /**
-   * Caption for the amount
-   */
-  amountSubtitle?: string;
-  /**
    * The amount
    */
-  amount?: string;
+  amount?: number;
   /**
    * Performance
    */
-  performance?: string;
+  performance?: number;
 }
 
 const PerformanceHighlight = ({
-  amountSubtitle,
   amount,
   performance,
 }: PricePerformanceProps) => {
+  const toEth = (gwei: number) => Big(gwei).div(1e18).toFixed(2);
+
   return (
-    <div className="flex-auto">
-      <div className="px-4 py-4 flex flex-col bg-gray-700 w-1/2 border border-gray-500 border-opacity-30 rounded-l-md rounded-br-md float-left">
-        <span className="text-xs opacity-50 pb-1">{amountSubtitle}</span>
-        <span className="font-bold text-2xl text-gray-50">{amount}</span>
+    <div className="flex items-start uppercase">
+      <div className="px-6 py-4 flex flex-col bg-gray-700 border border-gray-500 border-opacity-30 rounded-l-md rounded-br-md">
+        <span className="text-xs opacity-50 pb-1">
+          {useMessage('widgets.price.lastSalePrice')}
+        </span>
+        <span className="font-bold text-2xl text-gray-50">
+          Ξ{amount ? toEth(amount) : 'N/A'}
+        </span>
       </div>
-      <div className="px-4 py-4 flex bg-gray-700 w-1/2 border border-l-0 border-gray-500 border-opacity-30 rounded-r-md rounded-tr-md">
-        <span className="text-xs opacity-50 mr-1">PERFORMANCE</span>
-        <span className="text-xs text-green-400 mr-1 h-fit-content">
-          {performance}
+      <div className="px-6 py-4 flex flex-col md:flex-row items-start bg-gray-800 border border-l-0 border-gray-500 border-opacity-30 rounded-r-md rounded-tr-md">
+        <span className="text-xs opacity-50 mr-1">
+          {useMessage('widgets.price.performance')}
+        </span>
+        <span className="text-md leading-5 font-bold text-green-400 ml-1">
+          {performance}%
         </span>
       </div>
     </div>
