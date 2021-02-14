@@ -90,6 +90,7 @@ const Home = () => {
                 style="currency"
                 currency="USD"
                 maximumFractionDigits={0}
+                minimumFractionDigits={0}
               />
             ),
             volume: (
@@ -98,6 +99,7 @@ const Home = () => {
                 style="currency"
                 currency="USD"
                 maximumFractionDigits={0}
+                minimumFractionDigits={0}
               />
             ),
           })}
@@ -119,7 +121,7 @@ const Home = () => {
 
               if (fund) {
                 return (
-                  <Link href={`/funds/${cat.key}`}>
+                  <Link href={`/funds/${cat.key}`} key={cat.key}>
                     <a className="w-1/2 md:flex-1 md:p-2 transition-transform duration-300 transform hover:scale-105">
                       <div className="p-2 md:p-0">
                         <Poster
