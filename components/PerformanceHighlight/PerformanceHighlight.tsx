@@ -31,11 +31,11 @@ const PerformanceHighlight = ({
           Ξ{amount ? toEth(amount) : 'N/A'}
         </span>
       </div>
-      <div className="px-6 py-4 flex flex-col md:flex-row items-start bg-gray-800 border border-l-0 border-gray-500 border-opacity-30 rounded-r-md rounded-tr-md">
+      <div className="px-6 py-4 flex flex-col lg:flex-row items-start bg-gray-800 border border-l-0 border-gray-500 border-opacity-30 rounded-r-md rounded-tr-md">
         <span className="text-xs opacity-50 mr-1">
           {useMessage('widgets.price.performance')}
         </span>
-        <span className="text-md leading-5 font-bold text-green-400 ml-1">
+        <span className="text-md leading-5 font-bold text-green-400 lg:ml-1">
           {performance}%
         </span>
       </div>
