@@ -3,6 +3,7 @@ export enum Icons {
   CHECK_CIRCLE = 'check-circle',
   CHEVRON_RIGHT = 'chevron-right',
   EXTERNAL_LINK = 'external-link',
+  SPARKLE = 'sparkle',
 }
 
 export enum Size {

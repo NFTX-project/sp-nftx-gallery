@@ -6,15 +6,17 @@ import { useFundsContext } from '../contexts/funds';
 import useMessage from '../hooks/message';
 import Button from '../components/Button';
 import { Kind } from '../components/Button/constants';
-import { Icons } from '../components/Icon';
+import Icon, { Icons } from '../components/Icon';
 import FundGroup, { Columns } from '../components/FundGroup';
 import Poster from '../components/Poster';
 import { getCategoryKey } from '../utils/getCategoryKey';
 import { Colorway } from '../components/Poster/constants';
+import { getFundKey } from '../utils/getFundKey';
 
 const Home = () => {
   const funds = useFundsContext();
 
+  // Popular categories - hard coded for now
   const categories = [
     {
       key: 'hashmasks',
@@ -38,6 +40,8 @@ const Home = () => {
     },
   ];
 
+  const feelingLucky = funds[Math.floor(Math.random() * funds.length)];
+
   return (
     <>
       <Head>
@@ -45,22 +49,12 @@ const Home = () => {
       </Head>
       <div className="container mx-auto pt-12 pb-24 px-4">
         <nav className="mb-16 mt-12 flex justify-center md:justify-end flex-wrap">
-          <Link href="https://nftx.org/" passHref={true}>
+          <Link href={`/funds/${getFundKey(feelingLucky)}`} passHref={true}>
             <Button className="mb-2" kind={Kind.ICON}>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                className="h-6 w-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
-                />
-              </svg>
+              <Icon name={Icons.SPARKLE} />
+              <span className="hidden">
+                {useMessage('home.cta.feelingLucky')}
+              </span>
             </Button>
           </Link>
           <Link href="https://nftx.org/" passHref={true}>

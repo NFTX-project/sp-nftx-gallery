@@ -6,6 +6,7 @@ const CheckCircle = dynamic(() => import('./icons/CheckCircle'));
 const XCircle = dynamic(() => import('./icons/XCircle'));
 const ChevronRight = dynamic(() => import('./icons/ChevronRight'));
 const ExternalLink = dynamic(() => import('./icons/ExternalLink'));
+const Sparkle = dynamic(() => import('./icons/Sparkle'));
 
 export interface IconProps {
   /**
@@ -29,6 +30,7 @@ const iconMap = {
   [Icons.X_CIRCLE]: XCircle,
   [Icons.CHEVRON_RIGHT]: ChevronRight,
   [Icons.EXTERNAL_LINK]: ExternalLink,
+  [Icons.SPARKLE]: Sparkle,
 };
 
 const Icon = ({ className, name, size = Size.MEDIUM }: IconProps) => {

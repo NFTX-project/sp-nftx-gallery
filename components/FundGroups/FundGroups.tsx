@@ -1,5 +1,6 @@
 import React, { useMemo } from 'react';
 import useMessage from '../../hooks/message';
+import { getCategoryKey } from '../../utils/getCategoryKey';
 import FundGroup from '../FundGroup';
 
 interface FundGroupProps {
@@ -40,7 +41,7 @@ const groupFunds = (
       groups[key].funds.push(fund);
     } else {
       groups[key] = {
-        key: fund.asset.name.toLocaleLowerCase().replace(/ /g, '-'),
+        key: getCategoryKey(fund),
         funds: [fund],
       };
     }

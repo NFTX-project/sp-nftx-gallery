@@ -12,12 +12,14 @@ import useMessage from '../../../hooks/message';
 import Breadcrumbs from '../../../components/Breadcrumbs';
 import Link from 'next/link';
 import { Icons } from '../../../components/Icon';
+import { getFundKey } from '../../../utils/getFundKey';
 
 interface FundProps {
   holdings?: string[];
   asset: any;
   fundToken: any;
   isFinalized: boolean;
+  vaultId: number;
 }
 
 const FundCollection = ({
@@ -25,6 +27,7 @@ const FundCollection = ({
   asset,
   fundToken,
   isFinalized,
+  vaultId,
 }: FundProps) => {
   const { asPath } = useRouter();
   const [limit, setLimit] = useState(25);
@@ -39,10 +42,6 @@ const FundCollection = ({
   }, [asset.address, offset, limit]);
 
   const [{ data, loading, error }, refetch] = useAxios(url);
-
-  const firstItem = collection[0];
-  const description =
-    firstItem && firstItem.collection ? firstItem.collection.description : '';
 
   useEffect(() => {
     if (offset === 0) return;
@@ -96,7 +95,7 @@ const FundCollection = ({
         <aside className="text-right flex flex-col justify-end">
           <div className="mb-4">
             <Button
-              href="https://app.sushiswap.fi/"
+              href={`https://nftx.org/#/fund/${vaultId}`}
               icon={Icons.EXTERNAL_LINK}
               target="_blank"
             >
@@ -111,27 +110,22 @@ const FundCollection = ({
       <div className="bg-gradient-to-r from-yellow-500 via-green-500 to-purple-500 h-0.5 mb-8" />
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 mb-12">
         {loading ? (
-          [...Array(collection.length)].map((el, i) => (
+          [...Array(collection.length || holdings.length)].map((el, i) => (
             <VaultCard key={i} status={VaultCardStatus.PENDING} />
           ))
         ) : (
           <FilterResults
             value={value}
             data={collection}
-            renderResults={(results) => {
-              let toMap = results;
-
-              if (results.length === 0) {
-                toMap = collection;
-              }
-
-              return toMap.map((asset) => (
+            renderResults={(results) =>
+              results.map((asset) => (
                 <Link
                   key={asset.token_id}
                   href={`${asPath}${encodeURI(asset.token_id)}`}
                 >
-                  <a>
+                  <a className="flex flex-col">
                     <VaultCard
+                      className="flex-1 flex flex-col"
                       eyebrow={asset.asset_contract.name}
                       image={asset.image_url}
                       title={asset.name}
@@ -144,8 +138,8 @@ const FundCollection = ({
                     />
                   </a>
                 </Link>
-              ));
-            }}
+              ))
+            }
           />
         )}
       </div>
@@ -171,7 +165,7 @@ const FundPage = () => {
     if (funds.length) {
       const fundName = router.query.fund;
       const match = funds.find((v) => {
-        return fundName === v.fundToken.name.toLocaleLowerCase();
+        return fundName === getFundKey(v);
       });
 
       setFund(match);

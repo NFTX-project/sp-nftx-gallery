@@ -13,7 +13,7 @@ const DefaultVaultCard = ({
 }: VaultCardProps) => {
   return (
     <div className={className}>
-      <article className="text-gray-50 border-2 border-gray-500 border-opacity-30 text-left break-words">
+      <article className="h-full bg-gray-800 text-gray-50 border-2 border-gray-500 border-opacity-30 text-left break-words">
         <div
           className="p-12 flex justify-center items-center bg-gray-700"
           style={{ backgroundColor: background }}

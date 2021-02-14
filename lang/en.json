@@ -36,5 +36,5 @@
   "funds.cryptocubes.title": "Cryptocubes",
   "funds.cryptocubes.link": "See all",
   "fund.detail.supply": "Supply",
-  "fund.cta.invest": "Buy ${token} on Sushiswap"
+  "fund.cta.invest": "Go to ${token} fund"
 }
