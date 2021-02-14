@@ -13,6 +13,7 @@ import Breadcrumbs from '../../../components/Breadcrumbs';
 import Link from 'next/link';
 import { Icons } from '../../../components/Icon';
 import { getFundKey } from '../../../utils/getFundKey';
+import Divider from '../../../components/Divider';
 
 interface FundProps {
   holdings?: string[];
@@ -107,7 +108,7 @@ const FundCollection = ({
           <Search value={value} handleChange={handleChange} />
         </aside>
       </div>
-      <div className="bg-gradient-to-r from-yellow-500 via-green-500 to-purple-500 h-0.5 mb-8" />
+      <Divider />
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 mb-12">
         {loading ? (
           [...Array(collection.length || holdings.length)].map((el, i) => (

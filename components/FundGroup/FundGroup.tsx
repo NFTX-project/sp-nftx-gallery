@@ -5,6 +5,7 @@ import { getFundKey } from '../../utils/getFundKey';
 import FundStatus from '../FundStatus';
 import Icon, { Icons } from '../Icon';
 import VaultCard from '../VaultCard';
+import Divider from '../Divider';
 import { Columns } from './constants';
 
 interface FundGroupProps {
@@ -44,7 +45,7 @@ const FundGroup = ({
         </a>
       </Link>
     </header>
-    <div className="bg-gradient-to-r from-red-500 via-red-800 to-pink-500 h-0.5 mb-8" />
+    <Divider />
     <div className={`grid ${gridCols[columns]} gap-4`}>
       {funds.map((item) => (
         <Link key={item.fundToken.name} href={`/funds/${getFundKey(item)}/`}>
