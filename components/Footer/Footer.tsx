@@ -8,10 +8,16 @@ const Footer = () => {
       <div className="container flex flex-col md:flex-row justify-between content-center mx-auto px-4">
         <div className="">
           <Link href="/">
-            <a rel="noopener noreferrer" className="">
+            <a rel="noopener noreferrer" className="flex items-center">
               <img
-                src="/images/footer-logo.svg"
-                className="mx-auto pb-4 md:pb-0"
+                src="/images/logo_on_black.svg"
+                className="mx-auto pb-4 md:pb-0 h-10 mr-2"
+                alt="NFTX icon"
+              />
+              <img
+                src="/images/nftx_on_black.svg"
+                className="mx-auto pb-4 md:pb-0 h-5"
+                alt="NFTX logo"
               />
             </a>
           </Link>
