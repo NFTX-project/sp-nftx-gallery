@@ -13,9 +13,7 @@ import { getCategoryKey } from '../utils/getCategoryKey';
 import { Colorway } from '../components/Poster/constants';
 import { getFundKey } from '../utils/getFundKey';
 
-const Home = () => {
-  const funds = useFundsContext();
-
+const Home = ({ funds }: { funds: any }) => {
   // Popular categories - hard coded for now
   const categories = [
     {
@@ -108,29 +106,31 @@ const Home = () => {
           </h3>
           <section className="flex flex-wrap -m-2">
             {categories.map((cat) => {
-              const fund = funds.find((f) => getCategoryKey(f) === cat.key);
-              const matchingAssets = funds.filter(
-                (f) => f.asset.address === fund.asset.address
-              );
-
-              if (fund) {
-                return (
-                  <Link href={`/funds/${cat.key}`} key={cat.key}>
-                    <a className="w-1/2 md:flex-1 md:p-2 transition-transform duration-300 transform hover:scale-105">
-                      <div className="p-2 md:p-0">
-                        <Poster
-                          key={cat.key}
-                          title={useMessage(`funds.${cat.key}.title`)}
-                          text={useMessage('home.categories.poster.text', {
-                            count: matchingAssets.length,
-                          })}
-                          image={`/images/posters/${cat.image}`}
-                          colorway={cat.colorway}
-                        />
-                      </div>
-                    </a>
-                  </Link>
+              if (funds.length) {
+                const fund = funds.find((f) => getCategoryKey(f) === cat.key);
+                const matchingAssets = funds.filter(
+                  (f) => f.asset.address === fund.asset.address
                 );
+
+                if (fund) {
+                  return (
+                    <Link href={`/funds/${cat.key}`} key={cat.key}>
+                      <a className="w-1/2 md:flex-1 md:p-2 transition-transform duration-300 transform hover:scale-105">
+                        <div className="p-2 md:p-0">
+                          <Poster
+                            key={cat.key}
+                            title={useMessage(`funds.${cat.key}.title`)}
+                            text={useMessage('home.categories.poster.text', {
+                              count: matchingAssets.length,
+                            })}
+                            image={`/images/posters/${cat.image}`}
+                            colorway={cat.colorway}
+                          />
+                        </div>
+                      </a>
+                    </Link>
+                  );
+                }
               }
 
               return null;
@@ -146,16 +146,44 @@ const Home = () => {
         </div>
 
         <div className="mb-24">
-          <FundGroup
-            namespace="all"
-            slug=""
-            funds={funds}
-            columns={Columns.FOCUS}
-          />
+          {funds.length && (
+            <FundGroup
+              namespace="all"
+              slug=""
+              funds={funds}
+              columns={Columns.FOCUS}
+            />
+          )}
         </div>
       </div>
     </>
   );
 };
 
-export default Home;
+const Guard = () => {
+  const funds = useFundsContext();
+
+  if (funds.length) {
+    return <Home funds={funds} />;
+  }
+
+  return (
+    <>
+      <Head>
+        <title>{useMessage('home.meta.title')}</title>
+      </Head>
+      <div className="flex-1 flex items-center justify-center container mx-auto pt-12 pb-24 px-4">
+        <h1 className="text-4xl mb-4 font-bold text-center text-gray-50 animate-pulse">
+          <img
+            src="/images/logo_on_black.svg"
+            className="mx-auto max-w-xs md:max-w-sm lg:max-w-md xl:max-w-lg 2xl:max-w-xl"
+            alt="NFTX logo"
+          />
+          <div className="invisible h-0">{useMessage('home.title')}</div>
+        </h1>
+      </div>
+    </>
+  );
+};
+
+export default Guard;

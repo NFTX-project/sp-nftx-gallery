@@ -64,7 +64,7 @@ const App = ({ Component, pageProps }: AppProps) => {
           />
         </Head>
 
-        <main className="flex-1">
+        <main className="flex-1 flex flex-col">
           <FundsProvider>
             <VaultsProvider>
               <Component {...props} />

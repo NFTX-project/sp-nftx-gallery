@@ -32,38 +32,47 @@ const FundGroup = ({
   namespace,
   funds,
   columns = Columns.LIST,
-}: FundGroupProps) => (
-  <section className="font-sans font-bold">
-    <header className="flex flex-col md:flex-row items-center justify-between mb-5">
-      <h3 className="text-gray-50 font-sans text-2xl">
-        {useMessage(`funds.${namespace}.title`)}
-      </h3>
-      <Link href={`/funds/${slug}`}>
-        <a className="text-gray-50 text-lg font-sans flex items-center">
-          {useMessage(`funds.${namespace}.link`)}
-          <Icon name={Icons.CHEVRON_RIGHT} />
-        </a>
-      </Link>
-    </header>
-    <Divider />
-    <div className={`grid ${gridCols[columns]} gap-4`}>
-      {funds.map((item) => (
-        <Link key={item.fundToken.name} href={`/funds/${getFundKey(item)}/`}>
-          <a>
-            <VaultCard
-              image={`https://via.placeholder.com/160x160.png?text=${item.fundToken.symbol}`}
-              eyebrow={`${item?.holdings?.length || ''} ${item.asset.name} ${
-                item.isD2Vault ? 'D2' : ''
-              }`}
-              title={item.fundToken.name}
-              stack={true}
-              text={<FundStatus amm={true} fin={true} ver={true} />}
-            />
-          </a>
-        </Link>
-      ))}
-    </div>
-  </section>
-);
+}: FundGroupProps) => {
+  if (funds.length) {
+    return (
+      <section className="font-sans font-bold">
+        <header className="flex flex-col md:flex-row items-center justify-between mb-5">
+          <h3 className="text-gray-50 font-sans text-2xl">
+            {useMessage(`funds.${namespace}.title`)}
+          </h3>
+          <Link href={`/funds/${slug}`}>
+            <a className="text-gray-50 text-lg font-sans flex items-center">
+              {useMessage(`funds.${namespace}.link`)}
+              <Icon name={Icons.CHEVRON_RIGHT} />
+            </a>
+          </Link>
+        </header>
+        <Divider />
+        <div className={`grid ${gridCols[columns]} gap-4`}>
+          {funds.map((item) => (
+            <Link
+              key={item.fundToken.name}
+              href={`/funds/${getFundKey(item)}/`}
+            >
+              <a>
+                <VaultCard
+                  image={`https://via.placeholder.com/160x160.png?text=${item.fundToken.symbol}`}
+                  eyebrow={`${item?.holdings?.length || ''} ${
+                    item.asset.name
+                  } ${item.isD2Vault ? 'D2' : ''}`}
+                  title={item.fundToken.name}
+                  stack={true}
+                  text={<FundStatus amm={true} fin={true} ver={true} />}
+                />
+              </a>
+            </Link>
+          ))}
+        </div>
+      </section>
+    );
+  }
+
+  return null;
+};
 
 export default FundGroup;

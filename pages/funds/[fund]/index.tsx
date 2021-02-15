@@ -25,7 +25,6 @@ interface FundProps {
 }
 
 const FundCollection = ({
-  fundKey,
   holdings,
   asset,
   fundToken,
@@ -78,7 +77,11 @@ const FundCollection = ({
   return (
     <>
       <Head>
-        <title>{useMessage(`fund.${fundKey}.meta.title`)}</title>
+        <title>
+          {useMessage(`fund.meta.title`, {
+            fund: fundToken.name,
+          })}
+        </title>
       </Head>
       <div className="container mx-auto text-center px-4 text-gray-50">
         <div className="flex flex-col md:flex-row mb-8">

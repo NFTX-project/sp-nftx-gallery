@@ -17,18 +17,18 @@ const Breadcrumbs = () => {
         // join the URL together based on where you are
         const href = path.slice(0, i + 1).join('/');
 
-        let message = useMessage(`breadcrumb.${p}`);
+        let message: string;
 
         if (routerPath[i] === '[fund]') {
           message = useMessage('breadcrumb.fund', {
             fund: p,
           });
-        }
-
-        if (routerPath[i] === '[asset]') {
+        } else if (routerPath[i] === '[asset]') {
           message = useMessage('breadcrumb.asset', {
             asset: p,
           });
+        } else {
+          message = useMessage(`breadcrumb.${p}`);
         }
 
         return (

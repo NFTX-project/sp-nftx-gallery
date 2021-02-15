@@ -12,5 +12,10 @@ type Fund = {
   };
 };
 
-export const getFundKey = (fund: Fund) =>
-  encodeURI(fund.fundToken.name.toLocaleLowerCase().replace(/ /g, '-'));
+export const getFundKey = (fund: Fund) => {
+  if (fund) {
+    return encodeURI(
+      fund.fundToken.name.toLocaleLowerCase().replace(/ /g, '-')
+    );
+  }
+};
