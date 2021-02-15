@@ -4,14 +4,15 @@ import { createContext, ReactChild, useContext } from 'react';
 const FundsContext = createContext([]);
 
 const getFunds = async function () {
-  try {
-    // fetch the latest funds data
-    const res = await fetch('https://nftx.xyz/funds-data');
-    return await res.json();
-  } catch (err) {
+  // fetch the latest funds data
+  const res = await fetch('https://nftx.xyz/funds-data');
+  if (res.ok) {
+    return res.json();
+  } else {
     // if we error out or fail
-    console.error(err);
-    return [];
+    // fetch the backup funds
+    const backup = await fetch('/data/funds.json');
+    return backup.json();
   }
 };
 

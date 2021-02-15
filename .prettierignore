@@ -38,3 +38,6 @@ storybook-static
 
 # data files
 *.json
+
+# images
+*.svg

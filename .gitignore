@@ -107,3 +107,9 @@ dist
 
 # storybook
 storybook-static
+
+# Mac
+.DS_STORE
+
+# environment variables
+.env.local

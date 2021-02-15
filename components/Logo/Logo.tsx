@@ -13,7 +13,7 @@ export interface LogoProps {
  */
 const Logo = ({ size = 32, className, ...rest }: LogoProps) => (
   <img
-    src="/images/logo.png"
+    src="/images/logo_on_black.svg"
     alt="NFTX"
     height={size}
     width={size}

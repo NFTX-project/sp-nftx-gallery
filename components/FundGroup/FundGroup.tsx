@@ -1,9 +1,12 @@
 import Link from 'next/link';
 import React from 'react';
 import useMessage from '../../hooks/message';
+import { getFundKey } from '../../utils/getFundKey';
 import FundStatus from '../FundStatus';
 import Icon, { Icons } from '../Icon';
 import VaultCard from '../VaultCard';
+import Divider from '../Divider';
+import { Columns } from './constants';
 
 interface FundGroupProps {
   slug: string;
@@ -12,61 +15,64 @@ interface FundGroupProps {
     asset: any;
     fundToken: any;
     isD2Vault: boolean;
-    holdings?: number[];
+    holdings?: string[];
   }[];
-  cols?: number;
-  mdCols?: number;
-  lgCols?: number;
-  xlCols?: number;
-  xxlCols?: number;
+  columns?: Columns;
 }
+
+const gridCols = {
+  [Columns.LIST]:
+    'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5',
+  [Columns.FOCUS]:
+    'grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4',
+};
 
 const FundGroup = ({
   slug,
   namespace,
   funds,
-  cols = 1,
-  mdCols = 2,
-  lgCols = 2,
-  xlCols = 3,
-  xxlCols = 5,
-}: FundGroupProps) => (
-  <section className="font-sans font-bold">
-    <header className="flex items-center justify-between mb-6">
-      <h3 className="text-gray-50 font-sans text-2xl">
-        {useMessage(`funds.${namespace}.title`)}
-      </h3>
-      <Link href={`/funds/${slug}`}>
-        <a className="text-gray-50 text-lg font-sans flex items-center">
-          {useMessage(`funds.${namespace}.link`)}
-          <Icon name={Icons.CHEVRON_RIGHT} />
-        </a>
-      </Link>
-    </header>
-    <div className="bg-gradient-to-r from-yellow-500 via-green-500 to-purple-500 h-0.5 mb-8" />
-    <div
-      className={`grid grid-cols-${cols} md:grid-cols-${mdCols} lg:grid-cols-${lgCols} xl:grid-cols-${xlCols} 2xl:grid-cols-${xxlCols} gap-4`}
-    >
-      {funds.map((item) => (
-        <Link
-          key={item.fundToken.name}
-          href={`/funds/${item.fundToken.symbol.toLocaleLowerCase()}/`}
-        >
-          <a>
-            <VaultCard
-              image={`https://via.placeholder.com/160x160.png?text=${item.fundToken.symbol}`}
-              eyebrow={`${item?.holdings?.length || ''} ${item.asset.name} ${
-                item.isD2Vault ? 'D2' : ''
-              }`}
-              title={item.fundToken.name}
-              stack={true}
-              text={<FundStatus amm={true} fin={true} ver={true} />}
-            />
-          </a>
-        </Link>
-      ))}
-    </div>
-  </section>
-);
+  columns = Columns.LIST,
+}: FundGroupProps) => {
+  if (funds.length) {
+    return (
+      <section className="font-sans font-bold">
+        <header className="flex flex-col md:flex-row items-center justify-between mb-5">
+          <h3 className="text-gray-50 font-sans text-2xl">
+            {useMessage(`funds.${namespace}.title`)}
+          </h3>
+          <Link href={`/funds/${slug}`}>
+            <a className="text-gray-50 text-lg font-sans flex items-center">
+              {useMessage(`funds.${namespace}.link`)}
+              <Icon name={Icons.CHEVRON_RIGHT} />
+            </a>
+          </Link>
+        </header>
+        <Divider />
+        <div className={`grid ${gridCols[columns]} gap-4`}>
+          {funds.map((item) => (
+            <Link
+              key={item.fundToken.name}
+              href={`/funds/${getFundKey(item)}/`}
+            >
+              <a>
+                <VaultCard
+                  image={`https://via.placeholder.com/160x160.png?text=${item.fundToken.symbol}`}
+                  eyebrow={`${item?.holdings?.length || ''} ${
+                    item.asset.name
+                  } ${item.isD2Vault ? 'D2' : ''}`}
+                  title={item.fundToken.name}
+                  stack={true}
+                  text={<FundStatus amm={true} fin={true} ver={true} />}
+                />
+              </a>
+            </Link>
+          ))}
+        </div>
+      </section>
+    );
+  }
+
+  return null;
+};
 
 export default FundGroup;

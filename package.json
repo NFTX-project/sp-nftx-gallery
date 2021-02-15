@@ -2,7 +2,7 @@
   "name": "nftx-gallery",
   "version": "0.1.0",
   "private": true,
-  "author": "NTFX Gallery Squad <>",
+  "author": "NFTX Gallery Squad <>",
   "homepage": "https://github.com/NFTX-project/sp-nftx-gallery",
   "contributors": [
     "Tobias <4254570+quagliero@users.noreply.github.com>",
@@ -42,14 +42,15 @@
     "autoprefixer": "^9",
     "axios": "^0.21.1",
     "axios-hooks": "^2.3.0",
-    "next": "^10.0.0",
+    "big.js": "^6.0.3",
+    "next": "^10.0.6",
     "postcss": "^7",
     "prettier": "^2.2.1",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-filter-search": "^1.0.11",
     "react-intl": "^5.12.1",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.3",
     "typescript": "^4.1.3"
   },
   "devDependencies": {
