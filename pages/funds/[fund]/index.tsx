@@ -1,19 +1,19 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
+import Head from 'next/head';
 import useAxios from 'axios-hooks';
 import FilterResults from 'react-filter-search';
-import Search from '../../../components/Search';
-import VaultCard from '../../../components/VaultCard';
-import { VaultCardStatus } from '../../../components/VaultCard/constants';
-import Button, { Kind } from '../../../components/Button';
-import FundStatus from '../../../components/FundStatus';
-import useMessage from '../../../hooks/message';
-import Breadcrumbs from '../../../components/Breadcrumbs';
-import Link from 'next/link';
-import { Icons } from '../../../components/Icon';
-import Divider from '../../../components/Divider';
-import Head from 'next/head';
-import useFund from '../../../hooks/fund';
+import Search from '@/components/Search';
+import VaultCard from '@/components/VaultCard';
+import { VaultCardStatus } from '@/components/VaultCard/constants';
+import Button, { Kind } from '@/components/Button';
+import FundStatus from '@/components/FundStatus';
+import useMessage from '@/hooks/message';
+import Breadcrumbs from '@/components/Breadcrumbs';
+import { Icons } from '@/components/Icon';
+import Divider from '@/components/Divider';
+import useFund from '@/hooks/fund';
 
 interface FundProps {
   fundKey: string;
@@ -43,7 +43,12 @@ const FundCollection = ({
     }
   }, [asset.address, offset, limit]);
 
-  const [{ data, loading, error }, refetch] = useAxios(url);
+  const [{ data, loading, error }, refetch] = useAxios({
+    url,
+    headers: {
+      'X-API-KEY': process.env.NEXT_PUBLIC_OPENSEA_API_KEY,
+    },
+  });
 
   useEffect(() => {
     if (offset === 0) return;

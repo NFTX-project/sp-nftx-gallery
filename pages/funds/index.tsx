@@ -1,11 +1,11 @@
 import Head from 'next/head';
 import React, { useState } from 'react';
 import FilterResults from 'react-filter-search';
-import FundGroups from '../../components/FundGroups';
-import Search from '../../components/Search';
-import { useFundsContext } from '../../contexts/funds';
-import { useVaultsContext } from '../../contexts/vaults';
-import useMessage from '../../hooks/message';
+import FundGroups from '@/components/FundGroups';
+import Search from '@/components/Search';
+import { useFundsContext } from '@/contexts/funds';
+import { useVaultsContext } from '@/contexts/vaults';
+import useMessage from '@/hooks/message';
 
 const FundsPage = () => {
   const funds = useFundsContext();

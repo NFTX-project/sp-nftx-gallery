@@ -1,18 +1,16 @@
 import useAxios from 'axios-hooks';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import React, { useEffect, useMemo } from 'react';
-import Breadcrumb from '../../../components/Breadcrumbs';
-import AssetDetail, {
-  AssetDetailStatus,
-} from '../../../components/AssetDetail';
-import useFund from '../../../hooks/fund';
-import useMessage from '../../../hooks/message';
 import Link from 'next/link';
-import Icon, { Icons } from '../../../components/Icon';
-import Divider from '../../../components/Divider';
-import VaultCard from '../../../components/VaultCard';
-// import { getCategoryKey } from '../../../utils/getCategoryKey';
+import React, { useEffect, useMemo } from 'react';
+import Breadcrumb from '@/components/Breadcrumbs';
+import AssetDetail, { AssetDetailStatus } from '@/components/AssetDetail';
+import useFund from '@/hooks/fund';
+import useMessage from '@/hooks/message';
+import Icon, { Icons } from '@/components/Icon';
+import Divider from '@/components/Divider';
+import VaultCard from '@/components/VaultCard';
+// import { getCategoryKey } from '@/utils/getCategoryKey';
 
 interface AssetDetailProps {
   fund: any;
@@ -45,7 +43,12 @@ const OtherAssets = React.memo(
       .join('&token_ids=');
     const assetUrl = `https://api.opensea.io/api/v1/assets?asset_contract_address=${fund.asset.address}&token_ids=${tokenIds}&limit=5`;
 
-    const [{ data = {}, loading, error }] = useAxios(assetUrl);
+    const [{ data = {}, loading, error }] = useAxios({
+      url: assetUrl,
+      headers: {
+        'X-API-KEY': process.env.NEXT_PUBLIC_OPENSEA_API_KEY,
+      },
+    });
 
     if (loading || error) {
       return null;
@@ -96,7 +99,12 @@ const AssetView = React.memo(
     // const category = getCategoryKey(fund);
     const assetUrl = `https://api.opensea.io/api/v1/asset/${fund.asset.address}/${assetKey}`;
 
-    const [{ data = {}, loading, error }, refetch] = useAxios(assetUrl);
+    const [{ data = {}, loading, error }, refetch] = useAxios({
+      url: assetUrl,
+      headers: {
+        'X-API-KEY': process.env.NEXT_PUBLIC_OPENSEA_API_KEY,
+      },
+    });
 
     useEffect(() => {
       let retryCount = 0;

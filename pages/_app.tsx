@@ -1,13 +1,13 @@
 import React from 'react';
+import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { IntlProvider } from 'react-intl';
-import Head from 'next/head';
-import { FundsProvider } from '../contexts/funds';
-import { VaultsProvider } from '../contexts/vaults';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import * as locales from '../lang';
-import '../styles/globals.css';
+import { FundsProvider } from '@/contexts/funds';
+import { VaultsProvider } from '@/contexts/vaults';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import * as locales from '@/lang';
+import '@/styles/globals.css';
 
 interface AppProps {
   Component: React.ComponentType;

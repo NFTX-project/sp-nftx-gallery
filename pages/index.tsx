@@ -3,15 +3,15 @@ import Link from 'next/link';
 import Head from 'next/head';
 import { FormattedNumber } from 'react-intl';
 import { useFundsContext } from '../contexts/funds';
-import useMessage from '../hooks/message';
-import Button from '../components/Button';
-import { Kind } from '../components/Button/constants';
-import Icon, { Icons } from '../components/Icon';
-import FundGroup, { Columns } from '../components/FundGroup';
-import Poster from '../components/Poster';
-import { getCategoryKey } from '../utils/getCategoryKey';
-import { Colorway } from '../components/Poster/constants';
-import { getFundKey } from '../utils/getFundKey';
+import useMessage from '@/hooks/message';
+import Button from '@/components/Button';
+import { Kind } from '@/components/Button/constants';
+import Icon, { Icons } from '@/components/Icon';
+import FundGroup, { Columns } from '@/components/FundGroup';
+import Poster from '@/components/Poster';
+import { getCategoryKey } from '@/utils/getCategoryKey';
+import { Colorway } from '@/components/Poster/constants';
+import { getFundKey } from '@/utils/getFundKey';
 
 const Home = ({ funds }: { funds: any }) => {
   // Popular categories - hard coded for now
