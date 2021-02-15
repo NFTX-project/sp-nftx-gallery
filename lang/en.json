@@ -50,5 +50,10 @@
   "asset.otherHoldings.title": "Other holdings in this fund",
   "asset.otherHoldings.link": "See all",
   "widgets.price.lastSalePrice": "Last Sale Price",
-  "widgets.price.performance": "Performance"
+  "widgets.price.performance": "Performance",
+  "footer.link.twitter": "Twitter",
+  "footer.link.github": "GitHub",
+  "footer.link.blog": "Blog",
+  "footer.link.discord": "Discord",
+  "footer.link.aragon": "Aragon"
 }

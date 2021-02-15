@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import useMessage from '@/hooks/message';
 
 const Footer = () => {
   return (
@@ -18,27 +19,27 @@ const Footer = () => {
         <div className="flex pt-4 content-center justify-center h-full text-white text-bold">
           <Link href="https://twitter.com/NFTX_">
             <a target="_blank" rel="noopener noreferrer" className="">
-              Twitter
+              {useMessage('footer.link.twitter')}
             </a>
           </Link>
           <Link href="https://github.com/NFTX-project">
             <a target="_blank" rel="noopener noreferrer" className="ml-4">
-              GitHub
+              {useMessage('footer.link.github')}
             </a>
           </Link>
           <Link href="https://blog.nftx.org/">
             <a target="_blank" rel="noopener noreferrer" className="ml-4">
-              Blog
+              {useMessage('footer.link.blog')}
             </a>
           </Link>
           <Link href="https://discord.com/invite/hytQVM5ZxR">
             <a target="_blank" rel="noopener noreferrer" className="ml-4">
-              Discord
+              {useMessage('footer.link.discord')}
             </a>
           </Link>
           <Link href="https://client.aragon.org/#/nftx/">
             <a target="_blank" rel="noopener noreferrer" className="ml-4">
-              Aragon
+              {useMessage('footer.link.aragon')}
             </a>
           </Link>
         </div>
