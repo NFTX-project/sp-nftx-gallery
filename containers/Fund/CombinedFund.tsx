@@ -56,7 +56,7 @@ const CombinedFund = ({ fundKey, ...fund }: FundProps) => {
   return (
     <div className="container mx-auto px-4 py-20 text-gray-50">
       <div className="md:flex">
-        <div className="flex-none w-full md:w-3/5 lg:w-2/3 pr-24">
+        <div className="flex-none w-full md:w-3/5 lg:w-2/3 md:pr-16 lg:pr-24">
           <Breadcrumb />
           <h1 className="font-bold text-xl text-gray-50 mt-6 uppercase flex items-center">
             <img
