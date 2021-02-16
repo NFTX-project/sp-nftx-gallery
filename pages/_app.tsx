@@ -53,11 +53,6 @@ const App = ({ Component, pageProps }: AppProps) => {
           <meta name="msapplication-TileColor" content="#ffffff" />
           <meta name="theme-color" content="#ffffff" />
           <link rel="preconnect" href="//nftx.xyz" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" />
-          <link
-            href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap"
-            rel="stylesheet"
-          />
         </Head>
 
         <main className="flex-1 flex flex-col">

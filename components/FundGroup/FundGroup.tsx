@@ -60,7 +60,7 @@ const FundGroup = ({
               key={item.fundToken.name}
               href={`/funds/${getFundKey(item)}/`}
             >
-              <a>
+              <a aria-label={item.fundToken.name}>
                 <VaultCard
                   image={`https://via.placeholder.com/160x160.png?text=${item.fundToken.symbol}`}
                   eyebrow={`${item?.holdings?.length || ''} ${item.asset.name}`}
