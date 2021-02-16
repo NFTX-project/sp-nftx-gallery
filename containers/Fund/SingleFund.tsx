@@ -1,4 +1,8 @@
 import React, { useEffect, useMemo, useState } from 'react';
+import useAxios from 'axios-hooks';
+import Head from 'next/head';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import FilterResults from 'react-filter-search';
 import Breadcrumb from '@/components/Breadcrumbs';
 import Button, { Kind } from '@/components/Button';
@@ -9,11 +13,8 @@ import Search from '@/components/Search';
 import VaultCard from '@/components/VaultCard';
 import { VaultCardStatus } from '@/components/VaultCard/constants';
 import useMessage from '@/hooks/message';
-import Head from 'next/head';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
 import type { FundProps } from './types';
-import useAxios from 'axios-hooks';
+import { Asset } from '@/types/asset';
 
 const SingleFund = ({
   holdings,
@@ -34,7 +35,7 @@ const SingleFund = ({
     }
   }, [asset.address, offset, limit]);
 
-  const [{ data, loading, error }, refetch] = useAxios({
+  const [{ data, loading, error }, refetch] = useAxios<{ assets: Asset[] }>({
     url,
     headers: {
       'X-API-KEY': process.env.NEXT_PUBLIC_OPENSEA_API_KEY,
@@ -86,15 +87,22 @@ const SingleFund = ({
               <Breadcrumb />
             </div>
             <div className="flex-1 flex flex-col lg:flex-row items-baseline mb-6">
-              <h1 className="text-left text-3xl font-bold mb-6 lg:mb-0 mr-4">
+              <h1 className="text-left text-3xl font-bold mb-6 lg:mb-0 mr-4 uppercase">
                 {fundToken.name}
               </h1>
               <FundStatus amm={true} ver={true} fin={isFinalized} />
             </div>
             <dl className="flex">
+              <div className="mr-2">
+                <img
+                  src={`/images/funds/${fundToken.name}.png`}
+                  alt={`${fundToken.name} icon`}
+                  className="h-10 w-10"
+                />
+              </div>
               <div className="flex flex-col text-left">
                 <dt>{useMessage('fund.detail.supply')}</dt>
-                <dd className="font-medium text-xl">{holdings.length}</dd>
+                <dd className="font-bold text-xl">{holdings.length}</dd>
               </div>
             </dl>
           </header>
@@ -123,7 +131,7 @@ const SingleFund = ({
             <FilterResults
               value={value}
               data={collection}
-              renderResults={(results) =>
+              renderResults={(results: Asset[]) =>
                 results.map((asset) => (
                   <Link
                     key={asset.token_id}

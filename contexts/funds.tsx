@@ -5,7 +5,7 @@ import { Fund } from '@/types/fund';
 
 const FundsContext = createContext<Fund[]>([]);
 
-const getFunds = async function () {
+const getFunds = async function (): Promise<Fund[]> {
   // fetch the latest funds data, cap at 5 seconds
   try {
     const res = await fetchWithTimeout('https://nftx.xyz/funds-data', {
@@ -29,7 +29,9 @@ export const FundsProvider = ({ children }: { children: ReactChild }) => {
   const [funds, setFunds] = useState<Fund[]>([]);
   useEffect(() => {
     (async () => {
-      setFunds(await getFunds());
+      const allFunds = await getFunds();
+      const filteredFunds = allFunds.filter((f) => f.isFinalized);
+      setFunds(filteredFunds);
     })();
   }, []);
 

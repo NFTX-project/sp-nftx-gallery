@@ -57,7 +57,8 @@ const FundGroup = ({
             >
               <a aria-label={item.fundToken.name}>
                 <VaultCard
-                  image={`https://via.placeholder.com/160x160.png?text=${item.fundToken.symbol}`}
+                  image={`/images/cards/${item.fundToken.name}-140.png`}
+                  imageSrcSet={`/images/cards${item.fundToken.name}-140@2x.png 2x`}
                   eyebrow={`${item?.holdings?.length || ''} ${item.asset.name}`}
                   title={
                     <div className="mt-2 flex items-center flex-wrap">
