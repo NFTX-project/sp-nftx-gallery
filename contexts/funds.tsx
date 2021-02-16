@@ -5,10 +5,18 @@ const FundsContext = createContext([]);
 
 const getFunds = async function () {
   // fetch the latest funds data
-  const res = await fetch('https://nftx.xyz/funds-data');
-  if (res.ok) {
-    return res.json();
-  } else {
+  try {
+    const res = await fetch('https://nftx.xyz/funds-data');
+    if (res.ok) {
+      return res.json();
+    } else {
+      // if response is borked
+      // fetch the backup funds
+      const backup = await fetch('/data/funds.json');
+      return backup.json();
+    }
+  } catch (err) {
+    console.error(err);
     // if we error out or fail
     // fetch the backup funds
     const backup = await fetch('/data/funds.json');

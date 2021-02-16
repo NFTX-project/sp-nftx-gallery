@@ -5,4 +5,5 @@ export interface FundProps {
   fundToken: any;
   isFinalized: boolean;
   vaultId: number;
+  isD2Vault: boolean;
 }

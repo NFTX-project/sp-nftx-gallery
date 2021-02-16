@@ -16,7 +16,7 @@ const Search = ({
       type="text"
       value={value}
       onChange={handleChange}
-      className="font-mono h-14 w-full md:w-80 text-white font-bold lg:w-96 pr-8 pl-5 border border-1 border-gray-300 rounded z-0 focus:shadow focus:outline-none focus:border-gray-100 bg-gray-900"
+      className="font-sans h-14 w-full md:w-80 text-white font-bold lg:w-96 pr-8 pl-5 border border-1 border-gray-300 rounded z-0 focus:shadow focus:outline-none focus:border-gray-100 bg-gray-900"
       placeholder={placeholder}
     />
   </div>

@@ -55,10 +55,6 @@ const App = ({ Component, pageProps }: AppProps) => {
           <link rel="preconnect" href="//nftx.xyz" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link
-            href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100;300&display=swap"
-            rel="stylesheet"
-          />
-          <link
             href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap"
             rel="stylesheet"
           />
