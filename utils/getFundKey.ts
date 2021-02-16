@@ -6,11 +6,7 @@
  * with URLs and intl IDs
  */
 
-type Fund = {
-  fundToken: {
-    name: string;
-  };
-};
+import { Fund } from '@/types/fund';
 
 export const getFundKey = (fund: Fund) => {
   if (fund) {

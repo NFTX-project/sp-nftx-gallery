@@ -8,18 +8,13 @@ import VaultCard from '../VaultCard';
 import Divider from '../Divider';
 import { Columns } from './constants';
 import Pill from '../Pill';
+import { Fund } from '@/types/fund';
 
 interface FundGroupProps {
   namespace: string;
   slug?: string;
   showLink?: boolean;
-  funds: {
-    isFinalized: boolean;
-    asset: any;
-    fundToken: any;
-    isD2Vault: boolean;
-    holdings?: string[];
-  }[];
+  funds: Fund[];
   columns?: Columns;
 }
 

@@ -6,6 +6,7 @@ import Search from '@/components/Search';
 import { useFundsContext } from '@/contexts/funds';
 import { useVaultsContext } from '@/contexts/vaults';
 import useMessage from '@/hooks/message';
+import { Fund } from '@/types/fund';
 
 const FundsPage = () => {
   const funds = useFundsContext();
@@ -29,7 +30,7 @@ const FundsPage = () => {
         <FilterResults
           value={value}
           data={funds}
-          renderResults={(results) => (
+          renderResults={(results: Fund[]) => (
             <FundGroups funds={results} vaults={vaults} />
           )}
         />

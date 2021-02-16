@@ -2,14 +2,10 @@ import React, { useMemo } from 'react';
 import useMessage from '../../hooks/message';
 import { getCategoryKey } from '../../utils/getCategoryKey';
 import FundGroup from '../FundGroup';
+import { Fund } from '@/types/fund';
 
 interface FundGroupProps {
-  funds: {
-    asset: any;
-    fundToken: any;
-    isD2Vault: boolean;
-    vaultId: number;
-  }[];
+  funds: Fund[];
   vaults?: {
     d2VaultId: number;
     d1VaultIds: number[];

@@ -1,9 +1,5 @@
-export interface FundProps {
+import { Fund } from '@/types/fund';
+
+export interface FundProps extends Fund {
   fundKey: string;
-  holdings?: string[];
-  asset: any;
-  fundToken: any;
-  isFinalized: boolean;
-  vaultId: number;
-  isD2Vault: boolean;
 }

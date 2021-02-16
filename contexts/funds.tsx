@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { createContext, ReactChild, useContext } from 'react';
 import fetchWithTimeout from '@/utils/fetchWithTimeout';
+import { Fund } from '@/types/fund';
 
-const FundsContext = createContext([]);
+const FundsContext = createContext<Fund[]>([]);
 
 const getFunds = async function () {
   // fetch the latest funds data, cap at 5 seconds
@@ -25,7 +26,7 @@ const getFunds = async function () {
 };
 
 export const FundsProvider = ({ children }: { children: ReactChild }) => {
-  const [funds, setFunds] = useState([]);
+  const [funds, setFunds] = useState<Fund[]>([]);
   useEffect(() => {
     (async () => {
       setFunds(await getFunds());

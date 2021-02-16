@@ -6,11 +6,7 @@
  * with URLs and intl IDs
  */
 
-type Fund = {
-  asset: {
-    name: string;
-  };
-};
+import { Fund } from '@/types/fund';
 
 export const getCategoryKey = (fund: Fund) =>
   encodeURI(fund.asset.name.toLocaleLowerCase().replace(/ /g, '-'));

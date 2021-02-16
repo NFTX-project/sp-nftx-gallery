@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import { FundProps } from './types';
+import Link from 'next/link';
 import Breadcrumb from '@/components/Breadcrumbs';
-import Button, { Size } from '@/components/Button';
+import Button, { Size as ButtonSize } from '@/components/Button';
 import useMessage from '@/hooks/message';
 import useAxios from 'axios-hooks';
 import { useIntl } from 'react-intl';
-import { Icons } from '@/components/Icon';
+import Icon, { Icons, Size as IconSize } from '@/components/Icon';
 import FundStatus from '@/components/FundStatus';
 import trimAddress from '@/utils/trimAddress';
 import { useVaultsContext } from '@/contexts/vaults';
 import { useFundsContext } from '@/contexts/funds';
 import FundGroup from '@/components/FundGroup';
 import Pill from '@/components/Pill';
+import { FundProps } from './types';
 
 const CombinedFund = ({ fundKey, ...fund }: FundProps) => {
   const intl = useIntl();
@@ -87,24 +88,26 @@ const CombinedFund = ({ fundKey, ...fund }: FundProps) => {
               {useMessage('fund.combined.price', {
                 price: (
                   <span className="ml-2 font-bold text-3xl text-gray-50">
-                    {price || <span className="animate-spin">{'🦧'}</span>}
+                    {price || '🦧'}
                   </span>
                 ),
               })}
             </h4>
-            <Button
-              className="w-full"
-              size={Size.LARGE}
-              icon={Icons.EXTERNAL_LINK}
-              href={`https://app.sushiswap.fi/token/${fund.fundToken.address}`}
-              target="_blank"
-            >
-              {useMessage('fund.combined.buy', {
-                fund: (
-                  <b className="font-bold uppercase">{`$${fund.fundToken.name}`}</b>
-                ),
-              })}
-            </Button>
+            {!!price && (
+              <Button
+                className="w-full"
+                size={ButtonSize.LARGE}
+                icon={Icons.EXTERNAL_LINK}
+                href={`https://app.sushiswap.fi/token/${fund.fundToken.address}`}
+                target="_blank"
+              >
+                {useMessage('fund.combined.buy', {
+                  fund: (
+                    <b className="font-bold uppercase">{`$${fund.fundToken.name}`}</b>
+                  ),
+                })}
+              </Button>
+            )}
           </aside>
           <section className="pt-10 px-6">
             <dl className="mb-10">
@@ -113,13 +116,24 @@ const CombinedFund = ({ fundKey, ...fund }: FundProps) => {
                   {useMessage('fund.details.contractAddress')}
                 </dt>
                 <dd className="flex-1 text-green-400 overflow-hidden">
-                  <span
-                    className="lg:text-right block overflow-hidden overflow-ellipsis"
-                    title={fund.fundToken.address}
+                  <Link
+                    href={`https://etherscan.io/address/${fund.fundToken.address}`}
                   >
-                    {trimAddress(fund.fundToken.address)}
-                    <span className="hidden">{fund.fundToken.address}</span>
-                  </span>
+                    <a
+                      className="lg:text-right block overflow-hidden overflow-ellipsis hover:underline"
+                      target="_blank"
+                      rel="noreferrer nofollow"
+                      title={`View ${fund.fundToken.address} on etherscan`}
+                    >
+                      <span>{trimAddress(fund.fundToken.address)}</span>
+                      <Icon
+                        className="inline-block ml-1"
+                        size={IconSize.SMALL}
+                        name={Icons.EXTERNAL_LINK}
+                      />
+                      <span className="hidden">{fund.fundToken.address}</span>
+                    </a>
+                  </Link>
                 </dd>
               </div>
             </dl>
