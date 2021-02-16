@@ -92,10 +92,10 @@ const SingleFund = ({
               </h1>
               <FundStatus amm={true} ver={true} fin={isFinalized} />
             </div>
-            <dl className="flex">
-              <div className="mr-2">
+            <dl className="flex items-center">
+              <div className="mr-4">
                 <img
-                  src={`/images/funds/${fundToken.name}.png`}
+                  src={`/images/icons/icon-${fundToken.name}-40.png`}
                   alt={`${fundToken.name} icon`}
                   className="h-10 w-10"
                 />
@@ -161,7 +161,9 @@ const SingleFund = ({
         {holdings.length > collection.length && (
           <div className="my-8">
             <Button kind={Kind.SECONDARY} onClick={seeMore}>
-              {useMessage('fund.holdings.seeMore')}
+              {useMessage('fund.holdings.seeMore', {
+                asset: asset.name,
+              })}
             </Button>
           </div>
         )}

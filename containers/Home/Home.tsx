@@ -3,14 +3,10 @@ import Link from 'next/link';
 import Head from 'next/head';
 import { FormattedNumber } from 'react-intl';
 import useMessage from '@/hooks/message';
-import Button from '@/components/Button';
-import { Kind } from '@/components/Button/constants';
-import Icon, { Icons } from '@/components/Icon';
 import FundGroup, { Columns } from '@/components/FundGroup';
 import Poster from '@/components/Poster';
 import { getCategoryKey } from '@/utils/getCategoryKey';
 import { Colorway } from '@/components/Poster/constants';
-import { getFundKey } from '@/utils/getFundKey';
 import { Fund } from '@/types/fund';
 
 // Popular categories - hard coded for now
@@ -38,34 +34,12 @@ const categories = [
 ];
 
 const HomeContainer = ({ funds }: { funds: Fund[] }) => {
-  const feelingLucky = funds[Math.floor(Math.random() * funds.length)];
-
   return (
     <>
       <Head>
         <title>{useMessage('home.meta.title')}</title>
       </Head>
-      <div className="container mx-auto pt-12 pb-24 px-4">
-        <nav className="mb-16 mt-12 flex justify-center md:justify-end flex-wrap">
-          <Link href={`/funds/${getFundKey(feelingLucky)}`} passHref={true}>
-            <Button className="mb-2" kind={Kind.ICON}>
-              <Icon name={Icons.SPARKLE} />
-              <span className="hidden">
-                {useMessage('home.cta.feelingLucky')}
-              </span>
-            </Button>
-          </Link>
-          <Link href="https://nftx.org/" passHref={true}>
-            <Button
-              className="mb-2 ml-3"
-              kind={Kind.PRIMARY}
-              icon={Icons.EXTERNAL_LINK}
-              target="_blank"
-            >
-              {useMessage('home.cta.app')}
-            </Button>
-          </Link>
-        </nav>
+      <div className="container mx-auto pt-24 pb-18 px-4">
         <h1 className="text-4xl mb-4 font-bold text-center text-gray-50">
           <img
             src="/images/nftx_on_black.svg"
@@ -115,7 +89,7 @@ const HomeContainer = ({ funds }: { funds: Fund[] }) => {
                 if (fund) {
                   return (
                     <Link href={`/funds/${cat.key}`} key={cat.key}>
-                      <a className="w-1/2 md:flex-1 md:p-2 transition-transform duration-300 transform hover:scale-105">
+                      <a className="w-full sm:w-1/2 md:flex-1 md:p-2 transition-transform duration-300 transform hover:scale-105">
                         <div className="p-2 md:p-0">
                           <Poster
                             key={cat.key}

@@ -61,8 +61,9 @@ const CombinedFund = ({ fundKey, ...fund }: FundProps) => {
           <Breadcrumb />
           <h1 className="font-bold text-xl text-gray-50 mt-6 uppercase flex items-center">
             <img
-              src={`/images/funds/combined/${fundKey}.svg`}
-              alt=""
+              srcSet={`/images/cards/${fund.fundToken.name}-140@2x.png 2x`}
+              src={`/images/cards/${fund.fundToken.name}-140.png`}
+              alt={`${fund.fundToken.name} icon`}
               className="h-10 w-10 mr-4"
             />
             <span className="mr-2">{`$${fund.fundToken.name}`}</span>

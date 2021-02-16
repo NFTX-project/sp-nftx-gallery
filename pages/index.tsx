@@ -16,7 +16,7 @@ const HomePage = () => {
       <Head>
         <title>{useMessage('home.meta.title')}</title>
       </Head>
-      <div className="flex-1 flex items-center justify-center container mx-auto pt-12 pb-24 px-4">
+      <div className="flex-1 flex items-center justify-center container mx-auto pt-12 pb-18 px-4">
         <h1 className="text-4xl mb-4 font-bold text-center text-gray-50 animate-pulse">
           <img
             src="/images/logo_on_black.svg"

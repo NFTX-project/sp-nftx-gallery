@@ -23,7 +23,7 @@ const FundsPage = () => {
       <Head>
         <title>{useMessage('funds.meta.title')}</title>
       </Head>
-      <div className="container mx-auto pt-16 pb-24 px-4">
+      <div className="container mx-auto pt-16 pb-18 px-4">
         <div className="flex items-end justify-end max-w-full my-10">
           <Search value={value} handleChange={handleChange} />
         </div>

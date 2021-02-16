@@ -33,6 +33,8 @@ const FundGroup = ({
   showLink = true,
 }: FundGroupProps) => {
   if (funds.length) {
+    const sortedFunds = funds.sort((a) => (a.isD2Vault ? -1 : 1));
+
     return (
       <section className="font-sans font-bold">
         <header className="flex flex-col md:flex-row items-center justify-between mb-5">
@@ -50,7 +52,7 @@ const FundGroup = ({
         </header>
         <Divider />
         <div className={`grid ${gridCols[columns]} gap-4`}>
-          {funds.map((item) => (
+          {sortedFunds.map((item) => (
             <Link
               key={item.fundToken.name}
               href={`/funds/${getFundKey(item)}/`}
