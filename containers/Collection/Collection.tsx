@@ -6,6 +6,8 @@ import Breadcrumb from '@/components/Breadcrumbs';
 import AssetGroup from '@/components/AssetGroup';
 import { getFundKey } from '@/utils/getFundKey';
 import { Fund } from '@/types/fund';
+import { useVaultsContext } from '@/contexts/vaults';
+import FundGroup from '@/components/FundGroup';
 
 const CollectionContainer = ({
   funds,
@@ -19,11 +21,27 @@ const CollectionContainer = ({
   funds: Fund[];
 }) => {
   const [value, setValue] = useState('');
+  const vaults = useVaultsContext();
 
   function handleChange(event: { target: HTMLInputElement }) {
     const { value } = event.target;
     setValue(value);
   }
+
+  const getSupportingFundData = (fund: Fund) =>
+    vaults.reduce((acc, cur) => {
+      if (cur.d2VaultId === fund.vaultId) {
+        return [
+          ...acc,
+          ...cur.d1VaultIds.map((d1) => {
+            return funds.find((f) => f.vaultId === d1);
+          }),
+        ];
+      }
+      return acc;
+    }, []);
+
+  const sorted = funds.sort((f) => (f.isD2Vault ? -1 : 1));
 
   return (
     <>
@@ -53,11 +71,21 @@ const CollectionContainer = ({
         </div>
         {funds ? (
           <section className="my-12">
-            {funds.map((cf) => {
-              // @TODO some more crazy logic to go and x-reference the vault if you're D2
-              if (!cf.isD2Vault) {
+            {sorted.map((cf) => {
+              // if it's a D2 we need to grab the inner funds from the vault map
+              if (cf.isD2Vault) {
+                const supportingFunds = getSupportingFundData(cf);
                 return (
-                  <div key={cf.fundToken.name} className="mb-12">
+                  <div key={cf.fundToken.name} className="mb-24">
+                    <FundGroup
+                      funds={supportingFunds}
+                      namespace={cf.fundToken.name.toLocaleLowerCase()}
+                    />
+                  </div>
+                );
+              } else {
+                return (
+                  <div key={cf.fundToken.name} className="mb-24">
                     <AssetGroup
                       namespace="collection"
                       fundKey={getFundKey(cf)}
