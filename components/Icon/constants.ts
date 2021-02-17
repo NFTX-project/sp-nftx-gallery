@@ -4,6 +4,7 @@ export enum Icons {
   CHEVRON_RIGHT = 'chevron-right',
   EXTERNAL_LINK = 'external-link',
   SPARKLE = 'sparkle',
+  OPENSEA = 'opensea',
 }
 
 export enum Size {

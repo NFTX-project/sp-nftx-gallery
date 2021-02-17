@@ -74,12 +74,12 @@ const DefaultAssetDetail = ({
                 })}
               </Button>
               <Button
-                className="w-full xl:w-1/2 text-center"
+                className="w-full xl:w-1/2 text-center flex items-center"
                 size={Size.LARGE}
                 kind={Kind.SECONDARY}
                 href={openseaUrl}
                 target="_blank"
-                icon={Icons.EXTERNAL_LINK}
+                icon={Icons.OPENSEA}
               >
                 {useMessage('asset.detail.opensea.link')}
               </Button>
