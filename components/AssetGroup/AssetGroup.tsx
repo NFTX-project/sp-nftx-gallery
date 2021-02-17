@@ -7,19 +7,54 @@ import Divider from '@/components/Divider';
 import VaultCard from '@/components/VaultCard';
 import { Fund } from '@/types/fund';
 import { Asset } from '@/types/asset';
-import { VaultCardStatus } from '../VaultCard/constants';
 
 interface AssetGroupProps {
   fund: Fund;
   fundKey: string;
   assetKey?: string;
   namespace: string;
+  assets?: Asset[];
 }
 
-const AssetGroup = ({
+const AssetGroup = ({ fund, fundKey, assets, namespace }: AssetGroupProps) => (
+  <section className="font-sans font-bold">
+    <header className="flex flex-col md:flex-row items-baseline justify-between mb-5">
+      <h3 className="text-gray-50 font-sans text-2xl">
+        {useMessage(`asset.${namespace}.title`, {
+          fund: fund.fundToken.name,
+        })}
+      </h3>
+      <Link href={`/funds/${fundKey}`}>
+        <a className="text-gray-50 text-lg font-sans flex items-center">
+          {useMessage(`asset.${namespace}.link`)}
+          <Icon name={Icons.CHEVRON_RIGHT} />
+        </a>
+      </Link>
+    </header>
+    <Divider />
+    <div
+      className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4`}
+    >
+      {assets?.map((asset) => (
+        <Link key={asset.token_id} href={`/funds/${fundKey}/${asset.token_id}`}>
+          <a>
+            <VaultCard
+              image={asset.image_thumbnail_url}
+              eyebrow={asset.asset_contract.name}
+              title={asset.name}
+              stack={false}
+            />
+          </a>
+        </Link>
+      ))}
+    </div>
+  </section>
+);
+
+const AssetGroupLoader = ({
   fund,
-  fundKey,
   assetKey,
+  fundKey,
   namespace,
 }: AssetGroupProps) => {
   const randomEntry = useMemo(
@@ -37,54 +72,25 @@ const AssetGroup = ({
     .join('&token_ids=');
   const assetUrl = `https://api.opensea.io/api/v1/assets?asset_contract_address=${fund.asset.address}&token_ids=${tokenIds}&limit=5`;
 
-  const [{ data, loading }] = useAxios<{ assets: Asset[] }>({
+  const [{ data, loading, error }] = useAxios<{ assets: Asset[] }>({
     url: assetUrl,
     headers: {
       'X-API-KEY': process.env.NEXT_PUBLIC_OPENSEA_API_KEY,
     },
   });
 
+  if (loading || error) {
+    return null;
+  }
+
   return (
-    <section className="font-sans font-bold">
-      <header className="flex flex-col md:flex-row items-baseline justify-between mb-5">
-        <h3 className="text-gray-50 font-sans text-2xl">
-          {useMessage(`asset.${namespace}.title`, {
-            fund: fund.fundToken.name,
-          })}
-        </h3>
-        <Link href={`/funds/${fundKey}`}>
-          <a className="text-gray-50 text-lg font-sans flex items-center">
-            {useMessage(`asset.${namespace}.link`)}
-            <Icon name={Icons.CHEVRON_RIGHT} />
-          </a>
-        </Link>
-      </header>
-      <Divider />
-      <div
-        className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4`}
-      >
-        {loading
-          ? [...Array(5)].map((x, i) => (
-              <VaultCard key={i} status={VaultCardStatus.PENDING} />
-            ))
-          : data?.assets?.map((asset) => (
-              <Link
-                key={asset.token_id}
-                href={`/funds/${fundKey}/${asset.token_id}`}
-              >
-                <a>
-                  <VaultCard
-                    image={asset.image_thumbnail_url}
-                    eyebrow={asset.asset_contract.name}
-                    title={asset.name}
-                    stack={false}
-                  />
-                </a>
-              </Link>
-            ))}
-      </div>
-    </section>
+    <AssetGroup
+      fund={fund}
+      assets={data.assets}
+      fundKey={fundKey}
+      namespace={namespace}
+    />
   );
 };
 
-export default AssetGroup;
+export default AssetGroupLoader;

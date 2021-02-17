@@ -40,7 +40,7 @@ const Breadcrumbs = () => {
 
         return (
           <div key={`${i}_${p}`} className="mr-1 flex items-center">
-            <span className="mr-1">
+            <span className="mr-1 text-gray-400">
               <Icon name={Icons.CHEVRON_RIGHT} size={Size.SMALL} />
             </span>
             <Link href={`/${href}/`}>

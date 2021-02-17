@@ -9,6 +9,7 @@ import useMessage from '@/hooks/message';
 import collections from '@/constants/collections';
 import { Fund } from '@/types/fund';
 import { getCategoryKey } from '@/utils/getCategoryKey';
+import Breadcrumb from '@/components/Breadcrumbs';
 
 const CollectionsPage = () => {
   const funds = useFundsContext();
@@ -39,6 +40,7 @@ const CollectionsPage = () => {
         <title>{useMessage('funds.meta.title')}</title>
       </Head>
       <div className="container mx-auto pt-16 pb-18 px-4">
+        <Breadcrumb />
         <div className="flex items-end justify-end max-w-full my-10">
           <Search value={value} handleChange={handleChange} />
         </div>
@@ -46,7 +48,7 @@ const CollectionsPage = () => {
           value={value}
           data={collectionFunds}
           renderResults={(results: Fund[]) => (
-            <FundGroups funds={results} vaults={vaults} />
+            <FundGroups funds={results} vaults={vaults} showLink={false} />
           )}
         />
       </div>

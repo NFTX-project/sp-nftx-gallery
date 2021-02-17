@@ -79,6 +79,7 @@ const CollectionContainer = ({
                   <div key={cf.fundToken.name} className="mb-24">
                     <FundGroup
                       funds={supportingFunds}
+                      showLink={false}
                       namespace={cf.fundToken.name.toLocaleLowerCase()}
                     />
                   </div>
