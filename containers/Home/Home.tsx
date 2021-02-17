@@ -6,32 +6,8 @@ import useMessage from '@/hooks/message';
 import FundGroup, { Columns } from '@/components/FundGroup';
 import Poster from '@/components/Poster';
 import { getCategoryKey } from '@/utils/getCategoryKey';
-import { Colorway } from '@/components/Poster/constants';
+import collections from '@/constants/collections';
 import { Fund } from '@/types/fund';
-
-// Popular categories - hard coded for now
-const categories = [
-  {
-    key: 'hashmasks',
-    image: 'hashmasks.jpg',
-    colorway: Colorway.LIGHT,
-  },
-  {
-    key: 'wrapped-cryptopunks',
-    image: 'wrapped-cryptopunks.png',
-    colorway: Colorway.LIGHT,
-  },
-  {
-    key: 'axie',
-    image: 'axie.png',
-    colorway: Colorway.LIGHT,
-  },
-  {
-    key: 'cryptokitties',
-    image: 'cryptokitties.png',
-    colorway: Colorway.DARK,
-  },
-];
 
 const HomeContainer = ({ funds }: { funds: Fund[] }) => {
   return (
@@ -79,25 +55,26 @@ const HomeContainer = ({ funds }: { funds: Fund[] }) => {
             {useMessage(`home.categories.title`)}
           </h3>
           <section className="flex flex-wrap -m-2">
-            {categories.map((cat) => {
+            {collections.map((cat) => {
               if (funds.length) {
-                const fund = funds.find((f) => getCategoryKey(f) === cat.key);
+                const fund = funds.find((f) =>
+                  cat.items.includes(getCategoryKey(f))
+                );
                 const matchingAssets = funds.filter(
                   (f) => f.asset.address === fund.asset.address
                 );
 
                 if (fund) {
                   return (
-                    <Link href={`/funds/${cat.key}`} key={cat.key}>
+                    <Link href={`/collections/${cat.href}`} key={cat.href}>
                       <a className="w-full sm:w-1/2 md:flex-1 md:p-2 transition-transform duration-300 transform hover:scale-105">
                         <div className="p-2 md:p-0">
                           <Poster
-                            key={cat.key}
-                            title={useMessage(`funds.${cat.key}.title`)}
+                            title={useMessage(`funds.${cat.namespace}.title`)}
                             text={useMessage('home.categories.poster.text', {
                               count: matchingAssets.length,
                             })}
-                            image={`/images/posters/${cat.image}`}
+                            image={cat.image}
                             colorway={cat.colorway}
                           />
                         </div>
@@ -120,14 +97,14 @@ const HomeContainer = ({ funds }: { funds: Fund[] }) => {
         </div>
 
         <div className="mb-24">
-          {funds.length && (
+          {funds.length ? (
             <FundGroup
               namespace="all"
               slug=""
               funds={funds}
               columns={Columns.FOCUS}
             />
-          )}
+          ) : null}
         </div>
       </div>
     </>

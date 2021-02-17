@@ -23,6 +23,7 @@
       "@/lang": ["lang"],
       "@/styles/*": ["styles/*"],
       "@/types/*": ["types/*"],
+      "@/constants/*": ["constants/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

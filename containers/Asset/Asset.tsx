@@ -62,20 +62,25 @@ const AssetContainer = React.memo(
               loading ? AssetDetailStatus.PENDING : AssetDetailStatus.DEFAULT
             }
             eyebrow={fund.fundToken.name}
-            title={data.name}
-            text={data.description}
+            title={data?.name}
+            text={data?.description}
             background={
-              data.background_color ? `#${data.background_color}` : null
+              data?.background_color ? `#${data.background_color}` : null
             }
-            image={data.image_original_url}
-            assetType={data.asset_contract?.name}
+            image={data?.image_original_url}
+            assetType={data?.asset_contract?.name}
             fundName={fund.fundToken?.name}
             lastSalePrice={data?.last_sale?.total_price}
             performance={Infinity}
             vaultId={fund.vaultId}
           />
           <section className="mt-24">
-            <AssetGroup fundKey={fundKey} assetKey={assetKey} fund={fund} />
+            <AssetGroup
+              namespace="otherHoldings"
+              fundKey={fundKey}
+              assetKey={assetKey}
+              fund={fund}
+            />
           </section>
         </div>
       </>

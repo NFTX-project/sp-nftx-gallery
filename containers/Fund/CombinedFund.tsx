@@ -94,7 +94,7 @@ const CombinedFund = ({ fundKey, ...fund }: FundProps) => {
                 ),
               })}
             </h4>
-            {!!price && (
+            {price ? (
               <Button
                 className="w-full"
                 size={ButtonSize.LARGE}
@@ -108,7 +108,7 @@ const CombinedFund = ({ fundKey, ...fund }: FundProps) => {
                   ),
                 })}
               </Button>
-            )}
+            ) : null}
           </aside>
           <section className="pt-10 px-6">
             <dl className="mb-10">

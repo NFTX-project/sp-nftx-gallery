@@ -11,7 +11,7 @@ const AssetPage = () => {
   if (fund === false) {
     return (
       <div className="container text-center mx-auto px-4 py-20 text-gray-50">
-        <p>{useMessage('fund.notfound')}</p>
+        {/* <p>{useMessage('fund.notfound')}</p> */}
       </div>
     );
   }
