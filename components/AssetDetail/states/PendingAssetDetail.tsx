@@ -4,6 +4,9 @@ import DefaultAssetDetail from './DefaultAssetDetail';
 const PendingAssetDetail = () => (
   <DefaultAssetDetail
     className="animate-pulse"
+    fundSymbol={null}
+    fundAddress={null}
+    openseaUrl={null}
     assetType={null}
     fundName={null}
     vaultId={null}

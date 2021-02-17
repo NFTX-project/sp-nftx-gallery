@@ -6,9 +6,10 @@ import AssetDetail, { AssetDetailStatus } from '@/components/AssetDetail';
 import AssetGroup from '@/components/AssetGroup';
 import useMessage from '@/hooks/message';
 import { Asset } from '@/types/asset';
+import { Fund } from '@/types/fund';
 
 interface AssetDetailProps {
-  fund: any;
+  fund: Fund;
   fundKey: string;
   assetKey: string;
 }
@@ -70,7 +71,9 @@ const AssetContainer = React.memo(
             image={data?.image_original_url}
             assetType={data?.asset_contract?.name}
             openseaUrl={data?.permalink}
-            fundName={fund.fundToken?.name}
+            fundName={fund.fundToken.name}
+            fundAddress={fund.fundToken.address}
+            fundSymbol={fund.fundToken.symbol}
             lastSalePrice={data?.last_sale?.total_price}
             performance={null}
             vaultId={fund.vaultId}

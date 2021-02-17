@@ -16,7 +16,7 @@ const DefaultAssetDetail = ({
   placeholder,
   lastSalePrice,
   performance,
-  fundName,
+  fundSymbol,
   assetType,
   vaultId,
   openseaUrl,
@@ -69,8 +69,13 @@ const DefaultAssetDetail = ({
                 target="_blank"
                 icon={Icons.EXTERNAL_LINK}
               >
-                {useMessage('asset.detail.invest', {
-                  fund: fundName,
+                {useMessage('asset.detail.mintRedeem', {
+                  token: (
+                    <span className="uppercase">
+                      {'$'}
+                      {fundSymbol}
+                    </span>
+                  ),
                 })}
               </Button>
               <Button

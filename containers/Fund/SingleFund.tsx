@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import FilterResults from 'react-filter-search';
 import Breadcrumb from '@/components/Breadcrumbs';
-import Button, { Kind } from '@/components/Button';
+import Button, { Kind, Size } from '@/components/Button';
 import Divider from '@/components/Divider';
 import FundStatus from '@/components/FundStatus';
 import { Icons } from '@/components/Icon';
@@ -84,10 +84,10 @@ const SingleFund = ({
           })}
         </title>
       </Head>
-      <div className="container mx-auto text-center px-4 text-gray-50">
-        <div className="flex flex-col md:flex-row mb-8">
-          <header className="flex-1">
-            <div className="mt-16 mb-4">
+      <div className="container mx-auto text-center px-4 text-gray-50 mt-16">
+        <div className="flex flex-col sm:flex-row mb-8">
+          <header className="flex-1 sm:pr-8">
+            <div className="mb-4">
               <Breadcrumb />
             </div>
             <div className="flex-1 flex flex-col lg:flex-row items-baseline mb-6">
@@ -110,15 +110,40 @@ const SingleFund = ({
               </div>
             </dl>
           </header>
-          <aside className="text-right flex flex-col justify-end">
-            <div className="mb-4">
+          <aside className="text-right flex flex-col justify-end items-end">
+            <div className="mt-4 mb-4 w-full md:w-auto">
               <Button
+                className="mb-4 w-full md:w-auto"
+                size={Size.SMALL}
+                kind={Kind.SECONDARY}
                 href={`https://nftx.org/#/fund/${vaultId}`}
-                icon={Icons.EXTERNAL_LINK}
                 target="_blank"
+                icon={Icons.EXTERNAL_LINK}
+              >
+                {useMessage('fund.cta.mintRedeem', {
+                  token: (
+                    <span className="uppercase">
+                      {'$'}
+                      {fundToken.symbol}
+                    </span>
+                  ),
+                })}
+              </Button>
+              <div />
+              <Button
+                className="w-full md:w-auto"
+                kind={Kind.PRIMARY}
+                href={`https://app.sushiswap.fi/token/${fundToken.address}`}
+                target="_blank"
+                icon={Icons.EXTERNAL_LINK}
               >
                 {useMessage('fund.cta.invest', {
-                  token: fundToken.symbol,
+                  fund: (
+                    <span className="uppercase">
+                      {'$'}
+                      {fundToken.symbol}
+                    </span>
+                  ),
                 })}
               </Button>
             </div>
