@@ -13,6 +13,9 @@ const Breadcrumbs = () => {
 
   return (
     <nav className="flex flex-wrap items-center uppercase text-sm">
+      <Link href="/">
+        <a className="text-gray-400">{useMessage('breadcrumb.home')}</a>
+      </Link>
       {path.map((p, i) => {
         // join the URL together based on where you are
         const href = path.slice(0, i + 1).join('/');
@@ -27,21 +30,23 @@ const Breadcrumbs = () => {
           message = useMessage('breadcrumb.asset', {
             asset: p,
           });
+        } else if (routerPath[i] === '[collection]') {
+          message = useMessage('breadcrumb.collection', {
+            collection: p,
+          });
         } else {
           message = useMessage(`breadcrumb.${p}`);
         }
 
         return (
           <div key={`${i}_${p}`} className="mr-1 flex items-center">
-            {i !== 0 && (
-              <span className="mr-1">
-                <Icon name={Icons.CHEVRON_RIGHT} size={Size.SMALL} />
-              </span>
-            )}
+            <span className="mr-1 text-gray-400">
+              <Icon name={Icons.CHEVRON_RIGHT} size={Size.SMALL} />
+            </span>
             <Link href={`/${href}/`}>
               <a
                 className={
-                  i + 1 === path.length ? 'text-gray-50' : 'text-gray-300'
+                  i + 1 === path.length ? 'text-gray-50' : 'text-gray-400'
                 }
               >
                 {message}

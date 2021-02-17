@@ -15,6 +15,14 @@ export interface AssetDetailProps {
    */
   fundName: string;
   /**
+   * The ticker of the holding fund
+   */
+  fundSymbol: string;
+  /**
+   * The address of the holding fund
+   */
+  fundAddress: string;
+  /**
    * The id of the vault currently viewed on
    */
   vaultId: number;
@@ -58,4 +66,8 @@ export interface AssetDetailProps {
    * The percentage performance of the asset
    */
   performance: number;
+  /**
+   * The URL for the item on opensea
+   */
+  openseaUrl: string;
 }

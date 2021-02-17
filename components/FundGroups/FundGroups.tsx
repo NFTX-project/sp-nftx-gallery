@@ -2,18 +2,15 @@ import React, { useMemo } from 'react';
 import useMessage from '../../hooks/message';
 import { getCategoryKey } from '../../utils/getCategoryKey';
 import FundGroup from '../FundGroup';
+import { Fund } from '@/types/fund';
 
 interface FundGroupProps {
-  funds: {
-    asset: any;
-    fundToken: any;
-    isD2Vault: boolean;
-    vaultId: number;
-  }[];
+  funds: Fund[];
   vaults?: {
     d2VaultId: number;
     d1VaultIds: number[];
   }[];
+  showLink?: boolean;
 }
 
 /**
@@ -71,7 +68,7 @@ const groupFunds = (
   return groups;
 };
 
-const FundGroups = ({ funds, vaults }: FundGroupProps) => {
+const FundGroups = ({ funds, vaults, showLink }: FundGroupProps) => {
   const grouped = useMemo(() => {
     return Object.entries(groupFunds(funds, vaults));
   }, [funds]);
@@ -88,7 +85,12 @@ const FundGroups = ({ funds, vaults }: FundGroupProps) => {
     <>
       {grouped.map(([key, fund]: [string, any]) => (
         <div key={key} className="mb-24">
-          <FundGroup slug={fund.key} namespace={fund.key} funds={fund.funds} />
+          <FundGroup
+            showLink={showLink}
+            slug={fund.key}
+            namespace={fund.key}
+            funds={fund.funds}
+          />
         </div>
       ))}
     </>

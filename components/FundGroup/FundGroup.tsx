@@ -7,16 +7,14 @@ import Icon, { Icons } from '../Icon';
 import VaultCard from '../VaultCard';
 import Divider from '../Divider';
 import { Columns } from './constants';
+import Pill from '../Pill';
+import { Fund } from '@/types/fund';
 
 interface FundGroupProps {
-  slug: string;
   namespace: string;
-  funds: {
-    asset: any;
-    fundToken: any;
-    isD2Vault: boolean;
-    holdings?: string[];
-  }[];
+  slug?: string;
+  showLink?: boolean;
+  funds: Fund[];
   columns?: Columns;
 }
 
@@ -32,41 +30,67 @@ const FundGroup = ({
   namespace,
   funds,
   columns = Columns.LIST,
+  showLink = true,
 }: FundGroupProps) => {
   if (funds.length) {
+    const sortedFunds = funds.sort((a) => (a.isD2Vault ? -1 : 1));
+
     return (
       <section className="font-sans font-bold">
         <header className="flex flex-col md:flex-row items-center justify-between mb-5">
           <h3 className="text-gray-50 font-sans text-2xl">
             {useMessage(`funds.${namespace}.title`)}
           </h3>
-          <Link href={`/funds/${slug}`}>
-            <a className="text-gray-50 text-lg font-sans flex items-center">
-              {useMessage(`funds.${namespace}.link`)}
-              <Icon name={Icons.CHEVRON_RIGHT} />
-            </a>
-          </Link>
+          {showLink && (
+            <Link href={`/funds/${slug}`}>
+              <a className="text-gray-50 text-lg font-sans flex items-center">
+                {useMessage(`funds.${namespace}.link`)}
+                <Icon name={Icons.CHEVRON_RIGHT} />
+              </a>
+            </Link>
+          )}
         </header>
         <Divider />
         <div className={`grid ${gridCols[columns]} gap-4`}>
-          {funds.map((item) => (
-            <Link
-              key={item.fundToken.name}
-              href={`/funds/${getFundKey(item)}/`}
-            >
-              <a>
-                <VaultCard
-                  image={`https://via.placeholder.com/160x160.png?text=${item.fundToken.symbol}`}
-                  eyebrow={`${item?.holdings?.length || ''} ${
-                    item.asset.name
-                  } ${item.isD2Vault ? 'D2' : ''}`}
-                  title={item.fundToken.name}
-                  stack={true}
-                  text={<FundStatus amm={true} fin={true} ver={true} />}
-                />
-              </a>
-            </Link>
-          ))}
+          {sortedFunds.map((item) => {
+            const fundKey = getFundKey(item);
+            return (
+              <Link
+                key={item.fundToken.name}
+                href={`/funds/${getFundKey(item)}/`}
+              >
+                <a aria-label={item.fundToken.name}>
+                  <VaultCard
+                    image={`/images/cards/${fundKey}-140.png`}
+                    imageSrcSet={`/images/cards/${fundKey}-140@2x.png 2x`}
+                    eyebrow={`${item?.holdings?.length || ''} ${
+                      item.asset.name
+                    }`}
+                    title={
+                      <div className="mt-2 flex items-center flex-wrap">
+                        <span className="inline-block mr-2">
+                          {item.fundToken.name}
+                        </span>
+                        <Pill
+                          text={useMessage(
+                            item.isD2Vault ? 'pill.combined' : 'pill.single'
+                          )}
+                        />
+                      </div>
+                    }
+                    stack={true}
+                    text={
+                      <FundStatus
+                        amm={true}
+                        fin={item.isFinalized}
+                        ver={true}
+                      />
+                    }
+                  />
+                </a>
+              </Link>
+            );
+          })}
         </div>
       </section>
     );

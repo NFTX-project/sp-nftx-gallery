@@ -28,51 +28,46 @@ const App = ({ Component, pageProps }: AppProps) => {
       defaultLocale={defaultLocale}
       messages={locales[locale] || locales[defaultLocale]}
     >
-      <div className="bg-gray-900 min-h-screen flex flex-col">
-        <Header />
-        <Head>
-          <link
-            rel="apple-touch-icon"
-            sizes="180x180"
-            href="/apple-touch-icon.png"
-          />
-          <link
-            rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href="/favicon-32x32.png"
-          />
-          <link
-            rel="icon"
-            type="image/png"
-            sizes="16x16"
-            href="/favicon-16x16.png"
-          />
-          <link rel="manifest" href="/site.webmanifest" />
-          <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#fb287f" />
-          <meta name="msapplication-TileColor" content="#ffffff" />
-          <meta name="theme-color" content="#ffffff" />
-          <link rel="preconnect" href="//nftx.xyz" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" />
-          <link
-            href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100;300&display=swap"
-            rel="stylesheet"
-          />
-          <link
-            href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap"
-            rel="stylesheet"
-          />
-        </Head>
+      <FundsProvider>
+        <VaultsProvider>
+          <div className="bg-gray-900 min-h-screen flex flex-col">
+            <Header />
+            <Head>
+              <link
+                rel="apple-touch-icon"
+                sizes="180x180"
+                href="/apple-touch-icon.png"
+              />
+              <link
+                rel="icon"
+                type="image/png"
+                sizes="32x32"
+                href="/favicon-32x32.png"
+              />
+              <link
+                rel="icon"
+                type="image/png"
+                sizes="16x16"
+                href="/favicon-16x16.png"
+              />
+              <link rel="manifest" href="/site.webmanifest" />
+              <link
+                rel="mask-icon"
+                href="/safari-pinned-tab.svg"
+                color="#fb287f"
+              />
+              <meta name="msapplication-TileColor" content="#ffffff" />
+              <meta name="theme-color" content="#ffffff" />
+              <link rel="preconnect" href="//nftx.xyz" />
+            </Head>
 
-        <main className="flex-1 flex flex-col">
-          <FundsProvider>
-            <VaultsProvider>
+            <main className="flex-1 flex flex-col">
               <Component {...props} />
-            </VaultsProvider>
-          </FundsProvider>
-        </main>
-        <Footer />
-      </div>
+            </main>
+            <Footer />
+          </div>
+        </VaultsProvider>
+      </FundsProvider>
     </IntlProvider>
   );
 };
