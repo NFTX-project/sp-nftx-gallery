@@ -87,12 +87,13 @@ const CollectionContainer = ({
               // if it's a D2 we need to grab the inner funds from the vault map
               if (cf.isD2Vault) {
                 const supportingFunds = getSupportingFundData(cf);
+                const key = getFundKey(cf);
                 return (
                   <div key={cf.fundToken.name} className="mb-24">
                     <FundGroup
                       funds={supportingFunds}
-                      showLink={false}
-                      namespace={cf.fundToken.name.toLocaleLowerCase()}
+                      slug={key}
+                      namespace={key}
                     />
                   </div>
                 );
