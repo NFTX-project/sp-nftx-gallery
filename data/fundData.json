@@ -2,6 +2,8 @@
     {
         "vaultid": 0,
         "fundname": "PUNK-BASIC",
+        "fundimageicon": "../images/fund/punk-basic-icon.png",
+        "fundimagefeature": "../images/fund/punk-basic-feature.png",
         "funddescription": "Punk-Basic is a single fund token, which is 1:1 backed by any CryptoPunks NFT.Because\n this fund allows any CryptoPunk to be deposited as collateral, it acts \nas a floor price tracker for the entire NFT category.",
         "fundbuyurl": "https://sushiswap.vision/pair/0x0267bd35789a5ce247fff6cb1d597597e003cc43",
         "fundbuyopenseaurl": "https://opensea.io/assets/cryptopunks",
