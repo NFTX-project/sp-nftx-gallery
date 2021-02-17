@@ -52,36 +52,45 @@ const FundGroup = ({
         </header>
         <Divider />
         <div className={`grid ${gridCols[columns]} gap-4`}>
-          {sortedFunds.map((item) => (
-            <Link
-              key={item.fundToken.name}
-              href={`/funds/${getFundKey(item)}/`}
-            >
-              <a aria-label={item.fundToken.name}>
-                <VaultCard
-                  image={`/images/cards/${item.fundToken.name}-140.png`}
-                  imageSrcSet={`/images/cards${item.fundToken.name}-140@2x.png 2x`}
-                  eyebrow={`${item?.holdings?.length || ''} ${item.asset.name}`}
-                  title={
-                    <div className="mt-2 flex items-center flex-wrap">
-                      <span className="inline-block mr-2">
-                        {item.fundToken.name}
-                      </span>
-                      <Pill
-                        text={useMessage(
-                          item.isD2Vault ? 'pill.combined' : 'pill.single'
-                        )}
+          {sortedFunds.map((item) => {
+            const fundKey = getFundKey(item);
+            return (
+              <Link
+                key={item.fundToken.name}
+                href={`/funds/${getFundKey(item)}/`}
+              >
+                <a aria-label={item.fundToken.name}>
+                  <VaultCard
+                    image={`/images/cards/${fundKey}-140.png`}
+                    imageSrcSet={`/images/cards${fundKey}-140@2x.png 2x`}
+                    eyebrow={`${item?.holdings?.length || ''} ${
+                      item.asset.name
+                    }`}
+                    title={
+                      <div className="mt-2 flex items-center flex-wrap">
+                        <span className="inline-block mr-2">
+                          {item.fundToken.name}
+                        </span>
+                        <Pill
+                          text={useMessage(
+                            item.isD2Vault ? 'pill.combined' : 'pill.single'
+                          )}
+                        />
+                      </div>
+                    }
+                    stack={true}
+                    text={
+                      <FundStatus
+                        amm={true}
+                        fin={item.isFinalized}
+                        ver={true}
                       />
-                    </div>
-                  }
-                  stack={true}
-                  text={
-                    <FundStatus amm={true} fin={item.isFinalized} ver={true} />
-                  }
-                />
-              </a>
-            </Link>
-          ))}
+                    }
+                  />
+                </a>
+              </Link>
+            );
+          })}
         </div>
       </section>
     );

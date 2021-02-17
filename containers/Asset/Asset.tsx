@@ -69,9 +69,10 @@ const AssetContainer = React.memo(
             }
             image={data?.image_original_url}
             assetType={data?.asset_contract?.name}
+            openseaUrl={data?.permalink}
             fundName={fund.fundToken?.name}
             lastSalePrice={data?.last_sale?.total_price}
-            performance={Infinity}
+            performance={null}
             vaultId={fund.vaultId}
           />
           <section className="mt-24">

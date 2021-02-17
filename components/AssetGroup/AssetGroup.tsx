@@ -7,6 +7,7 @@ import Divider from '@/components/Divider';
 import VaultCard from '@/components/VaultCard';
 import { Fund } from '@/types/fund';
 import { Asset } from '@/types/asset';
+import { VaultCardStatus, VaultCardType } from '../VaultCard/constants';
 
 interface AssetGroupProps {
   fund: Fund;
@@ -14,9 +15,21 @@ interface AssetGroupProps {
   assetKey?: string;
   namespace: string;
   assets?: Asset[];
+  max?: number;
 }
 
-const AssetGroup = ({ fund, fundKey, assets, namespace }: AssetGroupProps) => (
+const AssetGroup = ({
+  fund,
+  fundKey,
+  assets,
+  namespace,
+  loading,
+  error,
+  max,
+}: AssetGroupProps & {
+  loading: boolean;
+  error: Error;
+}) => (
   <section className="font-sans font-bold">
     <header className="flex flex-col md:flex-row items-baseline justify-between mb-5">
       <h3 className="text-gray-50 font-sans text-2xl">
@@ -35,18 +48,22 @@ const AssetGroup = ({ fund, fundKey, assets, namespace }: AssetGroupProps) => (
     <div
       className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4`}
     >
-      {assets?.map((asset) => (
-        <Link key={asset.token_id} href={`/funds/${fundKey}/${asset.token_id}`}>
-          <a>
-            <VaultCard
-              image={asset.image_thumbnail_url}
-              eyebrow={asset.asset_contract.name}
-              title={asset.name}
-              stack={false}
-            />
-          </a>
-        </Link>
-      ))}
+      {loading &&
+        [...Array(max)].map((el, i) => (
+          <VaultCard key={i} status={VaultCardStatus.PENDING} />
+        ))}
+      {assets && !error
+        ? assets?.map((asset) => (
+            <Link
+              key={asset.token_id}
+              href={`/funds/${fundKey}/${asset.token_id}`}
+            >
+              <a>
+                <VaultCard type={VaultCardType.ASSET} asset={asset} />
+              </a>
+            </Link>
+          ))
+        : null}
     </div>
   </section>
 );
@@ -56,21 +73,22 @@ const AssetGroupLoader = ({
   assetKey,
   fundKey,
   namespace,
+  max = 5,
 }: AssetGroupProps) => {
   const randomEntry = useMemo(
     () =>
       Math.floor(
         Math.random() *
-          (fund.holdings.length > 5 ? fund.holdings.length - 5 : 0)
+          (fund.holdings.length > max ? fund.holdings.length - max : 0)
       ),
     [fund]
   );
 
   const tokenIds = fund.holdings
     .filter((h) => h !== assetKey)
-    .splice(randomEntry, 5)
+    .splice(randomEntry, max)
     .join('&token_ids=');
-  const assetUrl = `https://api.opensea.io/api/v1/assets?asset_contract_address=${fund.asset.address}&token_ids=${tokenIds}&limit=5`;
+  const assetUrl = `https://api.opensea.io/api/v1/assets?asset_contract_address=${fund.asset.address}&token_ids=${tokenIds}&limit=${max}`;
 
   const [{ data, loading, error }] = useAxios<{ assets: Asset[] }>({
     url: assetUrl,
@@ -79,16 +97,15 @@ const AssetGroupLoader = ({
     },
   });
 
-  if (loading || error) {
-    return null;
-  }
-
   return (
     <AssetGroup
       fund={fund}
-      assets={data.assets}
+      assets={data?.assets}
       fundKey={fundKey}
+      max={max}
       namespace={namespace}
+      loading={loading}
+      error={error}
     />
   );
 };

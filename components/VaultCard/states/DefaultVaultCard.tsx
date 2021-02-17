@@ -13,7 +13,7 @@ const DefaultVaultCard = ({
   placeholder,
 }: VaultCardProps) => {
   return (
-    <div className={className}>
+    <div className={className || `h-full`}>
       <article className="h-full bg-gray-800 text-gray-50 border-2 border-gray-500 border-opacity-30 text-left break-words">
         <div
           className="py-6 px-3 md:p-6 xl:p-9 flex justify-center items-center bg-gray-700"
@@ -37,7 +37,7 @@ const DefaultVaultCard = ({
             <h4 className="uppercase text-sm mb-1 text-gray-50">{eyebrow}</h4>
           )}
           <h3 className="font-bold text-xl text-gray-50">{title}</h3>
-          <div className="uppercase text-xs text-gray-400 mt-2">{text}</div>
+          <div className="uppercase text-xs text-gray-300 mt-2">{text}</div>
         </div>
       </article>
       {stack && (

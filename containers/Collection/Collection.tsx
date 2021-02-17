@@ -8,6 +8,8 @@ import { getFundKey } from '@/utils/getFundKey';
 import { Fund } from '@/types/fund';
 import { useVaultsContext } from '@/contexts/vaults';
 import FundGroup from '@/components/FundGroup';
+import useAxios from 'axios-hooks';
+import { Asset } from '@/types/asset';
 
 const CollectionContainer = ({
   funds,
@@ -17,11 +19,21 @@ const CollectionContainer = ({
     items: string[];
     image: string;
     namespace: string;
+    contract: string;
   };
   funds: Fund[];
 }) => {
   const [value, setValue] = useState('');
   const vaults = useVaultsContext();
+
+  const assetUrl = `https://api.opensea.io/api/v1/asset_contract/${collection.contract}`;
+
+  const [{ data }] = useAxios<Asset>({
+    url: assetUrl,
+    headers: {
+      'X-API-KEY': process.env.NEXT_PUBLIC_OPENSEA_API_KEY,
+    },
+  });
 
   function handleChange(event: { target: HTMLInputElement }) {
     const { value } = event.target;
@@ -47,7 +59,9 @@ const CollectionContainer = ({
     <>
       <Head>
         <title>
-          {useMessage(`collection.${collection.namespace}.meta.title`)}
+          {useMessage(`collection.meta.title`, {
+            collection: data?.name,
+          })}
         </title>
       </Head>
       <div className="container mx-auto px-4 text-gray-50">
@@ -58,11 +72,9 @@ const CollectionContainer = ({
             </div>
             <div className="flex-1 mb-6">
               <h1 className="text-left text-3xl font-bold lg:mb-0 mr-4 uppercase">
-                {useMessage(`collection.${collection.namespace}.title`)}
+                {data?.name}
               </h1>
-              <p className="mt-6">
-                {useMessage(`collection.${collection.namespace}.text`)}
-              </p>
+              <p className="mt-6">{data?.description}</p>
             </div>
           </header>
           <aside className="w-full md:w-1/2 text-right flex flex-col items-end justify-end">
@@ -91,6 +103,7 @@ const CollectionContainer = ({
                       namespace="collection"
                       fundKey={getFundKey(cf)}
                       fund={cf}
+                      max={10}
                     />
                   </div>
                 );

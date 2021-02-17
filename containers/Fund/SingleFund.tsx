@@ -11,7 +11,10 @@ import FundStatus from '@/components/FundStatus';
 import { Icons } from '@/components/Icon';
 import Search from '@/components/Search';
 import VaultCard from '@/components/VaultCard';
-import { VaultCardStatus } from '@/components/VaultCard/constants';
+import {
+  VaultCardStatus,
+  VaultCardType,
+} from '@/components/VaultCard/constants';
 import useMessage from '@/hooks/message';
 import type { FundProps } from './types';
 import { Asset } from '@/types/asset';
@@ -22,6 +25,7 @@ const SingleFund = ({
   fundToken,
   isFinalized,
   vaultId,
+  fundKey,
 }: FundProps) => {
   const { asPath } = useRouter();
   const [limit, setLimit] = useState(25);
@@ -53,15 +57,15 @@ const SingleFund = ({
     setCollection([...collection, ...data.assets]);
   }, [data]);
 
-  function handleChange(event: { target: HTMLInputElement }) {
+  const handleChange = (event: { target: HTMLInputElement }) => {
     const { value } = event.target;
     setValue(value);
-  }
+  };
 
-  function seeMore() {
+  const seeMore = () => {
     setOffset(limit);
     setLimit((limit) => limit + 25);
-  }
+  };
 
   if (error) {
     return (
@@ -95,7 +99,7 @@ const SingleFund = ({
             <dl className="flex items-center">
               <div className="mr-4">
                 <img
-                  src={`/images/icons/icon-${fundToken.name}-40.png`}
+                  src={`/images/icons/icon-${fundKey}-40.png`}
                   alt={`${fundToken.name} icon`}
                   className="h-10 w-10"
                 />
@@ -132,27 +136,22 @@ const SingleFund = ({
               value={value}
               data={collection}
               renderResults={(results: Asset[]) =>
-                results.map((asset) => (
-                  <Link
-                    key={asset.token_id}
-                    href={`${asPath}${encodeURI(asset.token_id)}`}
-                  >
-                    <a className="flex flex-col">
-                      <VaultCard
-                        className="flex-1 flex flex-col"
-                        eyebrow={asset.asset_contract.name}
-                        image={asset.image_url}
-                        title={asset.name}
-                        background={
-                          asset.background_color
-                            ? `#${asset.background_color}`
-                            : null
-                        } // seems to come through as hex without the hex
-                        text={`Number of sales: ${asset.num_sales || 0}`}
-                      />
-                    </a>
-                  </Link>
-                ))
+                results.map((asset) => {
+                  return (
+                    <Link
+                      key={asset.token_id}
+                      href={`${asPath}${encodeURI(asset.token_id)}`}
+                    >
+                      <a className="flex flex-col">
+                        <VaultCard
+                          className="flex-1 flex flex-col"
+                          type={VaultCardType.ASSET}
+                          asset={asset}
+                        />
+                      </a>
+                    </Link>
+                  );
+                })
               }
             />
           )}

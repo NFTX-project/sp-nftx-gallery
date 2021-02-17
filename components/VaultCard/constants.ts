@@ -3,3 +3,8 @@ export enum VaultCardStatus {
   DEFAULT = 'DEFAULT',
   PENDING = 'PENDING',
 }
+
+export enum VaultCardType {
+  ASSET = 'ASSET',
+  FUND = 'FUND',
+}

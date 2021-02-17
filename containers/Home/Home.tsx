@@ -52,7 +52,7 @@ const HomeContainer = ({ funds }: { funds: Fund[] }) => {
 
         <div className="mt-20 mb-16">
           <h3 className="text-gray-50 font-sans font-bold text-2xl mb-8">
-            {useMessage(`home.categories.title`)}
+            {useMessage(`home.collections.title`)}
           </h3>
           <section className="flex flex-wrap -m-2">
             {collections.map((cat) => {
@@ -71,7 +71,7 @@ const HomeContainer = ({ funds }: { funds: Fund[] }) => {
                         <div className="p-2 md:p-0">
                           <Poster
                             title={useMessage(`funds.${cat.namespace}.title`)}
-                            text={useMessage('home.categories.poster.text', {
+                            text={useMessage('home.collections.poster.text', {
                               count: matchingAssets.length,
                             })}
                             image={cat.image}
@@ -89,7 +89,7 @@ const HomeContainer = ({ funds }: { funds: Fund[] }) => {
             <Link href="/funds/">
               <a className="hidden lg:block lg:flex-1 p-2">
                 <div className="flex h-full items-center justify-center rounded-md bg-gradient-to-t from-gray-800 to-gray-700 text-white">
-                  {useMessage('home.categores.poster.all')}
+                  {useMessage('home.collections.poster.all')}
                 </div>
               </a>
             </Link>

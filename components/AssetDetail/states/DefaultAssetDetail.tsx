@@ -19,6 +19,7 @@ const DefaultAssetDetail = ({
   fundName,
   assetType,
   vaultId,
+  openseaUrl,
 }: AssetDetailProps) => {
   return (
     <div className={className}>
@@ -59,9 +60,9 @@ const DefaultAssetDetail = ({
                 performance={performance}
               />
             </div>
-            <div className="mt-auto">
+            <div className="mt-auto flex flex-col xl:flex-row xl:space-x-3 space-y-2 xl:space-y-0">
               <Button
-                className="w-full text-center"
+                className="w-full xl:w-1/2 text-center"
                 size={Size.LARGE}
                 kind={Kind.PRIMARY}
                 href={`https://nftx.org/#/fund/${vaultId}`}
@@ -72,6 +73,19 @@ const DefaultAssetDetail = ({
                   fund: fundName,
                 })}
               </Button>
+              <Button
+                className="w-full xl:w-1/2 text-center"
+                size={Size.LARGE}
+                kind={Kind.SECONDARY}
+                href={openseaUrl}
+                target="_blank"
+                icon={Icons.EXTERNAL_LINK}
+              >
+                {useMessage('asset.detail.opensea.link')}
+              </Button>
+            </div>
+            <div className="text-gray-500 text-xs mt-4">
+              {useMessage('asset.detail.opensea.disclaimer')}
             </div>
           </div>
         </div>

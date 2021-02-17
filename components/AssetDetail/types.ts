@@ -58,4 +58,8 @@ export interface AssetDetailProps {
    * The percentage performance of the asset
    */
   performance: number;
+  /**
+   * The URL for the item on opensea
+   */
+  openseaUrl: string;
 }

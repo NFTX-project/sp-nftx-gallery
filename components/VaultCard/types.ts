@@ -1,7 +1,16 @@
+import { Asset } from '@/types/asset';
 import { ReactNode } from 'react';
-import { VaultCardStatus } from './constants';
+import { VaultCardStatus, VaultCardType } from './constants';
 
 export interface VaultCardProps {
+  /**
+   * The type of item being viewed, i.e., Fund or Asset
+   */
+  type?: VaultCardType;
+  /**
+   * The asset object (if it's an asset card)
+   */
+  asset?: Asset;
   /**
    * The status of the card
    */

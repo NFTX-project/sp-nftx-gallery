@@ -94,21 +94,19 @@ const CombinedFund = ({ fundKey, ...fund }: FundProps) => {
                 ),
               })}
             </h4>
-            {price ? (
-              <Button
-                className="w-full"
-                size={ButtonSize.LARGE}
-                icon={Icons.EXTERNAL_LINK}
-                href={`https://app.sushiswap.fi/token/${fund.fundToken.address}`}
-                target="_blank"
-              >
-                {useMessage('fund.combined.buy', {
-                  fund: (
-                    <b className="font-bold uppercase">{`$${fund.fundToken.name}`}</b>
-                  ),
-                })}
-              </Button>
-            ) : null}
+            <Button
+              className="w-full"
+              size={ButtonSize.LARGE}
+              icon={Icons.EXTERNAL_LINK}
+              href={`https://app.sushiswap.fi/token/${fund.fundToken.address}`}
+              target="_blank"
+            >
+              {useMessage('fund.combined.buy', {
+                fund: (
+                  <b className="font-bold uppercase">{`$${fund.fundToken.name}`}</b>
+                ),
+              })}
+            </Button>
           </aside>
           <section className="pt-10 px-6">
             <dl className="mb-10">
