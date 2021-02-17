@@ -1,0 +1,162 @@
+[
+    {
+        "vaultId": 0,
+        "name": "PUNK-BASIC",
+        "imageIcon": "../images/fund/punk-basic-icon.png",
+        "imageFeature": "../images/fund/punk-basic-feature.png",
+        "description": "Punk-Basic is a single fund token, which is 1:1 backed by any CryptoPunks NFT.Because\n this fund allows any CryptoPunk to be deposited as collateral, it acts \nas a floor price tracker for the entire NFT category.",
+        "buyUrl": "https://sushiswap.vision/pair/0x0267bd35789a5ce247fff6cb1d597597e003cc43",
+        "buyOpenseaUrl": "https://opensea.io/assets/cryptopunks",
+        "mintRedeemUrl": "https://nftx.org/#/fund/0"
+    },
+    {
+        "vaultId": 1,
+        "name": "PUNK-ATTR-4",
+        "description": "Punk-Attr-4 is a single fund token, which is 1:1 backed by CryptoPunks NFTs that have four (4) attributes.",
+        "buyUrl": "https://sushiswap.vision/pair/0x608f8af5fd49b5a5421f53f79920C45b96bdA83F",
+        "buyOpenseaUrl": "https://opensea.io/assets/cryptopunks",
+        "mintRedeemUrl": "https://nftx.org/#/fund/1"
+    },
+    {
+        "vaultId": 2,
+        "name": "PUNK-ATTR-5",
+        "description": "Punk-Attr-5 is a single fund token, which is 1:1 backed by CryptoPunks NFTs that have five (5) attributes.",
+        "buyUrl": "https://sushiswap.vision/pair/0xd54A895623552853F8D673981CC32EB8f3929dFB",
+        "buyOpenseaUrl": "https://opensea.io/assets/cryptopunks",
+        "mintRedeemUrl": "https://nftx.org/#/fund/2"
+    },
+    {
+        "vaultId": 3,
+        "name": "PUNK-ZOMBIE",
+        "description": "Punk-Zombie is a single fund token, which is 1:1 backed by CryptoPunks NFTs that are zombie.",
+        "buyUrl": "https://sushiswap.vision/pair/0x0E7E8Dde18e4016ccc15F12301a47eF7B87Bdafa",
+        "buyOpenseaUrl": "https://opensea.io/assets/cryptopunks?search[sortAscending]=false&search[sortBy]=LISTING_DATE&search[stringTraits][0][name]=type&search[stringTraits][0][values][0]=Zombie",
+        "mintRedeemUrl": "https://nftx.org/#/fund/3"
+    },
+    {
+        "vaultId": 4,
+        "name": "AXIE-ORIGIN",
+        "description": "Add fund description here",
+        "buyOpenseaUrl": "https://opensea.io/assets/axie?search[stringTraits][0][name]=title&search[stringTraits][0][values][0]=Origin",
+        "mintRedeemUrl": "https://nftx.org/#/fund/4"
+    },
+    {
+        "vaultId": 5,
+        "name": "AXIE-MYSTIC-1",
+        "description": "Add fund description here",
+        "buyOpenseaUrl": "https://opensea.io/assets/axie",
+        "mintRedeemUrl": "https://nftx.org/#/fund/5"
+    },
+    {
+        "vaultId": 6,
+        "name": "AXIE-MYSTIC-2",
+        "description": "Add fund description here",
+        "buyOpenseaUrl": "https://opensea.io/assets/axie",
+        "mintRedeemUrl": "https://nftx.org/#/fund/6"
+    },
+    {
+        "vaultId": 7,
+        "name": "KITTY-GEN-0",
+        "description": "Add fund description here",
+        "buyOpenseaUrl": "https://opensea.io/assets/cryptokitties",
+        "mintRedeemUrl": "https://nftx.org/#/fund/7"
+    },
+    {
+        "vaultId": 8,
+        "name": "KITTY-GEN-0-F",
+        "description": "Add fund description here",
+        "buyOpenseaUrl": "https://opensea.io/assets/cryptokitties",
+        "mintRedeemUrl": "https://nftx.org/#/fund/8"
+    },
+    {
+        "vaultId": 9,
+        "name": "KITTY-FOUNDER",
+        "description": "Add fund description here",
+        "buyOpenseaUrl": "https://opensea.io/assets/cryptokitties",
+        "mintRedeemUrl": "https://nftx.org/#/fund/9"
+    },
+    {
+        "vaultId": 10,
+        "name": "AVASTR-BASIC",
+        "description": "Add fund description here",
+        "buyOpenseaUrl": "https://opensea.io/assets/avastar?search[numericTraits][0][name]=ranking&search[numericTraits][0][ranges][0][max]=29&search[numericTraits][0][ranges][0][min]=1",
+        "mintRedeemUrl": "https://nftx.org/#/fund/10"
+    },
+    {
+        "vaultId": 11,
+        "name": "AVASTR-RANK-30",
+        "description": "Add fund description here",
+        "buyOpenseaUrl": "https://opensea.io/assets/avastar?search[numericTraits][0][name]=ranking&search[numericTraits][0][ranges][0][max]=59&search[numericTraits][0][ranges][0][min]=30&search[numericTraits][1][name]=serial&search[numericTraits][1][ranges][0][min]=0&search[numericTraits][1][ranges][0][max]=12400",
+        "mintRedeemUrl": "https://nftx.org/#/fund/11"
+    },
+    {
+        "vaultId": 12,
+        "name": "AVASTR-RANK-60",
+        "description": "Add fund description here",
+        "buyOpenseaUrl": "https://opensea.io/assets/avastar?search[numericTraits][0][name]=serial&search[numericTraits][0][ranges][0][max]=12400&search[numericTraits][0][ranges][0][min]=0&search[numericTraits][1][name]=ranking&search[numericTraits][1][ranges][0][min]=60&search[numericTraits][1][ranges][0][max]=100",
+        "mintRedeemUrl": "https://nftx.org/#/fund/12"
+    },
+    {
+        "vaultId": 13,
+        "name": "GLYPH",
+        "description": "Add fund description here",
+        "buyOpenseaUrl": "https://opensea.io/assets/autoglyphs",
+        "mintRedeemUrl": "https://nftx.org/#/fund/13"
+    },
+    {
+        "vaultId": 14,
+        "name": "JOY",
+        "description": "Add fund description here",
+        "buyOpenseaUrl": "https://opensea.io/assets/joyworld-s2",
+        "mintRedeemUrl": "https://nftx.org/#/fund/14"
+    },
+    {
+        "vaultId": 15,
+        "name": "PUNK-FEMALE",
+        "description": "Punk-Female is a single fund token, which is 1:1 backed by CryptoPunks NFTs that are female.",
+        "buyUrl": "https://sushiswap.vision/pair/0xCA2Ae9C5C491F497DC5625fEaef4572076C946C5",
+        "buyOpenseaUrl": "https://opensea.io/assets/cryptopunks?search[sortAscending]=false&search[sortBy]=LISTING_DATE&search[stringTraits][0][name]=type&search[stringTraits][0][values][0]=Female",
+        "mintRedeemUrl": "https://nftx.org/#/fund/15"
+    },
+    {
+        "vaultId": 16,
+        "name": "PUNK-CORE",
+        "description": "The main way to invest into a well-balanced CryptoPunks Index Fund is through $PUNK, a combined index fund that is backed by multiple single CryptoPunks fund tokens.The price of this token is based on the weighted average of all underlying single fund tokens.",
+        "buyUrl": "https://sushiswap.vision/pair/0x092493a22375de1b17583d924abf9e8bf884491c",
+        "buyOpenseaUrl": "https://opensea.io/assets/cryptopunks",
+        "mintRedeemUrl": "https://nftx.org/#/fund/16"
+    },
+    {
+        "vaultId": 17,
+        "name": "CRYPTO-STAMP",
+        "description": "Add fund description here",
+        "buyOpenseaUrl": "https://opensea.io/assets/crypto-stamp-edition-1",
+        "mintRedeemUrl": "https://nftx.org/#/fund/17"
+    },
+    {
+        "vaultId": 18,
+        "name": "VARIANT-DAVIS",
+        "description": "Add fund description here",
+        "mintRedeemUrl": "https://nftx.org/#/fund/18"
+    },
+    {
+        "vaultId": 19,
+        "description": "Add fund description here",
+        "mintRedeemUrl": "https://nftx.org/#/fund/19"
+    },
+    {
+        "vaultId": 20,
+        "name": "MASK",
+        "description": "With the NFTX Hashmasks Index Fund, you can now supply one or \nmultiple Hashmasks as collateral which gives you back an index fund \ntoken called $MASK, which tracks the ETH-floor price of all Hashmasks in the index fund.This token allows you to become a liquidity provider on SushiSwap (or any other ERC20 AMM) by pooling it together with ETH.",
+        "buyUrl": "https://sushiswap.vision/pair/0xfd38565ef22299d491055f0c508f62dd9a669f0f",
+        "buyOpenseaUrl": "https://opensea.io/assets/hashmasks",
+        "mintRedeemUrl": "https://nftx.org/#/fund/20"
+    },
+    {
+        "vaultId": 21,
+        "name": "CUBES",
+        "description": "Add fund description here",
+        "buyOpenseaUrl": "https://opensea.io/assets/cryptocubes",
+        "mintRedeemUrl": "https://nftx.org/#/fund/21"
+    }
+]
