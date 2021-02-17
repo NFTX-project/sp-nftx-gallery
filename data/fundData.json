@@ -1,0 +1,160 @@
+[
+    {
+        "vaultid": 0,
+        "fundname": "PUNK-BASIC",
+        "funddescription": "Punk-Basic is a single fund token, which is 1:1 backed by any CryptoPunks NFT.Because\n this fund allows any CryptoPunk to be deposited as collateral, it acts \nas a floor price tracker for the entire NFT category.",
+        "fundbuyurl": "https://sushiswap.vision/pair/0x0267bd35789a5ce247fff6cb1d597597e003cc43",
+        "fundbuyopenseaurl": "https://opensea.io/assets/cryptopunks",
+        "fundmintredeem": "https://nftx.org/#/fund/0"
+    },
+    {
+        "vaultid": 1,
+        "fundname": "PUNK-ATTR-4",
+        "funddescription": "Punk-Attr-4 is a single fund token, which is 1:1 backed by CryptoPunks NFTs that have four (4) attributes.",
+        "fundbuyurl": "https://sushiswap.vision/pair/0x608f8af5fd49b5a5421f53f79920C45b96bdA83F",
+        "fundbuyopenseaurl": "https://opensea.io/assets/cryptopunks",
+        "fundmintredeem": "https://nftx.org/#/fund/1"
+    },
+    {
+        "vaultid": 2,
+        "fundname": "PUNK-ATTR-5",
+        "funddescription": "Punk-Attr-5 is a single fund token, which is 1:1 backed by CryptoPunks NFTs that have five (5) attributes.",
+        "fundbuyurl": "https://sushiswap.vision/pair/0xd54A895623552853F8D673981CC32EB8f3929dFB",
+        "fundbuyopenseaurl": "https://opensea.io/assets/cryptopunks",
+        "fundmintredeem": "https://nftx.org/#/fund/2"
+    },
+    {
+        "vaultid": 3,
+        "fundname": "PUNK-ZOMBIE",
+        "funddescription": "Punk-Zombie is a single fund token, which is 1:1 backed by CryptoPunks NFTs that are zombie.",
+        "fundbuyurl": "https://sushiswap.vision/pair/0x0E7E8Dde18e4016ccc15F12301a47eF7B87Bdafa",
+        "fundbuyopenseaurl": "https://opensea.io/assets/cryptopunks?search[sortAscending]=false&search[sortBy]=LISTING_DATE&search[stringTraits][0][name]=type&search[stringTraits][0][values][0]=Zombie",
+        "fundmintredeem": "https://nftx.org/#/fund/3"
+    },
+    {
+        "vaultid": 4,
+        "fundname": "AXIE-ORIGIN",
+        "funddescription": "Add fund description here",
+        "fundbuyopenseaurl": "https://opensea.io/assets/axie?search[stringTraits][0][name]=title&search[stringTraits][0][values][0]=Origin",
+        "fundmintredeem": "https://nftx.org/#/fund/4"
+    },
+    {
+        "vaultid": 5,
+        "fundname": "AXIE-MYSTIC-1",
+        "funddescription": "Add fund description here",
+        "fundbuyopenseaurl": "https://opensea.io/assets/axie",
+        "fundmintredeem": "https://nftx.org/#/fund/5"
+    },
+    {
+        "vaultid": 6,
+        "fundname": "AXIE-MYSTIC-2",
+        "funddescription": "Add fund description here",
+        "fundbuyopenseaurl": "https://opensea.io/assets/axie",
+        "fundmintredeem": "https://nftx.org/#/fund/6"
+    },
+    {
+        "vaultid": 7,
+        "fundname": "KITTY-GEN-0",
+        "funddescription": "Add fund description here",
+        "fundbuyopenseaurl": "https://opensea.io/assets/cryptokitties",
+        "fundmintredeem": "https://nftx.org/#/fund/7"
+    },
+    {
+        "vaultid": 8,
+        "fundname": "KITTY-GEN-0-F",
+        "funddescription": "Add fund description here",
+        "fundbuyopenseaurl": "https://opensea.io/assets/cryptokitties",
+        "fundmintredeem": "https://nftx.org/#/fund/8"
+    },
+    {
+        "vaultid": 9,
+        "fundname": "KITTY-FOUNDER",
+        "funddescription": "Add fund description here",
+        "fundbuyopenseaurl": "https://opensea.io/assets/cryptokitties",
+        "fundmintredeem": "https://nftx.org/#/fund/9"
+    },
+    {
+        "vaultid": 10,
+        "fundname": "AVASTR-BASIC",
+        "funddescription": "Add fund description here",
+        "fundbuyopenseaurl": "https://opensea.io/assets/avastar?search[numericTraits][0][name]=ranking&search[numericTraits][0][ranges][0][max]=29&search[numericTraits][0][ranges][0][min]=1",
+        "fundmintredeem": "https://nftx.org/#/fund/10"
+    },
+    {
+        "vaultid": 11,
+        "fundname": "AVASTR-RANK-30",
+        "funddescription": "Add fund description here",
+        "fundbuyopenseaurl": "https://opensea.io/assets/avastar?search[numericTraits][0][name]=ranking&search[numericTraits][0][ranges][0][max]=59&search[numericTraits][0][ranges][0][min]=30&search[numericTraits][1][name]=serial&search[numericTraits][1][ranges][0][min]=0&search[numericTraits][1][ranges][0][max]=12400",
+        "fundmintredeem": "https://nftx.org/#/fund/11"
+    },
+    {
+        "vaultid": 12,
+        "fundname": "AVASTR-RANK-60",
+        "funddescription": "Add fund description here",
+        "fundbuyopenseaurl": "https://opensea.io/assets/avastar?search[numericTraits][0][name]=serial&search[numericTraits][0][ranges][0][max]=12400&search[numericTraits][0][ranges][0][min]=0&search[numericTraits][1][name]=ranking&search[numericTraits][1][ranges][0][min]=60&search[numericTraits][1][ranges][0][max]=100",
+        "fundmintredeem": "https://nftx.org/#/fund/12"
+    },
+    {
+        "vaultid": 13,
+        "fundname": "GLYPH",
+        "funddescription": "Add fund description here",
+        "fundbuyopenseaurl": "https://opensea.io/assets/autoglyphs",
+        "fundmintredeem": "https://nftx.org/#/fund/13"
+    },
+    {
+        "vaultid": 14,
+        "fundname": "JOY",
+        "funddescription": "Add fund description here",
+        "fundbuyopenseaurl": "https://opensea.io/assets/joyworld-s2",
+        "fundmintredeem": "https://nftx.org/#/fund/14"
+    },
+    {
+        "vaultid": 15,
+        "fundname": "PUNK-FEMALE",
+        "funddescription": "Punk-Female is a single fund token, which is 1:1 backed by CryptoPunks NFTs that are female.",
+        "fundbuyurl": "https://sushiswap.vision/pair/0xCA2Ae9C5C491F497DC5625fEaef4572076C946C5",
+        "fundbuyopenseaurl": "https://opensea.io/assets/cryptopunks?search[sortAscending]=false&search[sortBy]=LISTING_DATE&search[stringTraits][0][name]=type&search[stringTraits][0][values][0]=Female",
+        "fundmintredeem": "https://nftx.org/#/fund/15"
+    },
+    {
+        "vaultid": 16,
+        "fundname": "PUNK-CORE",
+        "funddescription": "The main way to invest into a well-balanced CryptoPunks Index Fund is through $PUNK, a combined index fund that is backed by multiple single CryptoPunks fund tokens.The price of this token is based on the weighted average of all underlying single fund tokens.",
+        "fundbuyurl": "https://sushiswap.vision/pair/0x092493a22375de1b17583d924abf9e8bf884491c",
+        "fundbuyopenseaurl": "https://opensea.io/assets/cryptopunks",
+        "fundmintredeem": "https://nftx.org/#/fund/16"
+    },
+    {
+        "vaultid": 17,
+        "fundname": "CRYPTO-STAMP",
+        "funddescription": "Add fund description here",
+        "fundbuyopenseaurl": "https://opensea.io/assets/crypto-stamp-edition-1",
+        "fundmintredeem": "https://nftx.org/#/fund/17"
+    },
+    {
+        "vaultid": 18,
+        "fundname": "VARIANT-DAVIS",
+        "funddescription": "Add fund description here",
+        "fundmintredeem": "https://nftx.org/#/fund/18"
+    },
+    {
+        "vaultid": 19,
+        "funddescription": "Add fund description here",
+        "fundmintredeem": "https://nftx.org/#/fund/19"
+    },
+    {
+        "vaultid": 20,
+        "fundname": "MASK",
+        "funddescription": "With the NFTX Hashmasks Index Fund, you can now supply one or \nmultiple Hashmasks as collateral which gives you back an index fund \ntoken called $MASK, which tracks the ETH-floor price of all Hashmasks in the index fund.This token allows you to become a liquidity provider on SushiSwap (or any other ERC20 AMM) by pooling it together with ETH.",
+        "fundbuyurl": "https://sushiswap.vision/pair/0xfd38565ef22299d491055f0c508f62dd9a669f0f",
+        "fundbuyopenseaurl": "https://opensea.io/assets/hashmasks",
+        "fundmintredeem": "https://nftx.org/#/fund/20"
+    },
+    {
+        "vaultid": 21,
+        "fundname": "CUBES",
+        "funddescription": "Add fund description here",
+        "fundbuyopenseaurl": "https://opensea.io/assets/cryptocubes",
+        "fundmintredeem": "https://nftx.org/#/fund/21"
+    }
+]
