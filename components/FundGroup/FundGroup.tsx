@@ -62,7 +62,7 @@ const FundGroup = ({
                 <a aria-label={item.fundToken.name}>
                   <VaultCard
                     image={`/images/cards/${fundKey}-140.png`}
-                    imageSrcSet={`/images/cards${fundKey}-140@2x.png 2x`}
+                    imageSrcSet={`/images/cards/${fundKey}-140@2x.png 2x`}
                     eyebrow={`${item?.holdings?.length || ''} ${
                       item.asset.name
                     }`}
