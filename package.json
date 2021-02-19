@@ -1,0 +1,77 @@
+{
+  "name": "nftx-gallery",
+  "version": "0.1.0",
+  "private": true,
+  "author": "NFTX Gallery Squad <>",
+  "homepage": "https://github.com/NFTX-project/sp-nftx-gallery",
+  "contributors": [
+    "Tobias <4254570+quagliero@users.noreply.github.com>",
+    "Neuromancer <neuromancer.kitten@gmail.com>",
+    "Justin <justincavery@gmail.com>"
+  ],
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "export": "NODE_ENV=production yarn build && yarn next export",
+    "start": "next start",
+    "storybook": "start-storybook -p 6006 -s ./public",
+    "build-storybook": "build-storybook",
+    "deploy-storybook": "storybook-to-ghpages",
+    "lint": "eslint ./",
+    "tsc": "tsc --noEmit",
+    "prettier": "prettier --write --ignore-unknown ./"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx}": [
+      "yarn lint"
+    ],
+    "**/*": [
+      "yarn prettier",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "@tailwindcss/postcss7-compat": "^2.0.2",
+    "@types/node": "^14.14.22",
+    "@types/react": "^17.0.0",
+    "autoprefixer": "^9",
+    "axios": "^0.21.1",
+    "axios-hooks": "^2.3.0",
+    "big.js": "^6.0.3",
+    "next": "^10.0.6",
+    "postcss": "^7",
+    "prettier": "^2.2.1",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "react-filter-search": "^1.0.11",
+    "react-intl": "^5.12.1",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.3",
+    "typescript": "^4.1.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@storybook/addon-actions": "^6.1.15",
+    "@storybook/addon-essentials": "^6.1.15",
+    "@storybook/addon-links": "^6.1.15",
+    "@storybook/react": "^6.1.15",
+    "@storybook/storybook-deployer": "^2.8.7",
+    "@types/node": "^14.14.22",
+    "@types/react": "^17.0.0",
+    "@types/react-intl": "^3.0.0",
+    "@typescript-eslint/eslint-plugin": "^4.14.1",
+    "@typescript-eslint/parser": "^4.14.1",
+    "babel-loader": "^8.2.2",
+    "eslint": "^7.18.0",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-react": "^7.22.0",
+    "husky": "^4.3.8",
+    "lint-staged": "^10.5.3",
+    "prettier": "^2.2.1",
+    "typescript": "^4.1.3"
+  }
+}
