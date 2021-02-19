@@ -60,6 +60,7 @@
   "fund.loading": "Loading fund data...",
   "fund.error": "Failed to load fund data :(",
   "fund.detail.supply": "Supply",
+  "fund.detail.price": "Price",
   "fund.cta.invest": "Buy {fund}",
   "fund.cta.mintRedeem": "Mint or redeem {token}",
   "fund.meta.title": "{fund} | NFTX",

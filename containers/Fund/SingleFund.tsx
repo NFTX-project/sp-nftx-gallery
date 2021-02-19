@@ -18,6 +18,8 @@ import {
 import useMessage from '@/hooks/message';
 import type { FundProps } from './types';
 import { Asset } from '@/types/asset';
+import usePrice from '@/hooks/price';
+import { FormattedMessage } from 'react-intl';
 
 const SingleFund = ({
   holdings,
@@ -32,6 +34,8 @@ const SingleFund = ({
   const [offset, setOffset] = useState(0);
   const [collection, setCollection] = useState([]);
   const [value, setValue] = useState('');
+  const price = usePrice(fundToken.address);
+
   const url = useMemo(() => {
     const tokenIds = holdings.slice(offset, limit).join('&token_ids=');
     if (tokenIds) {
@@ -109,10 +113,18 @@ const SingleFund = ({
                   className="h-10 w-10"
                 />
               </div>
-              <div className="flex flex-col text-left">
+              <div className="mr-4 flex flex-col text-left">
                 <dt>{useMessage('fund.detail.supply')}</dt>
                 <dd className="font-bold text-xl">{holdings.length}</dd>
               </div>
+              {!!price && (
+                <div className="mr-4 flex-col text-left">
+                  <dt>
+                    <FormattedMessage id="fund.detail.price" />
+                  </dt>
+                  <dd className="font-bold text-xl">{price}</dd>
+                </div>
+              )}
             </dl>
           </header>
           <aside className="text-right flex flex-col justify-end items-end">
