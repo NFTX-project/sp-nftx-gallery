@@ -8,4 +8,5 @@ export const fundSymbols = [
   'MASK',
   'CUBES',
   'VARIANT-DAVIS',
+  'BABES-BASIC',
 ];

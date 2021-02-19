@@ -25,6 +25,14 @@ export default [
     namespace: 'cryptopunks',
     contract: '0xb47e3cd837ddf8e4c57f05d70ab865de6e193bbb',
   },
+  {
+    items: ['babes-basic'],
+    href: 'bullrun-babes',
+    image: '/images/posters/bullrun-babes.png',
+    colorway: Colorway.LIGHT,
+    namespace: 'bullrun-babes',
+    contract: '0x4Ad4455aD5eF891695C221e8E683EfA65fabEDE0',
+  },
   // {
   //   items: ['axie'],
   //   href: 'axies',

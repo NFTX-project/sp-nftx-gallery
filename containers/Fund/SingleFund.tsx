@@ -1,7 +1,7 @@
-import React, { useEffect, useMemo, useState } from 'react';
-import useAxios from 'axios-hooks';
+import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { FormattedMessage, FormattedNumber } from 'react-intl';
 import { useRouter } from 'next/router';
 import FilterResults from 'react-filter-search';
 import Breadcrumb from '@/components/Breadcrumbs';
@@ -19,7 +19,7 @@ import useMessage from '@/hooks/useMessage';
 import type { FundProps } from './types';
 import { Asset } from '@/types/asset';
 import usePrice from '@/hooks/usePrice';
-import { FormattedMessage, FormattedNumber } from 'react-intl';
+import useAssets from '@/hooks/useAssets';
 
 const SingleFund = ({
   holdings,
@@ -37,32 +37,16 @@ const SingleFund = ({
   const [value, setValue] = useState('');
   const price = usePrice(fundToken.address);
 
-  const url = useMemo(() => {
-    const tokenIds = holdings.slice(offset, limit).join('&token_ids=');
-    if (tokenIds) {
-      return `https://api.opensea.io/api/v1/assets?asset_contract_address=${asset.address}&token_ids=${tokenIds}&limit=25`;
-    }
-  }, [asset.address, offset, limit]);
-
-  // @TODO move to a useAssets hook
-  const [{ data, loading, error }, refetch] = useAxios<{ assets: Asset[] }>({
-    url,
-    headers: {
-      // @TODO have this stored in one common axios headers object for all opensea requests
-      'X-API-KEY': process.env.NEXT_PUBLIC_OPENSEA_API_KEY,
-    },
-  });
+  const { assets, loading } = useAssets(
+    asset.address,
+    holdings.slice(offset, limit),
+    limit
+  );
 
   useEffect(() => {
-    if (offset === 0) return;
-
-    refetch({ url });
-  }, [limit]);
-
-  useEffect(() => {
-    if (!data?.assets) return;
-    setCollection([...collection, ...data.assets]);
-  }, [data]);
+    if (!assets) return;
+    setCollection([...collection, ...assets]);
+  }, [assets]);
 
   const handleChange = (event: { target: HTMLInputElement }) => {
     const { value } = event.target;
@@ -73,14 +57,6 @@ const SingleFund = ({
     setOffset(limit);
     setLimit((limit) => limit + 25);
   };
-
-  if (error) {
-    return (
-      <div className="container mx-auto px-4 py-20 text-gray-50">
-        <p>Error! {error}</p>
-      </div>
-    );
-  }
 
   return (
     <>
