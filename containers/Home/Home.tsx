@@ -1,7 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
-import { FormattedNumber } from 'react-intl';
 import useMessage from '@/hooks/message';
 import FundGroup, { Columns } from '@/components/FundGroup';
 import Poster from '@/components/Poster';

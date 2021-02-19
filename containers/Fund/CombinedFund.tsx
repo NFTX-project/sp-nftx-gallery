@@ -3,8 +3,6 @@ import Link from 'next/link';
 import Breadcrumb from '@/components/Breadcrumbs';
 import Button, { Size as ButtonSize } from '@/components/Button';
 import useMessage from '@/hooks/message';
-import useAxios from 'axios-hooks';
-import { useIntl } from 'react-intl';
 import Icon, { Icons, Size as IconSize } from '@/components/Icon';
 import FundStatus from '@/components/FundStatus';
 import trimAddress from '@/utils/trimAddress';
@@ -13,29 +11,13 @@ import { useFundsContext } from '@/contexts/funds';
 import FundGroup from '@/components/FundGroup';
 import Pill from '@/components/Pill';
 import { FundProps } from './types';
+import usePrice from '@/hooks/price';
 
 const CombinedFund = ({ fundKey, ...fund }: FundProps) => {
-  const intl = useIntl();
   const vaults = useVaultsContext();
   const funds = useFundsContext();
   const [supportingFunds, setSupportingFunds] = useState([]);
-  const [price, setPrice] = useState(null);
-  // @TODO move to a usePrice (or useCovalent) hook
-  const [{ data }] = useAxios({
-    url: `https://api.covalenthq.com/v1/pricing/historical_by_address/1/usd/${fund.fundToken.address}/`,
-  });
-
-  useEffect(() => {
-    const latestPrice = data?.data?.prices[0]?.price;
-    if (latestPrice) {
-      setPrice(
-        intl.formatNumber(latestPrice, {
-          style: 'currency',
-          currency: 'USD',
-        })
-      );
-    }
-  }, [data]);
+  const price = usePrice(fund.fundToken.address);
 
   useEffect(() => {
     if (vaults.length && funds.length) {
