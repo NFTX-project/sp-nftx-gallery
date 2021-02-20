@@ -15,10 +15,10 @@ import {
   VaultCardStatus,
   VaultCardType,
 } from '@/components/VaultCard/constants';
-import useMessage from '@/hooks/message';
+import useMessage from '@/hooks/useMessage';
 import type { FundProps } from './types';
 import { Asset } from '@/types/asset';
-import usePrice from '@/hooks/price';
+import usePrice from '@/hooks/usePrice';
 import { FormattedMessage } from 'react-intl';
 
 const SingleFund = ({
@@ -200,7 +200,7 @@ const SingleFund = ({
         </div>
         {/* see more button */}
         {holdings.length > collection.length && (
-          <div className="my-8">
+          <div className="my-8 text-center">
             <Button kind={Kind.SECONDARY} onClick={seeMore}>
               {useMessage('fund.holdings.seeMore', {
                 asset: asset.name,

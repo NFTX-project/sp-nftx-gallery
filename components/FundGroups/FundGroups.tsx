@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
-import useMessage from '../../hooks/message';
-import { getCategoryKey } from '../../utils/getCategoryKey';
-import FundGroup from '../FundGroup';
+import useMessage from '@/hooks/useMessage';
+import { getCategoryKey } from '@/utils/getCategoryKey';
+import FundGroup from '@/components/FundGroup';
 import { Fund } from '@/types/fund';
 
 interface FundGroupProps {

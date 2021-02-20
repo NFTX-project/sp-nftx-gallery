@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import useMessage from '@/hooks/message';
+import useMessage from '@/hooks/useMessage';
 
 const Footer = () => {
   return (

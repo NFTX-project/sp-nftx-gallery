@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
-import useMessage from '@/hooks/message';
+import useMessage from '@/hooks/useMessage';
 import Search from '@/components/Search';
 import Breadcrumb from '@/components/Breadcrumbs';
 import AssetGroup from '@/components/AssetGroup';
@@ -61,7 +61,7 @@ const CollectionContainer = ({
       <Head>
         <title>
           {useMessage(`collection.meta.title`, {
-            collection: data?.name,
+            collection: data?.collection?.name || data?.name,
           })}
         </title>
       </Head>
@@ -73,7 +73,7 @@ const CollectionContainer = ({
             </div>
             <div className="flex-1 mb-6">
               <h1 className="text-left text-3xl font-bold lg:mb-0 mr-4 uppercase">
-                {data?.name}
+                {data?.collection?.name || data?.name}
               </h1>
               <p className="mt-6">{data?.description}</p>
             </div>
@@ -85,10 +85,11 @@ const CollectionContainer = ({
         {funds ? (
           <section className="my-12">
             {sorted.map((cf) => {
+              const key = getFundKey(cf);
               // if it's a D2 we need to grab the inner funds from the vault map
               if (cf.isD2Vault) {
                 const supportingFunds = getSupportingFundData(cf);
-                const key = getFundKey(cf);
+
                 return (
                   <div key={cf.fundToken.name} className="mb-24">
                     <FundGroup
@@ -103,7 +104,7 @@ const CollectionContainer = ({
                   <div key={cf.fundToken.name} className="mb-24">
                     <AssetGroup
                       namespace="collection"
-                      fundKey={getFundKey(cf)}
+                      fundKey={key}
                       fund={cf}
                       max={10}
                     />

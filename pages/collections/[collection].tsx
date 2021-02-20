@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import useMessage from '@/hooks/message';
+import useMessage from '@/hooks/useMessage';
 import { useRouter } from 'next/router';
 import collections from '@/constants/collections';
 import CollectionContainer from '@/containers/Collection';
 import { useFundsContext } from '@/contexts/funds';
-import { getCategoryKey } from '@/utils/getCategoryKey';
+import { getFundKey } from '@/utils/getFundKey';
 
 const CollectionsPage = () => {
   const router = useRouter();
@@ -18,7 +18,7 @@ const CollectionsPage = () => {
         (c) => c.href === collectionPath
       );
       const collectionFunds = funds.filter((f) =>
-        activeCollection.items.includes(getCategoryKey(f))
+        activeCollection.items.includes(getFundKey(f))
       );
 
       if (activeCollection) {

@@ -4,7 +4,7 @@ import React, { useEffect, useRef } from 'react';
 import Breadcrumb from '@/components/Breadcrumbs';
 import AssetDetail, { AssetDetailStatus } from '@/components/AssetDetail';
 import AssetGroup from '@/components/AssetGroup';
-import useMessage from '@/hooks/message';
+import useMessage from '@/hooks/useMessage';
 import { Asset } from '@/types/asset';
 import { Fund } from '@/types/fund';
 

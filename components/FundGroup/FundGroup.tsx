@@ -1,13 +1,13 @@
 import Link from 'next/link';
 import React from 'react';
-import useMessage from '../../hooks/message';
-import { getFundKey } from '../../utils/getFundKey';
-import FundStatus from '../FundStatus';
-import Icon, { Icons } from '../Icon';
-import VaultCard from '../VaultCard';
-import Divider from '../Divider';
+import useMessage from '@/hooks/useMessage';
+import { getFundKey } from '@/utils/getFundKey';
+import FundStatus from '@/components/FundStatus';
+import Icon, { Icons } from '@/components/Icon';
+import VaultCard from '@/components/VaultCard';
+import Divider from '@/components/Divider';
 import { Columns } from './constants';
-import Pill from '../Pill';
+import Pill from '@/components/Pill';
 import { Fund } from '@/types/fund';
 
 interface FundGroupProps {

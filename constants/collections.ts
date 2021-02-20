@@ -3,7 +3,7 @@ import { Colorway } from '@/components/Poster';
 // Popular collections - hard coded for now
 export default [
   {
-    items: ['hashmasks'],
+    items: ['mask'],
     href: 'hashmasks',
     image: '/images/posters/hashmasks.jpg',
     colorway: Colorway.LIGHT,
@@ -11,7 +11,14 @@ export default [
     contract: '0xc2c747e0f7004f9e8817db2ca4997657a7746928',
   },
   {
-    items: ['wrapped-cryptopunks', 'punk-core'],
+    items: [
+      'punk',
+      'punk-basic',
+      'punk-attr-4',
+      'punk-attr-5',
+      'punk-female',
+      'punk-zombie',
+    ],
     href: 'cryptopunks',
     image: '/images/posters/wrapped-cryptopunks.png',
     colorway: Colorway.LIGHT,

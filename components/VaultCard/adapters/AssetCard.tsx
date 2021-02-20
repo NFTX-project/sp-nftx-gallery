@@ -1,5 +1,5 @@
 import React from 'react';
-import useMessage from '@/hooks/message';
+import useMessage from '@/hooks/useMessage';
 import { Asset } from '@/types/asset';
 import DefaultVaultCard from '../states/DefaultVaultCard';
 import toEth from '@/utils/toEth';
