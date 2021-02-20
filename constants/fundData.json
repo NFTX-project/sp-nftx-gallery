@@ -156,6 +156,7 @@
         "vaultId": 21,
         "name": "CUBES",
         "description": "Cubes is a single fund (D1) token, which is 1:1 backed by CryptoCubes NFTs. With only 256 in existence, CryptoCubes are rare and enjoy unique aesthetics on account of being algorithmically generated. ",
+        "buyUrl": "https://info.uniswap.org/pair/0x584d368ab300f5f6a0666aef2b1d2d8e3cc7c0f2",
         "buyOpenseaUrl": "https://opensea.io/assets/cryptocubes",
         "mintRedeemUrl": "https://nftx.org/#/fund/21"
     }
