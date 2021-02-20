@@ -1,8 +1,8 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import FundContainer from '@/containers/Fund';
-import useMessage from '@/hooks/message';
-import useFund from '@/hooks/fund';
+import useMessage from '@/hooks/useMessage';
+import useFund from '@/hooks/useFund';
 
 const FundPage = () => {
   const router = useRouter();

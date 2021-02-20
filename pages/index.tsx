@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import { useFundsContext } from '../contexts/funds';
-import useMessage from '@/hooks/message';
+import useMessage from '@/hooks/useMessage';
 import HomeContainer from '@/containers/Home';
 
 const HomePage = () => {

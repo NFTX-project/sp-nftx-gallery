@@ -1,10 +1,10 @@
 import React from 'react';
 import type { AssetDetailProps } from '../types';
-import Button from '../../Button';
-import PerformanceHighlight from '../../PerformanceHighlight';
-import { Size, Kind } from '../../Button/constants';
-import useMessage from '../../../hooks/message';
-import { Icons } from '../../Icon';
+import Button from '@/components/Button';
+import PerformanceHighlight from '@/components/PerformanceHighlight';
+import { Size, Kind } from '@/components/Button/constants';
+import useMessage from '@/hooks/useMessage';
+import { Icons } from '@/components/Icon';
 
 const DefaultAssetDetail = ({
   image,

@@ -1,6 +1,5 @@
 import React from 'react';
-import Icon, { Icons } from '../Icon';
-import { Size } from '../Icon/constants';
+import Icon, { Icons, Size } from '@/components/Icon';
 
 export interface FundStatusProps {
   /**

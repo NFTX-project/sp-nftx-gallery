@@ -1,8 +1,8 @@
 import React, { useMemo } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import Icon, { Icons, Size } from '../Icon';
-import useMessage from '../../hooks/message';
+import Icon, { Icons, Size } from '@/components/Icon';
+import useMessage from '@/hooks/useMessage';
 
 const Breadcrumbs = () => {
   const { asPath, pathname } = useRouter();

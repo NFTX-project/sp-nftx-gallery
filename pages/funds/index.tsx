@@ -5,7 +5,7 @@ import FundGroups from '@/components/FundGroups';
 import Search from '@/components/Search';
 import { useFundsContext } from '@/contexts/funds';
 import { useVaultsContext } from '@/contexts/vaults';
-import useMessage from '@/hooks/message';
+import useMessage from '@/hooks/useMessage';
 import { Fund } from '@/types/fund';
 import Breadcrumb from '@/components/Breadcrumbs';
 

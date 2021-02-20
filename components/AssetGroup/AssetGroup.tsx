@@ -1,13 +1,13 @@
 import React, { useMemo } from 'react';
 import Link from 'next/link';
-import useAxios from 'axios-hooks';
-import useMessage from '@/hooks/message';
+import useMessage from '@/hooks/useMessage';
 import Icon, { Icons } from '@/components/Icon';
 import Divider from '@/components/Divider';
 import VaultCard from '@/components/VaultCard';
 import { Fund } from '@/types/fund';
 import { Asset } from '@/types/asset';
 import { VaultCardStatus, VaultCardType } from '../VaultCard/constants';
+import useAssets from '@/hooks/useAssets';
 
 interface AssetGroupProps {
   fund: Fund;
@@ -86,22 +86,18 @@ const AssetGroupLoader = ({
 
   const tokenIds = fund.holdings
     .filter((h) => h !== assetKey)
-    .splice(randomEntry, max)
-    .join('&token_ids=');
-  const assetUrl = `https://api.opensea.io/api/v1/assets?asset_contract_address=${fund.asset.address}&token_ids=${tokenIds}&limit=${max}`;
+    .splice(randomEntry, max);
 
-  // @TODO move to a useAssets hook
-  const [{ data, loading, error }] = useAxios<{ assets: Asset[] }>({
-    url: assetUrl,
-    headers: {
-      'X-API-KEY': process.env.NEXT_PUBLIC_OPENSEA_API_KEY,
-    },
-  });
+  const { assets, loading, error } = useAssets(
+    fund.asset.address,
+    tokenIds,
+    max
+  );
 
   return (
     <AssetGroup
       fund={fund}
-      assets={data?.assets}
+      assets={assets}
       fundKey={fundKey}
       max={max}
       namespace={namespace}

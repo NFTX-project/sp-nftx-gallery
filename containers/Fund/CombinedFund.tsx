@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Breadcrumb from '@/components/Breadcrumbs';
 import Button, { Size as ButtonSize } from '@/components/Button';
-import useMessage from '@/hooks/message';
+import useMessage from '@/hooks/useMessage';
 import Icon, { Icons, Size as IconSize } from '@/components/Icon';
 import FundStatus from '@/components/FundStatus';
 import trimAddress from '@/utils/trimAddress';
@@ -11,7 +11,7 @@ import { useFundsContext } from '@/contexts/funds';
 import FundGroup from '@/components/FundGroup';
 import Pill from '@/components/Pill';
 import { FundProps } from './types';
-import usePrice from '@/hooks/price';
+import usePrice from '@/hooks/usePrice';
 
 const CombinedFund = ({ fundKey, ...fund }: FundProps) => {
   const vaults = useVaultsContext();

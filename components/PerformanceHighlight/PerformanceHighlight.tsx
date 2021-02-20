@@ -1,5 +1,5 @@
 import React, { ButtonHTMLAttributes } from 'react';
-import useMessage from '../../hooks/message';
+import useMessage from '@/hooks/useMessage';
 import toEth from '@/utils/toEth';
 
 export interface PricePerformanceProps
