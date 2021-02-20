@@ -2,11 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { createContext, ReactChild, useContext } from 'react';
 import fetchWithTimeout from '@/utils/fetchWithTimeout';
 import { fundSymbols } from '@/constants/allowlist';
+import fundMeta from '@/constants/fundData.json';
 import { Fund } from '@/types/fund';
 
 const FundsContext = createContext<Fund[]>([]);
 
-const getFunds = async function (): Promise<Fund[]> {
+const getFunds = async function (): Promise<Omit<Fund, 'meta'>[]> {
   // fetch the latest funds data, cap at 5 seconds
   try {
     const res = await fetchWithTimeout('https://nftx.xyz/funds-data', {
@@ -34,7 +35,15 @@ export const FundsProvider = ({ children }: { children: ReactChild }) => {
       const filteredFunds = allFunds.filter(
         (f) => f.isFinalized && fundSymbols.includes(f.fundToken.symbol)
       );
-      setFunds(filteredFunds);
+      const withMeta = filteredFunds.map((f) => {
+        const meta = fundMeta.find((fm) => fm.vaultId === f.vaultId) || {};
+        return {
+          ...f,
+          meta,
+        };
+      });
+
+      setFunds(withMeta);
     })();
   }, []);
 

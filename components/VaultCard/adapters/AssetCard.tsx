@@ -23,7 +23,7 @@ const AssetCard = (
     <DefaultVaultCard
       className={props.className}
       eyebrow={props.asset_contract.name}
-      image={props.image_url}
+      image={props.image_preview_url}
       title={props.name}
       // seems to come through as hex without the hex
       background={props.background_color ? `#${props.background_color}` : null}
