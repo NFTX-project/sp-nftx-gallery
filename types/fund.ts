@@ -16,4 +16,14 @@ export interface Fund {
   isD2Vault: boolean;
   isClosed: boolean;
   manager: string;
+  meta?: {
+    vaultId?: number;
+    name?: string;
+    imageIcon?: string;
+    imageFeature?: string;
+    description?: string;
+    buyUrl?: string;
+    buyOpenseaUrl?: string;
+    mintRedeemUrl?: string;
+  };
 }

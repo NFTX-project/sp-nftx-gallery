@@ -28,6 +28,7 @@ const SingleFund = ({
   isFinalized,
   vaultId,
   fundKey,
+  meta,
 }: FundProps) => {
   const { asPath } = useRouter();
   const [limit, setLimit] = useState(25);
@@ -150,7 +151,10 @@ const SingleFund = ({
               <Button
                 className="w-full md:w-auto"
                 kind={Kind.PRIMARY}
-                href={`https://app.sushiswap.fi/token/${fundToken.address}`}
+                href={
+                  meta.buyUrl ||
+                  `https://app.sushiswap.fi/token/${fundToken.address}`
+                }
                 target="_blank"
                 icon={Icons.EXTERNAL_LINK}
               >
