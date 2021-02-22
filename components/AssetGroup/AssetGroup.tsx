@@ -34,7 +34,7 @@ const AssetGroup = ({
     <header className="flex flex-col md:flex-row items-baseline justify-between mb-5">
       <h3 className="text-gray-50 font-sans text-2xl">
         {useMessage(`asset.${namespace}.title`, {
-          fund: fund.fundToken.name,
+          fund: `$${fund.fundToken.symbol}`,
         })}
       </h3>
       <Link href={`/funds/${fundKey}`}>

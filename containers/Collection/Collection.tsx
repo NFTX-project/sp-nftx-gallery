@@ -96,6 +96,7 @@ const CollectionContainer = ({
                       funds={supportingFunds}
                       slug={key}
                       namespace={key}
+                      fund={cf}
                     />
                   </div>
                 );

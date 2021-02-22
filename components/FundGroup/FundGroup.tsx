@@ -16,6 +16,7 @@ interface FundGroupProps {
   showLink?: boolean;
   funds: Fund[];
   columns?: Columns;
+  fund?: Fund;
 }
 
 const gridCols = {
@@ -31,6 +32,7 @@ const FundGroup = ({
   funds,
   columns = Columns.LIST,
   showLink = true,
+  fund,
 }: FundGroupProps) => {
   if (funds.length) {
     const sortedFunds = funds.sort((a) => (a.isD2Vault ? -1 : 1));
@@ -39,7 +41,9 @@ const FundGroup = ({
       <section className="font-sans font-bold">
         <header className="flex flex-col md:flex-row items-center justify-between mb-5">
           <h3 className="text-gray-50 font-sans text-2xl">
-            {useMessage(`funds.${namespace}.title`)}
+            {fund != null ? (
+              <span>{`$${fund.fundToken.symbol}`}</span>
+            ) : useMessage(`funds.${namespace}.title`)}
           </h3>
           {showLink && (
             <Link href={`/funds/${slug}`}>
@@ -69,7 +73,7 @@ const FundGroup = ({
                     title={
                       <div className="mt-2 flex items-center flex-wrap">
                         <span className="inline-block mr-2">
-                          {item.fundToken.name}
+                          {`$${item.fundToken.symbol}`}
                         </span>
                         <Pill
                           highlight={item.isD2Vault}
