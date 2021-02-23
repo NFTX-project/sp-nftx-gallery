@@ -2,8 +2,8 @@ import Link from 'next/link';
 import React from 'react';
 import useMessage from '@/hooks/useMessage';
 import { getFundKey } from '@/utils/getFundKey';
+import GroupHeader from '@/components/GroupHeader';
 import FundStatus from '@/components/FundStatus';
-import Icon, { Icons } from '@/components/Icon';
 import VaultCard from '@/components/VaultCard';
 import Divider from '@/components/Divider';
 import { Columns } from './constants';
@@ -31,7 +31,7 @@ const FundGroup = ({
   namespace,
   funds,
   columns = Columns.LIST,
-  showLink = true,
+  showLink,
   fund,
 }: FundGroupProps) => {
   if (funds.length) {
@@ -39,21 +39,12 @@ const FundGroup = ({
 
     return (
       <section className="font-sans font-bold">
-        <header className="flex flex-col md:flex-row items-center justify-between mb-5">
-          <h3 className="text-gray-50 font-sans text-2xl">
-            {fund != null ? (
-              <span>{`$${fund.fundToken.symbol}`}</span>
-            ) : useMessage(`funds.${namespace}.title`)}
-          </h3>
-          {showLink && (
-            <Link href={`/funds/${slug}`}>
-              <a className="text-gray-50 text-lg font-sans flex items-center">
-                {useMessage(`funds.${namespace}.link`)}
-                <Icon name={Icons.CHEVRON_RIGHT} />
-              </a>
-            </Link>
-          )}
-        </header>
+        <GroupHeader
+          namespace={namespace}
+          fund={fund}
+          slug={slug}
+          showLink={showLink}
+        />
         <Divider />
         <div className={`grid ${gridCols[columns]} gap-4`}>
           {sortedFunds.map((item) => {

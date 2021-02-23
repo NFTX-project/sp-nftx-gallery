@@ -6,3 +6,4 @@ out
 yarn.lock
 .storybook
 storybook-static
+tailwind.config.js

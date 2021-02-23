@@ -45,9 +45,7 @@ const FundStatus = ({ fin, ver, amm }: FundStatusProps) => {
                 name={s.enabled ? Icons.CHECK_CIRCLE : Icons.X_CIRCLE}
               />
             </dd>
-            <dt className="ml-0.5">
-              {useMessage(`fund.status.${s.key}`)}
-            </dt>
+            <dt className="ml-0.5">{useMessage(`fund.status.${s.key}`)}</dt>
           </div>
         ))}
       </dl>

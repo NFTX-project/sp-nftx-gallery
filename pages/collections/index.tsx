@@ -8,8 +8,8 @@ import { useVaultsContext } from '@/contexts/vaults';
 import useMessage from '@/hooks/useMessage';
 import collections from '@/constants/collections';
 import { Fund } from '@/types/fund';
-import { getCategoryKey } from '@/utils/getCategoryKey';
 import Breadcrumb from '@/components/Breadcrumbs';
+import { getFundKey } from '@/utils/getFundKey';
 
 const CollectionsPage = () => {
   const funds = useFundsContext();
@@ -25,7 +25,7 @@ const CollectionsPage = () => {
   const collectionFunds = useMemo(() => {
     if (funds) {
       return funds.filter((f) => {
-        if (collections.find((c) => c.items.includes(getCategoryKey(f)))) {
+        if (collections.find((c) => c.items.includes(getFundKey(f)))) {
           return true;
         }
         return false;
@@ -48,7 +48,12 @@ const CollectionsPage = () => {
           value={value}
           data={collectionFunds}
           renderResults={(results: Fund[]) => (
-            <FundGroups funds={results} vaults={vaults} showLink={false} />
+            <FundGroups
+              namespace="funds"
+              funds={results}
+              vaults={vaults}
+              showLink={false}
+            />
           )}
         />
       </div>

@@ -1,3 +1,5 @@
+const colors = require('tailwindcss/colors');
+
 module.exports = {
   purge: ['./pages/**/*.tsx', './components/**/*.tsx', './containers/**/*.tsx'],
   theme: {
@@ -16,6 +18,10 @@ module.exports = {
         },
         green: {
           500: '#69e35e',
+        },
+        orange: {
+          ...colors.orange,
+          500: '#FF6D41',
         },
       },
     },

@@ -60,7 +60,7 @@ const CombinedFund = ({ fundKey, ...fund }: FundProps) => {
           </p>
           <div className="mt-6 mb-6">
             <FundStatus
-              amm={price || false}
+              amm={price.raw != null || false}
               ver={true}
               fin={fund.isFinalized}
             />
@@ -72,7 +72,7 @@ const CombinedFund = ({ fundKey, ...fund }: FundProps) => {
               {useMessage('fund.combined.price', {
                 price: (
                   <span className="ml-2 font-bold text-3xl text-gray-50">
-                    {price || '🦧'}
+                    {price.usd || '🦧'}
                   </span>
                 ),
               })}
