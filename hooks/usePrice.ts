@@ -23,6 +23,7 @@ const usePrice = (address: string) => {
         usd: intl.formatNumber(latestPrice, {
           style: 'currency',
           currency: 'USD',
+          maximumFractionDigits: 0,
         }),
         raw: latestPrice,
       });

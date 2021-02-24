@@ -19,7 +19,7 @@ import useMessage from '@/hooks/useMessage';
 import type { FundProps } from './types';
 import { Asset } from '@/types/asset';
 import usePrice from '@/hooks/usePrice';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, FormattedNumber } from 'react-intl';
 
 const SingleFund = ({
   holdings,
@@ -119,12 +119,27 @@ const SingleFund = ({
                 <dd className="font-bold text-xl">{holdings.length}</dd>
               </div>
               {!!price.usd && (
-                <div className="mr-4 flex-col text-left">
-                  <dt>
-                    <FormattedMessage id="fund.detail.price" />
-                  </dt>
-                  <dd className="font-bold text-xl">{price.usd}</dd>
-                </div>
+                <>
+                  <div className="mr-4 flex-col text-left">
+                    <dt>
+                      <FormattedMessage id="fund.detail.price" />
+                    </dt>
+                    <dd className="font-bold text-xl">{price.usd}</dd>
+                  </div>
+                  <div className="mr-4 flex-col text-left">
+                    <dt>
+                      <FormattedMessage id="fund.detail.tvl" />
+                    </dt>
+                    <dd className="font-bold text-xl">
+                      <FormattedNumber
+                        value={holdings.length * price.raw}
+                        currency="USD"
+                        style="currency"
+                        maximumFractionDigits={0}
+                      />
+                    </dd>
+                  </div>
+                </>
               )}
             </dl>
           </header>

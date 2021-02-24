@@ -32,13 +32,13 @@ const FundGroupHeader = ({
           text={useMessage(fund.isD2Vault ? 'pill.combined' : 'pill.single')}
         />
       </h3>
-      <span className="inline-flex items-center flex-wrap mb-2 lg:mb-0 lg:ml-8 text-sm uppercase text-gray-300">
+      <span className="inline-flex items-center justify-center md:justify-start flex-wrap mb-2 lg:mb-0 lg:ml-8 text-sm uppercase text-gray-300">
         {price.usd != null && (
           <span className="mr-2 lg:mr-4">
             <FormattedMessage
               id="group.fund.price"
               values={{
-                price: <span className="ml-2 text-green-500">{price.usd}</span>,
+                price: <span className="ml-1 text-green-500">{price.usd}</span>,
               }}
             />
           </span>
@@ -49,11 +49,12 @@ const FundGroupHeader = ({
               id="group.fund.tvl"
               values={{
                 tvl: (
-                  <span className="ml-2 text-green-500">
+                  <span className="ml-1 text-green-500">
                     <FormattedNumber
                       style="currency"
                       value={price.raw * fund.holdings.length}
                       currency="USD"
+                      maximumFractionDigits={0}
                     />
                   </span>
                 ),

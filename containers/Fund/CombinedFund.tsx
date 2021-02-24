@@ -133,7 +133,7 @@ const CombinedFund = ({ fundKey, ...fund }: FundProps) => {
           <FundGroup
             showLink={false}
             funds={supportingFunds}
-            namespace="supporting"
+            namespace="funds.supporting"
           />
         </section>
       ) : null}

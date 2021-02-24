@@ -68,6 +68,7 @@
   "fund.status.amm": "AMM",
   "fund.detail.supply": "Supply",
   "fund.detail.price": "Price",
+  "fund.detail.tvl": "TVL",
   "fund.cta.invest": "Buy {fund}",
   "fund.cta.mintRedeem": "Mint or redeem {token}",
   "fund.meta.title": "{fund} | NFTX",
