@@ -1,5 +1,6 @@
 import React from 'react';
 import Icon, { Icons, Size } from '@/components/Icon';
+import useMessage from '@/hooks/useMessage';
 
 export interface FundStatusProps {
   /**
@@ -21,20 +22,14 @@ const FundStatus = ({ fin, ver, amm }: FundStatusProps) => {
     {
       key: 'fin',
       enabled: fin,
-      abbr: 'FIN',
-      text: 'Finalised',
     },
     {
       key: 'ver',
       enabled: ver,
-      abbr: 'VER',
-      text: 'Verified',
     },
     {
       key: 'amm',
       enabled: amm,
-      abbr: 'AMM',
-      text: 'Swappable via an AMM',
     },
   ];
 
@@ -50,9 +45,7 @@ const FundStatus = ({ fin, ver, amm }: FundStatusProps) => {
                 name={s.enabled ? Icons.CHECK_CIRCLE : Icons.X_CIRCLE}
               />
             </dd>
-            <dt className="ml-0.5" title={s.text}>
-              {s.abbr}
-            </dt>
+            <dt className="ml-0.5">{useMessage(`fund.status.${s.key}`)}</dt>
           </div>
         ))}
       </dl>

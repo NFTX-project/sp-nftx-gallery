@@ -95,7 +95,8 @@ const CollectionContainer = ({
                     <FundGroup
                       funds={supportingFunds}
                       slug={key}
-                      namespace={key}
+                      namespace={`funds.${key}`}
+                      fund={cf}
                     />
                   </div>
                 );
@@ -103,7 +104,7 @@ const CollectionContainer = ({
                 return (
                   <div key={cf.fundToken.name} className="mb-24">
                     <AssetGroup
-                      namespace="collection"
+                      namespace="funds.collection"
                       fundKey={key}
                       fund={cf}
                       max={10}

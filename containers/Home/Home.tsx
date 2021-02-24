@@ -79,7 +79,7 @@ const HomeContainer = ({ funds }: { funds: Fund[] }) => {
         <div className="mb-24">
           {funds.length ? (
             <FundGroup
-              namespace="all"
+              namespace="funds.all"
               slug=""
               funds={funds}
               columns={Columns.FOCUS}

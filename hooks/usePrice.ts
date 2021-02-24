@@ -3,7 +3,13 @@ import { useEffect, useState } from 'react';
 import { useIntl } from 'react-intl';
 
 const usePrice = (address: string) => {
-  const [price, setPrice] = useState(null);
+  const [price, setPrice] = useState<{
+    usd: string;
+    raw: number;
+  }>({
+    raw: null,
+    usd: null,
+  });
   const intl = useIntl();
 
   const [{ data }] = useAxios({
@@ -13,12 +19,13 @@ const usePrice = (address: string) => {
   useEffect(() => {
     const latestPrice = data?.data?.prices[0]?.price;
     if (latestPrice) {
-      setPrice(
-        intl.formatNumber(latestPrice, {
+      setPrice({
+        usd: intl.formatNumber(latestPrice, {
           style: 'currency',
           currency: 'USD',
-        })
-      );
+        }),
+        raw: latestPrice,
+      });
     }
   }, [data]);
 

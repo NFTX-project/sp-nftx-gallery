@@ -35,7 +35,7 @@ const kindStyles = {
   [Kind.SECONDARY]:
     'bg-white text-gray-900 hover:bg-gray-50 focus:ring-gray-300',
   [Kind.ICON]:
-    'bg-gradient-to-b from-red-400 via-red-500 to-red-400 text-white hover:from-red-500 hover:to-red-500 focus:ring-red-600',
+    'bg-gradient-to-b from-orange-500 via-red-500 to-orange-500 text-white hover:from-orange-500 hover:to-orange-500 focus:ring-red-600',
 };
 const sizeStyles = {
   [Size.SMALL]: `py-2 px-3 min-h-100 h-10 text-sm`,

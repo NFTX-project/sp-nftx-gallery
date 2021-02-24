@@ -20,7 +20,7 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 z-10 border-b-2 border-gray-800 bg-gray-900">
-      <div className="bg-gradient-to-r from-red-500 via-red-800 to-pink-500 text-gray-50">
+      <div className="bg-gradient-to-r from-orange-500 to-pink-500 text-gray-50">
         <div className="container mx-auto text-xs px-4 py-1 flex justify-between font-bold">
           {useMessage('header.beta.text', {
             version: process.env.appVersion,

@@ -118,12 +118,12 @@ const SingleFund = ({
                 <dt>{useMessage('fund.detail.supply')}</dt>
                 <dd className="font-bold text-xl">{holdings.length}</dd>
               </div>
-              {!!price && (
+              {!!price.usd && (
                 <div className="mr-4 flex-col text-left">
                   <dt>
                     <FormattedMessage id="fund.detail.price" />
                   </dt>
-                  <dd className="font-bold text-xl">{price}</dd>
+                  <dd className="font-bold text-xl">{price.usd}</dd>
                 </div>
               )}
             </dl>

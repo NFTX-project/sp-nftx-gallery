@@ -11,6 +11,7 @@ interface FundGroupProps {
     d1VaultIds: number[];
   }[];
   showLink?: boolean;
+  namespace?: string;
 }
 
 /**
@@ -68,7 +69,12 @@ const groupFunds = (
   return groups;
 };
 
-const FundGroups = ({ funds, vaults, showLink }: FundGroupProps) => {
+const FundGroups = ({
+  funds,
+  vaults,
+  showLink,
+  namespace = 'funds',
+}: FundGroupProps) => {
   const grouped = useMemo(() => {
     return Object.entries(groupFunds(funds, vaults));
   }, [funds]);
@@ -88,7 +94,7 @@ const FundGroups = ({ funds, vaults, showLink }: FundGroupProps) => {
           <FundGroup
             showLink={showLink}
             slug={fund.key}
-            namespace={fund.key}
+            namespace={`${namespace}.${fund.key}`}
             funds={fund.funds}
           />
         </div>
