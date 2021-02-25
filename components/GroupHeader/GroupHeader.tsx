@@ -3,7 +3,7 @@ import usePrice from '@/hooks/usePrice';
 import { Fund } from '@/types/fund';
 import Pill from '@/components/Pill';
 import Link from 'next/link';
-import React from 'react';
+import React, { ReactNode } from 'react';
 import Icon, { Icons } from '../Icon';
 import { FormattedMessage, FormattedNumber } from 'react-intl';
 
@@ -72,11 +72,13 @@ interface GroupHeaderProps {
   slug: string;
   showLink?: boolean;
   fund?: Fund;
+  title?: ReactNode;
 }
 
 const GroupHeader = ({
   namespace,
   slug,
+  title,
   showLink = true,
   fund,
 }: GroupHeaderProps) => {
@@ -88,11 +90,11 @@ const GroupHeader = ({
         <FundGroupHeader fund={fund} namespace={namespace} slug={slug} />
       ) : (
         <h3 className="text-gray-50 font-sans text-2xl">
-          {useMessage(`${namespace}.title`)}
+          {title || useMessage(`${namespace}.title`)}
         </h3>
       )}
       {showLink && (
-        <Link href={`/funds/${slug}`}>
+        <Link href={slug}>
           <a className="text-gray-50 text-lg font-sans flex items-center">
             {useMessage(`${namespace}.link`)}
             <Icon name={Icons.CHEVRON_RIGHT} />

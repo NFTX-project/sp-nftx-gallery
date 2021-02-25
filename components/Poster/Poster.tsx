@@ -3,7 +3,7 @@ import { Colorway } from './constants';
 
 export interface PosterProps {
   background?: CSSStyleDeclaration['background'];
-  image?: string;
+  image?: string | URL;
   title?: string;
   text?: string;
   colorway?: Colorway;

@@ -1,33 +1,25 @@
 import React from 'react';
-import Head from 'next/head';
 import { useFundsContext } from '../contexts/funds';
-import useMessage from '@/hooks/useMessage';
 import HomeContainer from '@/containers/Home';
+import { GetServerSideProps } from 'next';
+import { Collection } from '@/types/wp';
 
-const HomePage = () => {
-  const funds = useFundsContext();
-
-  if (funds.length) {
-    return <HomeContainer funds={funds} />;
-  }
-
-  return (
-    <>
-      <Head>
-        <title>{useMessage('home.meta.title')}</title>
-      </Head>
-      <div className="flex-1 flex items-center justify-center container mx-auto pt-12 pb-18 px-4">
-        <h1 className="text-4xl mb-4 font-bold text-center text-gray-50 animate-pulse">
-          <img
-            src="/images/logo_on_black.svg"
-            className="mx-auto max-w-xs md:max-w-sm lg:max-w-md xl:max-w-lg 2xl:max-w-xl"
-            alt="NFTX logo"
-          />
-          <div className="invisible h-0">{useMessage('home.title')}</div>
-        </h1>
-      </div>
-    </>
+export const getServerSideProps: GetServerSideProps = async () => {
+  const res = await fetch(
+    'https://cms.nftx.xyz/wp-json/wp/v2/collections/?_fields=title,slug,acf.collection_title,acf.collection_description,acf.collection_feature_image,acf.collection_visible,acf.collection_related_fund_vault_ids,yoast_head'
   );
+  const collections = (await res.json()) as Collection[];
+
+  return {
+    props: {
+      collections,
+    },
+  };
+};
+
+const HomePage = ({ collections }: { collections: Collection[] }) => {
+  const funds = useFundsContext();
+  return <HomeContainer funds={funds} collections={collections || []} />;
 };
 
 export default HomePage;
