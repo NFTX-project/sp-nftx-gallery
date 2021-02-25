@@ -25,6 +25,7 @@
   "collection.loading": "Loading collection...",
   "collection.error": "Failed to load collection :(",
   "collection.meta.title": "{collection} Collection | NFTX",
+  "collection.link": "See collection",
   "funds.meta.title": "Explore Funds | NFTX",
   "funds.all.title": "Explore funds",
   "funds.all.link": "Search all",

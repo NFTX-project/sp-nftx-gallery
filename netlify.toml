@@ -1,14 +1,14 @@
-[[redirects]]
-  from = "/funds/:fund"
-  to = "/funds/[fund].html?fund=:fund"
-  status = 200
+[build]
+  command   = "yarn build"
+  publish   = "out"
 
-[[redirects]]
-  from = "/funds/:fund/:asset"
-  to = "/funds/[fund]/[asset].html?fund=:fund&asset=:asset"
-  status = 200
+[dev]
+  functions = "out_functions"
+  publish   = "out_publish"
+  # We manually set the framework to static, otherwise Netlify automatically
+  # detects Next.js and redirects do not work.
+  # Read more: https://github.com/netlify/cli/blob/master/docs/netlify-dev.md#project-detection
+  framework = "#static"
 
-[[redirects]]
-  from = "/collections/:collection"
-  to = "/collections/[collection].html?collection=:collection"
-  status = 200
+[[plugins]]
+  package = "@netlify/plugin-nextjs"

@@ -4,6 +4,8 @@ import Link from 'next/link';
 import Icon, { Icons, Size } from '@/components/Icon';
 import useMessage from '@/hooks/useMessage';
 
+const denylist = ['collections'];
+
 const Breadcrumbs = () => {
   const { asPath, pathname } = useRouter();
   const routerPath = pathname.split('/').filter(Boolean);
@@ -17,6 +19,10 @@ const Breadcrumbs = () => {
         <a className="text-gray-400">{useMessage('breadcrumb.home')}</a>
       </Link>
       {path.map((p, i) => {
+        if (denylist.includes(p)) {
+          return null;
+        }
+
         // join the URL together based on where you are
         const href = path.slice(0, i + 1).join('/');
 
