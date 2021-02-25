@@ -2,6 +2,8 @@
 build
 coverage
 out
+out_functions
+out_publish
 
 # Logs
 logs

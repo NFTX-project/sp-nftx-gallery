@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import React from 'react';
+import React, { ReactNode } from 'react';
 import useMessage from '@/hooks/useMessage';
 import { getFundKey } from '@/utils/getFundKey';
 import GroupHeader from '@/components/GroupHeader';
@@ -13,6 +13,7 @@ import { Fund } from '@/types/fund';
 interface FundGroupProps {
   namespace: string;
   slug?: string;
+  title?: ReactNode;
   showLink?: boolean;
   funds: Fund[];
   columns?: Columns;
@@ -28,6 +29,7 @@ const gridCols = {
 
 const FundGroup = ({
   slug,
+  title,
   namespace,
   funds,
   columns = Columns.LIST,
@@ -40,6 +42,7 @@ const FundGroup = ({
     return (
       <section className="font-sans font-bold">
         <GroupHeader
+          title={title}
           namespace={namespace}
           fund={fund}
           slug={slug}
