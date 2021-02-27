@@ -112,6 +112,7 @@ const SingleFund = ({
                         currency="USD"
                         style="currency"
                         maximumFractionDigits={0}
+                        minimumFractionDigits={0}
                       />
                     </dd>
                   </div>
