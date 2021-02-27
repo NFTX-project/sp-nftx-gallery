@@ -30,6 +30,8 @@
   "funds.all.link": "Search all",
   "funds.supporting.title": "Supporting funds",
   "funds.groups.none": " ",
+  "funds.group.eyebrow.combined": "{count} {type} funds",
+  "funds.group.eyebrow.single": "{count} {asset}",
   "funds.dynamic.title": "{fund}",
   "funds.dynamic.link": "See all",
   "funds.collection.link": "See supply",
