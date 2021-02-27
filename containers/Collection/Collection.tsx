@@ -83,7 +83,7 @@ const CollectionContainer = ({
             </p>
           </div>
         )}
-        {funds != null && (
+        {funds !== false && funds != null && (
           <section className="my-12">
             {sorted.map((cf) => {
               const key = getFundKey(cf);

@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { GetServerSideProps } from 'next';
+import Head from 'next/head';
 import CollectionContainer from '@/containers/Collection';
 import { useFundsContext } from '@/contexts/funds';
 import { Collection } from '@/types/wp';
+import buildYoastMeta from '@/utils/buildYoastMeta';
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const slug = context.params.collection;
 
   const res = await fetch(
-    `https://cms.nftx.xyz/wp-json/wp/v2/collections/?slug=${slug}&_fields=title,slug,acf.collection_title,acf.collection_description,acf.collection_feature_image,acf.collection_visible,acf.collection_related_fund_vault_ids,yoast_head`
+    `https://cms.nftx.xyz/wp-json/wp/v2/collections/?slug=${slug}&_fields=title,slug,acf.collection_title,acf.collection_description,acf.collection_related_fund_vault_ids,yoast_meta,yoast_title`
   );
   const collection = (await res.json()) as Collection[];
-  console.log(collection);
 
   if (Array.isArray(collection)) {
     return {
@@ -51,6 +52,9 @@ const CollectionPage = ({ collection }: { collection: Collection }) => {
 
   return (
     <>
+      <Head>
+        {buildYoastMeta(collection.yoast_title, collection.yoast_meta)}
+      </Head>
       <CollectionContainer collection={collection} funds={collectionFunds} />
     </>
   );

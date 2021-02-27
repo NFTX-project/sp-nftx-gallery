@@ -8,6 +8,4 @@ module.exports = {
   env: {
     appVersion: process.env.npm_package_version,
   },
-  // for next-on-netlify plugin
-  target: 'serverless',
 };

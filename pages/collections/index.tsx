@@ -11,7 +11,7 @@ import FundGroup from '@/components/FundGroup';
 
 export const getServerSideProps: GetServerSideProps = async () => {
   const res = await fetch(
-    'https://cms.nftx.xyz/wp-json/wp/v2/collections/?_fields=title,slug,acf.collection_title,acf.collection_description,acf.collection_feature_image,acf.collection_visible,acf.collection_related_fund_vault_ids,yoast_head'
+    'https://cms.nftx.xyz/wp-json/wp/v2/collections/?_fields=title,slug,acf.collection_title,acf.collection_related_fund_vault_ids'
   );
   const collections = (await res.json()) as Collection[];
 

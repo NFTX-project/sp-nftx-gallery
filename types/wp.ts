@@ -1,3 +1,9 @@
+export interface YoastMeta {
+  name?: string;
+  property?: string;
+  content: string;
+}
+
 export interface Collection {
   title: {
     rendered: string;
@@ -10,5 +16,6 @@ export interface Collection {
     collection_related_fund_vault_ids: string;
     collection_visible: 'visible' | null;
   };
-  yoast_head: string;
+  yoast_meta: YoastMeta[];
+  yoast_title: string;
 }

@@ -2299,6 +2299,18 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
+"@netlify/plugin-nextjs@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@netlify/plugin-nextjs/-/plugin-nextjs-2.0.1.tgz#7c1db68f85f56fbe912dda2d655bdc6237a6e166"
+  integrity sha512-bGo5QMXsoNmaz40rkxU2VxeEjG9/6WVfqijrzuXnD1ogsHKCrW/jY65s6gZ33pk3T/f8nxWFcjlQDwyKtaqGsw==
+  dependencies:
+    chalk "^4.1.0"
+    find-up "^4.1.0"
+    jimp "^0.16.1"
+    make-dir "^3.1.0"
+    next-on-netlify "2.8.7"
+    semver "^7.3.2"
+
 "@next/env@10.0.6":
   version "10.0.6"
   resolved "https://registry.yarnpkg.com/@next/env/-/env-10.0.6.tgz#e3c845491a8b0fffda219b5bda84b361b8b2f9c2"
@@ -4788,7 +4800,7 @@ chardet@^0.7.0:
   resolved "https://registry.yarnpkg.com/chardet/-/chardet-0.7.0.tgz"
   integrity sha512-mT8iDcrh03qDGRRmoA2hmBJnxpllMR+0/0qlzjqZES6NdiWDcZkCNAk4rPFZ9Q85r27unkiNNg8ZOiwZXBHwcA==
 
-chokidar@3.5.1, chokidar@^3.3.0, chokidar@^3.4.1, chokidar@^3.5.1:
+chokidar@3.5.1, chokidar@^3.3.0, chokidar@^3.4.1:
   version "3.5.1"
   resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-3.5.1.tgz"
   integrity sha512-9+s+Od+W0VJJzawDma/gvBNQqkTiqYTWLuZoyAsivsI4AaWTCzHG06/TMjsf1cYe9Cb97UCEhjz7HvnPk2p/tw==
@@ -5417,13 +5429,6 @@ data-uri-to-buffer@3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/data-uri-to-buffer/-/data-uri-to-buffer-3.0.1.tgz"
   integrity sha512-WboRycPNsVw3B3TL559F7kuBUM4d8CgMEvk6xEJlOp7OBPjt6G7z8WMWlD2rOFZLk6OYfFIUGsCOWzcQH9K2og==
-
-debounce-fn@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/debounce-fn/-/debounce-fn-4.0.0.tgz#ed76d206d8a50e60de0dd66d494d82835ffe61c7"
-  integrity sha512-8pYCQiL9Xdcg0UPSD3d+0KMlOjp+KGU5EPwYddgzQ7DATsg4fuUDjQtsYLmWjnk2obnNHgV3vE2Y4jejSOJVBQ==
-  dependencies:
-    mimic-fn "^3.0.0"
 
 debug@2.6.9, debug@^2.2.0, debug@^2.3.3, debug@^2.6.0:
   version "2.6.9"
@@ -8737,11 +8742,6 @@ mimic-fn@^2.1.0:
   resolved "https://registry.yarnpkg.com/mimic-fn/-/mimic-fn-2.1.0.tgz"
   integrity sha512-OqbOk5oEQeAZ8WXWydlu9HJjz9WVdEIvamMCcXmuqUYjTknH/sqsWvhQ3vgwKFRR1HpjvNBKQ37nbJgYzGqGcg==
 
-mimic-fn@^3.0.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/mimic-fn/-/mimic-fn-3.1.0.tgz#65755145bbf3e36954b949c16450427451d5ca74"
-  integrity sha512-Ysbi9uYW9hFyfrThdDEQuykN4Ey6BuwPD2kpI5ES/nFTDn/98yxYNLZJcgUAKPT/mcrLLKaGzJR9YVxJrIdASQ==
-
 mimic-response@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/mimic-response/-/mimic-response-2.1.0.tgz"
@@ -8995,15 +8995,13 @@ nested-error-stacks@^2.0.0, nested-error-stacks@^2.1.0:
   resolved "https://registry.yarnpkg.com/nested-error-stacks/-/nested-error-stacks-2.1.0.tgz"
   integrity sha512-AO81vsIO1k1sM4Zrd6Hu7regmJN1NSiAja10gc4bX3F0wd+9rQmcuHQaHVQCYIEC8iFXnE+mavh23GOt7wBgug==
 
-next-on-netlify@^2.9.0:
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/next-on-netlify/-/next-on-netlify-2.9.0.tgz#9d66fc65802e26d41bd7fcc5eb9a73326708a5e2"
-  integrity sha512-1M93P6VEvsDCzpx2bt6lRmnoLTd47YbVIrH6O2xb2Cptd6bJF+uACP3tdtD7Jv7HrCkfMqbGYalEeHAc/0RwKA==
+next-on-netlify@2.8.7:
+  version "2.8.7"
+  resolved "https://registry.yarnpkg.com/next-on-netlify/-/next-on-netlify-2.8.7.tgz#d498a079c7e41e6b302f1c7692a70f725e682188"
+  integrity sha512-3iNgKwwIShxerSwf9moFEeRiINvj46/xnvejSo6jYvXFdKRLYJrMr3aeyWD8NMsJ6nVRiiWk4Fv0df/wee8qfw==
   dependencies:
     "@sls-next/lambda-at-edge" "^1.5.2"
-    chokidar "^3.5.1"
     commander "^6.0.0"
-    debounce-fn "^4.0.0"
     fs-extra "^9.0.1"
     jimp "^0.16.1"
 

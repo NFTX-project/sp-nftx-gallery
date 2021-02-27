@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { Colorway } from './constants';
 
 export interface PosterProps {
   background?: CSSStyleDeclaration['background'];
   image?: string | URL;
-  title?: string;
-  text?: string;
+  title?: ReactNode;
+  text?: ReactNode;
   colorway?: Colorway;
 }
 
