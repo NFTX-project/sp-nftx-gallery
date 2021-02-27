@@ -9,6 +9,7 @@ import Divider from '@/components/Divider';
 import { Columns } from './constants';
 import Pill from '@/components/Pill';
 import { Fund } from '@/types/fund';
+import { useVaultsContext } from '@/contexts/vaults';
 
 interface FundGroupProps {
   namespace: string;
@@ -37,7 +38,25 @@ const FundGroup = ({
   fund,
 }: FundGroupProps) => {
   if (funds.length) {
+    const vaults = useVaultsContext();
     const sortedFunds = funds.sort((a) => (a.isD2Vault ? -1 : 1));
+
+    const getEyebrow = (item: Fund) => {
+      if (item.isD2Vault) {
+        const count =
+          vaults.find((v) => v.d2VaultId === item.vaultId)?.d1VaultIds
+            ?.length || null;
+        return useMessage('funds.group.eyebrow.combined', {
+          type: item.fundToken.name,
+          count,
+        });
+      }
+
+      return useMessage('funds.group.eyebrow.single', {
+        asset: item.asset.name,
+        count: item?.holdings?.length,
+      });
+    };
 
     return (
       <section className="font-sans font-bold">
@@ -61,9 +80,7 @@ const FundGroup = ({
                   <VaultCard
                     image={`/images/cards/${fundKey}-140.png`}
                     imageSrcSet={`/images/cards/${fundKey}-140@2x.png 2x`}
-                    eyebrow={`${item?.holdings?.length || ''} ${
-                      item.asset.name
-                    }`}
+                    eyebrow={getEyebrow(item)}
                     title={
                       <div className="mt-2 flex items-center flex-wrap">
                         <span className="inline-block mr-2">

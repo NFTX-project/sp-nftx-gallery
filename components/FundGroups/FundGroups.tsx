@@ -39,7 +39,7 @@ const groupFunds = (
       groups[key].funds.push(fund);
     } else {
       groups[key] = {
-        key: getCategoryKey(fund),
+        key: getCategoryKey(fund) || fund.fundToken.name,
         funds: [fund],
       };
     }

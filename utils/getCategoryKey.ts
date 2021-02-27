@@ -9,4 +9,4 @@
 import { Fund } from '@/types/fund';
 
 export const getCategoryKey = (fund: Fund) =>
-  encodeURI(fund.asset.name.toLocaleLowerCase().replace(/ /g, '-'));
+  encodeURI(fund?.asset.name.toLocaleLowerCase().replace(/ /g, '-'));
