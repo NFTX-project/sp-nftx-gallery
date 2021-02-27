@@ -10,9 +10,12 @@ const FundsContext = createContext<Fund[]>([]);
 const getFunds = async function (): Promise<Omit<Fund, 'meta'>[]> {
   // fetch the latest funds data, cap at 5 seconds
   try {
-    const res = await fetchWithTimeout('https://nftx.xyz/funds-data', {
-      timeout: 5000,
-    });
+    const res = await fetchWithTimeout(
+      'https://nftx.ethereumdb.com/v1/vaults/',
+      {
+        timeout: 5000,
+      }
+    );
     if (res.ok) {
       return res.json();
     } else {
