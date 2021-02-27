@@ -1,69 +1,59 @@
 import React, { useEffect, useState } from 'react';
-import useMessage from '@/hooks/useMessage';
-// import { GetServerSideProps } from 'next';
-import { useRouter } from 'next/router';
-import collections from '@/constants/collections';
+import { GetServerSideProps } from 'next';
 import CollectionContainer from '@/containers/Collection';
 import { useFundsContext } from '@/contexts/funds';
-import { getFundKey } from '@/utils/getFundKey';
-// import { Collection } from '@/types/wp';
+import { Collection } from '@/types/wp';
 
-// export const getServerSideProps: GetServerSideProps = async () => {
-//   const res = await fetch(
-//     'https://cms.nftx.xyz/wp-json/wp/v2/collections/?_fields=title,slug,acf.collection_title,acf.collection_description,acf.collection_feature_image,acf.collection_visible,acf.collection_related_fund_vault_ids,yoast_head'
-//   );
-//   const collections = await res.json() as Collection[];
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const slug = context.params.collection;
 
-//   return {
-//     props: {
-//       collections,
-//     },
-//   };
-// };
+  const res = await fetch(
+    `https://cms.nftx.xyz/wp-json/wp/v2/collections/?slug=${slug}&_fields=title,slug,acf.collection_title,acf.collection_description,acf.collection_feature_image,acf.collection_visible,acf.collection_related_fund_vault_ids,yoast_head`
+  );
+  const collection = (await res.json()) as Collection[];
+  console.log(collection);
 
-const CollectionPage = () => {
-  const router = useRouter();
+  if (Array.isArray(collection)) {
+    return {
+      props: {
+        collection: collection[0],
+      },
+    };
+  }
+
+  return {
+    props: {
+      collection: null,
+    },
+  };
+};
+
+const CollectionPage = ({ collection }: { collection: Collection }) => {
   const funds = useFundsContext();
-  const [collection, setCollection] = useState(null);
-  const collectionPath = router.query.collection as string;
+  const [collectionFunds, setCollectionFunds] = useState(null);
 
   useEffect(() => {
-    if (collectionPath && funds.length) {
-      const activeCollection = collections.find(
-        (c) => c.href === collectionPath
+    if (collection && funds.length) {
+      const vaultIds = collection.acf.collection_related_fund_vault_ids.split(
+        ','
       );
-      const collectionFunds = funds.filter((f) =>
-        activeCollection.items.includes(getFundKey(f))
+      const holdings = funds.filter((f) =>
+        vaultIds.includes(String(f.vaultId))
       );
 
-      if (activeCollection) {
-        setCollection({
-          collection: activeCollection,
-          funds: collectionFunds,
-        });
+      if (holdings.length) {
+        setCollectionFunds(holdings);
       } else {
-        setCollection(false);
+        setCollectionFunds(false);
       }
     }
-  }, [collectionPath, funds]);
+  }, [collection, funds]);
 
-  if (collection === false) {
-    return (
-      <div className="container text-center mx-auto px-4 py-20 text-gray-50">
-        <p>{useMessage('collection.notfound')}</p>
-      </div>
-    );
-  }
-
-  if (collection == null) {
-    return (
-      <div className="container text-center mx-auto px-4 py-20 text-gray-50">
-        <p>{useMessage('collection.loading')}</p>
-      </div>
-    );
-  }
-
-  return <CollectionContainer {...collection} />;
+  return (
+    <>
+      <CollectionContainer collection={collection} funds={collectionFunds} />
+    </>
+  );
 };
 
 export default CollectionPage;
