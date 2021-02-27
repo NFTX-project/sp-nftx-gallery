@@ -24,7 +24,7 @@ const usePrice = (address: string) => {
           style: 'currency',
           currency: 'USD',
           maximumFractionDigits: 2,
-          minimumFractionDigits: 0,
+          minimumFractionDigits: 2,
         }),
         raw: latestPrice,
       });
