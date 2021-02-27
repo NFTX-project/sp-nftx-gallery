@@ -21,6 +21,9 @@ const DefaultAssetDetail = ({
   vaultId,
   openseaUrl,
 }: AssetDetailProps) => {
+  // @TODO make proper media adapter to handle image/video
+  const isMp4 = image?.includes('.mp4');
+
   return (
     <div className={className}>
       <article className="text-gray-50 border-2 border-gray-500 border-opacity-30 text-left break-words">
@@ -31,11 +34,20 @@ const DefaultAssetDetail = ({
           >
             <div className="relative h-full">
               {placeholder}
-              {image && (
+              {image && !isMp4 && (
                 <img
                   loading="lazy"
                   src={image}
                   alt={`${eyebrow} ${title}`}
+                  className="w-full object-contain h-full"
+                />
+              )}
+              {image && isMp4 && (
+                <video
+                  src={image}
+                  autoPlay={true}
+                  muted={true}
+                  loop={true}
                   className="w-full object-contain h-full"
                 />
               )}

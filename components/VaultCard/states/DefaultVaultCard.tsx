@@ -12,6 +12,9 @@ const DefaultVaultCard = ({
   className,
   placeholder,
 }: VaultCardProps) => {
+  // @TODO make proper media adapter to handle image/video
+  const isMp4 = image?.includes('.mp4');
+
   return (
     <div className={className || `h-full`}>
       <article className="h-full bg-gray-800 text-gray-50 border-2 border-gray-500 border-opacity-30 text-left break-words">
@@ -21,13 +24,22 @@ const DefaultVaultCard = ({
         >
           <div className="relative h-36">
             {placeholder}
-            {image && (
+            {image && !isMp4 && (
               <img
                 loading="lazy"
                 srcSet={imageSrcSet}
                 src={image}
                 alt={`${eyebrow}`}
                 className="w-full object-contain h-36"
+              />
+            )}
+            {image && isMp4 && (
+              <video
+                src={image}
+                className="w-full object-contain h-36"
+                autoPlay={true}
+                loop={true}
+                muted={true}
               />
             )}
           </div>

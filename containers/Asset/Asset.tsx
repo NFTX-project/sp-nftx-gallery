@@ -73,7 +73,7 @@ const AssetContainer = React.memo(
             background={
               data?.background_color ? `#${data.background_color}` : null
             }
-            image={data?.image_original_url}
+            image={data?.image_url}
             assetType={data?.asset_contract?.name}
             openseaUrl={data?.permalink}
             fundName={fund.fundToken.name}
