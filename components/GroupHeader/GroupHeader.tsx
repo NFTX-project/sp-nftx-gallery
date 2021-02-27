@@ -55,6 +55,7 @@ const FundGroupHeader = ({
                       value={price.raw * fund.holdings.length}
                       currency="USD"
                       maximumFractionDigits={0}
+                      minimumFractionDigits={0}
                     />
                   </span>
                 ),
