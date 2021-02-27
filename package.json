@@ -43,7 +43,6 @@
     "big.js": "^6.0.3",
     "next": "^10.0.6",
     "postcss": "^7",
-    "prettier": "^2.2.1",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-filter-search": "^1.0.11",
