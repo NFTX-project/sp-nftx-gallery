@@ -95,18 +95,19 @@ const CollectionContainer = ({
                   <div key={cf.fundToken.name} className="mb-24">
                     <FundGroup
                       funds={supportingFunds}
-                      slug={key}
+                      slug={`/funds/${key}`}
                       namespace={`funds.${key}`}
                       fund={cf}
                     />
                   </div>
                 );
               } else {
+                console.log(key);
                 return (
                   <div key={cf.fundToken.name} className="mb-24">
                     <AssetGroup
                       namespace="funds.collection"
-                      fundKey={key}
+                      slug={`/funds/${key}`}
                       fund={cf}
                       max={10}
                     />

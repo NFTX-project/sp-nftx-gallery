@@ -8,10 +8,11 @@ import useMessage from '@/hooks/useMessage';
 import Breadcrumb from '@/components/Breadcrumbs';
 import { Collection } from '@/types/wp';
 import FundGroup from '@/components/FundGroup';
+import { WORDPRESS_CMS } from '@/constants/api';
 
 export const getServerSideProps: GetServerSideProps = async () => {
   const res = await fetch(
-    'https://cms.nftx.xyz/wp-json/wp/v2/collections/?_fields=title,slug,acf.collection_title,acf.collection_related_fund_vault_ids'
+    `${WORDPRESS_CMS}/collections/?_fields=title,slug,acf.collection_title,acf.collection_related_fund_vault_ids`
   );
   const collections = (await res.json()) as Collection[];
 

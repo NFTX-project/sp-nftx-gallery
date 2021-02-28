@@ -1,12 +1,13 @@
 import React from 'react';
-import { useFundsContext } from '../contexts/funds';
-import HomeContainer from '@/containers/Home';
+import { useFundsContext } from '@/contexts/funds';
+import HomeContainer from '@/components/Home';
 import { GetServerSideProps } from 'next';
 import { Collection } from '@/types/wp';
+import { WORDPRESS_CMS } from '@/constants/api';
 
 export const getServerSideProps: GetServerSideProps = async () => {
   const res = await fetch(
-    'https://cms.nftx.xyz/wp-json/wp/v2/collections/?_fields=title,slug,acf.collection_title,acf.collection_feature_image,acf.collection_related_fund_vault_ids'
+    `${WORDPRESS_CMS}/collections/?_fields=title,slug,acf.collection_title,acf.collection_feature_image,acf.collection_related_fund_vault_ids`
   );
   const collections = (await res.json()) as Collection[];
 

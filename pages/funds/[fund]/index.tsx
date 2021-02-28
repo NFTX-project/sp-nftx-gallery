@@ -1,6 +1,6 @@
 import React from 'react';
 import { useRouter } from 'next/router';
-import FundContainer from '@/containers/Fund';
+import FundContainer from '@/components/Fund';
 import useMessage from '@/hooks/useMessage';
 import useFund from '@/hooks/useFund';
 

@@ -86,7 +86,7 @@ const AssetContainer = React.memo(
           <section className="mt-24">
             <AssetGroup
               namespace="asset.otherHoldings"
-              fundKey={fundKey}
+              slug={`/funds/${fundKey}`}
               assetKey={assetKey}
               fund={fund}
             />

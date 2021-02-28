@@ -7,16 +7,19 @@ import Icon, { Icons, Size as IconSize } from '@/components/Icon';
 import { getFundKey } from '@/utils/getFundKey';
 import { useFundsContext } from '@/contexts/funds';
 import useMessage from '@/hooks/useMessage';
+import { useRouter } from 'next/router';
 
 const Header = () => {
   const funds = useFundsContext();
+  const { asPath } = useRouter();
   const [feelingLucky, setFeelingLucky] = useState(null);
 
   useEffect(() => {
+    // @TODO make this smarter so it can't link to itself and get stuck
     if (funds?.length) {
       setFeelingLucky(funds[Math.floor(Math.random() * funds.length)]);
     }
-  }, [funds]);
+  }, [funds, asPath]);
 
   return (
     <header className="sticky top-0 z-10 border-b-2 border-gray-800 bg-gray-900">

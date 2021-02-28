@@ -2,7 +2,7 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import useFund from '@/hooks/useFund';
 import useMessage from '@/hooks/useMessage';
-import AssetContainer from '@/containers/Asset';
+import AssetContainer from '@/components/Asset';
 
 const AssetPage = () => {
   const { query } = useRouter();

@@ -10,7 +10,7 @@ import useAssets from '@/hooks/useAssets';
 
 interface AssetGroupProps {
   fund: Fund;
-  fundKey: string;
+  slug: string;
   assetKey?: string;
   namespace: string;
   assets?: Asset[];
@@ -19,7 +19,7 @@ interface AssetGroupProps {
 
 const AssetGroup = ({
   fund,
-  fundKey,
+  slug,
   assets,
   namespace,
   loading,
@@ -30,7 +30,7 @@ const AssetGroup = ({
   error: Error;
 }) => (
   <section className="font-sans font-bold">
-    <GroupHeader fund={fund} namespace={namespace} slug={fundKey} />
+    <GroupHeader fund={fund} namespace={namespace} slug={slug} />
     <Divider />
     <div
       className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4`}
@@ -41,10 +41,7 @@ const AssetGroup = ({
         ))}
       {assets && !error
         ? assets?.map((asset) => (
-            <Link
-              key={asset.token_id}
-              href={`/funds/${fundKey}/${asset.token_id}`}
-            >
+            <Link key={asset.token_id} href={`${slug}/${asset.token_id}`}>
               <a>
                 <VaultCard type={VaultCardType.ASSET} asset={asset} />
               </a>
@@ -58,7 +55,7 @@ const AssetGroup = ({
 const AssetGroupLoader = ({
   fund,
   assetKey,
-  fundKey,
+  slug,
   namespace,
   max = 5,
 }: AssetGroupProps) => {
@@ -85,7 +82,7 @@ const AssetGroupLoader = ({
     <AssetGroup
       fund={fund}
       assets={assets}
-      fundKey={fundKey}
+      slug={slug}
       max={max}
       namespace={namespace}
       loading={loading}

@@ -58,8 +58,10 @@ const groupFunds = (
           vaultItem.d1VaultIds.includes(f.vaultId)
         );
         // grab the matching asset address and fallback to current fund just in case
-        const key = d1Item?.asset?.address || fund.asset.address;
-        addToGroup(key, fund);
+        const key = d1Item?.asset?.address;
+        if (key) {
+          addToGroup(key, fund);
+        }
       }
     } else {
       if (fund.asset.address) {

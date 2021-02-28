@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { useFundsContext } from '../contexts/funds';
-import { getFundKey } from '../utils/getFundKey';
+import { useFundsContext } from '@/contexts/funds';
+import { getFundKey } from '@/utils/getFundKey';
 
 /**
  * Given a fundKey it returns the whole fund
