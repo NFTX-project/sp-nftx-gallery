@@ -62,7 +62,9 @@ const groupFunds = (
         addToGroup(key, fund);
       }
     } else {
-      addToGroup(fund.asset.address, fund);
+      if (fund.asset.address) {
+        addToGroup(fund.asset.address, fund);
+      }
     }
   });
 

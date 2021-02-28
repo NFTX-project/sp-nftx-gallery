@@ -83,7 +83,7 @@ const HomeContainer = ({
           {!!(funds && funds.length) && (
             <FundGroup
               namespace="funds.all"
-              slug=""
+              slug="/funds"
               funds={funds}
               columns={Columns.FOCUS}
             />
