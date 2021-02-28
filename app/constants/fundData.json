@@ -137,7 +137,8 @@
         "vaultId": 18,
         "name": "VARIANT-DAVIS",
         "description": "Variant-Davis is a single fund (D1) token, which is 1:1 backed by Variant Plan NFTs. Created as a commission for Variant Fund by the artist Jeff Davis, Variant Plan pieces are generative artworks whose aesthetics are determined by randomized hash strings. There are currently only 199 Variant Plan NFTs in existence. ",
-        "mintRedeemUrl": "https://nftx.org/#/fund/18"
+        "mintRedeemUrl": "https://nftx.org/#/fund/18",
+        "buyUrl": "https://app.uniswap.org/#/swap?outputCurrency=0xb547faf8bd5a52b1fe4ce5d740bdfb396140eb08"
     },
     {
         "vaultId": 19,

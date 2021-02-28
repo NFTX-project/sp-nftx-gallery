@@ -59,6 +59,7 @@ const groupFunds = (
         );
         // grab the matching asset address and fallback to current fund just in case
         const key = d1Item?.asset?.address;
+
         if (key) {
           addToGroup(key, fund);
         }

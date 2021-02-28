@@ -29,11 +29,13 @@ const CollectionContainer = ({
       if (cur.d2VaultId === fund.vaultId) {
         return [
           ...acc,
-          ...cur.d1VaultIds.map((d1) => {
-            if (funds) {
-              return funds.find((f) => f.vaultId === d1);
-            }
-          }),
+          ...cur.d1VaultIds
+            .map((d1) => {
+              if (funds) {
+                return funds.find((f) => f.vaultId === d1);
+              }
+            })
+            .filter(Boolean),
         ];
       }
       return acc;
@@ -102,7 +104,6 @@ const CollectionContainer = ({
                   </div>
                 );
               } else {
-                console.log(key);
                 return (
                   <div key={cf.fundToken.name} className="mb-24">
                     <AssetGroup

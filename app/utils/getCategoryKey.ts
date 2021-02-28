@@ -8,5 +8,10 @@
 
 import { Fund } from '@/types/fund';
 
-export const getCategoryKey = (fund: Fund) =>
-  encodeURI(fund?.asset?.name?.toLocaleLowerCase().replace(/ /g, '-'));
+export const getCategoryKey = (fund: Fund) => {
+  const key = fund?.asset?.name || fund?.fundToken?.name || null;
+
+  if (key) {
+    return encodeURI(key.toLocaleLowerCase().replace(/ /g, '-'));
+  }
+};

@@ -40,14 +40,13 @@ const FundGroup = ({
   if (funds.length) {
     const vaults = useVaultsContext();
     const sortedFunds = funds.sort((a) => (a.isD2Vault ? -1 : 1));
-
     const getEyebrow = (item: Fund) => {
       if (item.isD2Vault) {
         const count =
           vaults.find((v) => v.d2VaultId === item.vaultId)?.d1VaultIds
             ?.length || null;
         return useMessage('funds.group.eyebrow.combined', {
-          type: item.fundToken.name,
+          type: item?.fundToken.name,
           count,
         });
       }
@@ -71,6 +70,10 @@ const FundGroup = ({
         <div className={`grid ${gridCols[columns]} gap-4`}>
           {sortedFunds.map((item) => {
             const fundKey = getFundKey(item);
+            if (!fundKey) {
+              return null;
+            }
+
             return (
               <Link
                 key={item.fundToken.name}
