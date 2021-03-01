@@ -20,7 +20,7 @@ const FundGroupHeader = ({
   return (
     <div className="flex flex-col lg:items-center lg:flex-row">
       <h3 className="text-gray-50 flex flex-wrap items-center font-sans text-2xl mb-2 lg:mb-0">
-        <Link href={`/funds/${slug}`}>
+        <Link href={`${slug}`}>
           <a className="mr-2">
             {useMessage(`group.fund.title`, {
               fund: `$${fund.fundToken.symbol}`,
