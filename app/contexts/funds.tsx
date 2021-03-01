@@ -11,7 +11,7 @@ const getFunds = async function (): Promise<Omit<Fund, 'meta'>[]> {
   // fetch the latest funds data, cap at 5 seconds
   try {
     const res = await fetchWithTimeout(
-      'https://nftx.ethereumdb.com/v1/vaults/',
+      'https://nftx.ethereumdb.com/v1/vaults/?eligibilities=false',
       {
         timeout: 5000,
       }
