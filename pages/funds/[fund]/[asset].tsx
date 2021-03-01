@@ -2,7 +2,7 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import useFund from '@/hooks/useFund';
 import useMessage from '@/hooks/useMessage';
-import AssetContainer from '@/containers/Asset';
+import AssetContainer from '@/components/Asset';
 
 const AssetPage = () => {
   const { query } = useRouter();
@@ -11,7 +11,7 @@ const AssetPage = () => {
   if (fund === false) {
     return (
       <div className="container text-center mx-auto px-4 py-20 text-gray-50">
-        {/* <p>{useMessage('fund.notfound')}</p> */}
+        <p>{useMessage('fund.notfound')}</p>
       </div>
     );
   }

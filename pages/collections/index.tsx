@@ -1,19 +1,34 @@
-import Head from 'next/head';
 import React, { useMemo, useState } from 'react';
+import Head from 'next/head';
+import { GetServerSideProps } from 'next';
 import FilterResults from 'react-filter-search';
-import FundGroups from '@/components/FundGroups';
 import Search from '@/components/Search';
 import { useFundsContext } from '@/contexts/funds';
-import { useVaultsContext } from '@/contexts/vaults';
 import useMessage from '@/hooks/useMessage';
-import collections from '@/constants/collections';
-import { Fund } from '@/types/fund';
 import Breadcrumb from '@/components/Breadcrumbs';
-import { getFundKey } from '@/utils/getFundKey';
+import { Collection } from '@/types/wp';
+import FundGroup from '@/components/FundGroup';
+import { WORDPRESS_CMS } from '@/constants/api';
 
-const CollectionsPage = () => {
+export const getServerSideProps: GetServerSideProps = async () => {
+  const res = await fetch(
+    `${WORDPRESS_CMS}/collections/?_fields=title,slug,acf.collection_title,acf.collection_related_fund_vault_ids`
+  );
+  const collections = (await res.json()) as Collection[];
+
+  return {
+    props: {
+      collections,
+    },
+  };
+};
+
+interface CollectionsPageProps {
+  collections: Collection[];
+}
+
+const CollectionsPage = ({ collections }: CollectionsPageProps) => {
   const funds = useFundsContext();
-  const vaults = useVaultsContext();
   const [value, setValue] = useState('');
 
   function handleChange(event: { target: HTMLInputElement }) {
@@ -23,21 +38,31 @@ const CollectionsPage = () => {
 
   // loop the funds and include any in the collections array
   const collectionFunds = useMemo(() => {
-    if (funds) {
-      return funds.filter((f) => {
-        if (collections.find((c) => c.items.includes(getFundKey(f)))) {
-          return true;
-        }
-        return false;
-      });
+    if (funds && collections) {
+      return collections
+        .map((c, i) => {
+          // get the vault ids from the collections
+          const vaultIds = c.acf.collection_related_fund_vault_ids.split(',');
+          // map them to our funds
+          const holdings = funds.filter((f) =>
+            vaultIds.includes(String(f.vaultId))
+          );
+          return {
+            holdings,
+            title: c.acf.collection_title,
+            slug: c.slug,
+            key: i,
+          };
+        })
+        .filter(Boolean);
     }
     return [];
-  }, [funds]);
+  }, [funds, collections]);
 
   return (
     <>
       <Head>
-        <title>{useMessage('funds.meta.title')}</title>
+        <title>{useMessage('collections.meta.title')}</title>
       </Head>
       <div className="container mx-auto pt-16 pb-18 px-4">
         <Breadcrumb />
@@ -47,14 +72,18 @@ const CollectionsPage = () => {
         <FilterResults
           value={value}
           data={collectionFunds}
-          renderResults={(results: Fund[]) => (
-            <FundGroups
-              namespace="funds"
-              funds={results}
-              vaults={vaults}
-              showLink={false}
-            />
-          )}
+          renderResults={(results) =>
+            results.map((collection) => (
+              <div key={collection.key} className="mb-24">
+                <FundGroup
+                  namespace="collection"
+                  title={collection.title}
+                  funds={collection.holdings}
+                  slug={`/collections/${collection.slug}`}
+                />
+              </div>
+            ))
+          }
         />
       </div>
     </>

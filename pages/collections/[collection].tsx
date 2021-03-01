@@ -1,54 +1,64 @@
 import React, { useEffect, useState } from 'react';
-import useMessage from '@/hooks/useMessage';
-import { useRouter } from 'next/router';
-import collections from '@/constants/collections';
-import CollectionContainer from '@/containers/Collection';
+import { GetServerSideProps } from 'next';
+import Head from 'next/head';
+import CollectionContainer from '@/components/Collection';
 import { useFundsContext } from '@/contexts/funds';
-import { getFundKey } from '@/utils/getFundKey';
+import { Collection } from '@/types/wp';
+import buildYoastMeta from '@/utils/buildYoastMeta';
+import { WORDPRESS_CMS } from '@/constants/api';
 
-const CollectionsPage = () => {
-  const router = useRouter();
-  const funds = useFundsContext();
-  const [collection, setCollection] = useState(null);
-  const collectionPath = router.query.collection as string;
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const slug = context.params.collection;
 
-  useEffect(() => {
-    if (collectionPath && funds.length) {
-      const activeCollection = collections.find(
-        (c) => c.href === collectionPath
-      );
-      const collectionFunds = funds.filter((f) =>
-        activeCollection.items.includes(getFundKey(f))
-      );
+  const res = await fetch(
+    `${WORDPRESS_CMS}/collections/?slug=${slug}&_fields=title,slug,acf.collection_title,acf.collection_description,acf.collection_related_fund_vault_ids,yoast_meta,yoast_title`
+  );
+  const collection = (await res.json()) as Collection[];
 
-      if (activeCollection) {
-        setCollection({
-          collection: activeCollection,
-          funds: collectionFunds,
-        });
-      } else {
-        setCollection(false);
-      }
-    }
-  }, [collectionPath, funds]);
-
-  if (collection === false) {
-    return (
-      <div className="container text-center mx-auto px-4 py-20 text-gray-50">
-        <p>{useMessage('collection.notfound')}</p>
-      </div>
-    );
+  if (Array.isArray(collection)) {
+    return {
+      props: {
+        collection: collection[0],
+      },
+    };
   }
 
-  if (collection == null) {
-    return (
-      <div className="container text-center mx-auto px-4 py-20 text-gray-50">
-        <p>{useMessage('collection.loading')}</p>
-      </div>
-    );
-  }
-
-  return <CollectionContainer {...collection} />;
+  return {
+    props: {
+      collection: null,
+    },
+  };
 };
 
-export default CollectionsPage;
+const CollectionPage = ({ collection }: { collection: Collection }) => {
+  const funds = useFundsContext();
+  const [collectionFunds, setCollectionFunds] = useState(null);
+
+  useEffect(() => {
+    if (collection && funds.length) {
+      const vaultIds = collection.acf.collection_related_fund_vault_ids.split(
+        ','
+      );
+      const holdings = funds.filter((f) =>
+        vaultIds.includes(String(f.vaultId))
+      );
+
+      if (holdings.length) {
+        setCollectionFunds(holdings);
+      } else {
+        setCollectionFunds(false);
+      }
+    }
+  }, [collection, funds]);
+
+  return (
+    <>
+      <Head>
+        {buildYoastMeta(collection?.yoast_title, collection?.yoast_meta)}
+      </Head>
+      <CollectionContainer collection={collection} funds={collectionFunds} />
+    </>
+  );
+};
+
+export default CollectionPage;

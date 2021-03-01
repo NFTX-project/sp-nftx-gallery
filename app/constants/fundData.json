@@ -1,0 +1,164 @@
+[
+    {
+        "vaultId": 0,
+        "name": "PUNK-BASIC",
+        "imageIcon": "../images/fund/punk-basic-icon.png",
+        "imageFeature": "../images/fund/punk-basic-feature.png",
+        "description": "Punk-Basic is a single fund token, which is backed 1:1 by any CryptoPunks NFT. Because this fund allows any CryptoPunk to be deposited as collateral, it actsas a floor price tracker for Ethereum’s original digital collectibles. \n this fund allows any CryptoPunk to be deposited as collateral, it acts \nas a floor price tracker for the entire NFT category.",
+        "buyUrl": "https://sushiswap.vision/pair/0x0267bd35789a5ce247fff6cb1d597597e003cc43",
+        "buyOpenseaUrl": "https://opensea.io/assets/cryptopunks",
+        "mintRedeemUrl": "https://nftx.org/#/fund/0"
+    },
+    {
+        "vaultId": 1,
+        "name": "PUNK-ATTR-4",
+        "description": "Punk-Attr-4 is a single fund token, which is backed 1:1 by CryptoPunks NFTs that have four (4) attributes. CryptoPunks with lower attribute counts are more common than ones with higher attribute counts, so CryptoPunks with 4 attributes are considered rare and thus highly sought. ",
+        "buyUrl": "https://sushiswap.vision/pair/0x608f8af5fd49b5a5421f53f79920C45b96bdA83F",
+        "buyOpenseaUrl": "https://opensea.io/assets/cryptopunks",
+        "mintRedeemUrl": "https://nftx.org/#/fund/1"
+    },
+    {
+        "vaultId": 2,
+        "name": "PUNK-ATTR-5",
+        "description": "Punk-Attr-5 is a single fund token, which is backed 1:1 by CryptoPunks NFTs that have five (5) attributes. Attribute count is a key valuation factor for CryptoPunks, so CryptoPunks with 5 attributes are extremely rare and collectable. ",
+        "buyUrl": "https://sushiswap.vision/pair/0xd54A895623552853F8D673981CC32EB8f3929dFB",
+        "buyOpenseaUrl": "https://opensea.io/assets/cryptopunks",
+        "mintRedeemUrl": "https://nftx.org/#/fund/2"
+    },
+    {
+        "vaultId": 3,
+        "name": "PUNK-ZOMBIE",
+        "description": "Punk-Zombie is a single fund token, which is backed 1:1 by CryptoPunks NFTs that are Zombies. Only 88 Zombie CryptoPunks were ever created, so these are among the most prized of any Ethereum collectibles. ",
+        "buyUrl": "https://sushiswap.vision/pair/0x0E7E8Dde18e4016ccc15F12301a47eF7B87Bdafa",
+        "buyOpenseaUrl": "https://opensea.io/assets/cryptopunks?search[sortAscending]=false&search[sortBy]=LISTING_DATE&search[stringTraits][0][name]=type&search[stringTraits][0][values][0]=Zombie",
+        "mintRedeemUrl": "https://nftx.org/#/fund/3"
+    },
+    {
+        "vaultId": 4,
+        "name": "AXIE-ORIGIN",
+        "description": "Axie-Origin is a single fund token, which is backed 1:1 by Origin Axie Infinity NFTs. Origin Axies are digital pets that were created during Axie Infinity’s two month pre-sale event in 2018 and are accordingly rare and collectable. Because this fund allows any Origin Axie to be deposited as collateral, it acts as a floor price tracker for these NFTs.",
+        "buyOpenseaUrl": "https://opensea.io/assets/axie?search[stringTraits][0][name]=title&search[stringTraits][0][values][0]=Origin",
+        "mintRedeemUrl": "https://nftx.org/#/fund/4"
+    },
+    {
+        "vaultId": 5,
+        "name": "AXIE-MYSTIC-1",
+        "description": "Axie-Mystic-1 is a single fund token, which is backed 1:1 by Axie Infinity NFTs with one Mystic body part. Only appearing in some Origin Axies, Mystic body parts have unique artwork and can evolve into Legendary parts. There are nearly 1,140 single Mystics in existence, making these Axies rare. ",
+        "buyOpenseaUrl": "https://opensea.io/assets/axie",
+        "mintRedeemUrl": "https://nftx.org/#/fund/5"
+    },
+    {
+        "vaultId": 6,
+        "name": "AXIE-MYSTIC-2",
+        "description": "Axie-Mystic-2 is a single fund token, which is backed 1:1 by Axie Infinity NFTs with two Mystic body parts. There are only 213 double Mystic Axies in existence, so these are among the most prized pets in the entire Axie Infinity ecosystem. ",
+        "buyOpenseaUrl": "https://opensea.io/assets/axie",
+        "mintRedeemUrl": "https://nftx.org/#/fund/6"
+    },
+    {
+        "vaultId": 7,
+        "name": "KITTY-GEN-0",
+        "description": "Kitty-Gen-0 is a single fund token, which is backed 1:1 by Gen 0 CryptoKitties NFTs. Gen 0 CryptoKitties were not bred into existence but rather created by the CryptoKitties smart contract, meaning they are the genesis Kitties that parented later generations into existence. There are only 50,000 Gen 0 CryptoKitties in total. ",
+        "buyOpenseaUrl": "https://opensea.io/assets/cryptokitties",
+        "mintRedeemUrl": "https://nftx.org/#/fund/7"
+    },
+    {
+        "vaultId": 8,
+        "name": "KITTY-GEN-0-F",
+        "description": "Kitty-Gen-0-F is a single fund token, which is backed 1:1 by Gen 0 CryptoKitties NFTs with Fast cooldown speed. A Fast cooldown is the most advantageous breeding cooldown speed in CryptoKitties, as it allows Kitties to generate the most offspring before they become subject to one-week breeding cooldown periods, also known as Catatonic. ",
+        "buyOpenseaUrl": "https://opensea.io/assets/cryptokitties",
+        "mintRedeemUrl": "https://nftx.org/#/fund/8"
+    },
+    {
+        "vaultId": 9,
+        "name": "KITTY-FOUNDER",
+        "description": "Kitty-Founder is a single fund token, which is backed 1:1 by Founder CryptoKitties NFTs. Founder CryptoKitties are the first 100 CryptoKitties ever created. Since CryptoKitties were the first standardized ERC-721 tokens, these Kitties are also collectable as the first 100 ERC-721 tokens ever. ",
+        "buyOpenseaUrl": "https://opensea.io/assets/cryptokitties",
+        "mintRedeemUrl": "https://nftx.org/#/fund/9"
+    },
+    {
+        "vaultId": 10,
+        "name": "AVASTR-BASIC",
+        "description": "Avastr-Basic is a single fund token, which is backed 1:1 by any Avastars NFTs. Avastars are on-chain art avatars designed for the metaverse. Because this fund allows any Avastar to be deposited as collateral, it acts as a floor price tracker for these NFTs.",
+        "buyOpenseaUrl": "https://opensea.io/assets/avastar?search[numericTraits][0][name]=ranking&search[numericTraits][0][ranges][0][max]=29&search[numericTraits][0][ranges][0][min]=1",
+        "mintRedeemUrl": "https://nftx.org/#/fund/10"
+    },
+    {
+        "vaultId": 11,
+        "name": "AVASTR-RANK-30",
+        "description": "Avastr-Rank-30 is a single fund token, which is backed 1:1 by any Avastars NFTs that have a ranking of at least 30 or higher. Every Avastar is given a score between 1 and 100 depending on their trait rarity levels, and scores are more desirable as they approach 100. ",
+        "buyOpenseaUrl": "https://opensea.io/assets/avastar?search[numericTraits][0][name]=ranking&search[numericTraits][0][ranges][0][max]=59&search[numericTraits][0][ranges][0][min]=30&search[numericTraits][1][name]=serial&search[numericTraits][1][ranges][0][min]=0&search[numericTraits][1][ranges][0][max]=12400",
+        "mintRedeemUrl": "https://nftx.org/#/fund/11"
+    },
+    {
+        "vaultId": 12,
+        "name": "AVASTR-RANK-60",
+        "description": "Avastr-Rank-60 is a single fund token, which is backed 1:1 by any Avastars NFTs that have a ranking of at least 60 or higher. Avastars with +60 scores are prized because such scores indicate these collectibles have very compelling trait makeups.  ",
+        "buyOpenseaUrl": "https://opensea.io/assets/avastar?search[numericTraits][0][name]=serial&search[numericTraits][0][ranges][0][max]=12400&search[numericTraits][0][ranges][0][min]=0&search[numericTraits][1][name]=ranking&search[numericTraits][1][ranges][0][min]=60&search[numericTraits][1][ranges][0][max]=100",
+        "mintRedeemUrl": "https://nftx.org/#/fund/12"
+    },
+    {
+        "vaultId": 13,
+        "name": "GLYPH",
+        "description": "Glyph is a single fund token, which is backed 1:1 by any Autoglyph NFTs that are supplied to the pool. Developed by the same creators as CryptoPunks, Autoglyphs have the distinction of being the first on-chain generative art project on Ethereum. As such, Autoglyphs are among Ethereum’s most valuable collectibles. ",
+        "buyOpenseaUrl": "https://opensea.io/assets/autoglyphs",
+        "mintRedeemUrl": "https://nftx.org/#/fund/13"
+    },
+    {
+        "vaultId": 14,
+        "name": "JOY",
+        "description": "Joy is a single fund token, which is backed 1:1 by JOY sculpture NFTs from John Orion Young’s JOYWORLD series. Over the past few years, Young’s iconic VR sculptures have become among the most highly sought collectibles in the NFT ecosystem. ",
+        "buyOpenseaUrl": "https://opensea.io/assets/joyworld-s2",
+        "mintRedeemUrl": "https://nftx.org/#/fund/14"
+    },
+    {
+        "vaultId": 15,
+        "name": "PUNK-FEMALE",
+        "description": "Punk-Female is a single fund token, which is 1:1 backed by CryptoPunks NFTs that are Female. There are only five types of CryptoPunks, namely Females, Males, Zombies, Apes, and Aliens. Female CryptoPunks are rarer than Males and thus more collectable. ",
+        "buyUrl": "https://sushiswap.vision/pair/0xCA2Ae9C5C491F497DC5625fEaef4572076C946C5",
+        "buyOpenseaUrl": "https://opensea.io/assets/cryptopunks?search[sortAscending]=false&search[sortBy]=LISTING_DATE&search[stringTraits][0][name]=type&search[stringTraits][0][values][0]=Female",
+        "mintRedeemUrl": "https://nftx.org/#/fund/15"
+    },
+    {
+        "vaultId": 16,
+        "name": "PUNK-CORE",
+        "description": "$PUNK is a CryptoPunks combined fund token that is backed by multiple single CryptoPunks fund tokens, like Punk-Attr-4, Punk-Attr-5, Punk-Zombie, and so forth. The price of this token is based on the weighted average of all underlying single fund tokens.",
+        "buyUrl": "https://sushiswap.vision/pair/0x092493a22375de1b17583d924abf9e8bf884491c",
+        "buyOpenseaUrl": "https://opensea.io/assets/cryptopunks",
+        "mintRedeemUrl": "https://nftx.org/#/fund/16"
+    },
+    {
+        "vaultId": 17,
+        "name": "CRYPTO-STAMP",
+        "description": "Crypto-Stamp is a single fund (D1) token, which is 1:1 backed by Crypto stamp NFTs. Published by the Austrian Postal Service, these NFTs can be used as postage stamps in Austria and are also coveted as digital collectibles. ",
+        "buyOpenseaUrl": "https://opensea.io/assets/crypto-stamp-edition-1",
+        "mintRedeemUrl": "https://nftx.org/#/fund/17"
+    },
+    {
+        "vaultId": 18,
+        "name": "VARIANT-DAVIS",
+        "description": "Variant-Davis is a single fund (D1) token, which is 1:1 backed by Variant Plan NFTs. Created as a commission for Variant Fund by the artist Jeff Davis, Variant Plan pieces are generative artworks whose aesthetics are determined by randomized hash strings. There are currently only 199 Variant Plan NFTs in existence. ",
+        "mintRedeemUrl": "https://nftx.org/#/fund/18",
+        "buyUrl": "https://app.uniswap.org/#/swap?outputCurrency=0xb547faf8bd5a52b1fe4ce5d740bdfb396140eb08"
+    },
+    {
+        "vaultId": 19,
+        "description": "0xmon is a single fund (D1) token, which is 1:1 backed by 0xmon NFTs. Inspired by Pokemon and MEME Protocol, 0xmon is a digital collectibles experiment that is centered around generative pixel art. Because this fund allows any 0xmon to be deposited as collateral, it acts as a floor price tracker for these NFTs",
+        "mintRedeemUrl": "https://nftx.org/#/fund/19"
+    },
+    {
+        "vaultId": 20,
+        "name": "MASK",
+        "description": "With the NFTX Hashmasks Index Fund, you can now supply one or \nMask is a single fund (D1) token, which is 1:1 backed by Hashmasks NFTs. When you supply Hashmasks to this pool as collateral you receive back an index fund token, $MASK, that tracks the ETH-floor price of all Hashmasks in the index fund. This token allows you to become a liquidity provider on SushiSwap or any other ERC-20 AMM by pooling it together with ETH.\ntoken called $MASK, which tracks the ETH-floor price of all Hashmasks in the index fund.This token allows you to become a liquidity provider on SushiSwap (or any other ERC20 AMM) by pooling it together with ETH.",
+        "buyUrl": "https://sushiswap.vision/pair/0xfd38565ef22299d491055f0c508f62dd9a669f0f",
+        "buyOpenseaUrl": "https://opensea.io/assets/hashmasks",
+        "mintRedeemUrl": "https://nftx.org/#/fund/20"
+    },
+    {
+        "vaultId": 21,
+        "name": "CUBES",
+        "description": "Cubes is a single fund (D1) token, which is 1:1 backed by CryptoCubes NFTs. With only 256 in existence, CryptoCubes are rare and enjoy unique aesthetics on account of being algorithmically generated. ",
+        "buyUrl": "https://info.uniswap.org/pair/0x584d368ab300f5f6a0666aef2b1d2d8e3cc7c0f2",
+        "buyOpenseaUrl": "https://opensea.io/assets/cryptocubes",
+        "mintRedeemUrl": "https://nftx.org/#/fund/21"
+    }
+]

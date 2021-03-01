@@ -15,15 +15,20 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
-      "@/components/*": ["components/*"],
-      "@/containers/*": ["containers/*"],
-      "@/hooks/*": ["hooks/*"],
-      "@/contexts/*": ["contexts/*"],
-      "@/utils/*": ["utils/*"],
+      "@/components/*": [
+        "app/components/*",
+        "app/components/elements/*",
+        "app/components/modules/*",
+        "app/components/layouts/*",
+        "app/components/templates/*"
+      ],
+      "@/hooks/*": ["app/hooks/*"],
+      "@/contexts/*": ["app/contexts/*"],
+      "@/utils/*": ["app/utils/*"],
+      "@/constants/*": ["app/constants/*"],
       "@/lang": ["lang"],
       "@/styles/*": ["styles/*"],
       "@/types/*": ["types/*"],
-      "@/constants/*": ["constants/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
