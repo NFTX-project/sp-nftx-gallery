@@ -1,5 +1,6 @@
 import React from 'react';
 import Icon, { Icons, Size } from '@/components/Icon';
+import Tooltip from '@/components/Tooltip';
 import useMessage from '@/hooks/useMessage';
 
 export interface FundStatusProps {
@@ -48,6 +49,7 @@ const FundStatus = ({ fin, ver, amm }: FundStatusProps) => {
             <dt className="ml-0.5">{useMessage(`fund.status.${s.key}`)}</dt>
           </div>
         ))}
+        <Tooltip />
       </dl>
     </aside>
   );
