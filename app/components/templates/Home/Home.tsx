@@ -4,8 +4,8 @@ import useMessage from '@/hooks/useMessage';
 import { Fund } from '@/types/fund';
 import { Collection } from '@/types/wp';
 import Link from 'next/link';
-import FundGroup, { Columns } from '@/components/FundGroup';
-import Poster, { Colorway } from '@/components/Poster';
+import FundGroup, { Columns } from '@/components/modules/FundGroup';
+import Poster, { Colorway } from '@/components/modules/Poster';
 import { FormattedMessage } from 'react-intl';
 
 const HomeContainer = ({

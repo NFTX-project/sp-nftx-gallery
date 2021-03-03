@@ -3,25 +3,20 @@ import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 
 import AssetDetail from './AssetDetail';
-import FundStatus from '../FundStatus/FundStatus';
 import { AssetDetailStatus } from './constants';
 import { AssetDetailProps } from './types';
 
 export default {
-  title: 'Components/AssetDetail',
+  title: 'Components/Modules/AssetDetail',
   component: AssetDetail,
-  parameters: {
-    backgrounds: {
-      default: 'dark',
-      values: [{ name: 'dark', value: '#0c0c0c' }],
-    },
-  },
 } as Meta;
 
 const Template: Story<AssetDetailProps> = (args) => <AssetDetail {...args} />;
 
-export const NFT = Template.bind({});
-NFT.args = {
+export const Pending = () => <AssetDetail status={AssetDetailStatus.PENDING}/>;
+
+export const Ready = Template.bind({});
+Ready.args = {
   image:
     'https://lh3.googleusercontent.com/Xxa2jwdrc68IADg17DXm5TdwtJ4TPtba3vt-s6gxATQkjcPDHpmV7FvGn7dE9y7DjwS1EzGnYfhUAf08garZoMTpOePxoVx2tiARseM',
   eyebrow: 'PUNK-BASIC',

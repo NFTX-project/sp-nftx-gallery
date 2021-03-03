@@ -2,12 +2,12 @@ import Link from 'next/link';
 import React, { ReactNode } from 'react';
 import useMessage from '@/hooks/useMessage';
 import { getFundKey } from '@/utils/getFundKey';
-import GroupHeader from '@/components/GroupHeader';
-import FundStatus from '@/components/FundStatus';
-import VaultCard from '@/components/VaultCard';
-import Divider from '@/components/Divider';
+import GroupHeader from '@/components/modules/GroupHeader';
+import FundStatus from '@/components/modules/FundStatus';
+import VaultCard from '@/components/modules/VaultCard';
+import Divider from '@/components/elements/Divider';
+import Pill from '@/components/elements/Pill';
 import { Columns } from './constants';
-import Pill from '@/components/Pill';
 import { Fund } from '@/types/fund';
 import { useVaultsContext } from '@/contexts/vaults';
 

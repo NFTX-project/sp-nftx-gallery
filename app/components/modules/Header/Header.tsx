@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import Logo from '@/components/Logo';
+import Logo from '@/components/elements/Logo';
 import Link from 'next/link';
-import Button from '@/components/Button';
-import { Kind, Size } from '@/components/Button/constants';
-import Icon, { Icons, Size as IconSize } from '@/components/Icon';
+import Button from '@/components/elements/Button';
+import { Kind, Size } from '@/components/elements/Button/constants';
+import Icon, { Icons, Size as IconSize } from '@/components/elements/Icon';
 import { getFundKey } from '@/utils/getFundKey';
 import { useFundsContext } from '@/contexts/funds';
 import useMessage from '@/hooks/useMessage';

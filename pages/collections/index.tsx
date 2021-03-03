@@ -2,12 +2,12 @@ import React, { useMemo, useState } from 'react';
 import Head from 'next/head';
 import { GetServerSideProps } from 'next';
 import FilterResults from 'react-filter-search';
-import Search from '@/components/Search';
+import Search from '@/components/modules/Search';
+import Breadcrumb from '@/components/modules/Breadcrumbs';
+import FundGroup from '@/components/modules/FundGroup';
 import { useFundsContext } from '@/contexts/funds';
-import useMessage from '@/hooks/useMessage';
-import Breadcrumb from '@/components/Breadcrumbs';
 import { Collection } from '@/types/wp';
-import FundGroup from '@/components/FundGroup';
+import useMessage from '@/hooks/useMessage';
 import { WORDPRESS_CMS } from '@/constants/api';
 
 export const getServerSideProps: GetServerSideProps = async () => {

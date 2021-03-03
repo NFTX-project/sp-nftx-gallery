@@ -1,6 +1,6 @@
 import React from 'react';
 import { useRouter } from 'next/router';
-import FundContainer from '@/components/Fund';
+import FundTemplate from '@/components/templates/Fund';
 import useMessage from '@/hooks/useMessage';
 import useFund from '@/hooks/useFund';
 
@@ -24,7 +24,7 @@ const FundPage = () => {
     );
   }
 
-  return <FundContainer fundKey={router.query.fund} {...fund} />;
+  return <FundTemplate fundKey={router.query.fund} {...fund} />;
 };
 
 export default FundPage;

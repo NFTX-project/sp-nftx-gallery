@@ -1,13 +1,13 @@
 import React, { useMemo, useState } from 'react';
-import Search from '@/components/Search';
-import Breadcrumb from '@/components/Breadcrumbs';
-import AssetGroup from '@/components/AssetGroup';
+import { FormattedMessage } from 'react-intl';
+import Search from '@/components/modules/Search';
+import Breadcrumb from '@/components/modules/Breadcrumbs';
+import AssetGroup from '@/components/modules/AssetGroup';
+import FundGroup from '@/components/modules/FundGroup';
 import { getFundKey } from '@/utils/getFundKey';
 import { Fund } from '@/types/fund';
 import { useVaultsContext } from '@/contexts/vaults';
-import FundGroup from '@/components/FundGroup';
 import { Collection } from '@/types/wp';
-import { FormattedMessage } from 'react-intl';
 
 const CollectionContainer = ({
   funds,

@@ -1,5 +1,5 @@
 import React, { ButtonHTMLAttributes, forwardRef } from 'react';
-import Icon, { Icons, Size as IconSize } from '@/components/Icon';
+import Icon, { Icons, Size as IconSize } from '@/components/elements/Icon';
 import { Kind, Size } from './constants';
 
 export interface ButtonProps

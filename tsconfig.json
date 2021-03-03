@@ -15,13 +15,7 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
-      "@/components/*": [
-        "app/components/*",
-        "app/components/elements/*",
-        "app/components/modules/*",
-        "app/components/layouts/*",
-        "app/components/templates/*"
-      ],
+      "@/components/*": ["app/components/*"],
       "@/hooks/*": ["app/hooks/*"],
       "@/contexts/*": ["app/contexts/*"],
       "@/utils/*": ["app/utils/*"],

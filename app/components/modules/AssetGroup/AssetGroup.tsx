@@ -1,8 +1,8 @@
 import React, { useMemo } from 'react';
 import Link from 'next/link';
-import Divider from '@/components/Divider';
-import VaultCard from '@/components/VaultCard';
-import GroupHeader from '@/components/GroupHeader';
+import Divider from '@/components/elements/Divider';
+import VaultCard from '@/components/modules/VaultCard';
+import GroupHeader from '@/components/modules/GroupHeader';
 import { Fund } from '@/types/fund';
 import { Asset } from '@/types/asset';
 import { VaultCardStatus, VaultCardType } from '../VaultCard/constants';

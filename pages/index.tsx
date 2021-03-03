@@ -1,6 +1,6 @@
 import React from 'react';
 import { useFundsContext } from '@/contexts/funds';
-import HomeContainer from '@/components/Home';
+import HomeContainer from '@/components/templates/Home';
 import { GetServerSideProps } from 'next';
 import { Collection } from '@/types/wp';
 import { WORDPRESS_CMS } from '@/constants/api';

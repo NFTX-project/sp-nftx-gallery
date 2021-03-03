@@ -4,7 +4,7 @@ import { Story, Meta } from '@storybook/react/types-6-0';
 import FundStatus, { FundStatusProps } from './FundStatus';
 
 export default {
-  title: 'Components/FundStatus',
+  title: 'Components/modules/FundStatus',
   component: FundStatus,
   argTypes: {},
 } as Meta;

@@ -1,10 +1,10 @@
 import useMessage from '@/hooks/useMessage';
 import usePrice from '@/hooks/usePrice';
 import { Fund } from '@/types/fund';
-import Pill from '@/components/Pill';
+import Pill from '@/components/elements/Pill';
 import Link from 'next/link';
 import React, { ReactNode } from 'react';
-import Icon, { Icons } from '@/components/Icon';
+import Icon, { Icons } from '@/components/elements/Icon';
 import { FormattedMessage, FormattedNumber } from 'react-intl';
 
 const FundGroupHeader = ({
