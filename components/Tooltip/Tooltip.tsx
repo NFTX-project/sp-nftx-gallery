@@ -14,10 +14,10 @@ const Tooltip = ({ content }: FundStatusProp) => {
       <style
         dangerouslySetInnerHTML={{
           __html: `
-        .__react_component_tooltip.show {
-          opacity: 1 !important;
-        }
-      `,
+            .__react_component_tooltip.show {
+              opacity: 1 !important;
+            }
+          `,
         }}
       />
 
