@@ -49,7 +49,30 @@ const FundStatus = ({ fin, ver, amm }: FundStatusProps) => {
             <dt className="ml-0.5">{useMessage(`fund.status.${s.key}`)}</dt>
           </div>
         ))}
-        <Tooltip />
+        <Tooltip
+          content={
+            <aside className="py-2 uppercase">
+              <dt className="mb-1">
+                <span className="text-green-500">
+                  {useMessage(`fund.status.fin`)}
+                </span>{' '}
+                = {useMessage(`fund.status.tooltip.fin.text`)}
+              </dt>
+              <dt className="mb-1">
+                <span className="text-green-500">
+                  {useMessage(`fund.status.ver`)}
+                </span>{' '}
+                = {useMessage(`fund.status.tooltip.ver.text`)}
+              </dt>
+              <dt>
+                <span className="text-green-500">
+                  {useMessage(`fund.status.amm`)}
+                </span>{' '}
+                = {useMessage(`fund.status.tooltip.amm.text`)}
+              </dt>
+            </aside>
+          }
+        />
       </dl>
     </aside>
   );
