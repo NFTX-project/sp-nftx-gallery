@@ -5,7 +5,7 @@ import { Story, Meta } from '@storybook/react/types-6-0';
 import Logo, { LogoProps } from './Logo';
 
 export default {
-  title: 'Components/Logo',
+  title: 'Components/elements/Logo',
   component: Logo,
   argTypes: {
     size: { control: 'number' },

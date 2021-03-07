@@ -5,14 +5,8 @@ import Poster, { PosterProps } from './Poster';
 import { Colorway } from './constants';
 
 export default {
-  title: 'Components/Poster',
+  title: 'Components/modules/Poster',
   component: Poster,
-  parameters: {
-    backgrounds: {
-      default: 'dark',
-      values: [{ name: 'dark', value: '#0c0c0c' }],
-    },
-  },
 } as Meta;
 
 const Template: Story<PosterProps> = (args) => <Poster {...args} />;

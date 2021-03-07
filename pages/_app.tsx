@@ -4,8 +4,8 @@ import { useRouter } from 'next/router';
 import { IntlProvider } from 'react-intl';
 import { FundsProvider } from '@/contexts/funds';
 import { VaultsProvider } from '@/contexts/vaults';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import Header from '@/components/modules/Header';
+import Footer from '@/components/modules/Footer';
 import * as locales from '@/lang';
 import '@/styles/globals.css';
 

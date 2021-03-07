@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import Breadcrumb from '@/components/Breadcrumbs';
-import Button, { Size as ButtonSize } from '@/components/Button';
+import Breadcrumb from '@/components/modules/Breadcrumbs';
+import Button, { Size as ButtonSize } from '@/components/elements/Button';
 import useMessage from '@/hooks/useMessage';
-import Icon, { Icons, Size as IconSize } from '@/components/Icon';
-import FundStatus from '@/components/FundStatus';
+import Icon, { Icons, Size as IconSize } from '@/components/elements/Icon';
+import FundStatus from '@/components/modules/FundStatus';
 import trimAddress from '@/utils/trimAddress';
 import { useVaultsContext } from '@/contexts/vaults';
 import { useFundsContext } from '@/contexts/funds';
-import FundGroup from '@/components/FundGroup';
-import Pill from '@/components/Pill';
+import FundGroup from '@/components/modules/FundGroup';
+import Pill from '@/components/elements/Pill';
 import { FundProps } from './types';
 import usePrice from '@/hooks/usePrice';
 

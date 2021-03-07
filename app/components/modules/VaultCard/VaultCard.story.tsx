@@ -8,22 +8,13 @@ import { VaultCardStatus } from './constants';
 import { VaultCardProps } from './types';
 
 export default {
-  title: 'Components/VaultCard',
+  title: 'Components/modules/VaultCard',
   component: VaultCard,
-  parameters: {
-    backgrounds: {
-      default: 'dark',
-      values: [{ name: 'dark', value: '#0c0c0c' }],
-    },
-  },
 } as Meta;
 
 const Template: Story<VaultCardProps> = (args) => <VaultCard {...args} />;
 
-export const Pending = Template.bind({});
-Pending.args = {
-  status: VaultCardStatus.PENDING,
-};
+export const Pending = () => <VaultCard status={VaultCardStatus.PENDING}/>;
 
 export const NFT = Template.bind({});
 NFT.args = {

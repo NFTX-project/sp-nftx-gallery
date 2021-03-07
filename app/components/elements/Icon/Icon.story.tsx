@@ -5,7 +5,7 @@ import Icon, { IconProps } from './Icon';
 import { Icons } from './constants';
 
 export default {
-  title: 'Components/Icon',
+  title: 'Components/elements/Icon',
   component: Icon,
   argTypes: {
     name: {

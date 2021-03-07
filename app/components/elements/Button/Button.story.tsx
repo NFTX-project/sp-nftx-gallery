@@ -6,7 +6,7 @@ import { Kind, Size } from './constants';
 import { Icons } from '../Icon';
 
 export default {
-  title: 'Components/Button',
+  title: 'Components/elements/Button',
   component: Button,
   argTypes: {
     size: {

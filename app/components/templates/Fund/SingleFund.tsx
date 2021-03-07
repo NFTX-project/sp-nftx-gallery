@@ -4,17 +4,13 @@ import Link from 'next/link';
 import { FormattedMessage, FormattedNumber } from 'react-intl';
 import { useRouter } from 'next/router';
 import FilterResults from 'react-filter-search';
-import Breadcrumb from '@/components/Breadcrumbs';
-import Button, { Kind, Size } from '@/components/Button';
-import Divider from '@/components/Divider';
-import FundStatus from '@/components/FundStatus';
-import { Icons } from '@/components/Icon';
-import Search from '@/components/Search';
-import VaultCard from '@/components/VaultCard';
-import {
-  VaultCardStatus,
-  VaultCardType,
-} from '@/components/VaultCard/constants';
+import Breadcrumb from '@/components/modules/Breadcrumbs';
+import Button, { Kind, Size } from '@/components/elements/Button';
+import Divider from '@/components/elements/Divider';
+import FundStatus from '@/components/modules/FundStatus';
+import { Icons } from '@/components/elements/Icon';
+import Search from '@/components/modules/Search';
+import VaultCard, { VaultCardStatus, VaultCardType } from '@/components/modules/VaultCard';
 import useMessage from '@/hooks/useMessage';
 import type { FundProps } from './types';
 import { Asset } from '@/types/asset';

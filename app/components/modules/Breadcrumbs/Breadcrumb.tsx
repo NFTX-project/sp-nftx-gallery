@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import Icon, { Icons, Size } from '@/components/Icon';
+import Icon, { Icons, Size } from '@/components/elements/Icon';
 import useMessage from '@/hooks/useMessage';
 
 const denylist = ['collections'];

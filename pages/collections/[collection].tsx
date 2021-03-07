@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { GetServerSideProps } from 'next';
 import Head from 'next/head';
-import CollectionContainer from '@/components/Collection';
+import CollectionTemplate from '@/components/templates/Collection';
 import { useFundsContext } from '@/contexts/funds';
 import { Collection } from '@/types/wp';
 import buildYoastMeta from '@/utils/buildYoastMeta';
@@ -56,7 +56,7 @@ const CollectionPage = ({ collection }: { collection: Collection }) => {
       <Head>
         {buildYoastMeta(collection?.yoast_title, collection?.yoast_meta)}
       </Head>
-      <CollectionContainer collection={collection} funds={collectionFunds} />
+      <CollectionTemplate collection={collection} funds={collectionFunds} />
     </>
   );
 };

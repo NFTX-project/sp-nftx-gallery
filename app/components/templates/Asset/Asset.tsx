@@ -1,9 +1,9 @@
 import useAxios from 'axios-hooks';
 import Head from 'next/head';
 import React, { useEffect, useRef } from 'react';
-import Breadcrumb from '@/components/Breadcrumbs';
-import AssetDetail, { AssetDetailStatus } from '@/components/AssetDetail';
-import AssetGroup from '@/components/AssetGroup';
+import Breadcrumb from '@/components/modules/Breadcrumbs';
+import AssetDetail, { AssetDetailStatus } from '@/components/modules/AssetDetail';
+import AssetGroup from '@/components/modules/AssetGroup';
 import useMessage from '@/hooks/useMessage';
 import { Asset } from '@/types/asset';
 import { Fund } from '@/types/fund';

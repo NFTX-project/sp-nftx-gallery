@@ -1,5 +1,5 @@
 import React from 'react';
-import Icon, { Icons, Size } from '@/components/Icon';
+import Icon, { Icons, Size } from '@/components/elements/Icon';
 import useMessage from '@/hooks/useMessage';
 
 export interface FundStatusProps {
