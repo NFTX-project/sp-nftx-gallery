@@ -1,11 +1,12 @@
+import React, { ReactNode } from 'react';
+import Link from 'next/link';
+import { FormattedMessage } from 'react-intl';
+import Tvl from '@/components/elements/Tvl';
+import Pill from '@/components/elements/Pill';
+import Icon, { Icons } from '@/components/elements/Icon';
 import useMessage from '@/hooks/useMessage';
 import usePrice from '@/hooks/usePrice';
 import { Fund } from '@/types/fund';
-import Pill from '@/components/elements/Pill';
-import Link from 'next/link';
-import React, { ReactNode } from 'react';
-import Icon, { Icons } from '@/components/elements/Icon';
-import { FormattedMessage, FormattedNumber } from 'react-intl';
 
 const FundGroupHeader = ({
   fund,
@@ -50,13 +51,7 @@ const FundGroupHeader = ({
               values={{
                 tvl: (
                   <span className="ml-1 text-green-500">
-                    <FormattedNumber
-                      style="currency"
-                      value={price.raw * fund.holdings.length}
-                      currency="USD"
-                      maximumFractionDigits={0}
-                      minimumFractionDigits={0}
-                    />
+                    <Tvl price={price.raw} quantity={fund.holdings.length} />
                   </span>
                 ),
               }}

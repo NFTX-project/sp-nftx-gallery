@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import { FormattedMessage, FormattedNumber } from 'react-intl';
+import { FormattedMessage } from 'react-intl';
 import { useRouter } from 'next/router';
 import FilterResults from 'react-filter-search';
 import Breadcrumb from '@/components/modules/Breadcrumbs';
@@ -10,6 +10,7 @@ import Divider from '@/components/elements/Divider';
 import FundStatus from '@/components/modules/FundStatus';
 import { Icons } from '@/components/elements/Icon';
 import Search from '@/components/modules/Search';
+import Tvl from '@/components/elements/Tvl';
 import VaultCard, { VaultCardStatus, VaultCardType } from '@/components/modules/VaultCard';
 import useMessage from '@/hooks/useMessage';
 import type { FundProps } from './types';
@@ -78,46 +79,42 @@ const SingleFund = ({
             <div className="mb-6 max-w-prose">
               <p>{useMessage(`fund.single.${fundKey}.text`)}</p>
             </div>
-            <dl className="flex items-center">
-              <div className="mr-4">
+            <dl className="flex flex-wrap items-center">
+              <div className="mr-4 mb-2 sm:mb-0 flex-none">
                 <img
                   src={`/images/icons/icon-${fundKey}-40.png`}
                   alt={`${fundToken.name} icon`}
-                  className="h-10 w-10"
+                  className="sm:h-10 sm:w-10"
                 />
               </div>
-              <div className="mr-4 flex flex-col text-left">
-                <dt>{useMessage('fund.detail.supply')}</dt>
-                <dd className="font-bold text-xl">{holdings.length}</dd>
+              <div className="flex mb-2 sm:mb-0">
+                <div className="mr-4 flex flex-col text-left">
+                  <dt>{useMessage('fund.detail.supply')}</dt>
+                  <dd className="font-bold text-xl">{holdings.length}</dd>
+                </div>
+                {!!price.usd && (
+                  <>
+                    <div className="mr-4 flex-col text-left">
+                      <dt>
+                        <FormattedMessage id="fund.detail.price" />
+                      </dt>
+                      <dd className="font-bold text-xl">{price.usd}</dd>
+                    </div>
+                    <div className="mr-4 flex-col text-left">
+                      <dt>
+                        <FormattedMessage id="fund.detail.tvl" />
+                      </dt>
+                      <dd className="font-bold text-xl">
+                        <Tvl price={price.raw} quantity={holdings.length} />
+                      </dd>
+                    </div>
+                  </>
+                )}
               </div>
-              {!!price.usd && (
-                <>
-                  <div className="mr-4 flex-col text-left">
-                    <dt>
-                      <FormattedMessage id="fund.detail.price" />
-                    </dt>
-                    <dd className="font-bold text-xl">{price.usd}</dd>
-                  </div>
-                  <div className="mr-4 flex-col text-left">
-                    <dt>
-                      <FormattedMessage id="fund.detail.tvl" />
-                    </dt>
-                    <dd className="font-bold text-xl">
-                      <FormattedNumber
-                        value={holdings.length * price.raw}
-                        currency="USD"
-                        style="currency"
-                        maximumFractionDigits={0}
-                        minimumFractionDigits={0}
-                      />
-                    </dd>
-                  </div>
-                </>
-              )}
             </dl>
           </header>
           <aside className="text-right flex flex-col justify-end items-end">
-            <div className="mt-4 mb-4 w-full md:w-auto">
+            <div className="mt-2 sm:mt-4 mb-4 w-full md:w-auto">
               <Button
                 className="mb-4 w-full md:w-auto"
                 size={Size.SMALL}
