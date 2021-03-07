@@ -1,3 +1,4 @@
+import getFractionDigits from '@/utils/getFractionDigits';
 import useAxios from 'axios-hooks';
 import { useEffect, useState } from 'react';
 import { useIntl } from 'react-intl';
@@ -23,8 +24,7 @@ const usePrice = (address: string) => {
         usd: intl.formatNumber(latestPrice, {
           style: 'currency',
           currency: 'USD',
-          maximumFractionDigits: 2,
-          minimumFractionDigits: 2,
+          ...getFractionDigits(latestPrice),
         }),
         raw: latestPrice,
       });
