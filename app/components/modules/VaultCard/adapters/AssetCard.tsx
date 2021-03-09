@@ -24,7 +24,7 @@ const AssetCard = (
       className={props.className}
       eyebrow={props.asset_contract.name}
       image={props.image_preview_url}
-      title={props.name}
+      title={props.name || props.token_id}
       // seems to come through as hex without the hex
       background={props.background_color ? `#${props.background_color}` : null}
       text={getCardText(props)}
