@@ -9,4 +9,5 @@ export const fundSymbols = [
   'CUBES',
   'VARIANT-DAVIS',
   'BABES-BASIC',
+  'WAIFU',
 ];

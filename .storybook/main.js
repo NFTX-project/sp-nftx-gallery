@@ -22,7 +22,6 @@ module.exports = {
       })
     );
 
-    console.log(path.resolve(__dirname));
     const aliases = {
       '@/components': path.resolve(__dirname, '../app/components/'),
       '@/hooks': path.resolve(__dirname, '../app/hooks/'),
