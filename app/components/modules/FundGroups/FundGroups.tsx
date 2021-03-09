@@ -3,6 +3,7 @@ import useMessage from '@/hooks/useMessage';
 import { getCategoryKey } from '@/utils/getCategoryKey';
 import FundGroup from '@/components/modules/FundGroup';
 import { Fund } from '@/types/fund';
+import { FormattedMessage } from 'react-intl';
 
 interface FundGroupProps {
   funds: Fund[];
@@ -97,6 +98,14 @@ const FundGroups = ({
       {grouped.map(([key, fund]: [string, any]) => (
         <div key={key} className="mb-24">
           <FundGroup
+            title={
+              <FormattedMessage
+                id="funds.dynamic.title"
+                values={{
+                  fund: fund.funds[0].asset.name,
+                }}
+              />
+            }
             showLink={showLink}
             slug={fund.key}
             namespace={`${namespace}.${fund.key}`}
