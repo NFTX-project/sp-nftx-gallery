@@ -13,7 +13,6 @@ export const decorators = [
   ),
 ];
 
-
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
   backgrounds: {
@@ -25,10 +24,10 @@ export const parameters = {
       },
       {
         name: 'light',
-        value: colors.gray['50']
-      }
-    ]
-  }
+        value: colors.gray['50'],
+      },
+    ],
+  },
 };
 
 // Stub out nextjs `Image` component

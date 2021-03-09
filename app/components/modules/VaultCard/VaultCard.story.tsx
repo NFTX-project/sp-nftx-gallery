@@ -14,7 +14,7 @@ export default {
 
 const Template: Story<VaultCardProps> = (args) => <VaultCard {...args} />;
 
-export const Pending = () => <VaultCard status={VaultCardStatus.PENDING}/>;
+export const Pending = () => <VaultCard status={VaultCardStatus.PENDING} />;
 
 export const NFT = Template.bind({});
 NFT.args = {

@@ -13,7 +13,7 @@ export default {
 
 const Template: Story<AssetDetailProps> = (args) => <AssetDetail {...args} />;
 
-export const Pending = () => <AssetDetail status={AssetDetailStatus.PENDING}/>;
+export const Pending = () => <AssetDetail status={AssetDetailStatus.PENDING} />;
 
 export const Ready = Template.bind({});
 Ready.args = {

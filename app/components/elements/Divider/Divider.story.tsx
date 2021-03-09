@@ -12,13 +12,12 @@ export default {
 export const Example = () => (
   <>
     <div className="p-12 bg-gray-800">
-      <Divider/>
+      <Divider />
     </div>
     <div className="p-12">
-      <Divider/>
+      <Divider />
     </div>
   </>
 );
 
 Example.storyName = 'Divider';
-

@@ -24,14 +24,14 @@ module.exports = {
 
     console.log(path.resolve(__dirname));
     const aliases = {
-      "@/components": path.resolve(__dirname, "../app/components/"),
-      "@/hooks": path.resolve(__dirname, "../app/hooks/"),
-      "@/contexts": path.resolve(__dirname, "../app/contexts/"),
-      "@/utils": path.resolve(__dirname, "../app/utils/"),
-      "@/constants": path.resolve(__dirname, "../app/constants/"),
-      "@/lang": path.resolve(__dirname, "../lang"),
-      "@/styles": path.resolve(__dirname, "../styles/"),
-      "@/types": path.resolve(__dirname, "../types/"),
+      '@/components': path.resolve(__dirname, '../app/components/'),
+      '@/hooks': path.resolve(__dirname, '../app/hooks/'),
+      '@/contexts': path.resolve(__dirname, '../app/contexts/'),
+      '@/utils': path.resolve(__dirname, '../app/utils/'),
+      '@/constants': path.resolve(__dirname, '../app/constants/'),
+      '@/lang': path.resolve(__dirname, '../lang'),
+      '@/styles': path.resolve(__dirname, '../styles/'),
+      '@/types': path.resolve(__dirname, '../types/'),
     };
 
     return {
@@ -40,9 +40,9 @@ module.exports = {
         ...config.resolve,
         alias: {
           ...config.resolve?.alias,
-          ...aliases
-        }
-      }
+          ...aliases,
+        },
+      },
     };
   },
 };

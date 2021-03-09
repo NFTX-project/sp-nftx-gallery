@@ -14,7 +14,7 @@ const Template: Story<PillProps> = (args) => <Pill {...args} />;
 export const Basic = Template.bind({});
 Basic.args = {
   text: 'Single',
-}
+};
 
 export const Highlight = Template.bind({});
 Highlight.args = {

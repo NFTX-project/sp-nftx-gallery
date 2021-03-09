@@ -24,11 +24,20 @@ const Footer = () => {
             </Link>
           </div>
           <div className="mt-4 flex flex-wrap content-center justify-center h-full text-white text-bold">
+            <Link href="https://docs.google.com/forms/d/e/1FAIpQLScnaUGFuz6-iyLTCeLhcLcFfxAdpPhGzGfxDtET7qgBIJO_xg/viewform">
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline text-pink-500"
+              >
+                {useMessage('footer.link.request')}
+              </a>
+            </Link>
             <Link href="https://twitter.com/NFTX_">
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:underline"
+                className="hover:underline ml-4"
               >
                 {useMessage('footer.link.twitter')}
               </a>

@@ -11,7 +11,10 @@ import FundStatus from '@/components/modules/FundStatus';
 import { Icons } from '@/components/elements/Icon';
 import Search from '@/components/modules/Search';
 import Tvl from '@/components/elements/Tvl';
-import VaultCard, { VaultCardStatus, VaultCardType } from '@/components/modules/VaultCard';
+import VaultCard, {
+  VaultCardStatus,
+  VaultCardType,
+} from '@/components/modules/VaultCard';
 import useMessage from '@/hooks/useMessage';
 import type { FundProps } from './types';
 import { Asset } from '@/types/asset';
