@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { createContext, ReactChild, useContext } from 'react';
 import fetchWithTimeout from '@/utils/fetchWithTimeout';
-import { fundSymbols } from '@/constants/allowlist';
+import { vaultIds } from '@/constants/allowlist';
 import fundMeta from '@/constants/fundData.json';
 import { Fund } from '@/types/fund';
 
@@ -36,7 +36,7 @@ export const FundsProvider = ({ children }: { children: ReactChild }) => {
     (async () => {
       const allFunds = await getFunds();
       const filteredFunds = allFunds.filter(
-        (f) => f.isFinalized && fundSymbols.includes(f.fundToken.symbol)
+        (f) => f.isFinalized && vaultIds.includes(f.vaultId)
       );
       const withMeta = filteredFunds.map((f) => {
         const meta = fundMeta.find((fm) => fm.vaultId === f.vaultId) || {};

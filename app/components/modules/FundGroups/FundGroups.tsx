@@ -75,6 +75,18 @@ const groupFunds = (
   return groups;
 };
 
+const getFundName = (funds: Fund[]) => {
+  // grab the NFT asset name from first non d2 child funds
+  const assetTitle = funds.find((f) => !f.isD2Vault)?.asset?.name;
+
+  if (!assetTitle) {
+    // if we haven't got one then return the fundToken name
+    return funds[0]?.fundToken?.name;
+  }
+
+  return assetTitle;
+};
+
 const FundGroups = ({
   funds,
   vaults,
@@ -102,7 +114,7 @@ const FundGroups = ({
               <FormattedMessage
                 id="funds.dynamic.title"
                 values={{
-                  fund: fund.funds[0].asset.name,
+                  fund: getFundName(fund.funds),
                 }}
               />
             }
