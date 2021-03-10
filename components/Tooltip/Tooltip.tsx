@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactTooltip from 'react-tooltip';
+import Modal from '@/components/Modal';
+import useMessage from '@/hooks/useMessage';
 
 export interface TooltipProps {
   /**
@@ -8,7 +10,9 @@ export interface TooltipProps {
   content: any;
 }
 
-const Tooltip = ({ content }: FundStatusProp) => {
+const Tooltip = ({ content }: TooltipProps) => {
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <div>
       <style
@@ -41,7 +45,7 @@ const Tooltip = ({ content }: FundStatusProp) => {
           overridePosition={(pos, event, target, node, place, desiredPlace) => {
             const rect = target.getBoundingClientRect();
             return {
-              left: rect.left + 16,
+              left: rect.left + 24,
               top: rect.top + 16 - (node.offsetHeight + rect.height) / 2,
             };
           }}
@@ -53,16 +57,16 @@ const Tooltip = ({ content }: FundStatusProp) => {
           effect="solid"
           globalEventOff="click"
         >
-          {content}
+          <div className="py-3">{content}</div>
         </ReactTooltip>
       </div>
 
       <div className="sm:block md:hidden lg:hidden">
         <a
-          data-tip="custom show"
-          data-event="click focus"
-          data-for="tooltip-mobile"
           className="cursor-pointer mb-0.5 ml-1"
+          onClick={() => {
+            setShowModal(true);
+          }}
         >
           <img
             src="/images/tooltip.svg"
@@ -72,30 +76,17 @@ const Tooltip = ({ content }: FundStatusProp) => {
             className={`inline-block`}
           />
         </a>
-
-        <ReactTooltip
-          resizeHide
-          overridePosition={(pos, event, target, node, place, desiredPlace) => {
-            const rect = target.getBoundingClientRect();
-            return {
-              left:
-                window.innerWidth > node.offsetWidth
-                  ? (window.innerWidth - node.offsetWidth) / 2
-                  : 0,
-              top: rect.top + 16,
-            };
-          }}
-          backgroundColor="#242526"
-          border
-          borderColor="#3f4044"
-          id="tooltip-mobile"
-          place="bottom"
-          effect="solid"
-          globalEventOff="click"
-        >
-          {content}
-        </ReactTooltip>
       </div>
+
+      {showModal && (
+        <Modal
+          content={content}
+          primaryLabel={useMessage('modal.cta.okay.text')}
+          primaryHandleSelect={() => {
+            setShowModal(false);
+          }}
+        />
+      )}
     </div>
   );
 };

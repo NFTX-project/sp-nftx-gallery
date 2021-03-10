@@ -127,5 +127,6 @@
   "footer.link.aragon": "Aragon",
   "footer.text.data": "Data by {opensea} & {covalent}",
   "footer.link.opensea": "OpenSea",
-  "footer.link.covalent": "Covalent"
+  "footer.link.covalent": "Covalent",
+  "modal.cta.okay.text": "Okay"
 }

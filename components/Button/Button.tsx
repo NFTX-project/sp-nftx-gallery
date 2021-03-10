@@ -28,12 +28,14 @@ export interface ButtonProps
   icon: Icons;
 }
 
-const baseStyles = `inline-flex items-center justify-center outline-none font-medium rounded-md hover:outline focus:outline-none focus:ring-2 focus:ring-opacity-75`;
+const baseStyles = `inline-flex items-center justify-center outline-none font-medium rounded-md hover:outline focus:outline-none focus:ring-2 focus:ring-opacity-75 transition`;
 const kindStyles = {
   [Kind.PRIMARY]:
     'bg-gradient-to-b from-pink-500 to-pink-600 text-white hover:from-pink-700 hover:to-pink-700 focus:ring-pink-600',
   [Kind.SECONDARY]:
     'bg-white text-gray-900 hover:bg-gray-50 focus:ring-gray-300',
+  [Kind.TERTIARY]:
+    'bg-transparent text-white hover:bg-gray-50 hover:bg-opacity-10 focus:ring-gray-300 border border-pink-500',
   [Kind.ICON]:
     'bg-gradient-to-b from-orange-500 via-red-500 to-orange-500 text-white hover:from-orange-500 hover:to-orange-500 focus:ring-red-600',
 };

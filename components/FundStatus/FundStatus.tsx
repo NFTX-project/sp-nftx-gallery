@@ -51,7 +51,7 @@ const FundStatus = ({ fin, ver, amm }: FundStatusProps) => {
         ))}
         <Tooltip
           content={
-            <aside className="py-2 uppercase">
+            <aside className="uppercase">
               <dt className="mb-1">
                 <span className="text-green-500">
                   {useMessage(`fund.status.fin`)}

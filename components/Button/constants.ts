@@ -1,6 +1,7 @@
 export enum Kind {
   PRIMARY = 'PRIMARY',
   SECONDARY = 'SECONDARY',
+  TERTIARY = 'TERTIARY',
   ICON = 'ICON',
 }
 
