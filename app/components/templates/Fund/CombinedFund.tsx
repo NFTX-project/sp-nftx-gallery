@@ -81,7 +81,7 @@ const CombinedFund = ({ fundKey, ...fund }: FundProps) => {
               className="w-full"
               size={ButtonSize.LARGE}
               icon={Icons.EXTERNAL_LINK}
-              href={`https://app.sushiswap.fi/token/${fund.fundToken.address}`}
+              href={`https://app.sushi.com/token/${fund.fundToken.address}`}
               target="_blank"
             >
               {useMessage('fund.combined.buy', {

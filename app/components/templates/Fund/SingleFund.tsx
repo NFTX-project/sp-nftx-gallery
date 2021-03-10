@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, useIntl } from 'react-intl';
 import { useRouter } from 'next/router';
 import FilterResults from 'react-filter-search';
 import Breadcrumb from '@/components/modules/Breadcrumbs';
@@ -31,6 +31,7 @@ const SingleFund = ({
   meta,
 }: FundProps) => {
   const { asPath } = useRouter();
+  const intl = useIntl();
   const [limit, setLimit] = useState(25);
   const [offset, setOffset] = useState(0);
   const [collection, setCollection] = useState([]);
@@ -58,6 +59,11 @@ const SingleFund = ({
     setLimit((limit) => limit + 25);
   };
 
+  // Check for specific fund text or pull from asset
+  const message =
+    intl.messages[`fund.single.${fundKey}.text`] ??
+    assets?.[0].asset_contract?.description;
+
   return (
     <>
       <Head>
@@ -80,7 +86,7 @@ const SingleFund = ({
               <FundStatus amm={true} ver={true} fin={isFinalized} />
             </div>
             <div className="mb-6 max-w-prose">
-              <p>{useMessage(`fund.single.${fundKey}.text`)}</p>
+              <p>{message}</p>
             </div>
             <dl className="flex flex-wrap items-center">
               <div className="mr-4 mb-2 sm:mb-0 flex-none">
@@ -141,7 +147,7 @@ const SingleFund = ({
                 kind={Kind.PRIMARY}
                 href={
                   meta.buyUrl ||
-                  `https://app.sushiswap.fi/token/${fundToken.address}`
+                  `https://app.sushi.com/token/${fundToken.address}`
                 }
                 target="_blank"
                 icon={Icons.EXTERNAL_LINK}
