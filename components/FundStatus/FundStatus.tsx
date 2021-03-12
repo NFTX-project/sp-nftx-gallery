@@ -52,24 +52,14 @@ const FundStatus = ({ fin, ver, amm }: FundStatusProps) => {
         <Tooltip
           content={
             <aside className="uppercase">
-              <dt className="mb-1">
-                <span className="text-green-500">
-                  {useMessage(`fund.status.fin`)}
-                </span>{' '}
-                = {useMessage(`fund.status.tooltip.fin.text`)}
-              </dt>
-              <dt className="mb-1">
-                <span className="text-green-500">
-                  {useMessage(`fund.status.ver`)}
-                </span>{' '}
-                = {useMessage(`fund.status.tooltip.ver.text`)}
-              </dt>
-              <dt>
-                <span className="text-green-500">
-                  {useMessage(`fund.status.amm`)}
-                </span>{' '}
-                = {useMessage(`fund.status.tooltip.amm.text`)}
-              </dt>
+              {['fin', 'ver', 'amm'].map((x, i) => (
+                <p key={i} className="mb-1">
+                  <span className="text-green-500">
+                    {useMessage(`fund.status.${x}`)}
+                  </span>{' '}
+                  = {useMessage(`fund.status.tooltip.${x}.text`)}
+                </p>
+              ))}
             </aside>
           }
         />

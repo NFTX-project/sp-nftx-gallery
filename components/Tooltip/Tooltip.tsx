@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ReactTooltip from 'react-tooltip';
+import tailwindsConfig from '../../tailwind.config.js';
 import Modal from '@/components/Modal';
 import useMessage from '@/hooks/useMessage';
 
@@ -12,6 +13,7 @@ export interface TooltipProps {
 
 const Tooltip = ({ content }: TooltipProps) => {
   const [showModal, setShowModal] = useState(false);
+  const color = tailwindsConfig.theme.extend.colors;
 
   return (
     <div>
@@ -26,12 +28,7 @@ const Tooltip = ({ content }: TooltipProps) => {
       />
 
       <div className="hidden md:block lg:block">
-        <a
-          data-tip="custom show"
-          data-event="click focus"
-          data-for="tooltip"
-          className="cursor-pointer mb-0.5 ml-1"
-        >
+        <a data-tip data-for="tooltip" className="cursor-pointer mb-0.5 ml-1">
           <img
             src="/images/tooltip.svg"
             alt="wut"
@@ -42,16 +39,16 @@ const Tooltip = ({ content }: TooltipProps) => {
         </a>
         <ReactTooltip
           resizeHide
-          overridePosition={(pos, event, target, node, place, desiredPlace) => {
+          overridePosition={(pos, event, target, node) => {
             const rect = target.getBoundingClientRect();
             return {
               left: rect.left + 24,
               top: rect.top + 16 - (node.offsetHeight + rect.height) / 2,
             };
           }}
-          backgroundColor="#242526"
+          backgroundColor={color.gray['700']}
           border
-          borderColor="#3f4044"
+          borderColor={color.gray['600']}
           id="tooltip"
           place="right"
           effect="solid"
