@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import ReactTooltip from 'react-tooltip';
 import tailwindsConfig from '../../tailwind.config.js';
 import Modal from '@/components/Modal';
+import Icon, { Icons, Size as IconSize } from '@/components/Icon';
 import useMessage from '@/hooks/useMessage';
 
 export interface TooltipProps {
@@ -28,13 +29,15 @@ const Tooltip = ({ content }: TooltipProps) => {
       />
 
       <div className="hidden md:block lg:block">
-        <a data-tip data-for="tooltip" className="cursor-pointer mb-0.5 ml-1">
-          <img
-            src="/images/tooltip.svg"
-            alt="wut"
-            height={14}
-            width={14}
-            className={`inline-block`}
+        <a
+          data-tip
+          data-for="tooltip"
+          className="cursor-pointer ml-1 relative text-gray-500"
+        >
+          <Icon
+            className="absolute top-0 left-0"
+            name={Icons.INFO_CIRCLE}
+            size={IconSize.SMALL}
           />
         </a>
         <ReactTooltip
@@ -60,17 +63,15 @@ const Tooltip = ({ content }: TooltipProps) => {
 
       <div className="sm:block md:hidden lg:hidden">
         <a
-          className="cursor-pointer mb-0.5 ml-1"
+          className="cursor-pointer ml-1 relative text-gray-500"
           onClick={() => {
             setShowModal(true);
           }}
         >
-          <img
-            src="/images/tooltip.svg"
-            alt="wut"
-            height={14}
-            width={14}
-            className={`inline-block`}
+          <Icon
+            className="absolute top-0 left-0"
+            name={Icons.INFO_CIRCLE}
+            size={IconSize.SMALL}
           />
         </a>
       </div>

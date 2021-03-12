@@ -5,6 +5,7 @@ export enum Icons {
   EXTERNAL_LINK = 'external-link',
   SPARKLE = 'sparkle',
   OPENSEA = 'opensea',
+  INFO_CIRCLE = 'info-circle',
 }
 
 export enum Size {
