@@ -14,4 +14,5 @@ export const vaultIds = [
   29, //'TWERKYPEPE'
   // 41, //'BLOCKCITIES'
   40, //'BGANPUNK'
+  49, // 'MOONCAT'
 ];
