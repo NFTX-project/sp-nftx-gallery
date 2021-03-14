@@ -24,6 +24,10 @@ export interface VaultCardProps {
    */
   imageSrcSet?: string;
   /**
+   * The image alt tag
+   */
+  imageAlt?: string;
+  /**
    * Placeholder to render in the image slot
    */
   placeholder?: ReactNode;
