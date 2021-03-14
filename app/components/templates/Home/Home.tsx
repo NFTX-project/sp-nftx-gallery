@@ -68,13 +68,6 @@ const HomeContainer = ({
                   </a>
                 </Link>
               ))}
-              {/* <Link href="/funds/">
-                <a className="hidden lg:block lg:w-1/5 p-2">
-                  <div className="flex h-full items-center justify-center rounded-md bg-gradient-to-t from-gray-800 to-gray-700 text-white">
-                    {useMessage('home.collections.poster.all')}
-                  </div>
-                </a>
-              </Link> */}
             </section>
           </div>
         )}

@@ -4,6 +4,7 @@ import type { VaultCardProps } from '../types';
 const DefaultVaultCard = ({
   image,
   imageSrcSet,
+  imageAlt,
   eyebrow,
   title,
   text,
@@ -29,7 +30,7 @@ const DefaultVaultCard = ({
                 loading="lazy"
                 srcSet={imageSrcSet}
                 src={image}
-                alt={`${eyebrow}`}
+                alt={`${imageAlt ?? eyebrow}`}
                 className="w-full object-contain h-36"
               />
             )}

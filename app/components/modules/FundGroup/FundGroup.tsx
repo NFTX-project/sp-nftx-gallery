@@ -83,6 +83,7 @@ const FundGroup = ({
                   <VaultCard
                     image={`/images/cards/${fundKey}-140.png`}
                     imageSrcSet={`/images/cards/${fundKey}-140@2x.png 2x`}
+                    imageAlt={item.asset.name}
                     eyebrow={getEyebrow(item)}
                     title={
                       <div className="mt-2 flex items-center flex-wrap">

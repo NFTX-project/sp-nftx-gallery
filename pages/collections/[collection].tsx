@@ -9,13 +9,19 @@ import { WORDPRESS_CMS } from '@/constants/api';
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const slug = context.params.collection;
+  let collection;
 
-  const res = await fetch(
-    `${WORDPRESS_CMS}/collections/?slug=${slug}&_fields=title,slug,acf.collection_title,acf.collection_description,acf.collection_related_fund_vault_ids,yoast_meta,yoast_title`
-  );
-  const collection = (await res.json()) as Collection[];
+  try {
+    const res = await fetch(
+      `${WORDPRESS_CMS}/collections/?slug=${slug}&_fields=title,slug,acf.collection_title,acf.collection_description,acf.collection_related_fund_vault_ids,yoast_meta,yoast_title`
+    );
+    collection = (await res.json()) as Collection[];
+  } catch {
+    collection = null;
+  }
 
-  if (Array.isArray(collection)) {
+  // the WP API returns the collection as a nested array
+  if (Array.isArray(collection) && collection.length) {
     return {
       props: {
         collection: collection[0],
@@ -23,9 +29,11 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     };
   }
 
+  // didn't get a collection back, return to homepage
   return {
-    props: {
-      collection: null,
+    redirect: {
+      destination: '/',
+      permanent: false,
     },
   };
 };
@@ -35,7 +43,7 @@ const CollectionPage = ({ collection }: { collection: Collection }) => {
   const [collectionFunds, setCollectionFunds] = useState(null);
 
   useEffect(() => {
-    if (collection && funds.length) {
+    if (funds.length) {
       const vaultIds = collection.acf.collection_related_fund_vault_ids.split(
         ','
       );
@@ -49,7 +57,7 @@ const CollectionPage = ({ collection }: { collection: Collection }) => {
         setCollectionFunds(false);
       }
     }
-  }, [collection, funds]);
+  }, [funds]);
 
   return (
     <>
