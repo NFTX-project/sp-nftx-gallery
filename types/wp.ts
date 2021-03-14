@@ -13,6 +13,7 @@ export interface Collection {
     collection_title: string;
     collection_description: string;
     collection_feature_image: URL;
+    collection_feature_homepage: boolean;
     collection_related_fund_vault_ids: string;
     collection_visible: 'visible' | null;
   };
