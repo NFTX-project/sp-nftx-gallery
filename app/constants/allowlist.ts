@@ -14,5 +14,8 @@ export const vaultIds = [
   29, //'TWERKYPEPE'
   // 41, //'BLOCKCITIES'
   40, //'BGANPUNK'
+  45, // 'HERO'
+  47, // 'PP9000 (Pepemon)
   49, // 'MOONCAT'
+  50, // 'CC' (CryptoCrystal)
 ];
