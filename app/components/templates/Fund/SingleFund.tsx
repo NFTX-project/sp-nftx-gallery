@@ -91,7 +91,7 @@ const SingleFund = ({
             <dl className="flex flex-wrap items-center">
               <div className="mr-4 mb-2 sm:mb-0 flex-none">
                 <img
-                  src={`/images/icons/icon-${fundKey}-40.png`}
+                  src={`/images/icons/icon-vault-${vaultId}-40.png`}
                   alt={`${fundToken.name} icon`}
                   className="sm:h-10 sm:w-10"
                 />
