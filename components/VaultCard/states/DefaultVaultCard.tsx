@@ -25,7 +25,7 @@ const DefaultVaultCard = ({
               <img
                 loading="lazy"
                 srcSet={imageSrcSet}
-                src={image}
+                src={`https://res.cloudinary.com/nftx/image/fetch/${image}`}
                 alt={`${eyebrow}`}
                 className="w-full object-contain h-36"
               />
