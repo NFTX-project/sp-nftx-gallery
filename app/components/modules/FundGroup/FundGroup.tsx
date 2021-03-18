@@ -52,8 +52,8 @@ const FundGroup = ({
       }
 
       return useMessage('funds.group.eyebrow.single', {
-        asset: item.asset.name,
-        count: item?.holdings?.length,
+        asset: item.asset.name || item.fundToken.name,
+        count: item?.holdings?.length || '',
       });
     };
 
@@ -87,7 +87,7 @@ const FundGroup = ({
                     eyebrow={getEyebrow(item)}
                     title={
                       <div className="mt-2 flex items-center flex-wrap">
-                        <span className="inline-block mr-2">
+                        <span className="inline-block mr-2 uppercase">
                           {`$${item.fundToken.symbol}`}
                         </span>
                         <Pill

@@ -21,5 +21,5 @@ export const vaultIds = [
   33, // 'SQUIGGLE'
   52, // 'ALPACA' (AlpacaCity)
   51, // 'ARTE' (CryptoArte)
- // 53, // 'CARDS' (EtherCards)
+  53, // 'CARDS' (EtherCards)
 ];
