@@ -18,4 +18,8 @@ export const vaultIds = [
   47, // 'PP9000 (Pepemon)
   49, // 'MOONCAT'
   50, // 'CC' (CryptoCrystal)
+  33, // 'SQUIGGLE'
+  52, // 'ALPACA' (AlpacaCity)
+  51, // 'ARTE' (CryptoArte)
+  53, // 'CARDS' (EtherCards)
 ];
