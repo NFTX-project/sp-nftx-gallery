@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import Head from 'next/head';
 import useMessage from '@/hooks/useMessage';
 import { Fund } from '@/types/fund';
@@ -7,6 +7,7 @@ import Link from 'next/link';
 import FundGroup, { Columns } from '@/components/modules/FundGroup';
 import Poster, { Colorway } from '@/components/modules/Poster';
 import { FormattedMessage } from 'react-intl';
+import { getFundKey } from '@/utils/getFundKey';
 
 const HomeContainer = ({
   funds,
@@ -45,29 +46,50 @@ const HomeContainer = ({
               <FormattedMessage id="home.collections.title" />
             </h3>
             <section className="flex flex-wrap -m-2">
-              {collections.map((cat) => (
-                <Link href={`/collections/${cat.slug}`} key={cat.slug}>
-                  <a className="w-full sm:w-1/2 md:w-1/4 lg:w-1/5 md:p-2 transition-transform duration-300 transform hover:scale-105">
-                    <div className="p-2 md:p-0">
-                      <Poster
-                        title={cat.acf.collection_title}
-                        text={
-                          <FormattedMessage
-                            id="home.collections.poster.text"
-                            values={{
-                              count: cat.acf.collection_related_fund_vault_ids.split(
-                                ','
-                              ).length,
-                            }}
-                          />
-                        }
-                        image={cat.acf.collection_feature_image}
-                        colorway={Colorway.LIGHT}
-                      />
-                    </div>
-                  </a>
-                </Link>
-              ))}
+              {collections.map((cat) => {
+                const vaults = cat.acf.collection_related_fund_vault_ids.split(
+                  ','
+                );
+                // @TODO this all should be powered by CMS
+                const url = (() => {
+                  // if only one fund exists, go there
+                  if (vaults.length === 1) {
+                    const vault = funds.find(
+                      (f) =>
+                        f.vaultId ===
+                        Number(cat.acf.collection_related_fund_vault_ids)
+                    );
+
+                    if (vault) {
+                      return `/funds/${getFundKey(vault)}`;
+                    }
+                  }
+
+                  return `/collections/${cat.slug}`;
+                })();
+
+                return (
+                  <Link href={url} key={cat.slug}>
+                    <a className="w-full sm:w-1/2 md:w-1/4 lg:w-1/5 md:p-2 transition-transform duration-300 transform hover:scale-105">
+                      <div className="p-2 md:p-0">
+                        <Poster
+                          title={cat.acf.collection_title}
+                          text={
+                            <FormattedMessage
+                              id="home.collections.poster.text"
+                              values={{
+                                count: vaults.length,
+                              }}
+                            />
+                          }
+                          image={cat.acf.collection_feature_image}
+                          colorway={Colorway.LIGHT}
+                        />
+                      </div>
+                    </a>
+                  </Link>
+                );
+              })}
             </section>
           </div>
         )}
