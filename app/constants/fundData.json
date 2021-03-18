@@ -166,5 +166,10 @@
         "name": "WAIFU",
         "buyUrl": "https://app.sushi.com/token/0x0f10e6ec76346c2362897bfe948c8011bb72880f",
         "mintRedeemUrl": "https://nftx.org/#/fund/37"
+    },
+    {
+        "vaultId": 53,
+        "name": "CARD",
+        "buyUrl": "https://app.sushi.com/pair/0x14994c09c42644bfc0a00ebb356a12a530da1e58"
     }
 ]
