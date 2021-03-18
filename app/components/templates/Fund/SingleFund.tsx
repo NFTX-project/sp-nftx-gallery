@@ -147,19 +147,22 @@ const SingleFund = ({
                 kind={Kind.PRIMARY}
                 href={
                   meta.buyUrl ||
-                  `https://app.sushi.com/token/${fundToken.address}`
+                  `https://app.sushi.com/add/ETH/${fundToken.address}`
                 }
                 target="_blank"
                 icon={Icons.EXTERNAL_LINK}
               >
-                {useMessage('fund.cta.invest', {
-                  fund: (
-                    <span className="uppercase">
-                      {'$'}
-                      {fundToken.symbol}
-                    </span>
-                  ),
-                })}
+                {useMessage(
+                  meta.buyUrl ? 'fund.cta.invest' : 'fund.cta.liquidity',
+                  {
+                    fund: (
+                      <span className="uppercase">
+                        {'$'}
+                        {fundToken.symbol}
+                      </span>
+                    ),
+                  }
+                )}
               </Button>
             </div>
             <Search value={value} handleChange={handleChange} />

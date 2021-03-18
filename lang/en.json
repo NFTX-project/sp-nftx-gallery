@@ -76,6 +76,7 @@
   "fund.detail.tvl": "TVL",
   "fund.cta.invest": "Buy {fund}",
   "fund.cta.mintRedeem": "Mint or redeem {token}",
+  "fund.cta.liquidity": "Add Liquidity",
   "fund.meta.title": "{fund} | NFTX",
   "fund.combined.punk.title": "Cryptopunks",
   "fund.combined.punk.text": "$PUNK is a CryptoPunks combined fund token that is backed by multiple single CryptoPunks fund tokens, like Punk-Attr-4, Punk-Attr-5, Punk-Zombie, and so forth. The price of this token is based on the weighted average of all underlying single fund tokens.",
