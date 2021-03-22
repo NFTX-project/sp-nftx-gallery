@@ -22,4 +22,5 @@ export const vaultIds = [
   52, // 'ALPACA' (AlpacaCity)
   51, // 'ARTE' (CryptoArte)
   53, // 'CARDS' (EtherCards)
+  57, // 'CHUBBY' (Chubbies)
 ];
