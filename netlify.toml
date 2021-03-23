@@ -12,16 +12,3 @@
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
-
-[[headers]]
-  for = "/*"
-  [headers.values]
-    X-Frame-Options = "DENY"
-    X-XSS-Protection = "1; mode=block"
-    Content-Security-Policy = "default-src 'none'; script-src 'self' www.googletagmanager.com www.google-analytics.com; connect-src 'self' nftx.ethereumdb.com; img-src 'self' cms.nftx.xyz res.cloudinary.com; style-src 'self';base-uri 'self';form-action 'self'"
-
-[[redirects]]
-from = "/javery"
-to = "https://justinavery.me"
-status = 301
-force = true
