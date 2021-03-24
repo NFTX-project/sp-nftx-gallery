@@ -15,7 +15,7 @@ module.exports = {
           {
             key: 'Content-Security-Policy',
             value:
-              "default-src 'none'; script-src 'self' www.googletagmanager.com www.google-analytics.com; connect-src 'self' nftx.ethereumdb.com; img-src 'self' cms.nftx.xyz res.cloudinary.com; style-src 'self';base-uri 'self';form-action 'self'",
+              "default-src 'none'; script-src 'self' 'unsafe-inline' www.googletagmanager.com www.google-analytics.com; font-src 'self'; connect-src 'self' nftx.ethereumdb.com api.covalenthq.com api.opensea.io www.google-analytics.com stats.g.doubleclick.net; img-src 'self' cms.nftx.xyz res.cloudinary.com www.google-analytics.com lh3.googleusercontent.com www.google.com www.google.co.uk; style-src 'self' 'unsafe-inline'; base-uri 'self';form-action 'self'",
           },
         ],
       },
