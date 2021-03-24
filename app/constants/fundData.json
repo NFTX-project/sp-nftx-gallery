@@ -37,6 +37,7 @@
         "vaultId": 4,
         "name": "AXIE-ORIGIN",
         "description": "Axie-Origin is a single fund token, which is backed 1:1 by Origin Axie Infinity NFTs. Origin Axies are digital pets that were created during Axie Infinity’s two month pre-sale event in 2018 and are accordingly rare and collectable. Because this fund allows any Origin Axie to be deposited as collateral, it acts as a floor price tracker for these NFTs.",
+        "buyUrl": "https://app.sushi.com/token/0x5b9f63f256fac333bc2bc73c7867ba4865a49729",
         "buyOpenseaUrl": "https://opensea.io/assets/axie?search[stringTraits][0][name]=title&search[stringTraits][0][values][0]=Origin",
         "mintRedeemUrl": "https://nftx.org/#/fund/4"
     },
@@ -58,6 +59,7 @@
         "vaultId": 7,
         "name": "KITTY-GEN-0",
         "description": "Kitty-Gen-0 is a single fund token, which is backed 1:1 by Gen 0 CryptoKitties NFTs. Gen 0 CryptoKitties were not bred into existence but rather created by the CryptoKitties smart contract, meaning they are the genesis Kitties that parented later generations into existence. There are only 50,000 Gen 0 CryptoKitties in total. ",
+        "buyUrl": "https://app.sushi.com/token/0x8712A5580995a1b0E10856e8C3E26B14C1CDF7b6",
         "buyOpenseaUrl": "https://opensea.io/assets/cryptokitties",
         "mintRedeemUrl": "https://nftx.org/#/fund/7"
     },
@@ -65,6 +67,7 @@
         "vaultId": 8,
         "name": "KITTY-GEN-0-F",
         "description": "Kitty-Gen-0-F is a single fund token, which is backed 1:1 by Gen 0 CryptoKitties NFTs with Fast cooldown speed. A Fast cooldown is the most advantageous breeding cooldown speed in CryptoKitties, as it allows Kitties to generate the most offspring before they become subject to one-week breeding cooldown periods, also known as Catatonic. ",
+        "buyUrl": "https://app.sushi.com/token/0xc4bf60B93ac60dB9A45AD232368d50de0A354849",
         "buyOpenseaUrl": "https://opensea.io/assets/cryptokitties",
         "mintRedeemUrl": "https://nftx.org/#/fund/8"
     },
@@ -79,6 +82,7 @@
         "vaultId": 10,
         "name": "AVASTR-BASIC",
         "description": "Avastr-Basic is a single fund token, which is backed 1:1 by any Avastars NFTs. Avastars are on-chain art avatars designed for the metaverse. Because this fund allows any Avastar to be deposited as collateral, it acts as a floor price tracker for these NFTs.",
+        "buyUrl": "https://app.sushi.com/token/0xb5A0931b1B7F21C2F557fd4FDdCcb504e71AE32D",
         "buyOpenseaUrl": "https://opensea.io/assets/avastar?search[numericTraits][0][name]=ranking&search[numericTraits][0][ranges][0][max]=29&search[numericTraits][0][ranges][0][min]=1",
         "mintRedeemUrl": "https://nftx.org/#/fund/10"
     },
@@ -86,12 +90,14 @@
         "vaultId": 11,
         "name": "AVASTR-RANK-30",
         "description": "Avastr-Rank-30 is a single fund token, which is backed 1:1 by any Avastars NFTs that have a ranking of at least 30 or higher. Every Avastar is given a score between 1 and 100 depending on their trait rarity levels, and scores are more desirable as they approach 100. ",
+        "buyUrl": "https://app.sushi.com/token/0x59a82F0FF8E88804a34Dd467b7061F1986Fe1769",
         "buyOpenseaUrl": "https://opensea.io/assets/avastar?search[numericTraits][0][name]=ranking&search[numericTraits][0][ranges][0][max]=59&search[numericTraits][0][ranges][0][min]=30&search[numericTraits][1][name]=serial&search[numericTraits][1][ranges][0][min]=0&search[numericTraits][1][ranges][0][max]=12400",
         "mintRedeemUrl": "https://nftx.org/#/fund/11"
     },
     {
         "vaultId": 12,
         "name": "AVASTR-RANK-60",
+        "buyUrl": "https://app.sushi.com/token/0xabA49Db7E374cc6954401DC0A886E0B02670536e",
         "description": "Avastr-Rank-60 is a single fund token, which is backed 1:1 by any Avastars NFTs that have a ranking of at least 60 or higher. Avastars with +60 scores are prized because such scores indicate these collectibles have very compelling trait makeups.  ",
         "buyOpenseaUrl": "https://opensea.io/assets/avastar?search[numericTraits][0][name]=serial&search[numericTraits][0][ranges][0][max]=12400&search[numericTraits][0][ranges][0][min]=0&search[numericTraits][1][name]=ranking&search[numericTraits][1][ranges][0][min]=60&search[numericTraits][1][ranges][0][max]=100",
         "mintRedeemUrl": "https://nftx.org/#/fund/12"
