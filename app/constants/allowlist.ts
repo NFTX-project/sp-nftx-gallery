@@ -5,6 +5,13 @@ export const vaultIds = [
   2, //'PUNK-ATTR-5'
   3, //'PUNK-ZOMBIE'
   15, //'PUNK-FEMALE'
+  4, // AXIES
+  7, // KITIES-GEN-0
+  8, // KITIES-GEN-0-F
+  10, //AVASTAR-BASIC
+  11, //AVASTAR-30
+  12, //AVASTAR-60
+  13, //AUTOGLYPH
   20, //'MASK'
   21, //'CUBES'
   18, //'VARIANT-DAVIS'
