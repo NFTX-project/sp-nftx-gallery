@@ -10,3 +10,9 @@
   to = "https://gallery.nftx.org"
   status = 200
   headers = {X-From = "Netlify"}
+
+  [[redirects]]
+  from = "/javery"
+  to = "https://justinavery.me"
+  status = 301
+  headers = {X-From = "Netlify"}
