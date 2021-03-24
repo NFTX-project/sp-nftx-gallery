@@ -176,6 +176,13 @@
     {
         "vaultId": 53,
         "name": "CARD",
-        "buyUrl": "https://app.sushi.com/pair/0x14994c09c42644bfc0a00ebb356a12a530da1e58"
+        "buyUrl": "https://app.sushi.com/pair/0x14994c09c42644bfc0a00ebb356a12a530da1e58",
+        "mintRedeemUrl": "https://nftx.org/#/fund/53"
+    },
+    {
+        "vaultId": 52,
+        "name": "ALPACA",
+        "buyUrl": "https://app.sushi.com/token/0xed31fda280153d4a38294582aea3a1a27901aca3",
+        "mintRedeemUrl": "https://nftx.org/#/fund/52"
     }
 ]
