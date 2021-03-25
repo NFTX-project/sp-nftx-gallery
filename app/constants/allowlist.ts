@@ -30,4 +30,5 @@ export const vaultIds = [
   51, // 'ARTE' (CryptoArte)
   53, // 'CARDS' (EtherCards)
   57, // 'CHUBBY' (Chubbies)
+  58, // R3SONANCE
 ];
