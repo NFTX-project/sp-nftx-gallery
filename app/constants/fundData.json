@@ -184,5 +184,11 @@
         "name": "ALPACA",
         "buyUrl": "https://app.sushi.com/token/0xed31fda280153d4a38294582aea3a1a27901aca3",
         "mintRedeemUrl": "https://nftx.org/#/fund/52"
+    },
+    {
+        "vaultId": 58,
+        "name": "R3SONANCE",
+        "buyOpenseaUrl": "https://opensea.io/assets/art-blocks-playground?search[stringTraits][0][name]=R3sonance&search[stringTraits][0][values][0]=All%20R3sonances",
+        "mintRedeemUrl": "https://nftx.org/#/fund/58"
     }
 ]
