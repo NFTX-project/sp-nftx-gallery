@@ -106,6 +106,7 @@
         "vaultId": 13,
         "name": "GLYPH",
         "description": "Glyph is a single fund token, which is backed 1:1 by any Autoglyph NFTs that are supplied to the pool. Developed by the same creators as CryptoPunks, Autoglyphs have the distinction of being the first on-chain generative art project on Ethereum. As such, Autoglyphs are among Ethereum’s most valuable collectibles. ",
+        "buyUrl": "https://app.sushi.com/pair/0x6d3519e7316d2b69e816d141c92434f49bba90c5",
         "buyOpenseaUrl": "https://opensea.io/assets/autoglyphs",
         "mintRedeemUrl": "https://nftx.org/#/fund/13"
     },
