@@ -31,4 +31,5 @@ export const vaultIds = [
   53, // 'CARDS' (EtherCards)
   57, // 'CHUBBY' (Chubbies)
   58, // R3SONANCE
+  61, // PIXL-Basic
 ];
