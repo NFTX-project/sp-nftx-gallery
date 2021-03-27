@@ -4,9 +4,9 @@ const { createSecureHeaders } = require('next-secure-headers');
 
 module.exports = {
   async headers() {
-    return [{ source: '*', headers: createSecureHeaders() }];
+    return [{ source: '/:path*', headers: createSecureHeaders() }];
   },
-
+  poweredByHeader: false, // remove the powered by so it's not an obvious next.js app
   // Enable this when we're actually using the nextjs server and not static
   i18n: {
     locales: ['en'],
