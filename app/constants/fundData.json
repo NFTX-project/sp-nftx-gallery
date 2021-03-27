@@ -191,5 +191,11 @@
         "name": "R3SONANCE",
         "buyOpenseaUrl": "https://opensea.io/assets/art-blocks-playground?search[stringTraits][0][name]=R3sonance&search[stringTraits][0][values][0]=All%20R3sonances",
         "mintRedeemUrl": "https://nftx.org/#/fund/58"
+    },
+    {
+        "vaultId": 61,
+        "name": "PIXL-BASIC",
+        "buyOpenseaUrl": "https://opensea.io/collection/pixls-official",
+        "mintRedeemUrl": "https://nftx.org/#/fund/61"
     }
 ]
