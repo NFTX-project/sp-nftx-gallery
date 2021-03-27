@@ -3,7 +3,7 @@
   [headers.values]
     X-Frame-Options = "DENY"
     X-XSS-Protection = "1; mode=block"
-    Content-Security-Policy = "default-src 'none'; script-src 'self' 'unsafe-inline' www.googletagmanager.com www.google-analytics.com; connect-src 'self' nftx.ethereumdb.com api.opensea.io api.covalenthq.com; img-src 'self' cms.nftx.xyz res.cloudinary.com lh3.googleusercontent.com storage.opensea.io; style-src 'self' 'unsafe-inline' ;base-uri 'self';form-action 'self'; font-src 'self'"
+    Content-Security-Policy = "default-src 'none'; script-src 'self' 'unsafe-inline' www.googletagmanager.com www.google-analytics.com; connect-src 'self' nftx.ethereumdb.com api.opensea.io api.covalenthq.com; img-src 'self' cms.nftx.xyz res.cloudinary.com lh3.googleusercontent.com storage.opensea.io; style-src 'self' 'unsafe-inline' ;base-uri 'self';form-action 'self'; font-src 'self'; prefetch-src 'self'"
 
 [[redirects]]
   from = "/live"
