@@ -196,6 +196,7 @@
         "vaultId": 61,
         "name": "PIXL-BASIC",
         "buyOpenseaUrl": "https://opensea.io/collection/pixls-official",
+        "buyUrl": "https://app.sushi.com/pair/0xd35f86e05d3a0d94db482bed55fdabb089c40203",
         "mintRedeemUrl": "https://nftx.org/#/fund/61"
     }
 ]
