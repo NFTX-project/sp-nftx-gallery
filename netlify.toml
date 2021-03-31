@@ -3,16 +3,4 @@
   [headers.values]
     X-Frame-Options = "DENY"
     X-XSS-Protection = "1; mode=block"
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' www.googletagmanager.com www.google-analytics.com; connect-src 'self' nftx.ethereumdb.com api.opensea.io api.covalenthq.com www.google-analytics.com; img-src 'self' cms.nftx.xyz res.cloudinary.com lh3.googleusercontent.com storage.opensea.io www.google-analytics.com; style-src 'self' 'unsafe-inline' ;base-uri 'self';form-action 'self'; font-src 'self'; prefetch-src 'self' 'unsafe-inline'; manifest-src 'self'"
-
-[[redirects]]
-  from = "/live"
-  to = "https://gallery.nftx.org"
-  status = 200
-  headers = {X-From = "Netlify"}
-
-[[redirects]]
-  from = "/javery"
-  to = "https://justinavery.me"
-  status = 301
-  headers = {X-From = "Netlify"}
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' www.googletagmanager.com www.google-analytics.com; connect-src 'self' nftx.ethereumdb.com api.opensea.io api.covalenthq.com www.google-analytics.com; img-src 'self' cms.nftx.xyz res.cloudinary.com lh3.googleusercontent.com storage.opensea.io www.google-analytics.com; style-src 'self' 'unsafe-inline'; prefetch-src 'self' 'unsafe-inline';"
