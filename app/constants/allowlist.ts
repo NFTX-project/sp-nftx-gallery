@@ -12,6 +12,7 @@ export const vaultIds = [
   11, //AVASTAR-30
   12, //AVASTAR-60
   13, //AUTOGLYPH
+  19, // 0XYMONS
   20, //'MASK'
   21, //'CUBES'
   18, //'VARIANT-DAVIS'
@@ -32,4 +33,5 @@ export const vaultIds = [
   57, // 'CHUBBY' (Chubbies)
   58, // R3SONANCE
   61, // PIXL-Basic
+  63, // PUNK BODYS
 ];
