@@ -203,8 +203,7 @@
     {
         "vaultId": 63,
         "name": "PUNKBODY",
-        "buyOpenseaUrl": "https://opensea.io/collection/punkbodies",
-        //"buyUrl": "",
+        "buyUrl": "https://app.sushi.com/pair/0xb1058a18c243ba0c0242aea7ac4a6b5013b8aff2",
         "mintRedeemUrl": "https://nftx.org/#/fund/63"
     }
 ]
