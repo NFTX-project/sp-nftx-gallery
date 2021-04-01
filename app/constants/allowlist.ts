@@ -33,5 +33,7 @@ export const vaultIds = [
   57, // 'CHUBBY' (Chubbies)
   58, // R3SONANCE
   61, // PIXL-Basic
+  62, // Dada
   63, // PUNK BODYS
+  64, // SOLOS
 ];
