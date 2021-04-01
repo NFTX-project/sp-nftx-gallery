@@ -206,5 +206,17 @@
         "buyUrl": "https://app.sushi.com/pair/0xb1058a18c243ba0c0242aea7ac4a6b5013b8aff2",
         "buyOpenseaUrl": "https://opensea.io/collection/punkbodies",
         "mintRedeemUrl": "https://nftx.org/#/fund/63"
+    },
+    {
+        "vaultId": 62,
+        "name": "DADA-946",
+        "buyOpenseaUrl": "https://opensea.io/collection/dada-collectible",
+        "mintRedeemUrl": "https://nftx.org/#/fund/62"
+    },
+    {
+        "vaultId": 64,
+        "name": "SOLOS",
+        "buyOpenseaUrl": "https://opensea.io/assets/solos",
+        "mintRedeemUrl": "https://nftx.org/#/fund/64"
     }
 ]
