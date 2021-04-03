@@ -36,4 +36,5 @@ export const vaultIds = [
   62, // Dada
   63, // PUNK BODYS
   64, // SOLOS
+  67, // DEAFBEEF
 ];

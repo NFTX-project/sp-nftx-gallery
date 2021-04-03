@@ -218,5 +218,11 @@
         "name": "SOLOS",
         "buyOpenseaUrl": "https://opensea.io/assets/solos",
         "mintRedeemUrl": "https://nftx.org/#/fund/64"
+    },
+    {
+        "vaultId": 67,
+        "name": "DEAFBEEF",
+        "buyOpenseaUrl": "https://opensea.io/assets/deafbeef-v2",
+        "mintRedeemUrl": "https://nftx.org/#/fund/67"
     }
 ]
