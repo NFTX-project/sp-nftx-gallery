@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import Head from 'next/head';
 import useMessage from '@/hooks/useMessage';
 import { Fund } from '@/types/fund';
