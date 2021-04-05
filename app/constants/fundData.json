@@ -224,5 +224,11 @@
         "name": "DEAFBEEF",
         "buyOpenseaUrl": "https://opensea.io/assets/deafbeef-v2",
         "mintRedeemUrl": "https://nftx.org/#/fund/67"
+    },
+    {
+        "vaultId": 68,
+        "name": "POW",
+        "buyOpenseaUrl": "https://opensea.io/collection/pownft",
+        "mintRedeemUrl": "https://nftx.org/#/fund/68"
     }
 ]
