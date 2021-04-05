@@ -36,6 +36,8 @@
     ]
   },
   "dependencies": {
+    "@sentry/react": "^6.2.5",
+    "@sentry/tracing": "^6.2.5",
     "@tailwindcss/postcss7-compat": "^2.0.2",
     "autoprefixer": "^9",
     "axios": "^0.21.1",
