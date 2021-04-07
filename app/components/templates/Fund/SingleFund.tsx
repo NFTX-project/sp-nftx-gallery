@@ -128,7 +128,7 @@ const SingleFund = ({
                 className="mb-4 w-full md:w-auto"
                 size={Size.SMALL}
                 kind={Kind.SECONDARY}
-                href={`https://app.nftx.org/vault/${vaultId}`}
+                href={`https://app.nftx.org/mint/${vaultId}`}
                 target="_blank"
                 icon={Icons.EXTERNAL_LINK}
               >
