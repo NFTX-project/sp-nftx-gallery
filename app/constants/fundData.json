@@ -5,7 +5,7 @@
         "imageIcon": "../images/fund/punk-basic-icon.png",
         "imageFeature": "../images/fund/punk-basic-feature.png",
         "description": "Punk-Basic is a single fund token, which is backed 1:1 by any CryptoPunks NFT. Because this fund allows any CryptoPunk to be deposited as collateral, it actsas a floor price tracker for Ethereum’s original digital collectibles. \n this fund allows any CryptoPunk to be deposited as collateral, it acts \nas a floor price tracker for the entire NFT category.",
-        "buyUrl": "https://app.sushi.com/pair/0x0267bd35789a5ce247fff6cb1d597597e003cc43",
+        "buyUrl": "https://app.sushi.com/token/0x69bbe2fa02b4d90a944ff328663667dc32786385",
         "buyOpenseaUrl": "https://opensea.io/assets/cryptopunks",
         "mintRedeemUrl": "https://nftx.org/#/fund/0"
     },
