@@ -151,6 +151,7 @@
         "vaultId": 19,
         "description": "0xmon is a single fund (D1) token, which is 1:1 backed by 0xmon NFTs. Inspired by Pokemon and MEME Protocol, 0xmon is a digital collectibles experiment that is centered around generative pixel art. Because this fund allows any 0xmon to be deposited as collateral, it acts as a floor price tracker for these NFTs",
         "mintRedeemUrl": "https://nftx.org/#/fund/19",
+        "buyUrl": "https://sushiswap.vision/pair/0x88e3f360e105264d3ad518da8a9d45f0448aaad5",
         "buyOpenseaUrl": "https://opensea.io/assets/0xmons-xyz"
     },
     {
