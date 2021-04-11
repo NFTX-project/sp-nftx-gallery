@@ -177,6 +177,12 @@
         "mintRedeemUrl": "https://nftx.org/#/fund/37"
     },
     {
+        "vaultId": 44,
+        "name": "89SA",
+        "buyOpenseaUrl": "https://opensea.io/collection/89-seconds-atomized-v5",
+        "mintRedeemUrl": "https://nftx.org/#/fund/44"
+    },
+    {
         "vaultId": 53,
         "name": "CARD",
         "buyUrl": "https://app.sushi.com/pair/0x14994c09c42644bfc0a00ebb356a12a530da1e58",
