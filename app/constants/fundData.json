@@ -171,6 +171,13 @@
         "mintRedeemUrl": "https://nftx.org/#/fund/21"
     },
     {
+        "vaultId": 32,
+        "name": "Singularity",
+        "buyUrl": "https://app.sushi.com/token/0xb825FF3Ca3454C133a9747Fb15a0EE1f51309D0A",
+        "buyOpenseaUrl": "https://opensea.io/assets/art-blocks?search[query]=singularity",
+        "mintRedeemUrl": "https://nftx.org/#/fund/32"
+    },
+    {
         "vaultId": 37,
         "name": "WAIFU",
         "buyUrl": "https://app.sushi.com/token/0x0f10e6ec76346c2362897bfe948c8011bb72880f",

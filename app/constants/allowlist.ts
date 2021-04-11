@@ -17,6 +17,7 @@ export const vaultIds = [
   21, //'CUBES'
   18, //'VARIANT-DAVIS'
   22, //'BABES-BASIC'
+  32, // Singularity
   37, //'WAIFU'
   35, //'DUDE'
   29, //'TWERKYPEPE'
