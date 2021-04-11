@@ -38,4 +38,5 @@ export const vaultIds = [
   64, // SOLOS
   67, // DEAFBEEF
   68, // POW
+  70, // Apparitions Ghosts (Art Blocks)
 ];
