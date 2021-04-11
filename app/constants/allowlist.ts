@@ -22,6 +22,7 @@ export const vaultIds = [
   29, //'TWERKYPEPE'
   // 41, //'BLOCKCITIES'
   40, //'BGANPUNK'
+  44, // 89 Seconds Atomized
   45, // 'HERO'
   47, // 'PP9000 (Pepemon)
   49, // 'MOONCAT'
@@ -30,7 +31,7 @@ export const vaultIds = [
   52, // 'ALPACA' (AlpacaCity)
   51, // 'ARTE' (CryptoArte)
   53, // 'CARDS' (EtherCards)
-  57, // 'CHUBBY' (Chubbies)
+  // 57, // 'CHUBBY' (Chubbies) removed after copyright issues.
   58, // R3SONANCE
   61, // PIXL-Basic
   62, // Dada
