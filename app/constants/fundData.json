@@ -236,6 +236,7 @@
     {
         "vaultId": 67,
         "name": "DEAFBEEF",
+        "buyUrl": "https://sushiswap.vision/pair/0x35f8e2446bfdb0702c881a2664603241240d7ff7",
         "buyOpenseaUrl": "https://opensea.io/assets/deafbeef-v2",
         "mintRedeemUrl": "https://nftx.org/#/fund/67"
     },
