@@ -7,7 +7,7 @@ export const vaultIds = [
   15, //'PUNK-FEMALE'
   4, // AXIES
 //  7,  KITIES-GEN-0 hidden while redeem issue is fixed.
-  8, // KITIES-GEN-0-F
+//  8, // KITIES-GEN-0-F
   10, //AVASTAR-BASIC
   11, //AVASTAR-30
   12, //AVASTAR-60
