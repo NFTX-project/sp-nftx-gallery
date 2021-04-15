@@ -128,23 +128,6 @@ const SingleFund = ({
                 className="mb-4 w-full md:w-auto"
                 size={Size.SMALL}
                 kind={Kind.SECONDARY}
-                href={`https://app.nftx.org/mint/${vaultId}`}
-                target="_blank"
-                icon={Icons.EXTERNAL_LINK}
-              >
-                {useMessage('fund.cta.mintRedeem', {
-                  token: (
-                    <span className="uppercase">
-                      {'$'}
-                      {fundToken.symbol}
-                    </span>
-                  ),
-                })}
-              </Button>
-              <div />
-              <Button
-                className="w-full md:w-auto"
-                kind={Kind.PRIMARY}
                 href={
                   meta.buyUrl ||
                   `https://app.sushi.com/add/ETH/${fundToken.address}`
@@ -153,16 +136,35 @@ const SingleFund = ({
                 icon={Icons.EXTERNAL_LINK}
               >
                 {useMessage(
-                  meta.buyUrl ? 'fund.cta.invest' : 'fund.cta.liquidity',
+                  meta.buyUrl
+                    ? meta.buyUrl.includes('sushi')
+                      ? 'fund.cta.sushi'
+                      : 'fund.cta.invest'
+                    : 'fund.cta.liquidity',
                   {
                     fund: (
                       <span className="uppercase">
-                        {'$'}
                         {fundToken.symbol}
                       </span>
                     ),
                   }
                 )}
+              </Button>
+              <div />
+              <Button
+                className="w-full md:w-auto"
+                kind={Kind.PRIMARY}
+                href={`https://app.nftx.org/mint/${vaultId}`}
+                target="_blank"
+                icon={Icons.EXTERNAL_LINK}
+              >
+                {useMessage('fund.cta.mint', {
+                  token: (
+                    <span className="uppercase">
+                      {fundToken.symbol}
+                    </span>
+                  ),
+                })}
               </Button>
             </div>
             <Search value={value} handleChange={handleChange} />
