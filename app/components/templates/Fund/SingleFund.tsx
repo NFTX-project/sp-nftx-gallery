@@ -144,7 +144,6 @@ const SingleFund = ({
                   {
                     fund: (
                       <span className="uppercase">
-                        {'$'}
                         {fundToken.symbol}
                       </span>
                     ),
@@ -162,7 +161,6 @@ const SingleFund = ({
                 {useMessage('fund.cta.mint', {
                   token: (
                     <span className="uppercase">
-                      {'$'}
                       {fundToken.symbol}
                     </span>
                   ),
