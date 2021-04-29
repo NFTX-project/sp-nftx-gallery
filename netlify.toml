@@ -3,4 +3,4 @@
   [headers.values]
     X-Frame-Options = "DENY"
     X-XSS-Protection = "1; mode=block"
-    Content-Security-Policy = "default-src 'self' ; script-src 'self' 'unsafe-inline' www.googletagmanager.com www.google-analytics.com; connect-src 'self' nftx.ethereumdb.com api.opensea.io api.covalenthq.com www.google-analytics.com; img-src 'self' cms.nftx.xyz res.cloudinary.com lh3.googleusercontent.com storage.opensea.io www.google-analytics.com; style-src 'self' 'unsafe-inline'; prefetch-src 'self' 'unsafe-inline'; media-src 'self' storage.opensea.io;"
+    Content-Security-Policy = "default-src 'self' ; script-src 'self' 'unsafe-inline' www.googletagmanager.com www.google-analytics.com rum-static.pingdom.net; connect-src 'self' nftx.ethereumdb.com api.opensea.io api.covalenthq.com www.google-analytics.com rum-collector-2.pingdom.net; img-src 'self' cms.nftx.xyz res.cloudinary.com lh3.googleusercontent.com storage.opensea.io www.google-analytics.com; style-src 'self' 'unsafe-inline'; prefetch-src 'self' 'unsafe-inline'; media-src 'self' storage.opensea.io;"
