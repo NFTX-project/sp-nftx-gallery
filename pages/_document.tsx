@@ -34,6 +34,7 @@ class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
+          <script src="//rum-static.pingdom.net/pa-608b3d3c7267e100110002c1.js" async></script>
         </body>
       </Html>
     );
