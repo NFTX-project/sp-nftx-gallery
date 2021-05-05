@@ -259,6 +259,11 @@
         "mintRedeemUrl": "https://nftx.org/#/fund/72"
     },
     {
+        "vaultId": 73,
+        "name": "KamaMixer",
+        "mintRedeemUrl": "https://nftx.org/#/fund/73"
+    },
+    {
         "vaultId": 74,
         "name": "BAYC",
         "buyOpenseaUrl": "https://opensea.io/collection/boredapeyachtclub",
