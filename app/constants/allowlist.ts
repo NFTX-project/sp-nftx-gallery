@@ -43,4 +43,5 @@ export const vaultIds = [
   70, // Apparitions Ghosts (Art Blocks)
   72, // Meebits
   74, // Bored Ape Yacht Club
+  73, // KamaMixer
 ];
