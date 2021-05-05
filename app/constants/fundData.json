@@ -251,5 +251,11 @@
         "name": "GHOSTS",
         "buyOpenseaUrl": "https://opensea.io/assets/art-blocks?search[stringTraits][0][name]=Apparitions&search[stringTraits][0][values][0]=All%20Apparitions",
         "mintRedeemUrl": "https://nftx.org/#/fund/70"
+    },
+    {
+        "vaultId": 72,
+        "name": "MEEBITS",
+        "buyOpenseaUrl": "https://opensea.io/assets/meebits",
+        "mintRedeemUrl": "https://nftx.org/#/fund/72"
     }
 ]
