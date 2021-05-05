@@ -42,4 +42,5 @@ export const vaultIds = [
   68, // POW
   70, // Apparitions Ghosts (Art Blocks)
   72, // Meebits
+  74, // Bored Ape Yacht Club
 ];
