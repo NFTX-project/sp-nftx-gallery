@@ -257,5 +257,12 @@
         "name": "MEEBITS",
         "buyOpenseaUrl": "https://opensea.io/assets/meebits",
         "mintRedeemUrl": "https://nftx.org/#/fund/72"
+    },
+    {
+        "vaultId": 74,
+        "name": "BAYC",
+        "buyOpenseaUrl": "https://opensea.io/collection/boredapeyachtclub",
+        "mintRedeemUrl": "https://nftx.org/#/fund/74",
+        "buyUrl": "https://analytics.sushi.com/pairs/0xb35d7cfe7f4874d57c047316bdd791b08236a151"
     }
 ]
