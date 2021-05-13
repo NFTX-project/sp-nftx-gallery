@@ -6,7 +6,7 @@ import { Collection } from '@/types/wp';
 import Link from 'next/link';
 import FundGroup, { Columns } from '@/components/modules/FundGroup';
 import Poster, { Colorway } from '@/components/modules/Poster';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, FormattedNumber } from 'react-intl';
 import { getFundKey } from '@/utils/getFundKey';
 
 const HomeContainer = ({
@@ -16,6 +16,22 @@ const HomeContainer = ({
   funds: Fund[];
   collections: Collection[];
 }) => {
+  const tvl = useMemo(() => {
+    if (funds) {
+      return funds.reduce((acc, cur) => {
+        return acc + cur?.holdings?.length * cur.price;
+      }, 0);
+    }
+  }, [funds]);
+
+  const total = useMemo(() => {
+    if (funds) {
+      return funds.reduce((acc, cur) => {
+        return acc + cur.holdings.length;
+      }, 0);
+    }
+  }, [funds]);
+
   return (
     <>
       <Head>
@@ -32,8 +48,16 @@ const HomeContainer = ({
         </h1>
         <h2 className="text-sm font-bold text-center text-gray-50 leading-loose mb-3">
           {useMessage('home.subtitle', {
-            tvl: '🦧',
-            volume: '🦧',
+            tvl: (
+              <FormattedNumber
+                value={tvl}
+                style="currency"
+                currency="USD"
+                maximumFractionDigits={0}
+                minimumFractionDigits={0}
+              />
+            ),
+            volume: <FormattedNumber value={total} />,
           })}
         </h2>
         <p className="text-md object-center text-center text-white text-opacity-50 leading-relaxed max-w-xl mx-auto">
