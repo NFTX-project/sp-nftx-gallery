@@ -87,6 +87,15 @@ const Footer = () => {
                 {useMessage('footer.link.aragon')}
               </a>
             </Link>
+            <Link href="https://status.nftx.org">
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline ml-4"
+              >
+                {useMessage('footer.link.status')}
+              </a>
+            </Link>
           </div>
         </div>
         <div className="md:text-right text-center pt-4 md:pt-0 text-sm">

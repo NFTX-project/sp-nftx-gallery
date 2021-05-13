@@ -5,7 +5,7 @@
         "imageIcon": "../images/fund/punk-basic-icon.png",
         "imageFeature": "../images/fund/punk-basic-feature.png",
         "description": "Punk-Basic is a single fund token, which is backed 1:1 by any CryptoPunks NFT. Because this fund allows any CryptoPunk to be deposited as collateral, it actsas a floor price tracker for Ethereum’s original digital collectibles. \n this fund allows any CryptoPunk to be deposited as collateral, it acts \nas a floor price tracker for the entire NFT category.",
-        "buyUrl": "https://app.sushi.com/pair/0x0267bd35789a5ce247fff6cb1d597597e003cc43",
+        "buyUrl": "https://app.sushi.com/token/0x69bbe2fa02b4d90a944ff328663667dc32786385",
         "buyOpenseaUrl": "https://opensea.io/assets/cryptopunks",
         "mintRedeemUrl": "https://nftx.org/#/fund/0"
     },
@@ -151,6 +151,7 @@
         "vaultId": 19,
         "description": "0xmon is a single fund (D1) token, which is 1:1 backed by 0xmon NFTs. Inspired by Pokemon and MEME Protocol, 0xmon is a digital collectibles experiment that is centered around generative pixel art. Because this fund allows any 0xmon to be deposited as collateral, it acts as a floor price tracker for these NFTs",
         "mintRedeemUrl": "https://nftx.org/#/fund/19",
+        "buyUrl": "https://sushiswap.vision/pair/0x88e3f360e105264d3ad518da8a9d45f0448aaad5",
         "buyOpenseaUrl": "https://opensea.io/assets/0xmons-xyz"
     },
     {
@@ -170,10 +171,23 @@
         "mintRedeemUrl": "https://nftx.org/#/fund/21"
     },
     {
+        "vaultId": 32,
+        "name": "Singularity",
+        "buyUrl": "https://app.sushi.com/token/0xb825FF3Ca3454C133a9747Fb15a0EE1f51309D0A",
+        "buyOpenseaUrl": "https://opensea.io/assets/art-blocks?search[query]=singularity",
+        "mintRedeemUrl": "https://nftx.org/#/fund/32"
+    },
+    {
         "vaultId": 37,
         "name": "WAIFU",
         "buyUrl": "https://app.sushi.com/token/0x0f10e6ec76346c2362897bfe948c8011bb72880f",
         "mintRedeemUrl": "https://nftx.org/#/fund/37"
+    },
+    {
+        "vaultId": 44,
+        "name": "89SA",
+        "buyOpenseaUrl": "https://opensea.io/collection/89-seconds-atomized-v5",
+        "mintRedeemUrl": "https://nftx.org/#/fund/44"
     },
     {
         "vaultId": 53,
@@ -206,5 +220,54 @@
         "buyUrl": "https://app.sushi.com/pair/0xb1058a18c243ba0c0242aea7ac4a6b5013b8aff2",
         "buyOpenseaUrl": "https://opensea.io/collection/punkbodies",
         "mintRedeemUrl": "https://nftx.org/#/fund/63"
+    },
+    {
+        "vaultId": 62,
+        "name": "DADA-946",
+        "buyOpenseaUrl": "https://opensea.io/collection/dada-collectible",
+        "mintRedeemUrl": "https://nftx.org/#/fund/62"
+    },
+    {
+        "vaultId": 64,
+        "name": "SOLOS",
+        "buyOpenseaUrl": "https://opensea.io/assets/solos",
+        "mintRedeemUrl": "https://nftx.org/#/fund/64"
+    },
+    {
+        "vaultId": 67,
+        "name": "DEAFBEEF",
+        "buyUrl": "https://sushiswap.vision/pair/0x35f8e2446bfdb0702c881a2664603241240d7ff7",
+        "buyOpenseaUrl": "https://opensea.io/assets/deafbeef-v2",
+        "mintRedeemUrl": "https://nftx.org/#/fund/67"
+    },
+    {
+        "vaultId": 68,
+        "name": "POW",
+        "buyOpenseaUrl": "https://opensea.io/collection/pownft",
+        "mintRedeemUrl": "https://nftx.org/#/fund/68"
+    },
+    {
+        "vaultId": 70,
+        "name": "GHOSTS",
+        "buyOpenseaUrl": "https://opensea.io/assets/art-blocks?search[stringTraits][0][name]=Apparitions&search[stringTraits][0][values][0]=All%20Apparitions",
+        "mintRedeemUrl": "https://nftx.org/#/fund/70"
+    },
+    {
+        "vaultId": 72,
+        "name": "MEEBITS",
+        "buyOpenseaUrl": "https://opensea.io/assets/meebits",
+        "mintRedeemUrl": "https://nftx.org/#/fund/72"
+    },
+    {
+        "vaultId": 73,
+        "name": "KamaMixer",
+        "mintRedeemUrl": "https://nftx.org/#/fund/73"
+    },
+    {
+        "vaultId": 74,
+        "name": "BAYC",
+        "buyOpenseaUrl": "https://opensea.io/collection/boredapeyachtclub",
+        "mintRedeemUrl": "https://nftx.org/#/fund/74",
+        "buyUrl": "https://analytics.sushi.com/pairs/0xb35d7cfe7f4874d57c047316bdd791b08236a151"
     }
 ]
