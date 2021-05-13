@@ -76,7 +76,7 @@ const DefaultAssetDetail = ({
                 className="w-full xl:w-1/2 text-center"
                 size={Size.LARGE}
                 kind={Kind.PRIMARY}
-                href={`https://nftx.org/#/fund/${vaultId}`}
+                href={`https://app.nftx.org/mint/${vaultId}`}
                 target="_blank"
                 icon={Icons.EXTERNAL_LINK}
               >
