@@ -79,7 +79,7 @@ const SingleFund = ({
             <div className="mb-4">
               <Breadcrumb />
             </div>
-            <div className="flex-1 flex flex-col lg:flex-row items-baseline mb-6">
+            <div className="flex-1 flex flex-col lg:flex-row lg:flex-wrap items-baseline mb-6">
               <h1 className="text-left text-3xl font-bold mb-6 lg:mb-0 mr-4 uppercase">
                 {fundToken.name}
               </h1>
@@ -128,23 +128,6 @@ const SingleFund = ({
                 className="mb-4 w-full md:w-auto"
                 size={Size.SMALL}
                 kind={Kind.SECONDARY}
-                href={`https://app.nftx.org/mint/${vaultId}`}
-                target="_blank"
-                icon={Icons.EXTERNAL_LINK}
-              >
-                {useMessage('fund.cta.mintRedeem', {
-                  token: (
-                    <span className="uppercase">
-                      {'$'}
-                      {fundToken.symbol}
-                    </span>
-                  ),
-                })}
-              </Button>
-              <div />
-              <Button
-                className="w-full md:w-auto"
-                kind={Kind.PRIMARY}
                 href={
                   meta.buyUrl ||
                   `https://app.sushi.com/add/ETH/${fundToken.address}`

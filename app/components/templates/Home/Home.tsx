@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import Head from 'next/head';
 import useMessage from '@/hooks/useMessage';
 import { Fund } from '@/types/fund';
@@ -16,19 +16,25 @@ const HomeContainer = ({
   funds: Fund[];
   collections: Collection[];
 }) => {
-  const tvl = useMemo(() => {
+  const galleryData = useMemo<{
+    count?: number;
+    tvl?: number;
+  }>(() => {
     if (funds) {
-      return funds.reduce((acc, cur) => {
-        return acc + cur?.holdings?.length * cur.price;
-      }, 0);
-    }
-  }, [funds]);
-
-  const total = useMemo(() => {
-    if (funds) {
-      return funds.reduce((acc, cur) => {
-        return acc + cur.holdings.length;
-      }, 0);
+      return funds.reduce(
+        (acc, cur) => {
+          return {
+            tvl: acc.tvl + cur?.holdings?.length * cur.price,
+            count: acc.count + cur.holdings.length,
+          };
+        },
+        {
+          count: 0,
+          tvl: 0,
+        }
+      );
+    } else {
+      return {};
     }
   }, [funds]);
 
@@ -50,14 +56,14 @@ const HomeContainer = ({
           {useMessage('home.subtitle', {
             tvl: (
               <FormattedNumber
-                value={tvl}
+                value={galleryData.tvl}
                 style="currency"
                 currency="USD"
                 maximumFractionDigits={0}
                 minimumFractionDigits={0}
               />
             ),
-            volume: <FormattedNumber value={total} />,
+            volume: <FormattedNumber value={galleryData.count} />,
           })}
         </h2>
         <p className="text-md object-center text-center text-white text-opacity-50 leading-relaxed max-w-xl mx-auto">
