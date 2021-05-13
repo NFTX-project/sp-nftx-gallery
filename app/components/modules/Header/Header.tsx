@@ -52,7 +52,7 @@ const Header = () => {
               </span>
             </Button>
           </Link>
-          <Link href="https://nftx.org/" passHref={true}>
+          <Link href="https://app.nftx.org/" passHref={true}>
             <Button
               className="ml-3"
               kind={Kind.PRIMARY}
