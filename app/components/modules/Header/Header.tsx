@@ -28,44 +28,39 @@ const Header = () => {
           {useMessage('header.beta.text', {
             version: process.env.appVersion,
           })}
-          <Link href="https://nftx.canny.io/">
-            <a className="ml-2 underline hover:no-underline" target="_blank">
-              {useMessage('header.beta.feedback')}
-            </a>
-          </Link>
+          <a
+            href="https://nftx.canny.io/"
+            className="ml-2 underline hover:no-underline" target="_blank"
+            rel="noopener noreferrer"
+          >
+            {useMessage('header.beta.feedback')}
+          </a>
         </div>
       </div>
       <div className="container mx-auto px-4 py-5 flex items-center">
         <nav className="flex">
-          <Link href="https://nftx.org/">
-            <a className="flex items-center mr-4">
-              <Logo />
-            </a>
-          </Link>
-          <Link href="https://app.nftx.org/" passHref={true}>
-            <Button kind={Kind.INVERT} className="hidden sm:block mr-2">
-              <FormattedMessage id="header.menu.app" />
-            </Button>
-          </Link>
-          <Link href="https://gallery.nftx.org/" passHref={true}>
+          <a href="https://nftx.org/" className="flex items-center mr-4">
+            <Logo />
+          </a>
+          <Button href="https://app.nftx.org/" kind={Kind.INVERT} className="hidden sm:block mr-2">
+            <FormattedMessage id="header.menu.app" />
+          </Button>
+          <Link href="/" passHref={true}>
             <Button kind={Kind.OUTLINE} className="hidden sm:block mr-2">
               <FormattedMessage id="header.menu.gallery" />
             </Button>
           </Link>
-          <Link href="https://discord.gg/SAZRt6m5Yw" passHref={true}>
-            <Button
-              kind={Kind.INVERT}
-              className="hidden sm:block mr-2"
-              target="_blank"
-            >
-              <FormattedMessage id="header.menu.discord" />
-            </Button>
-          </Link>
-          <Link href="https://docs.nftx.org" passHref={true}>
-            <Button kind={Kind.INVERT} className="hidden sm:block mr-2">
-              <FormattedMessage id="header.menu.docs" />
-            </Button>
-          </Link>
+          <Button
+            kind={Kind.INVERT}
+            className="hidden sm:block mr-2"
+            target="_blank"
+            href="https://discord.gg/SAZRt6m5Yw"
+          >
+            <FormattedMessage id="header.menu.discord" />
+          </Button>
+          <Button href="https://docs.nftx.org" kind={Kind.INVERT} className="hidden sm:block mr-2">
+            <FormattedMessage id="header.menu.docs" />
+          </Button>
         </nav>
         <aside className="flex justify-center ml-auto flex-wrap">
           <Link href={`/funds/${getFundKey(feelingLucky)}`} passHref={true}>
