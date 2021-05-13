@@ -77,26 +77,25 @@ const HomeContainer = ({
             </h3>
             <section className="flex flex-wrap -m-2">
               {collections.map((cat) => {
+                let holdings;
+                let url = `/collections/${cat.slug}`;
                 const vaults = cat.acf.collection_related_fund_vault_ids.split(
                   ','
                 );
-                // @TODO this all should be powered by CMS
-                const url = (() => {
-                  // if only one fund exists, go there
-                  if (vaults.length === 1) {
-                    const vault = funds.find(
-                      (f) =>
-                        f.vaultId ===
-                        Number(cat.acf.collection_related_fund_vault_ids)
-                    );
 
-                    if (vault) {
-                      return `/funds/${getFundKey(vault)}`;
-                    }
+                // if only one fund exists, go there
+                if (vaults.length === 1) {
+                  const vault = funds.find(
+                    (f) =>
+                      f.vaultId ===
+                      Number(cat.acf.collection_related_fund_vault_ids)
+                  );
+
+                  if (vault) {
+                    holdings = vault.holdings.length;
+                    url = `/funds/${getFundKey(vault)}`;
                   }
-
-                  return `/collections/${cat.slug}`;
-                })();
+                }
 
                 return (
                   <Link href={url} key={cat.slug}>
@@ -105,12 +104,21 @@ const HomeContainer = ({
                         <Poster
                           title={cat.acf.collection_title}
                           text={
-                            <FormattedMessage
-                              id="home.collections.poster.text"
-                              values={{
-                                count: vaults.length,
-                              }}
-                            />
+                            holdings != null ? (
+                              <FormattedMessage
+                                id="home.collections.poster.text.single"
+                                values={{
+                                  count: holdings,
+                                }}
+                              />
+                            ) : (
+                              <FormattedMessage
+                                id="home.collections.poster.text"
+                                values={{
+                                  count: vaults.length,
+                                }}
+                              />
+                            )
                           }
                           image={cat.acf.collection_feature_image}
                           colorway={Colorway.LIGHT}

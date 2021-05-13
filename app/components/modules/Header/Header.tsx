@@ -30,7 +30,8 @@ const Header = () => {
           })}
           <a
             href="https://nftx.canny.io/"
-            className="ml-2 underline hover:no-underline" target="_blank"
+            className="ml-2 underline hover:no-underline"
+            target="_blank"
             rel="noopener noreferrer"
           >
             {useMessage('header.beta.feedback')}
@@ -42,7 +43,11 @@ const Header = () => {
           <a href="https://nftx.org/" className="flex items-center mr-4">
             <Logo />
           </a>
-          <Button href="https://app.nftx.org/" kind={Kind.INVERT} className="hidden sm:block mr-2">
+          <Button
+            href="https://app.nftx.org/"
+            kind={Kind.INVERT}
+            className="hidden sm:block mr-2"
+          >
             <FormattedMessage id="header.menu.app" />
           </Button>
           <Link href="/" passHref={true}>
@@ -58,7 +63,11 @@ const Header = () => {
           >
             <FormattedMessage id="header.menu.discord" />
           </Button>
-          <Button href="https://docs.nftx.org" kind={Kind.INVERT} className="hidden sm:block mr-2">
+          <Button
+            href="https://docs.nftx.org"
+            kind={Kind.INVERT}
+            className="hidden sm:block mr-2"
+          >
             <FormattedMessage id="header.menu.docs" />
           </Button>
         </nav>
