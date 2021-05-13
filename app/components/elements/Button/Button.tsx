@@ -28,14 +28,18 @@ export interface ButtonProps
   icon: Icons;
 }
 
-const baseStyles = `inline-flex items-center justify-center outline-none font-medium rounded-md hover:outline focus:outline-none focus:ring-2 focus:ring-opacity-75`;
+const baseStyles = `inline-flex items-center justify-center outline-none font-medium rounded-md break-word hover:outline focus:outline-none focus:ring-2 focus:ring-opacity-75`;
 const kindStyles = {
   [Kind.PRIMARY]:
-    'bg-gradient-to-b from-pink-500 to-pink-600 text-white hover:from-pink-700 hover:to-pink-700 focus:ring-pink-600',
+    'bg-gradient-to-b from-pink-400 to-pink-500 text-white hover:from-pink-500 hover:to-pink-500 focus:ring-pink-500',
   [Kind.SECONDARY]:
-    'bg-white text-gray-900 hover:bg-gray-50 focus:ring-gray-300',
+    'bg-white text-gray-900 hover:bg-gray-100 focus:ring-gray-300',
   [Kind.ICON]:
     'bg-gradient-to-b from-orange-500 via-red-500 to-orange-500 text-white hover:from-orange-500 hover:to-orange-500 focus:ring-red-600',
+  [Kind.OUTLINE]:
+    'bg-transparent border border-pink-500 text-white hover:bg-pink-500 hover:bg-opacity-10 focus:ring-pink-700',
+  [Kind.INVERT]:
+    'bg-transparent text-white border border-transparent hover:border-opacity-50 hover:border-pink-500 focus:ring-pink-700',
 };
 const sizeStyles = {
   [Size.SMALL]: `py-2 px-3 min-h-100 h-10 text-sm`,

@@ -26,4 +26,6 @@ export interface Fund {
     buyOpenseaUrl?: string;
     mintRedeemUrl?: string;
   };
+  price: number;
+  priceEth: number;
 }

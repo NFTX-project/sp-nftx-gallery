@@ -79,7 +79,7 @@ const SingleFund = ({
             <div className="mb-4">
               <Breadcrumb />
             </div>
-            <div className="flex-1 flex flex-col lg:flex-row items-baseline mb-6">
+            <div className="flex-1 flex flex-col lg:flex-row lg:flex-wrap items-baseline mb-6">
               <h1 className="text-left text-3xl font-bold mb-6 lg:mb-0 mr-4 uppercase">
                 {fundToken.name}
               </h1>
@@ -142,11 +142,7 @@ const SingleFund = ({
                       : 'fund.cta.invest'
                     : 'fund.cta.liquidity',
                   {
-                    fund: (
-                      <span className="uppercase">
-                        {fundToken.symbol}
-                      </span>
-                    ),
+                    fund: <span className="uppercase">{fundToken.symbol}</span>,
                   }
                 )}
               </Button>
@@ -159,11 +155,7 @@ const SingleFund = ({
                 icon={Icons.EXTERNAL_LINK}
               >
                 {useMessage('fund.cta.mint', {
-                  token: (
-                    <span className="uppercase">
-                      {fundToken.symbol}
-                    </span>
-                  ),
+                  token: <span className="uppercase">{fundToken.symbol}</span>,
                 })}
               </Button>
             </div>
