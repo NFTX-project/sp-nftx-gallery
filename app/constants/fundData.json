@@ -5,7 +5,7 @@
         "imageIcon": "../images/fund/punk-basic-icon.png",
         "imageFeature": "../images/fund/punk-basic-feature.png",
         "description": "Punk-Basic is a single fund token, which is backed 1:1 by any CryptoPunks NFT. Because this fund allows any CryptoPunk to be deposited as collateral, it actsas a floor price tracker for Ethereum’s original digital collectibles. \n this fund allows any CryptoPunk to be deposited as collateral, it acts \nas a floor price tracker for the entire NFT category.",
-        "buyUrl": "https://app.sushi.com/token/0x69bbe2fa02b4d90a944ff328663667dc32786385",
+        "buyUrl": "https://app.sushi.com/swap?outputCurrency=0x69bbe2fa02b4d90a944ff328663667dc32786385",
         "buyOpenseaUrl": "https://opensea.io/assets/cryptopunks",
         "mintRedeemUrl": "https://nftx.org/#/fund/0"
     },
@@ -13,7 +13,7 @@
         "vaultId": 1,
         "name": "PUNK-ATTR-4",
         "description": "Punk-Attr-4 is a single fund token, which is backed 1:1 by CryptoPunks NFTs that have four (4) attributes. CryptoPunks with lower attribute counts are more common than ones with higher attribute counts, so CryptoPunks with 4 attributes are considered rare and thus highly sought. ",
-        "buyUrl": "https://app.sushi.com/pair/0x608f8af5fd49b5a5421f53f79920C45b96bdA83F",
+        "buyUrl": "https://app.sushi.com/swap?outputCurrency=0x49706a576bb823cde3180c930f9947d59e2ded4d",
         "buyOpenseaUrl": "https://opensea.io/assets/cryptopunks",
         "mintRedeemUrl": "https://nftx.org/#/fund/1"
     },
@@ -21,7 +21,7 @@
         "vaultId": 2,
         "name": "PUNK-ATTR-5",
         "description": "Punk-Attr-5 is a single fund token, which is backed 1:1 by CryptoPunks NFTs that have five (5) attributes. Attribute count is a key valuation factor for CryptoPunks, so CryptoPunks with 5 attributes are extremely rare and collectable. ",
-        "buyUrl": "https://app.sushi.com/pair/0xd54A895623552853F8D673981CC32EB8f3929dFB",
+        "buyUrl": "https://app.sushi.com/swap?outputCurrency=0xAB9c92A9337A1494C6D545E48187Fa37144403c8",
         "buyOpenseaUrl": "https://opensea.io/assets/cryptopunks",
         "mintRedeemUrl": "https://nftx.org/#/fund/2"
     },
@@ -29,7 +29,7 @@
         "vaultId": 3,
         "name": "PUNK-ZOMBIE",
         "description": "Punk-Zombie is a single fund token, which is backed 1:1 by CryptoPunks NFTs that are Zombies. Only 88 Zombie CryptoPunks were ever created, so these are among the most prized of any Ethereum collectibles. ",
-        "buyUrl": "https://app.sushi.com/pair/0x0E7E8Dde18e4016ccc15F12301a47eF7B87Bdafa",
+        "buyUrl": "https://app.sushi.com/swap?outputCurrency=0xf18ade29a225faa555e475ee01f9eb66eb4a3a74",
         "buyOpenseaUrl": "https://opensea.io/assets/cryptopunks?search[sortAscending]=false&search[sortBy]=LISTING_DATE&search[stringTraits][0][name]=type&search[stringTraits][0][values][0]=Zombie",
         "mintRedeemUrl": "https://nftx.org/#/fund/3"
     },
@@ -37,7 +37,7 @@
         "vaultId": 4,
         "name": "AXIE-ORIGIN",
         "description": "Axie-Origin is a single fund token, which is backed 1:1 by Origin Axie Infinity NFTs. Origin Axies are digital pets that were created during Axie Infinity’s two month pre-sale event in 2018 and are accordingly rare and collectable. Because this fund allows any Origin Axie to be deposited as collateral, it acts as a floor price tracker for these NFTs.",
-        "buyUrl": "https://app.sushi.com/token/0x5b9f63f256fac333bc2bc73c7867ba4865a49729",
+        "buyUrl": "https://app.sushi.com/swap?outputCurrency=0x5b9f63f256fac333bc2bc73c7867ba4865a49729",
         "buyOpenseaUrl": "https://opensea.io/assets/axie?search[stringTraits][0][name]=title&search[stringTraits][0][values][0]=Origin",
         "mintRedeemUrl": "https://nftx.org/#/fund/4"
     },
@@ -59,7 +59,7 @@
         "vaultId": 7,
         "name": "KITTY-GEN-0",
         "description": "Kitty-Gen-0 is a single fund token, which is backed 1:1 by Gen 0 CryptoKitties NFTs. Gen 0 CryptoKitties were not bred into existence but rather created by the CryptoKitties smart contract, meaning they are the genesis Kitties that parented later generations into existence. There are only 50,000 Gen 0 CryptoKitties in total. ",
-        "buyUrl": "https://app.sushi.com/token/0x8712A5580995a1b0E10856e8C3E26B14C1CDF7b6",
+        "buyUrl": "https://app.sushi.com/swap?outputCurrency=0x8712A5580995a1b0E10856e8C3E26B14C1CDF7b6",
         "buyOpenseaUrl": "https://opensea.io/assets/cryptokitties",
         "mintRedeemUrl": "https://nftx.org/#/fund/7"
     },
@@ -67,7 +67,7 @@
         "vaultId": 8,
         "name": "KITTY-GEN-0-F",
         "description": "Kitty-Gen-0-F is a single fund token, which is backed 1:1 by Gen 0 CryptoKitties NFTs with Fast cooldown speed. A Fast cooldown is the most advantageous breeding cooldown speed in CryptoKitties, as it allows Kitties to generate the most offspring before they become subject to one-week breeding cooldown periods, also known as Catatonic. ",
-        "buyUrl": "https://app.sushi.com/token/0xc4bf60B93ac60dB9A45AD232368d50de0A354849",
+        "buyUrl": "https://app.sushi.com/swap?outputCurrency=0xc4bf60B93ac60dB9A45AD232368d50de0A354849",
         "buyOpenseaUrl": "https://opensea.io/assets/cryptokitties",
         "mintRedeemUrl": "https://nftx.org/#/fund/8"
     },
@@ -82,7 +82,7 @@
         "vaultId": 10,
         "name": "AVASTR-BASIC",
         "description": "Avastr-Basic is a single fund token, which is backed 1:1 by any Avastars NFTs. Avastars are on-chain art avatars designed for the metaverse. Because this fund allows any Avastar to be deposited as collateral, it acts as a floor price tracker for these NFTs.",
-        "buyUrl": "https://app.sushi.com/token/0xb5A0931b1B7F21C2F557fd4FDdCcb504e71AE32D",
+        "buyUrl": "https://app.sushi.com/swap?outputCurrency=0xb5A0931b1B7F21C2F557fd4FDdCcb504e71AE32D",
         "buyOpenseaUrl": "https://opensea.io/assets/avastar?search[numericTraits][0][name]=ranking&search[numericTraits][0][ranges][0][max]=29&search[numericTraits][0][ranges][0][min]=1",
         "mintRedeemUrl": "https://nftx.org/#/fund/10"
     },
@@ -90,14 +90,14 @@
         "vaultId": 11,
         "name": "AVASTR-RANK-30",
         "description": "Avastr-Rank-30 is a single fund token, which is backed 1:1 by any Avastars NFTs that have a ranking of at least 30 or higher. Every Avastar is given a score between 1 and 100 depending on their trait rarity levels, and scores are more desirable as they approach 100. ",
-        "buyUrl": "https://app.sushi.com/token/0x59a82F0FF8E88804a34Dd467b7061F1986Fe1769",
+        "buyUrl": "https://app.sushi.com/swap?outputCurrency=0x59a82F0FF8E88804a34Dd467b7061F1986Fe1769",
         "buyOpenseaUrl": "https://opensea.io/assets/avastar?search[numericTraits][0][name]=ranking&search[numericTraits][0][ranges][0][max]=59&search[numericTraits][0][ranges][0][min]=30&search[numericTraits][1][name]=serial&search[numericTraits][1][ranges][0][min]=0&search[numericTraits][1][ranges][0][max]=12400",
         "mintRedeemUrl": "https://nftx.org/#/fund/11"
     },
     {
         "vaultId": 12,
         "name": "AVASTR-RANK-60",
-        "buyUrl": "https://app.sushi.com/token/0xabA49Db7E374cc6954401DC0A886E0B02670536e",
+        "buyUrl": "https://app.sushi.com/swap?outputCurrency=0xabA49Db7E374cc6954401DC0A886E0B02670536e",
         "description": "Avastr-Rank-60 is a single fund token, which is backed 1:1 by any Avastars NFTs that have a ranking of at least 60 or higher. Avastars with +60 scores are prized because such scores indicate these collectibles have very compelling trait makeups.  ",
         "buyOpenseaUrl": "https://opensea.io/assets/avastar?search[numericTraits][0][name]=serial&search[numericTraits][0][ranges][0][max]=12400&search[numericTraits][0][ranges][0][min]=0&search[numericTraits][1][name]=ranking&search[numericTraits][1][ranges][0][min]=60&search[numericTraits][1][ranges][0][max]=100",
         "mintRedeemUrl": "https://nftx.org/#/fund/12"
@@ -106,7 +106,7 @@
         "vaultId": 13,
         "name": "GLYPH",
         "description": "Glyph is a single fund token, which is backed 1:1 by any Autoglyph NFTs that are supplied to the pool. Developed by the same creators as CryptoPunks, Autoglyphs have the distinction of being the first on-chain generative art project on Ethereum. As such, Autoglyphs are among Ethereum’s most valuable collectibles. ",
-        "buyUrl": "https://app.sushi.com/pair/0x6d3519e7316d2b69e816d141c92434f49bba90c5",
+        "buyUrl": "https://app.sushi.com/swap?outputCurrency=0xc8aa432112814b9cab53811d4340ed45482cb2b5",
         "buyOpenseaUrl": "https://opensea.io/assets/autoglyphs",
         "mintRedeemUrl": "https://nftx.org/#/fund/13"
     },
@@ -121,7 +121,7 @@
         "vaultId": 15,
         "name": "PUNK-FEMALE",
         "description": "Punk-Female is a single fund token, which is 1:1 backed by CryptoPunks NFTs that are Female. There are only five types of CryptoPunks, namely Females, Males, Zombies, Apes, and Aliens. Female CryptoPunks are rarer than Males and thus more collectable. ",
-        "buyUrl": "https://app.sushi.com/pair/0xCA2Ae9C5C491F497DC5625fEaef4572076C946C5",
+        "buyUrl": "https://app.sushi.com/swap?outputCurrency=0x27ffed7e5926fb2795fc85aaab558243f280a8a2",
         "buyOpenseaUrl": "https://opensea.io/assets/cryptopunks?search[sortAscending]=false&search[sortBy]=LISTING_DATE&search[stringTraits][0][name]=type&search[stringTraits][0][values][0]=Female",
         "mintRedeemUrl": "https://nftx.org/#/fund/15"
     },
@@ -129,7 +129,7 @@
         "vaultId": 16,
         "name": "PUNK-CORE",
         "description": "$PUNK is a CryptoPunks combined fund token that is backed by multiple single CryptoPunks fund tokens, like Punk-Attr-4, Punk-Attr-5, Punk-Zombie, and so forth. The price of this token is based on the weighted average of all underlying single fund tokens.",
-        "buyUrl": "https://app.sushi.com/pair/0x092493a22375de1b17583d924abf9e8bf884491c",
+        "buyUrl": "https://app.sushi.com/swap?outputCurrency=0x9cea2ed9e47059260c97d697f82b8a14efa61ea5",
         "buyOpenseaUrl": "https://opensea.io/assets/cryptopunks",
         "mintRedeemUrl": "https://nftx.org/#/fund/16"
     },
@@ -151,14 +151,14 @@
         "vaultId": 19,
         "description": "0xmon is a single fund (D1) token, which is 1:1 backed by 0xmon NFTs. Inspired by Pokemon and MEME Protocol, 0xmon is a digital collectibles experiment that is centered around generative pixel art. Because this fund allows any 0xmon to be deposited as collateral, it acts as a floor price tracker for these NFTs",
         "mintRedeemUrl": "https://nftx.org/#/fund/19",
-        "buyUrl": "https://sushiswap.vision/pair/0x88e3f360e105264d3ad518da8a9d45f0448aaad5",
+        "buyUrl": "https://app.sushi.com/swap?outputCurrency=0xb7acb10b6e1d15d2e5760a9fb328e10008dfcc3c",
         "buyOpenseaUrl": "https://opensea.io/assets/0xmons-xyz"
     },
     {
         "vaultId": 20,
         "name": "MASK",
         "description": "With the NFTX Hashmasks Index Fund, you can now supply one or \nMask is a single fund (D1) token, which is 1:1 backed by Hashmasks NFTs. When you supply Hashmasks to this pool as collateral you receive back an index fund token, $MASK, that tracks the ETH-floor price of all Hashmasks in the index fund. This token allows you to become a liquidity provider on SushiSwap or any other ERC-20 AMM by pooling it together with ETH.\ntoken called $MASK, which tracks the ETH-floor price of all Hashmasks in the index fund.This token allows you to become a liquidity provider on SushiSwap (or any other ERC20 AMM) by pooling it together with ETH.",
-        "buyUrl": "https://app.sushi.com/pair/0xfd38565ef22299d491055f0c508f62dd9a669f0f",
+        "buyUrl": "https://app.sushi.com/swap?outputCurrency=0x0fe629d1e84e171f8ff0c1ded2cc2221caa48a3f",
         "buyOpenseaUrl": "https://opensea.io/assets/hashmasks",
         "mintRedeemUrl": "https://nftx.org/#/fund/20"
     },
@@ -166,39 +166,56 @@
         "vaultId": 21,
         "name": "CUBES",
         "description": "Cubes is a single fund (D1) token, which is 1:1 backed by CryptoCubes NFTs. With only 256 in existence, CryptoCubes are rare and enjoy unique aesthetics on account of being algorithmically generated. ",
-        "buyUrl": "https://info.uniswap.org/pair/0x584d368ab300f5f6a0666aef2b1d2d8e3cc7c0f2",
         "buyOpenseaUrl": "https://opensea.io/assets/cryptocubes",
         "mintRedeemUrl": "https://nftx.org/#/fund/21"
-    },
+    },{
+        "vaultId": 22,
+        "name": "Babes-Basic",
+        "buyUrl": "https://app.sushi.com/swap?outputCurrency=0xC8120381FFaAE4c79dd51f71affdc9F88420B505",
+        "mintRedeemUrl": "https://nftx.org/#/fund/22"
+    }, 
+    {
+        "vaultId": 29,
+        "name": "TWERKY",
+        "buyUrl": "https://app.sushi.com/swap?outputCurrency=0xDc7eE965B4F62C1Ed2A2da72B20a143Bfe31fD32",
+        "mintRedeemUrl": "https://nftx.org/#/fund/29"
+    },    
     {
         "vaultId": 32,
         "name": "Singularity",
-        "buyUrl": "https://app.sushi.com/token/0xb825FF3Ca3454C133a9747Fb15a0EE1f51309D0A",
+        "buyUrl": "https://app.sushi.com/swap?outputCurrency=0xb825FF3Ca3454C133a9747Fb15a0EE1f51309D0A",
         "buyOpenseaUrl": "https://opensea.io/assets/art-blocks?search[query]=singularity",
         "mintRedeemUrl": "https://nftx.org/#/fund/32"
     },
     {
         "vaultId": 37,
         "name": "WAIFU",
-        "buyUrl": "https://app.sushi.com/token/0x0f10e6ec76346c2362897bfe948c8011bb72880f",
+        "buyUrl": "https://app.sushi.com/swap?outputCurrency=0x0f10e6ec76346c2362897bfe948c8011bb72880f",
         "mintRedeemUrl": "https://nftx.org/#/fund/37"
+    },
+    {
+        "vaultId": 40,
+        "name": "BGANPUNK",
+        "buyUrl": "https://app.sushi.com/swap?outputCurrency=0xF9F3AEc20B51c04625748007Bb244191ce18b44c",
+        "mintRedeemUrl": "https://nftx.org/#/fund/40"
     },
     {
         "vaultId": 44,
         "name": "89SA",
+        "buyUrl":"https://app.sushi.com/swap?outputCurrency=0x7a1a7c1bed151052b3d47a132b0b9dd1f1976aea",
         "buyOpenseaUrl": "https://opensea.io/collection/89-seconds-atomized-v5",
         "mintRedeemUrl": "https://nftx.org/#/fund/44"
     },
     {
         "vaultId": 53,
         "name": "CARD",
-        "buyUrl": "https://app.sushi.com/pair/0x14994c09c42644bfc0a00ebb356a12a530da1e58",
+        "buyUrl": "https://app.sushi.com/swap?outputCurrency=0xead35f584b21fe77bd7673921e909032101dbde5",
         "mintRedeemUrl": "https://nftx.org/#/fund/53"
     },
     {
         "vaultId": 52,
         "name": "ALPACA",
-        "buyUrl": "https://app.sushi.com/token/0xed31fda280153d4a38294582aea3a1a27901aca3",
+        "buyUrl": "https://app.sushi.com/swap?outputCurrency=0xed31fda280153d4a38294582aea3a1a27901aca3",
         "mintRedeemUrl": "https://nftx.org/#/fund/52"
     },
     {
@@ -211,13 +228,13 @@
         "vaultId": 61,
         "name": "PIXL-BASIC",
         "buyOpenseaUrl": "https://opensea.io/collection/pixls-official",
-        "buyUrl": "https://app.sushi.com/pair/0xd35f86e05d3a0d94db482bed55fdabb089c40203",
+        "buyUrl": "https://app.sushi.com/swap?outputCurrency=0x0bc18c456959d03e4c3d2cad6543da99fa5baf21",
         "mintRedeemUrl": "https://nftx.org/#/fund/61"
     },
     {
         "vaultId": 63,
         "name": "PUNKBODY",
-        "buyUrl": "https://app.sushi.com/pair/0xb1058a18c243ba0c0242aea7ac4a6b5013b8aff2",
+        "buyUrl": "https://app.sushi.com/swap?outputCurrency=0x23a1e8b38bd71692c45d39b96774dcf489286b87",
         "buyOpenseaUrl": "https://opensea.io/collection/punkbodies",
         "mintRedeemUrl": "https://nftx.org/#/fund/63"
     },
@@ -230,19 +247,21 @@
     {
         "vaultId": 64,
         "name": "SOLOS",
+        "buyUrl":"https://app.sushi.com/swap?outputCurrency=0x17b0A6E384c50DE3848063e599e7345C7428d98b",
         "buyOpenseaUrl": "https://opensea.io/assets/solos",
         "mintRedeemUrl": "https://nftx.org/#/fund/64"
     },
     {
         "vaultId": 67,
         "name": "DEAFBEEF",
-        "buyUrl": "https://sushiswap.vision/pair/0x35f8e2446bfdb0702c881a2664603241240d7ff7",
+        "buyUrl": "https://app.sushi.com/swap?outputCurrency=0xb772481226124caed78c7b4654424020b06118ed",
         "buyOpenseaUrl": "https://opensea.io/assets/deafbeef-v2",
         "mintRedeemUrl": "https://nftx.org/#/fund/67"
     },
     {
         "vaultId": 68,
         "name": "POW",
+        "buyUrl":"https://app.sushi.com/swap?outputCurrency=0x9AD5D6C438267BdADA28d37e3793954A804Cdf78",
         "buyOpenseaUrl": "https://opensea.io/collection/pownft",
         "mintRedeemUrl": "https://nftx.org/#/fund/68"
     },
@@ -269,5 +288,10 @@
         "buyOpenseaUrl": "https://opensea.io/collection/boredapeyachtclub",
         "mintRedeemUrl": "https://nftx.org/#/fund/74",
         "buyUrl": "https://analytics.sushi.com/pairs/0xb35d7cfe7f4874d57c047316bdd791b08236a151"
+    },
+    {
+        "vaultId": 75,
+        "name": "STADIA",
+        "mintRedeemUrl": "https://nftx.org/#/fund/75"
     }
 ]
