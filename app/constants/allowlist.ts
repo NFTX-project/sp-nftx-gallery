@@ -45,4 +45,6 @@ export const vaultIds = [
   74, // Bored Ape Yacht Club
   73, // KamaMixer
   75, // Stadia
+  76, // ASCII Punks
+  78, // Empyrean
 ];

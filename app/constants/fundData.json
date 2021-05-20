@@ -293,5 +293,15 @@
         "vaultId": 75,
         "name": "STADIA",
         "mintRedeemUrl": "https://nftx.org/#/fund/75"
+    },
+    {
+        "vaultId": 76,
+        "name": "ASC",
+        "mintRedeemUrl": "https://nftx.org/#/fund/76"
+    },
+    {
+        "vaultId": 78,
+        "name": "EMP",
+        "mintRedeemUrl": "https://nftx.org/#/fund/78"
     }
 ]
