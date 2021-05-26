@@ -61,8 +61,8 @@ const DefaultVaultCard = ({
       </article>
       {stack && (
         <>
-          <div className="bg-gray-800 h-1 mx-1 border-l border-b border-r border-gray-500 dark:border-opacity-30" />
-          <div className="bg-gray-800 h-1 mx-2 border-l border-b border-r border-gray-500 dark:border-opacity-30" />
+          <div className="dark:bg-gray-800 h-1 mx-1 border-l border-b border-r dark:border-gray-500 dark:border-opacity-30 bg-gray-100 border-gray-50 border-opacity-50" />
+          <div className="dark:bg-gray-800 h-1 mx-2 border-l border-b border-r dark:border-gray-500 dark:border-opacity-30 bg-gray-100 border-gray-50 border-opacity-50" />
         </>
       )}
     </div>

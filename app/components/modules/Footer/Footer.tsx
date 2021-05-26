@@ -33,7 +33,7 @@ const Footer = () => {
               </a>
             </Link>
           </div>
-          <div className="mt-4 flex flex-wrap content-center justify-center h-full text-white text-bold">
+          <div className="mt-4 flex flex-wrap content-center justify-center h-full  dark:text-white text-gray-800 text-bold">
             <Link href="https://docs.google.com/forms/d/e/1FAIpQLScnaUGFuz6-iyLTCeLhcLcFfxAdpPhGzGfxDtET7qgBIJO_xg/viewform">
               <a
                 target="_blank"

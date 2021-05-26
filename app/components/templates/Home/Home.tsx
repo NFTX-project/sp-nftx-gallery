@@ -47,7 +47,12 @@ const HomeContainer = ({
         <h1 className="text-4xl mb-4 font-bold text-center dark:text-gray-50 text-gray-800">
           <img
             src="/images/nftx_on_black.svg"
-            className="mx-auto max-w-xs md:max-w-sm lg:max-w-md xl:max-w-lg 2xl:max-w-xl"
+            className="mx-auto max-w-xs md:max-w-sm lg:max-w-md xl:max-w-lg 2xl:max-w-xl dark:block hidden"
+            alt="NFTX logo"
+          />
+          <img
+            src="/images/nftx_on_white.svg"
+            className="mx-auto max-w-xs md:max-w-sm lg:max-w-md xl:max-w-lg 2xl:max-w-xl block dark:hidden"
             alt="NFTX logo"
           />
           <div className="invisible h-0">{useMessage('home.title')}</div>

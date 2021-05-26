@@ -57,18 +57,21 @@ const Header = () => {
           <Button
             href="https://app.nftx.org/"
             kind={Kind.INVERT}
-            className="hidden sm:block mr-2"
+            className="hidden dark:text-white text-gray-800 sm:block mr-2"
           >
             <FormattedMessage id="header.menu.app" />
           </Button>
           <Link href="/" passHref={true}>
-            <Button kind={Kind.OUTLINE} className="hidden sm:block mr-2">
+            <Button
+              kind={Kind.OUTLINE}
+              className="hidden sm:block mr-2  dark:text-white text-gray-800"
+            >
               <FormattedMessage id="header.menu.gallery" />
             </Button>
           </Link>
           <Button
             kind={Kind.INVERT}
-            className="hidden sm:block mr-2"
+            className="hidden sm:block mr-2  dark:text-white text-gray-800"
             target="_blank"
             href="https://discord.gg/SAZRt6m5Yw"
           >
@@ -77,7 +80,7 @@ const Header = () => {
           <Button
             href="https://docs.nftx.org"
             kind={Kind.INVERT}
-            className="hidden sm:block mr-2"
+            className="hidden sm:block mr-2 dark:text-white text-gray-800"
           >
             <FormattedMessage id="header.menu.docs" />
           </Button>
