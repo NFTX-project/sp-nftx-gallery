@@ -20,7 +20,7 @@ const FundGroupHeader = ({
 
   return (
     <div className="flex flex-col lg:items-center lg:flex-row">
-      <h3 className="text-gray-50 flex flex-wrap items-center font-sans text-2xl mb-2 lg:mb-0">
+      <h3 className="dark:text-gray-50 text-gray-800 flex flex-wrap items-center font-sans text-2xl mb-2 lg:mb-0">
         <Link href={`${slug}`}>
           <a className="mr-2">
             {useMessage(`group.fund.title`, {
@@ -33,13 +33,17 @@ const FundGroupHeader = ({
           text={useMessage(fund.isD2Vault ? 'pill.combined' : 'pill.single')}
         />
       </h3>
-      <span className="inline-flex items-center justify-center md:justify-start flex-wrap mb-2 lg:mb-0 lg:ml-8 text-sm uppercase text-gray-300">
+      <span className="inline-flex items-center justify-center md:justify-start flex-wrap mb-2 lg:mb-0 lg:ml-8 text-sm uppercase dark:text-gray-300 text-gray-600">
         {price.usd != null && (
           <span className="mr-2 lg:mr-4">
             <FormattedMessage
               id="group.fund.price"
               values={{
-                price: <span className="ml-1 text-green-500">{price.usd}</span>,
+                price: (
+                  <span className="ml-1 dark:text-green-500 text-green-600">
+                    {price.usd}
+                  </span>
+                ),
               }}
             />
           </span>
@@ -50,7 +54,7 @@ const FundGroupHeader = ({
               id="group.fund.tvl"
               values={{
                 tvl: (
-                  <span className="ml-1 text-green-500">
+                  <span className="ml-1 dark:text-green-500 text-green-600">
                     <Tvl price={price.raw} quantity={fund.holdings.length} />
                   </span>
                 ),
@@ -85,13 +89,13 @@ const GroupHeader = ({
       {isFund ? (
         <FundGroupHeader fund={fund} namespace={namespace} slug={slug} />
       ) : (
-        <h3 className="text-gray-50 font-sans text-2xl">
+        <h3 className="dark:text-gray-50 text-gray-900 font-sans text-2xl">
           {title || useMessage(`${namespace}.title`)}
         </h3>
       )}
       {showLink && (
         <Link href={slug}>
-          <a className="text-gray-50 text-lg font-sans flex items-center">
+          <a className="dark:text-gray-50 text-gray-900 text-lg font-sans flex items-center">
             {useMessage(`${namespace}.link`)}
             <Icon name={Icons.CHEVRON_RIGHT} />
           </a>

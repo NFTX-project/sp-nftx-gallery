@@ -33,7 +33,7 @@ const kindStyles = {
   [Kind.PRIMARY]:
     'bg-gradient-to-b from-pink-400 to-pink-500 text-white hover:from-pink-500 hover:to-pink-500 focus:ring-pink-500',
   [Kind.SECONDARY]:
-    'bg-white text-gray-900 hover:bg-gray-100 focus:ring-gray-300',
+    'dark:bg-white dark:border-none border border-pink-500 text-gray-900 hover:bg-gray-100 focus:ring-gray-300',
   [Kind.ICON]:
     'bg-gradient-to-b from-orange-500 via-red-500 to-orange-500 text-white hover:from-orange-500 hover:to-orange-500 focus:ring-red-600',
   [Kind.OUTLINE]:

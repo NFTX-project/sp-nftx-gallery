@@ -13,20 +13,20 @@ const PendingAssetDetail = () => (
     lastSalePrice={null}
     performance={null}
     placeholder={
-      <div className="rounded-full w-36 h-36 max-w-full max-h-full bg-gray-600" />
+      <div className="rounded-full w-36 h-36 max-w-full max-h-full dark:bg-gray-600 bg-gray-100" />
     }
     eyebrow={
-      <span className="block w-1/4 bg-gray-600">
+      <span className="block w-1/4 dark:bg-gray-600 bg-gray-100">
         <span className="invisible">{'N'}</span>
       </span>
     }
     title={
-      <span className="block w-1/2 bg-gray-600">
+      <span className="block w-1/2 dark:bg-gray-600 bg-gray-100">
         <span className="invisible">{'F'}</span>
       </span>
     }
     text={
-      <span className="block w-3/4 bg-gray-600">
+      <span className="block w-3/4 dark:bg-gray-600 bg-gray-100">
         <span className="invisible">{'T'}</span>
       </span>
     }

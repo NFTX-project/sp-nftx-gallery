@@ -44,7 +44,7 @@ const AssetContainer = React.memo(
 
     if (error) {
       return (
-        <div className="container text-center mx-auto px-4 py-20 text-gray-50">
+        <div className="container text-center mx-auto px-4 py-20 dark:text-gray-50 text-gray-800">
           <p>{useMessage('asset.error')}</p>
         </div>
       );
@@ -61,7 +61,7 @@ const AssetContainer = React.memo(
           </title>
           <meta name="description" content={data?.description} />
         </Head>
-        <div className="container text-center mx-auto px-4 pt-10 pb-20 text-gray-50">
+        <div className="container text-center mx-auto px-4 pt-10 pb-20 dark:text-gray-50 text-gray-800">
           <div className="mt-8 mb-4">
             <Breadcrumb />
           </div>

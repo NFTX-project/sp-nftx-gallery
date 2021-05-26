@@ -22,8 +22,19 @@ const Header = () => {
   }, [funds, asPath]);
 
   return (
-    <header className="border-b-2 border-gray-800 bg-gray-900">
-      <div className="bg-gradient-to-r from-orange-500 to-pink-500 text-gray-50">
+    <header className="border-b-2 dark:border-gray-800 border-gray-100 dark:bg-gray-900 bg-white">
+      <div className="bg-gradient-to-r from-orange-500 to-pink-500 dark:text-gray-50 text-gray-800">
+        <button
+          aria-label="Toggle Dark Mode"
+          type="button"
+          className=""
+          onClick={() =>
+            document.querySelector('body').classList.toggle('dark')
+          }
+        >
+          Dark Light
+        </button>
+
         <div className="container mx-auto text-xs px-4 py-1 flex justify-between font-bold">
           {useMessage('header.beta.text', {
             version: process.env.appVersion,
@@ -46,18 +57,21 @@ const Header = () => {
           <Button
             href="https://app.nftx.org/"
             kind={Kind.INVERT}
-            className="hidden sm:block mr-2"
+            className="hidden dark:text-white text-gray-800 sm:block mr-2"
           >
             <FormattedMessage id="header.menu.app" />
           </Button>
           <Link href="/" passHref={true}>
-            <Button kind={Kind.OUTLINE} className="hidden sm:block mr-2">
+            <Button
+              kind={Kind.OUTLINE}
+              className="hidden sm:block mr-2  dark:text-white text-gray-800"
+            >
               <FormattedMessage id="header.menu.gallery" />
             </Button>
           </Link>
           <Button
             kind={Kind.INVERT}
-            className="hidden sm:block mr-2"
+            className="hidden sm:block mr-2  dark:text-white text-gray-800"
             target="_blank"
             href="https://discord.gg/SAZRt6m5Yw"
           >
@@ -66,7 +80,7 @@ const Header = () => {
           <Button
             href="https://docs.nftx.org"
             kind={Kind.INVERT}
-            className="hidden sm:block mr-2"
+            className="hidden sm:block mr-2 dark:text-white text-gray-800"
           >
             <FormattedMessage id="header.menu.docs" />
           </Button>

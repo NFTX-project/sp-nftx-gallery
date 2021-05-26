@@ -4,31 +4,41 @@ import useMessage from '@/hooks/useMessage';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 py-12 text-gray-500">
+    <footer className="dark:bg-gray-900 bg-white py-12 dark:text-gray-50 text-gray-800">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="inline-flex mt-4">
             <Link href="/">
               <a rel="noopener noreferrer" className="flex items-center">
                 <img
+                  src="/images/logo_on_white.svg"
+                  className="mx-auto md:pb-0 h-10 mr-2 block dark:hidden"
+                  alt="NFTX icon"
+                />
+                <img
+                  src="/images/nftx_on_white.svg"
+                  className="mx-auto md:pb-0 h-5 block dark:hidden"
+                  alt="NFTX logo"
+                />
+                <img
                   src="/images/logo_on_black.svg"
-                  className="mx-auto md:pb-0 h-10 mr-2"
+                  className="mx-auto md:pb-0 h-10 mr-2 dark:block hidden"
                   alt="NFTX icon"
                 />
                 <img
                   src="/images/nftx_on_black.svg"
-                  className="mx-auto md:pb-0 h-5"
+                  className="mx-auto md:pb-0 h-5 dark:block hidden"
                   alt="NFTX logo"
                 />
               </a>
             </Link>
           </div>
-          <div className="mt-4 flex flex-wrap content-center justify-center h-full text-white text-bold">
+          <div className="mt-4 flex flex-wrap content-center justify-center h-full  dark:text-white text-gray-800 text-bold">
             <Link href="https://docs.google.com/forms/d/e/1FAIpQLScnaUGFuz6-iyLTCeLhcLcFfxAdpPhGzGfxDtET7qgBIJO_xg/viewform">
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:underline text-pink-500"
+                className="hover:underline dark:text-pink-500 text-pink-600"
               >
                 {useMessage('footer.link.request')}
               </a>
@@ -105,7 +115,7 @@ const Footer = () => {
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-300 hover:underline"
+                  className="dark:text-gray-300 text-gray-800 hover:underline"
                 >
                   {useMessage('footer.link.opensea')}
                 </a>
@@ -116,7 +126,7 @@ const Footer = () => {
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-300 hover:underline"
+                  className="dark:text-gray-300 text-gray-800 hover:underline"
                 >
                   {useMessage('footer.link.covalent')}
                 </a>

@@ -10,7 +10,7 @@ const AssetPage = () => {
 
   if (fund === false) {
     return (
-      <div className="container text-center mx-auto px-4 py-20 text-gray-50">
+      <div className="container text-center mx-auto px-4 py-20  dark:text-gray-50 text-gray-800">
         <p>{useMessage('fund.notfound')}</p>
       </div>
     );
@@ -18,7 +18,7 @@ const AssetPage = () => {
 
   if (fund == null) {
     return (
-      <div className="container text-center mx-auto px-4 py-20 text-gray-50">
+      <div className="container text-center mx-auto px-4 py-20  dark:text-gray-50 text-gray-800">
         <p>{useMessage('fund.loading')}</p>
       </div>
     );

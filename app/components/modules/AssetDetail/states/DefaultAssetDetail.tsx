@@ -25,10 +25,10 @@ const DefaultAssetDetail = ({
 
   return (
     <div className={className}>
-      <article className="text-gray-50 border-2 border-gray-500 border-opacity-30 text-left break-words">
+      <article className="text-gray-50 border-2 dark:border-gray-500 border-gray-100 dark:border-opacity-30 border-opacity-30 text-left break-words">
         <div className="flex flex-col md:flex-row w-full">
           <div
-            className="md:w-1/2 p-6 md:p-9 lg:p-12 xl:p-24 flex justify-center items-center bg-gray-700"
+            className="md:w-1/2 p-6 md:p-9 lg:p-12 xl:p-24 flex justify-center items-center dark:bg-gray-700 bg-gray-50"
             style={{ backgroundColor: background }}
           >
             <div className="relative h-full">
@@ -52,17 +52,21 @@ const DefaultAssetDetail = ({
               )}
             </div>
           </div>
-          <div className="md:w-1/2 p-8 flex flex-col bg-gray-800 md:border-l-2 border-gray-500 border-opacity-30">
+          <div className="md:w-1/2 p-8 flex flex-col dark:bg-gray-800 bg-white md:border-l-2 dark:border-gray-500 border-gray-100 dark:border-opacity-30 border-opacity-30">
             {eyebrow && (
-              <h4 className="uppercase text-md mb-1 text-gray-50">{eyebrow}</h4>
+              <h4 className="uppercase text-md mb-1  dark:text-gray-50 text-gray-800">
+                {eyebrow}
+              </h4>
             )}
             <div className="flex flex-wrap items-baseline">
-              <h3 className="font-bold text-3xl text-gray-50 mr-2">{title}</h3>
-              <div className="uppercase text-sm text-gray-300 mt-2">
+              <h3 className="font-bold text-3xl  dark:text-gray-50 text-gray-800 mr-2">
+                {title}
+              </h3>
+              <div className="uppercase text-sm dark:text-gray-300 text-gray-600 mt-2">
                 {assetType}
               </div>
             </div>
-            <p className="text-md pt-3 text-left text-white text-opacity-75 leading-relaxed">
+            <p className="text-md pt-3 text-left dark:text-white text-gray-800 text-opacity-75 leading-relaxed">
               {text}
             </p>
             <div className="py-8">
@@ -101,7 +105,7 @@ const DefaultAssetDetail = ({
                 {useMessage('asset.detail.opensea.link')}
               </Button>
             </div>
-            <div className="text-gray-500 text-xs mt-4">
+            <div className="dark:text-gray-500 text-gray-600 text-xs mt-4">
               {useMessage('asset.detail.opensea.disclaimer')}
             </div>
           </div>
