@@ -18,7 +18,7 @@ const DefaultVaultCard = ({
 
   return (
     <div className={className || `h-full`}>
-      <article className="h-full dark:bg-gray-800 bg-white dark:text-gray-50 text-gray-800 border-2 dark:border-gray-500 border-gray-100 dark:border-opacity-30 border-opacity-30 text-left break-words">
+      <article className="h-full dark:bg-gray-800 bg-white shadow-lg dark:shadow-none dark:text-gray-50 text-gray-800 border-2 dark:border-gray-500 border-gray-100 dark:border-opacity-30 border-opacity-30 text-left break-words">
         <div
           className="py-6 px-3 md:p-6 xl:p-9 flex justify-center items-center dark:bg-gray-700 bg-white"
           style={{ backgroundColor: background }}
@@ -45,7 +45,7 @@ const DefaultVaultCard = ({
             )}
           </div>
         </div>
-        <div className="p-6 dark:bg-gray-800 bg-gray-50 border-t-2 dark:border-gray-500 border-gray-50 dark:border-opacity-30">
+        <div className="p-6 dark:bg-gray-800 bg-white dark:border-t-2 dark:border-gray-500 border-gray-50 dark:border-opacity-30">
           {eyebrow && (
             <h4 className="uppercase text-sm mb-1 dark:text-gray-50 text-gray-800">
               {eyebrow}
