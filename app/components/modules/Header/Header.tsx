@@ -22,8 +22,19 @@ const Header = () => {
   }, [funds, asPath]);
 
   return (
-    <header className="border-b-2 border-gray-800 bg-gray-900">
-      <div className="bg-gradient-to-r from-orange-500 to-pink-500 text-gray-50">
+    <header className="border-b-2 dark:border-gray-800 border-gray-100 dark:bg-gray-900 bg-white">
+      <div className="bg-gradient-to-r from-orange-500 to-pink-500 dark:text-gray-50 text-gray-800">
+        <button
+          aria-label="Toggle Dark Mode"
+          type="button"
+          className=""
+          onClick={() =>
+            document.querySelector('body').classList.toggle('dark')
+          }
+        >
+          Dark Light
+        </button>
+
         <div className="container mx-auto text-xs px-4 py-1 flex justify-between font-bold">
           {useMessage('header.beta.text', {
             version: process.env.appVersion,

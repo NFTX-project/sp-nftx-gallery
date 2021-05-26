@@ -30,7 +30,7 @@ const App = ({ Component, pageProps }: AppProps) => {
     >
       <FundsProvider>
         <VaultsProvider>
-          <div className="bg-gray-900 min-h-screen flex flex-col">
+          <div className="dark:bg-gray-900 bg-gray-50 min-h-screen flex flex-col">
             <Header />
             <Head>
               <link

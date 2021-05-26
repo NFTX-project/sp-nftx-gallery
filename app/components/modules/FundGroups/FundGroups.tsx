@@ -100,7 +100,9 @@ const FundGroups = ({
   if (grouped.length === 0) {
     return (
       <div className="my-6">
-        <h3 className="text-gray-300">{useMessage('funds.groups.none')}</h3>
+        <h3 className="dark:text-gray-300 text-gray-600">
+          {useMessage('funds.groups.none')}
+        </h3>
       </div>
     );
   }

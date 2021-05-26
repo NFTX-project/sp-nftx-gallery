@@ -31,7 +31,7 @@ export default {
 } as Meta;
 
 const Template: Story<ButtonProps> = (args) => (
-  <div className="p-10 bg-gray-900">
+  <div className="p-10 dark:bg-gray-900 bg-gray-50">
     <Button {...args} />
   </div>
 );

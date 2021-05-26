@@ -11,7 +11,7 @@ export default {
 
 export const Example = () => (
   <>
-    <div className="p-12 bg-gray-800">
+    <div className="p-12 dark:bg-gray-800 bg-gray-50">
       <Divider />
     </div>
     <div className="p-12">

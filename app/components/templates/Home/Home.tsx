@@ -44,7 +44,7 @@ const HomeContainer = ({
         <title>{useMessage('home.meta.title')}</title>
       </Head>
       <div className="container mx-auto pt-24 pb-18 px-4">
-        <h1 className="text-4xl mb-4 font-bold text-center text-gray-50">
+        <h1 className="text-4xl mb-4 font-bold text-center dark:text-gray-50 text-gray-800">
           <img
             src="/images/nftx_on_black.svg"
             className="mx-auto max-w-xs md:max-w-sm lg:max-w-md xl:max-w-lg 2xl:max-w-xl"
@@ -52,7 +52,7 @@ const HomeContainer = ({
           />
           <div className="invisible h-0">{useMessage('home.title')}</div>
         </h1>
-        <h2 className="text-sm font-bold text-center text-gray-50 leading-loose mb-3">
+        <h2 className="text-sm font-bold text-center dark:text-gray-50 text-gray-800 leading-loose mb-3">
           {useMessage('home.subtitle', {
             tvl: (
               <FormattedNumber
