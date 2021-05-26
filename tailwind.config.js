@@ -1,6 +1,7 @@
 const colors = require('tailwindcss/colors');
 
 module.exports = {
+  darkMode: 'class',
   purge: [
     './pages/**/*.tsx',
     './app/components/**/*.tsx',
