@@ -42,7 +42,7 @@ const FundStatus = ({ fin, ver, amm }: FundStatusProps) => {
               <Icon
                 size={Size.SMALL}
                 className={`${
-                  s.enabled ? 'text-green-500 dark:text-green-400' : ''
+                  s.enabled ? 'text-green-600 dark:text-green-400' : ''
                 }`}
                 name={s.enabled ? Icons.CHECK_CIRCLE : Icons.X_CIRCLE}
               />

@@ -71,13 +71,13 @@ const HomeContainer = ({
             volume: <FormattedNumber value={galleryData.count} />,
           })}
         </h2>
-        <p className="text-md object-center text-center text-white text-opacity-50 leading-relaxed max-w-xl mx-auto">
+        <p className="text-md object-center text-center dark:text-white dark:text-opacity-50 text-gray-600 leading-relaxed max-w-xl mx-auto">
           {useMessage('home.text')}
         </p>
 
         {!!(collections && collections.length) && (
           <div className="mt-20 mb-16">
-            <h3 className="text-gray-50 font-sans font-bold text-2xl mb-8">
+            <h3 className="dark:text-gray-50 text-gray-800 font-sans font-bold text-2xl mb-8">
               <FormattedMessage id="home.collections.title" />
             </h3>
             <section className="flex flex-wrap -m-2">
