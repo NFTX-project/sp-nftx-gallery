@@ -60,6 +60,9 @@ module.exports = {
           900: '#33160D',
         },
       },
+      boxShadow: {
+        nftx: '0 12px 12px -3px rgba(0, 0, 0, 0.07)',
+      },
     },
   },
   variants: {

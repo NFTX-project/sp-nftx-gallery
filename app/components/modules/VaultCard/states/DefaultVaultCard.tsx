@@ -18,7 +18,7 @@ const DefaultVaultCard = ({
 
   return (
     <div className={className || `h-full`}>
-      <article className="h-full dark:bg-gray-800 bg-white shadow-lg dark:shadow-none dark:text-gray-50 text-gray-800 border-2 dark:border-gray-500 border-gray-100 dark:border-opacity-30 border-opacity-30 text-left break-words">
+      <article className="h-full dark:bg-gray-800 bg-white shadow-nftx dark:shadow-none dark:text-gray-50 text-gray-800 border-1 dark:border-gray-500 border-gray-100 dark:border-opacity-30 border-opacity-30 text-left break-words">
         <div
           className="py-6 px-3 md:p-6 xl:p-9 flex justify-center items-center dark:bg-gray-700 bg-white"
           style={{ backgroundColor: background }}
