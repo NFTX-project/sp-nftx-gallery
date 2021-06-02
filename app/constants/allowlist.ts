@@ -47,4 +47,5 @@ export const vaultIds = [
   75, // Stadia
   76, // ASCII Punks
   78, // Empyrean
+  84, // Bonsai
 ];
