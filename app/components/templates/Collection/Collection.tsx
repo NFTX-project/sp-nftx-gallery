@@ -49,7 +49,7 @@ const CollectionContainer = ({
 
   return (
     <>
-      <div className="container mx-auto px-4 text-gray-50">
+      <div className="container mx-auto px-4 dark:text-gray-50 text-gray-800">
         <div className="md:flex md:flex-row mb-8">
           <header className="w-full md:w-1/2">
             <div className="mt-16 mb-4">
@@ -72,14 +72,14 @@ const CollectionContainer = ({
           </aside>
         </div>
         {funds === false && (
-          <div className="container text-center mx-auto px-4 py-20 text-gray-50">
+          <div className="container text-center mx-auto px-4 py-20 dark:text-gray-50 text-gray-800">
             <p>
               <FormattedMessage id="collection.notfound" />
             </p>
           </div>
         )}
         {funds == null && (
-          <div className="container text-center mx-auto px-4 py-20 text-gray-50">
+          <div className="container text-center mx-auto px-4 py-20 dark:text-gray-50 text-gray-800">
             <p>
               <FormattedMessage id="collection.loading" />
             </p>

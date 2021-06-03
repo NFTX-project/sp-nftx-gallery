@@ -16,7 +16,9 @@ const Breadcrumbs = () => {
   return (
     <nav className="flex flex-wrap items-center uppercase text-sm">
       <Link href="/">
-        <a className="text-gray-400">{useMessage('breadcrumb.home')}</a>
+        <a className="dark:text-gray-400 text-gray-800">
+          {useMessage('breadcrumb.home')}
+        </a>
       </Link>
       {path.map((p, i) => {
         if (denylist.includes(p)) {
@@ -46,13 +48,15 @@ const Breadcrumbs = () => {
 
         return (
           <div key={`${i}_${p}`} className="mr-1 flex items-center">
-            <span className="mr-1 text-gray-400">
+            <span className="mr-1 dark:text-gray-400 text-gray-800">
               <Icon name={Icons.CHEVRON_RIGHT} size={Size.SMALL} />
             </span>
             <Link href={`/${href}/`}>
               <a
                 className={
-                  i + 1 === path.length ? 'text-gray-50' : 'text-gray-400'
+                  i + 1 === path.length
+                    ? 'dark:text-gray-50 text-gray-900'
+                    : 'dark:text-gray-400 text-gray-800'
                 }
               >
                 {message}

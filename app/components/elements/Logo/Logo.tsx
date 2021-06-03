@@ -12,14 +12,24 @@ export interface LogoProps {
  * Reusable logo component that takes a size
  */
 const Logo = ({ size = 32, className, ...rest }: LogoProps) => (
-  <img
-    src="/images/logo_on_black.svg"
-    alt="NFTX"
-    height={size}
-    width={size}
-    className={`${className} inline-block`}
-    {...rest}
-  />
+  <>
+    <img
+      src="/images/logo_on_black.svg"
+      alt="NFTX"
+      height={size}
+      width={size}
+      className={`${className} hidden dark:inline-block`}
+      {...rest}
+    />
+    <img
+      src="/images/logo_on_white.svg"
+      alt="NFTX"
+      height={size}
+      width={size}
+      className={`${className} dark:hidden inline-block`}
+      {...rest}
+    />
+  </>
 );
 
 export default Logo;

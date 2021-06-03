@@ -73,7 +73,7 @@ const SingleFund = ({
           })}
         </title>
       </Head>
-      <div className="container mx-auto px-4 text-gray-50 mt-16">
+      <div className="container mx-auto px-4 dark:text-gray-50 text-gray-800 mt-16">
         <div className="flex flex-col md:flex-row mb-8">
           <header className="flex-1 md:pr-8">
             <div className="mb-4">

@@ -1,6 +1,7 @@
 const colors = require('tailwindcss/colors');
 
 module.exports = {
+  darkMode: 'class',
   purge: [
     './pages/**/*.tsx',
     './app/components/**/*.tsx',
@@ -16,6 +17,7 @@ module.exports = {
         gray: {
           ...colors.gray,
           50: '#FAFAFA',
+          100: '#E7E7E7',
           500: '#9a96a3',
           700: '#242526',
           800: '#191A1B',
@@ -58,10 +60,16 @@ module.exports = {
           900: '#33160D',
         },
       },
+      boxShadow: {
+        nftx: '0 12px 12px -3px rgba(0, 0, 0, 0.07)',
+      },
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      borderStyle: ['dark'],
+      display: ['dark'],
+    },
   },
   plugins: [],
 };

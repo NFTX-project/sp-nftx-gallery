@@ -38,11 +38,11 @@ const CombinedFund = ({ fundKey, ...fund }: FundProps) => {
   }, [vaults, funds]);
 
   return (
-    <div className="container mx-auto px-4 py-20 text-gray-50">
+    <div className="container mx-auto px-4 py-20 dark:text-gray-50 text-gray-800">
       <div className="md:flex">
         <div className="flex-none w-full md:w-3/5 lg:w-2/3 md:pr-16 lg:pr-24">
           <Breadcrumb />
-          <h1 className="font-bold text-xl text-gray-50 mt-6 uppercase flex items-center">
+          <h1 className="font-bold text-xl dark:text-gray-50 text-gray-800 mt-6 uppercase flex items-center">
             <img
               srcSet={`/images/cards/vault-${fund.vaultId}-140@2x.png 2x`}
               src={`/images/cards/vault-${fund.vaultId}-140.png`}
@@ -52,7 +52,7 @@ const CombinedFund = ({ fundKey, ...fund }: FundProps) => {
             <span className="mr-2">{`$${fund.fundToken.name}`}</span>
             <Pill highlight={true} text={useMessage('pill.combined')} />
           </h1>
-          <h2 className="text-3xl font-bold text-gray-50 mt-6 uppercase">
+          <h2 className="text-3xl font-bold dark:text-gray-50 text-gray-800 mt-6 uppercase">
             {useMessage(`fund.combined.${fundKey}.title`)}
           </h2>
           <p className="mt-6 text-gray-300 max-w-prose">
@@ -71,7 +71,7 @@ const CombinedFund = ({ fundKey, ...fund }: FundProps) => {
             <h4 className="mb-6 text-center uppercase text-gray-400 flex items-center flex-wrap justify-center">
               {useMessage('fund.combined.price', {
                 price: (
-                  <span className="ml-2 font-bold text-3xl text-gray-50">
+                  <span className="ml-2 font-bold text-3xl dark:text-gray-50 text-gray-800">
                     {price.usd || '🦧'}
                   </span>
                 ),
@@ -119,10 +119,10 @@ const CombinedFund = ({ fundKey, ...fund }: FundProps) => {
                 </dd>
               </div>
             </dl>
-            <h5 className="font-bold text-gray-50">
+            <h5 className="font-bold dark:text-gray-50 text-gray-800">
               {useMessage('fund.info.combined.title')}
             </h5>
-            <p className="mt-1 text-gray-500">
+            <p className="mt-1 dark:text-gray-50 text-gray-8000">
               {useMessage('fund.info.combined.text')}
             </p>
           </section>
