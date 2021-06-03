@@ -2,16 +2,16 @@ import React from 'react';
 
 export interface LightModeProps {
   /**
-   * The size of the logo in pixels (1:1 ratio). Defaults to 32.
+   * The size of the Light Mode in pixels (1:1 ratio). Defaults to 18.
    */
   size?: number;
   className?: string;
 }
 
 /**
- * Reusable logo component that takes a size
+ * Reusable LightMode component that takes a size
  */
-const LightMode = ({ size = 20, className, ...rest }: LightModeProps) => (
+const LightMode = ({ size = 18, className, ...rest }: LightModeProps) => (
   <>
     <img
       src="/images/lightmode_on_black.svg"
