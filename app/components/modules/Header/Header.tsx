@@ -8,6 +8,7 @@ import { useFundsContext } from '@/contexts/funds';
 import useMessage from '@/hooks/useMessage';
 import { useRouter } from 'next/router';
 import { FormattedMessage } from 'react-intl';
+import LightMode from '@/components/elements/LightMode';
 
 const Header = () => {
   const funds = useFundsContext();
@@ -28,16 +29,6 @@ const Header = () => {
           {useMessage('header.beta.text', {
             version: process.env.appVersion,
           })}
-          <button
-            aria-label="Toggle Dark Mode"
-            type="button"
-            className="mx-auto text-xs px-4 py-1 flex justify-between font-bold inline"
-            onClick={() =>
-              document.querySelector('body').classList.toggle('dark')
-            }
-          >
-            Dark Light
-          </button>
           <a
             href="https://nftx.canny.io/"
             className="ml-2 underline hover:no-underline"
@@ -85,6 +76,16 @@ const Header = () => {
           </Button>
         </nav>
         <aside className="flex justify-center ml-auto flex-wrap">
+          <button
+            aria-label="Toggle Dark Mode"
+            type="button"
+            className="flex items-center mr-4 focus-none"
+            onClick={() =>
+              document.querySelector('body').classList.toggle('dark')
+            }
+          >
+            <LightMode />
+          </button>
           <Link href={`/funds/${getFundKey(feelingLucky)}`} passHref={true}>
             <Button kind={Kind.ICON}>
               <Icon name={Icons.SPARKLE} size={IconSize.SMALL} />

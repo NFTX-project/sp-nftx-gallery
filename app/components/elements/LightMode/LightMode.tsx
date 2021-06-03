@@ -1,6 +1,6 @@
 import React from 'react';
 
-export interface LogoProps {
+export interface LightModeProps {
   /**
    * The size of the logo in pixels (1:1 ratio). Defaults to 32.
    */
@@ -11,19 +11,19 @@ export interface LogoProps {
 /**
  * Reusable logo component that takes a size
  */
-const Logo = ({ size = 32, className, ...rest }: LogoProps) => (
+const LightMode = ({ size = 20, className, ...rest }: LightModeProps) => (
   <>
     <img
-      src="/images/logo_on_black.svg"
-      alt="NFTX"
+      src="/images/lightmode_on_black.svg"
+      alt="LightMode Light"
       height={size}
       width={size}
       className={`${className} hidden dark:inline-block`}
       {...rest}
     />
     <img
-      src="/images/logo_on_white.svg"
-      alt="NFTX"
+      src="/images/lightmode_on_white.svg"
+      alt="LightMode Dark"
       height={size}
       width={size}
       className={`${className} dark:hidden inline-block`}
@@ -32,4 +32,4 @@ const Logo = ({ size = 32, className, ...rest }: LogoProps) => (
   </>
 );
 
-export default Logo;
+export default LightMode;
