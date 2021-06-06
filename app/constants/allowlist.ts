@@ -12,6 +12,7 @@ export const vaultIds = [
   11, //AVASTAR-30
   12, //AVASTAR-60
   13, //AUTOGLYPH
+  14, //JOY
   19, // 0XYMONS
   20, //'MASK'
   21, //'CUBES'
