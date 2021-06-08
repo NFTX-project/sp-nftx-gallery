@@ -36,11 +36,13 @@
     ]
   },
   "dependencies": {
+    "@netlify/plugin-nextjs": "^3.1.1-experimental-odb.1",
     "@tailwindcss/postcss7-compat": "^2.0.2",
     "autoprefixer": "^9",
     "axios": "^0.21.1",
     "axios-hooks": "^2.3.0",
     "big.js": "^6.0.3",
+    "netlify-cli": "^3.35.6",
     "next": "^10.0.6",
     "postcss": "^7",
     "react": "17.0.1",
@@ -51,6 +53,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
+    "@netlify/functions": "^0.7.2",
     "@storybook/addon-actions": "^6.1.15",
     "@storybook/addon-essentials": "^6.1.15",
     "@storybook/addon-links": "^6.1.15",
