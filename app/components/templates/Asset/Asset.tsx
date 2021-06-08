@@ -60,6 +60,27 @@ const AssetContainer = React.memo(
             })}
           </title>
           <meta name="description" content={data?.description} />
+          <meta
+            property="og:title"
+            content={useMessage('asset.meta.title', {
+              asset: data?.name,
+              fund: fund.fundToken.name,
+            })}
+          />
+          <meta property="og:description" content={data?.description} />
+          <meta
+            property="og:image"
+            content={`https://res.cloudinary.com/nftx/image/fetch/b_white,w_1600,h_600,f_auto,c_lpad,g_west,x_24/l_v1621440569:nftx-assets:logos:NFTX_logotype_on_white,w_200,g_north_west,x_600,y_180/l_text:Arial_75_bold:${encodeURIComponent(
+              fund.fundToken.name
+            )},g_north_west,x_600,y_260/l_text:Arial_55_bold:${encodeURIComponent(
+              data?.name
+            )},g_north_west,x_600,y_320/l_text:Arial_45:%24${encodeURIComponent(
+              fund.fundToken.name
+            )},g_north_west,x_600,y_390/${data?.image_url}`}
+          />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta property="og:site_name" content="NFTX NFT Gallery" />
+          <meta name="twitter:site" content="@nftx_" />
         </Head>
         <div className="container text-center mx-auto px-4 pt-10 pb-20 dark:text-gray-50 text-gray-800">
           <div className="mt-8 mb-4">
