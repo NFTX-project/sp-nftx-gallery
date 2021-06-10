@@ -309,5 +309,11 @@
         "name": "BNSI",
         "buyOpenseaUrl": "https://opensea.io/assets/bonsai-zenft",
         "mintRedeemUrl": "https://app.nftx.org/mint/84"
+    },
+    {
+        "vaultId": 87,
+        "name": "GCG",
+        "buyOpenseaUrl": "https://opensea.io/assets/guttercatgang",
+        "mintRedeemUrl": "https://app.nftx.org/mint/87"
     }
 ]
