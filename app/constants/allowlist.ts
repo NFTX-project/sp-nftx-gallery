@@ -49,4 +49,5 @@ export const vaultIds = [
   76, // ASCII Punks
   78, // Empyrean
   84, // Bonsai
+  87, // Gutter Cat Gang
 ];
