@@ -179,7 +179,12 @@
         "name": "TWERKY",
         "buyUrl": "https://app.sushi.com/swap?outputCurrency=0xDc7eE965B4F62C1Ed2A2da72B20a143Bfe31fD32",
         "mintRedeemUrl": "https://app.nftx.org/mint/29"
-    },    
+    }, 
+    {
+        "vaultId": 31,
+        "name": "COLOR",
+        "mintRedeemUrl": "https://app.nftx.org/mint/31"
+    },   
     {
         "vaultId": 32,
         "name": "Singularity",
