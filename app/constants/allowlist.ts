@@ -51,4 +51,6 @@ export const vaultIds = [
   78, // Empyrean
   84, // Bonsai
   87, // Gutter Cat Gang
+  98, // My Fucking Pickle
+  99, // The Alien Boy
 ];

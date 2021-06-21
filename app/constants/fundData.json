@@ -320,5 +320,17 @@
         "name": "GCG",
         "buyOpenseaUrl": "https://opensea.io/assets/guttercatgang",
         "mintRedeemUrl": "https://app.nftx.org/mint/87"
+    },
+    {
+        "vaultId": 98,
+        "name": "PICKLE",
+        "buyOpenseaUrl": "https://opensea.io/assets/myfuckingpickle",
+        "mintRedeemUrl": "https://app.nftx.org/mint/98"
+    },
+    {
+        "vaultId": 99,
+        "name": "TABOY",
+        "buyOpenseaUrl": "https://opensea.io/assets/thealienboy",
+        "mintRedeemUrl": "https://app.nftx.org/mint/99"
     }
 ]
