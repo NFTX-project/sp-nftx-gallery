@@ -205,6 +205,12 @@
         "mintRedeemUrl": "https://app.nftx.org/mint/40"
     },
     {
+        "vaultId": 41,
+        "name": "CITIES",
+        "buyUrl": "https://app.sushi.com/swap?outputCurrency=0x94469aA23E2b29B17219a2B186e82D8fdf32088A",
+        "mintRedeemUrl": "https://app.nftx.org/mint/41"
+    },
+    {
         "vaultId": 44,
         "name": "89SA",
         "buyUrl":"https://app.sushi.com/swap?outputCurrency=0x7a1a7c1bed151052b3d47a132b0b9dd1f1976aea",
