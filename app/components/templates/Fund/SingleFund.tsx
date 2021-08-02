@@ -55,8 +55,8 @@ const SingleFund = ({
   };
 
   const seeMore = () => {
-    setOffset(limit);
-    setLimit((limit) => limit + 25);
+    setLimit(limit);
+    setOffset((limit) => limit + 25);
   };
 
   // Check for specific fund text or pull from asset
