@@ -40,8 +40,7 @@ const SingleFund = ({
 
   const { assets, loading } = useAssets(
     asset.address,
-    holdings.slice(offset, limit),
-    limit
+    holdings.slice(offset, limit)
   );
 
   useEffect(() => {
