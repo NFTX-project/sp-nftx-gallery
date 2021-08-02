@@ -2,10 +2,10 @@ import { Asset } from '@/types/asset';
 import useAxios from 'axios-hooks';
 import { useEffect, useRef } from 'react';
 
-const useAssets = (address: string, tokens: string[], max: number) => {
+const useAssets = (address: string, tokens: string[]) => {
   const retryRef = useRef(0);
   const tokenIds = tokens.join('&token_ids=');
-  const assetUrl = `https://api.opensea.io/api/v1/assets?asset_contract_address=${address}&token_ids=${tokenIds}&limit=${max}`;
+  const assetUrl = `https://api.opensea.io/api/v1/assets?asset_contract_address=${address}&token_ids=${tokenIds}&limit=50`;
 
   const [{ data, loading, error }, refetch] = useAxios<{ assets: Asset[] }>({
     url: assetUrl,
