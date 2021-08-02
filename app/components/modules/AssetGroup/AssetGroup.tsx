@@ -72,11 +72,7 @@ const AssetGroupLoader = ({
     .filter((h) => h !== assetKey)
     .splice(randomEntry, max);
 
-  const { assets, loading, error } = useAssets(
-    fund.asset.address,
-    tokenIds,
-    max
-  );
+  const { assets, loading, error } = useAssets(fund.asset.address, tokenIds);
 
   return (
     <AssetGroup
