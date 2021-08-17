@@ -10,18 +10,18 @@ module.exports = {
   },
   // for @netlify/plugin-next-js
   target: 'serverless',
-  async redirects() {
-    return [
-      {
-        source: '/',
-        destination: 'https://app.nftx.org',
-        permanent: false,
-      },
-      {
-        source: '/funds/waifusion/',
-        destination: 'https://app.nftx.org/waifus',
-        permanent: false,
-      },
-    ];
-  },
+  // async redirects() {
+  //   return [
+  //     {
+  //       source: '/',
+  //       destination: 'https://app.nftx.org',
+  //       permanent: false,
+  //     },
+  //     {
+  //       source: '/funds/waifusion/',
+  //       destination: 'https://app.nftx.org/waifus',
+  //       permanent: true,
+  //     },
+  //   ];
+  // },
 };
