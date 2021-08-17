@@ -1,5 +1,7 @@
 {
   "redirects": [
-    { "source": "/funds/", "destination": "https://app.nftx.org" }
+    { "source": "/funds/", "destination": "https://app.nftx.org" },
+    { "source": "funds/mask/", "destination": "https://app.nftx.org" },
+    { "source": "funds/mask", "destination": "https://app.nftx.org/somewhereelse" },
   ]
 }
