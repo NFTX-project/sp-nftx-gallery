@@ -1,5 +1,5 @@
 {
     "redirects": [
-      { "source": "/javery", "destination": "https://app.nftx.org", "permanent": true  },
+      { "source": "/javery/", "destination": "https://app.nftx.org", "permanent": true  },
     ]
 }
