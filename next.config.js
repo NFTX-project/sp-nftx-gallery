@@ -17,6 +17,11 @@ module.exports = {
         destination: 'https://app.nftx.org',
         permanent: false,
       },
+      {
+        source: '/funds/waifusion/',
+        destination: 'https://app.nftx.org/waifus',
+        permanent: false,
+      },
     ];
   },
 };
