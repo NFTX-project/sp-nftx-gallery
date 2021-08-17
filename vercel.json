@@ -1,5 +1,19 @@
 {
-    "redirects": [
-      { "source": "/javery/", "destination": "https://app.nftx.org", "permanent": true  },
-    ]
+  "redirects": [
+    { "source": "/me", "destination": "/profile.html" },
+    { "source": "/user", "destination": "/api/user", "permanent": false },
+    { "source": "/view-source", "destination": "https://github.com/vercel/vercel" },
+    {
+      "source": "/:path((?!uk/).*)",
+      "has": [
+        {
+          "type": "header",
+          "key": "x-vercel-ip-country",
+          "value": "GB"
+        }
+      ],
+      "destination": "/uk/:path*",
+      "permanent": false
+    }
+  ]
 }
