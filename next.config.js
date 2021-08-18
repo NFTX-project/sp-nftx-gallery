@@ -19,31 +19,31 @@ module.exports = {
         permanent: true,
       },
       {
-        source: '/funds/punk/punk-basic/',
+        source: '/funds/punk-basic/',
         destination:
           'https://app.nftx.org/redeem/0x269616d549d7e8eaa82dfb17028d0b212d11232a/',
         permanent: true,
       },
       {
-        source: '/funds/punk/punk-attr-4/',
+        source: '/funds/punk-attr-4/',
         destination:
           'https://app.nftx.org/redeem/0x269616d549d7e8eaa82dfb17028d0b212d11232a/',
         permanent: true,
       },
       {
-        source: '/funds/punk/punk-attr-5/',
+        source: '/funds/punk-attr-5/',
         destination:
           'https://app.nftx.org/redeem/0x269616d549d7e8eaa82dfb17028d0b212d11232a/',
         permanent: true,
       },
       {
-        source: '/funds/punk/punk-zombie/',
+        source: '/funds/punk-zombie/',
         destination:
           'https://app.nftx.org/redeem/0x269616d549d7e8eaa82dfb17028d0b212d11232a/',
         permanent: true,
       },
       {
-        source: '/funds/punk/punk-female/',
+        source: '/funds/punk-female/',
         destination:
           'https://app.nftx.org/redeem/0x269616d549d7e8eaa82dfb17028d0b212d11232a/',
         permanent: true,
