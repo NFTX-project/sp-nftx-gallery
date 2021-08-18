@@ -37,19 +37,19 @@ module.exports = {
         permanent: true,
       },
       {
-        source: '/funds/punk/punk-zombie',
+        source: '/funds/punk/punk-zombie/',
         destination:
           'https://app.nftx.org/redeem/0x269616d549d7e8eaa82dfb17028d0b212d11232a/',
         permanent: true,
       },
       {
-        source: '/funds/punk/punk-female',
+        source: '/funds/punk/punk-female/',
         destination:
           'https://app.nftx.org/redeem/0x269616d549d7e8eaa82dfb17028d0b212d11232a/',
         permanent: true,
       },
       {
-        source: '/funds/punk/bored-ape-yacht-club-nftx/',
+        source: '/funds/bored-ape-yacht-club-nftx/',
         destination:
           'https://app.nftx.org/redeem/0xea47b64e1bfccb773a0420247c0aa0a3c1d2e5c5/',
         permanent: true,
