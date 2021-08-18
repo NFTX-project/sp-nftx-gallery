@@ -302,7 +302,7 @@ module.exports = {
         destination: 'https://app.nftx.org',
         permanent: true,
       },
-    ];
+    ]
   },
   i18n: {
     locales: ['en'],
