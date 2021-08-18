@@ -54,6 +54,24 @@ module.exports = {
           'https://app.nftx.org/redeem/0xea47b64e1bfccb773a0420247c0aa0a3c1d2e5c5/',
         permanent: true,
       },
+      {
+        source: '/funds/mask/',
+        destination:
+          'https://app.nftx.org/redeem/0xc7a8b45e184138114e6085c82936a8db93dd156a/',
+        permanent: true,
+      },
+      {
+        source: '/funds/zenft/',
+        destination:
+          'https://app.nftx.org/redeem/0xf0fe1a87abf12099b77352bdcc10f5a87067b290/',
+        permanent: true,
+      },
+      {
+        source: '/funds/kamamixer/',
+        destination:
+          'https://app.nftx.org/redeem/0xb2c62e0a1f5837356e399359ecc34fcc49a02093/',
+        permanent: true,
+      },
     ];
   },
   i18n: {
