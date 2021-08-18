@@ -286,7 +286,23 @@ module.exports = {
         destination: 'https://app.nftx.org',
         permanent: true,
       },
-    ];
+      {
+        source: '/collections/cryptopunks/',
+        destination:
+          'https://app.nftx.org/redeem/0x269616d549d7e8eaa82dfb17028d0b212d11232a/',
+        permanent: true,
+      },
+      {
+        source: '/collections/',
+        destination: 'https://app.nftx.org',
+        permanent: true,
+      },
+      {
+        source: '/',
+        destination: 'https://app.nftx.org',
+        permanent: true,
+      },
+    ]
   },
   i18n: {
     locales: ['en'],
