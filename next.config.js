@@ -2,9 +2,9 @@ module.exports = {
   async redirects() {
     return [
       {
-        source: '/',
-        destination: '/funds',
-        permanent: false,
+        source: '/funds/waifusion',
+        destination: '/',
+        permanent: true,
       },
     ];
   },
